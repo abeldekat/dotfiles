@@ -1,0 +1,5 @@
+[include]
+	path = ~/.gitconfig.local
+[user]
+	email = chris.mousset@gmail.com
+	name = chris
