@@ -14,6 +14,6 @@ ln -s -f $DOTFILES/global-gitignore ~/.gitignore
 ln -s -f $DOTFILES/gitconfig ~/.gitconfig
 
 echo "Get minpac"
-git clone https://github.com/k-takata/minpac.git $MINPACPATH
+git clone https://github.com/k-takata/minpac.git $MINPACPATH/minpac
 
 echo "Done"
