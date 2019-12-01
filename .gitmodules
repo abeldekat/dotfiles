@@ -1,3 +1,0 @@
-[submodule "minpac"]
-	path = vim/pack/minpac/opt
-	url = https://github.com/k-takata/minpac.git
