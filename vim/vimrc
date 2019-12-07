@@ -1,55 +1,144 @@
 " vim: nowrap fdm=marker
 scriptencoding utf-8
 
-" Minimum requirements for plugin
-"set nocompatible
-"filetype plugin on
+" Vim essential {{{1
+set nocompatible
+filetype plugin on
 
-source ~/dotfiles/packages.vim
+" Plugins Minpac {{{1
+packadd minpac
+call minpac#init({'verbose': 2})
+call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-" Personal preferences not set by sensible.vim  TODO Controleren {{{1 
-" runtime macros/matchit.vim
+"General enhancements {{{2
+call minpac#add('tpope/vim-sensible')
+call minpac#add('tpope/vim-repeat')
+"call minpac#add('tpope/vim-unimpaired')
+"call minpac#add('tpope/vim-surround')
+"call minpac#add('tpope/vim-commentary')
+"call minpac#add('tpope/vim-projectionist')
+"call minpac#add('tpope/vim-dispatch')
+call minpac#add('junegunn/fzf.vim')
+call minpac#add('vim-airline/vim-airline')
+"call minpac#add('dense-analysis/ale')
+"call minpac#add('scrooloose/nerdtree')
+"call minpac#add('vim-syntastic/syntastic')
+
+"Custom textobjects {{{2
+"call minpac#add('kana/vim-textobj-user')
+"call minpac#add('kana/vim-textobj-entire')
+
+" For Vimscript {{{2
+call minpac#add('tpope/vim-scriptease')
+
+" Colorschemes {{{2
+"call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
+"call minpac#add('morhetz/gruvbox', {'type': 'opt'})
+
+" Useful commands {{{2
+command! PackUpdate source $MYVIMRC | call minpac#update()
+command! PackClean  source $MYVIMRC | call minpac#clean()
+command! PackStatus source $MYVIMRC | call minpac#status()
+
+" Personal preferences not set by sensible.vim  {{{1 
 let g:mapleader=','
-inoremap jk <Esc>
-"syntax on
-"set relativenumber 
-"set number
-"set timeoutlen=1
-"set ttimeoutlen=10
-"set hidden
-"set wildmenu
-"set wildmode=full
-"set history=200
-"set hlsearch
-"set incsearch
+set hlsearch " sensible <C-L>
+set incsearch
+set history=5000
+set nojoinspaces
+set number
+set relativenumber 
+set noswapfile
+if has('mouse') " the * register in a terminal?
+  set mouse=nv
+endif
+set foldcolumn=3
+set hidden
+" TODO Clipboard unnamed
+" set listchars=tab:▸\ ,eol:¬
+" set ruler, already done by powerline
+" TODO set wildmode=full
 
 " Colorscheme {{{1
 set termguicolors
 set background=light
+colorscheme darkblue
 "silent! colorscheme blue "solarized8_light
 " _high _low _flat
 "colorscheme solarized8_high
 
-" Always set hidden {{{1
-set hidden
+" Define a group for autocommands  {{{1
+augroup vimrc
+  autocmd!
+augroup END
 
-" Mappings {{{1
-" edit with path in current directory
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+" Plugin configuration {{{1
+" netrw.vim TODO {{{2
+" Solarized8 TODO {{{2
+nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
+      \ ? substitute(g:colors_name, 'dark', 'light', '')
+      \ : substitute(g:colors_name, 'light', 'dark', '')
+      \ )<cr>
+
+function! Solarized8Contrast(delta)
+  let l:schemes = map(['_low', '_flat', '', '_high'], '"solarized8_".(&background).v:val')
+  exe 'colors' l:schemes[((a:delta+index(l:schemes, g:colors_name)) % 4 + 4) % 4]
+endfunction
+
+nmap <leader>- :<c-u>call Solarized8Contrast(-v:count1)<cr>
+nmap <leader>+ :<c-u>call Solarized8Contrast(+v:count1)<cr>
+" Ctlr-P TODO {{{2
+let g:ctrlp_jump_to_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'find %s -type f'
+
+" FZF {{{2
+set rtp+=~/.fzf
+nnoremap <C-p> :<C-u>FZF<CR>
+
+" Airline {{{2
+"let g:airline_powerline_fonts = 1
+
+" Mappings and commands {{{1
+" Override defaults TODO {{{2
+nnoremap Q <Nop> "TODO test gQ
+command! -nargs=0 -bang Qa qall!
+command! -nargs=0 -bang QA qall!
+" TODO the comma {{{2
+" File opening {{{2
+cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
+
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
-" hls on redraw screen
+
+" Prompt to open file with same name, different extension
+map <leader>er :e <C-R>=expand("%:r")."."<CR>
+
+
+" Fix the & command in normal+visual modes keep the flags of last search {{{2
+nnoremap & :&&<Enter>
+xnoremap & :&&<Enter>
+" Strip trailing whitespace {{{2
+" Visual line repeat {{{2
+" Terminal TODO {{{2
+if exists(':terminal')
+  "tnoremap <expr> <C-\><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+  " No such event Termopen
+  "autocmd vimrc TermOpen * nnoremap <buffer> I I<C-a>
+  "autocmd vimrc TermOpen * nnoremap <buffer> A A<C-e>
+  "autocmd vimrc TermOpen * nnoremap <buffer> C i<C-k>
+  "autocmd vimrc TermOpen * nnoremap <buffer> D i<C-k><C-\><C-n>
+  "autocmd vimrc TermOpen * nnoremap <buffer> cc i<C-e><C-u>
+  "autocmd vimrc TermOpen * nnoremap <buffer> dd i<C-e><C-u><C-\><C-n>
+endif
+" Windows, TODO {{{2
+" https://github.com/neovim/neovim/pull/2076#issuecomment-76998265
+
+" hls on redraw screen {{{2
 nnoremap <C-l> :<C-u>nohlsearch<CR><C-l>
-
-
-" Airline {{{1
-"let g:airline_powerline_fonts = 1
-
-" FZF {{{1
-set rtp+=~/.fzf
-nnoremap <C-p> :<C-u>FZF<CR>
+inoremap jk <Esc>
 
 " TODO {{{1
 "find command: set path+=app/**

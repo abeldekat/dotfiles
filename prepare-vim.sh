@@ -1,12 +1,20 @@
 #!/bin/sh
 DOTFILES=~/dotfiles
-MINPACPATH=$DOTFILES/vim/pack/minpac/opt
+PACKPATH=$DOTFILES/vim/pack
+MINPACPATH=$PACKPATH/minpac/opt
 
 mkdir -p ~/.config/nvim
 mkdir -p ~/tmp
 
+echo "Removing "
+rm -rf ~/.vim
+rm -r ~/.config/nvim/init.vim
+rm -r ~/.gitignore
+rm -r ~/.gitconfig
+rm -rf $PACKPATH 
+
 echo "Apply ln"
-ln -s -f $DOTFILES/vim ~/.vim
+ln -s -f -v $DOTFILES/vim ~/.vim
 ln -s -f $DOTFILES/init.vim ~/.config/nvim/init.vim
 
 echo "Apply ln git: Reminder for  .gitconfig.local"
