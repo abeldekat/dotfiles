@@ -43,7 +43,7 @@ command! PackStatus source $MYVIMRC | call minpac#status()
 " Personal preferences not set by sensible.vim  {{{1 
 let g:mapleader=','
 set hlsearch " sensible <C-L>
-set incsearch
+set incsearch smartcase
 set history=5000
 set nojoinspaces
 set number
@@ -54,13 +54,15 @@ if has('mouse') " the * register in a terminal?
 endif
 set foldcolumn=3
 set hidden
-" TODO Clipboard unnamed
+set clipboard^=unnamed,unnamedplus
 " set listchars=tab:▸\ ,eol:¬
 " set ruler, already done by powerline
-" TODO set wildmode=full
+set wildmode=full
 
 " Colorscheme {{{1
-set termguicolors
+if has('termguicolors')
+	set termguicolors
+endif
 set background=light
 colorscheme darkblue
 "silent! colorscheme blue "solarized8_light
@@ -116,7 +118,6 @@ map <leader>et :tabe %%
 " Prompt to open file with same name, different extension
 map <leader>er :e <C-R>=expand("%:r")."."<CR>
 
-
 " Fix the & command in normal+visual modes keep the flags of last search {{{2
 nnoremap & :&&<Enter>
 xnoremap & :&&<Enter>
@@ -124,20 +125,14 @@ xnoremap & :&&<Enter>
 " Visual line repeat {{{2
 " Terminal TODO {{{2
 if exists(':terminal')
-  "tnoremap <expr> <C-\><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-  " No such event Termopen
-  "autocmd vimrc TermOpen * nnoremap <buffer> I I<C-a>
-  "autocmd vimrc TermOpen * nnoremap <buffer> A A<C-e>
-  "autocmd vimrc TermOpen * nnoremap <buffer> C i<C-k>
-  "autocmd vimrc TermOpen * nnoremap <buffer> D i<C-k><C-\><C-n>
-  "autocmd vimrc TermOpen * nnoremap <buffer> cc i<C-e><C-u>
-  "autocmd vimrc TermOpen * nnoremap <buffer> dd i<C-e><C-u><C-\><C-n>
 endif
-" Windows, TODO {{{2
-" https://github.com/neovim/neovim/pull/2076#issuecomment-76998265
+" Windows {{{2
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-" hls on redraw screen {{{2
-nnoremap <C-l> :<C-u>nohlsearch<CR><C-l>
+" Faster escape {{{2
 inoremap jk <Esc>
 
 " TODO {{{1
