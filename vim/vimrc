@@ -103,38 +103,33 @@ nnoremap <C-p> :<C-u>FZF<CR>
 
 " Mappings and commands {{{1
 " Override defaults TODO {{{2
-nnoremap Q <Nop> "TODO test gQ
+nnoremap Q <Nop> 
 command! -nargs=0 -bang Qa qall!
 command! -nargs=0 -bang QA qall!
-" TODO the comma {{{2
-" File opening {{{2
-cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
-
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
-
-" Prompt to open file with same name, different extension
-map <leader>er :e <C-R>=expand("%:r")."."<CR>
-
-" Fix the & command in normal+visual modes keep the flags of last search {{{2
+" Fix the & command in normal+visual modes keep the flags of last search
 nnoremap & :&&<Enter>
 xnoremap & :&&<Enter>
-" Strip trailing whitespace {{{2
-" Visual line repeat {{{2
-" Terminal TODO {{{2
-if exists(':terminal')
-endif
+"TODO test gQ
+" mapleader {{{2
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
+map <leader>ew :e %%
+map <leader>es :sp %%
+"map <leader>ev :vsp %%
+map <leader>et :tabe %%
+" Prompt to open file with same name, different extension
+map <leader>er :e <C-R>=expand("%:r")."."<CR>
+" Faster escape
+inoremap jk <Esc>
+"force learning it
+inoremap <esc> <nop> 
+" TODO the comma
 " Windows {{{2
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Faster escape {{{2
-inoremap jk <Esc>
-
 " TODO {{{1
 "find command: set path+=app/**
 "Ack, vim plugin also possible, grep is posix, ack is perl compliant
