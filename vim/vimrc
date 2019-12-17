@@ -9,7 +9,6 @@ filetype plugin on
 packadd minpac
 call minpac#init({'verbose': 2})
 call minpac#add('k-takata/minpac', {'type': 'opt'})
-
 "General enhancements {{{2
 call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-repeat')
@@ -23,25 +22,22 @@ call minpac#add('vim-airline/vim-airline')
 "call minpac#add('dense-analysis/ale')
 "call minpac#add('scrooloose/nerdtree')
 "call minpac#add('vim-syntastic/syntastic')
-
 "Custom textobjects {{{2
 "call minpac#add('kana/vim-textobj-user')
 "call minpac#add('kana/vim-textobj-entire')
-
 " For Vimscript {{{2
 call minpac#add('tpope/vim-scriptease')
-
 " Colorschemes {{{2
 "call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
 "call minpac#add('morhetz/gruvbox', {'type': 'opt'})
-
 " Useful commands {{{2
 command! PackUpdate source $MYVIMRC | call minpac#update()
 command! PackClean  source $MYVIMRC | call minpac#clean()
 command! PackStatus source $MYVIMRC | call minpac#status()
 
 " Personal preferences not set by sensible.vim  {{{1 
-let g:mapleader=','
+let mapleader=','
+let maplocalleader = "\\"
 set hlsearch " sensible <C-L>
 set incsearch smartcase
 set history=5000
@@ -102,7 +98,7 @@ nnoremap <C-p> :<C-u>FZF<CR>
 "let g:airline_powerline_fonts = 1
 
 " Mappings and commands {{{1
-" Override defaults TODO {{{2
+" Override defaults {{{2
 nnoremap Q <Nop> 
 command! -nargs=0 -bang Qa qall!
 command! -nargs=0 -bang QA qall!
