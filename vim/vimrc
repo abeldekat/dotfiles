@@ -57,10 +57,10 @@ set wildmode=full
 
 " Colorscheme {{{1
 if has('termguicolors')
-	set termguicolors
+"	set termguicolors
 endif
-set background=light
-colorscheme morning
+"set background=light
+colorscheme elflord 
 "silent! colorscheme blue "solarized8_light
 " _high _low _flat
 "colorscheme solarized8_high
