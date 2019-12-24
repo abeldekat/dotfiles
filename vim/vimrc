@@ -60,7 +60,7 @@ if has('termguicolors')
 	set termguicolors
 endif
 set background=light
-colorscheme darkblue
+colorscheme morning
 "silent! colorscheme blue "solarized8_light
 " _high _low _flat
 "colorscheme solarized8_high
