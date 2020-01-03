@@ -2,3 +2,6 @@
 vim/pack/
 .netrwhist
 test.*
+.zcompdump*
+pack
+
