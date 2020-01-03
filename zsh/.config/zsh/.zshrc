@@ -3,7 +3,7 @@
 # /home/chris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/chris/.config/omyzsh"
+export ZSH="/home/chris/.config/oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 #POWERLEVEL9K_MODE='nerdfont-complete'
@@ -44,7 +44,7 @@ ENABLE_CORRECTION="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
-ZSH_CUSTOM="$HOME/.config/zsh"
+#ZSH_CUSTOM="$HOME/.config/oh-my-zsh/custom"
 # plugins=(git vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 plugins=(
 vi-mode
