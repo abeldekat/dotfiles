@@ -2,6 +2,7 @@
 Prerequisite:
 setxkbmap
 xcape
+stow
 
 zsh
 arch: zsh-completions
