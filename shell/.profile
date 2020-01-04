@@ -8,6 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Note: Ubuntu overrides this setting. Use gnome tweak tool to set it once more
 setxkbmap -option "ctrl:nocaps"
 xcape -e 'Control_L=Escape'
 
