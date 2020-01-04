@@ -13,10 +13,14 @@ echo "hello from .profile" >> /home/chris/testdots.out
 # setxkbmap -print
 # ctrl(nocaps)
 # via gnome tweaks
+setxkbmap -option "ctrl:nocaps"
 xcape -e '#66=Escape'
 
+echo "second hello from .profile" >> /home/chris/testdots.out
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
+
+echo "inside if running bash " >> /home/chris/testdots.out
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
 	. "$HOME/.bashrc"
@@ -25,10 +29,13 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
+
+echo "inside if bin " >> /home/chris/testdots.out
     PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
+echo "inside if local bin " >> /home/chris/testdots.out
     PATH="$HOME/.local/bin:$PATH"
 fi
