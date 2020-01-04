@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+echo "hello from .profile" >> /home/chris/testdots.out
+
 # setxkbmap -print
 # ctrl(nocaps)
 # via gnome tweaks

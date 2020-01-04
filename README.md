@@ -19,3 +19,7 @@ tree
 5 Add minpac to vim
 6 Utility, unstow
 
+# Regarding xcape,
+arch linux xfce4 with lightdm loads both .profile and .xprofile. It does not load .xinitrc
+
+
