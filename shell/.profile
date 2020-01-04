@@ -13,8 +13,9 @@ echo "hello from .profile" >> /home/chris/testdots.out
 # setxkbmap -print
 # ctrl(nocaps)
 # via gnome tweaks
+# <nop> [200~caps:ctrl_modifier<nop> [201~
 setxkbmap -option "ctrl:nocaps"
-xcape -e '#66=Escape'
+#xcape -e '#66=Escape'
 
 echo "second hello from .profile" >> /home/chris/testdots.out
 # if running bash
