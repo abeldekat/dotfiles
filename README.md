@@ -3,6 +3,7 @@ Prerequisite:
 setxkbmap
 xcape
 stow
+fzf
 
 zsh
 arch: zsh-completions
@@ -10,6 +11,7 @@ arch: zsh-completions
 tree
 
 # The numbered installation scripts:
+0 Prepare directories for a proper stpw
 1 Install oh-my-zsh to .config/oh-my-zsh
 2 Install additional plugins to .config/oh-my-zsh/custom
 3 Test stow

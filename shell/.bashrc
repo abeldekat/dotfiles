@@ -116,8 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#https://www.atlassian.com/git/tutorials/dotfiles
-#config config --local status.showUntrackedFiles no
-alias config='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# This is the default .bashrc in arch linux xfce
+# If not running interactively, don't do anything
+#[[ $- != *i* ]] && return
+#alias ls='ls --color=auto'
+#PS1='[\u@\h \W]\$ '
