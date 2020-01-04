@@ -17,5 +17,8 @@ DOTFILES=~/dotfiles
 
 # If stow discovers an existing .vim directory symlinking will be diffent
 mv ~/.vim ~/.vim-REMOVEME
+# Add a real bin path
+mkdir ~/bin
+mkdir ~/.local/bin
 #Install clean oh my zsh
 rm -rf ~/.config/oh-my-zsh
