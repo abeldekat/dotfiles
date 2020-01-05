@@ -18,11 +18,11 @@ DOTFILES=~/dotfiles
 # If stow discovers an existing .vim directory symlinking will be diffent
 # .vim should be a link to .vim in the dotfiles...
 PACKPATH=$DOTFILES/vim/.vim/pack
-if [ ! -f $PACKPATH ] ; then
+if [ ! -d $PACKPATH ] ; then
 	echo "Adding minpack to the dotfiles folder"
-        git clone https://github.com/k-takata/minpac.git $PACKPATH/opt/
+        git clone https://github.com/k-takata/minpac.git $PACKPATH/minpac/opt/minpac
 fi
-if [ -f ~/.vim ] ; then
+if [ -d ~/.vim ] ; then
   echo "Renaming existing .vim dir..."
   mv ~/.vim ~/.vim-REMOVEME
 fi
@@ -38,21 +38,28 @@ if [ ! -d $ZSH ] ; then
   echo "Installing oh-my-zsh unattended..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended 
   echo "Installing extra themes..."
-  git clone https://github.com/bhilburn/powerlevel9k.git $OMY_CUSTOM/themes/
-  git clone https://github.com/romkatv/powerlevel10k.git $OMY_CUSTOM/themes/
+  git clone https://github.com/bhilburn/powerlevel9k.git $OMY_CUSTOM/themes/powerlevel9k
+  git clone https://github.com/romkatv/powerlevel10k.git $OMY_CUSTOM/themes/powerlevel10k
   echo "Installing extra plugins..."
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $OMY_CUSTOM/plugins/
-  git clone https://github.com/zsh-users/zsh-autosuggestions $OMY_CUSTOM/plugins/
-  #git clone https://github.com/zsh-users/zsh-completions $OMY_CUSTOM/plugins/
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $OMY_CUSTOM/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions $OMY_CUSTOM/plugins/zsh-autosuggestions
+  #git clone https://github.com/zsh-users/zsh-completions $OMY_CUSTOM/plugins/zsh-completions
 fi
 
 # Test for existing zshrc
-if [ -f ~/.zsh ] ; then
+if [ -f ~/.zshrc ] ; then
 	echo "Renaming existing .zshrc"
-	mv ~/.zshrc ~/zshrc-REMOVEME
+	mv ~/.zshrc ~/.zshrc-REMOVEME
+fi
+
+# Test for existing bin
+if [ -d ~/bin ] ; then
+	echo "Renaming existing bin..."
+	mv ~/bin ~/bin-REMOVEME
 fi
 
 # Test stow
+echo "Simulating stow with all lowercase packages..."
 cd $DOTFILES
 stow -vnS `ls --ignore='[A-Z]*'`
 cd -
