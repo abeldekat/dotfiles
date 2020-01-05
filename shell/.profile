@@ -8,8 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-setxkbmap -option "ctrl:nocaps"
-xcape -e 'Control_L=Escape'
 
 echo "second hello from .profile" >> /home/chris/testdots.out
 # if running bash

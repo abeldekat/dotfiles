@@ -1,1 +1,4 @@
 echo "hello from .xprofile" >> /home/chris/testdots.out
+
+setxkbmap -option "ctrl:nocaps"
+xcape -e 'Control_L=Escape'

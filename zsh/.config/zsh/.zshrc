@@ -8,6 +8,9 @@ export ZSH="/home/chris/.config/oh-my-zsh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 #POWERLEVEL9K_MODE='nerdfont-complete'
 
+# arch startup tty warning:
+POWERLEVEL9K_IGNORE_TERM_COLORS=true
+
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
