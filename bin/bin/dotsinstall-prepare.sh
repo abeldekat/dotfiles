@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES=~/dotfiles
+DOTFILES=$HOME/dotfiles
 
 # Nice to have
 # ranger lf exuberant-ctags shellcheck fzf
@@ -22,17 +22,17 @@ if [ ! -d $PACKPATH ] ; then
 	echo "Adding minpack to the dotfiles folder"
         git clone https://github.com/k-takata/minpac.git $PACKPATH/minpac/opt/minpac
 fi
-if [ ! -L ~/.vim ] && [ -d ~/.vim ] ; then
+if [ ! -L $HOME/.vim ] && [ -d $HOME/.vim ] ; then
   echo "Renaming existing .vim dir..."
-  mv ~/.vim ~/.vim-REMOVEME
+  mv $HOME/.vim $HOME/.vim-REMOVEME
 fi
-if [ -f ~/.vimrc ] ; then
+if [ -f $HOME/.vimrc ] ; then
   echo "Renaming existing .vimrc ..."
-  mv ~/.vimrc ~/.vimrc-REMOVEME
+  mv $HOME/.vimrc $HOME/.vimrc-REMOVEME
 fi
 
 # Install oh-my-zsh
-export ZSH=~/.config/oh-my-zsh
+export ZSH=$HOME/.config/oh-my-zsh
 OMY_CUSTOM="$ZSH/custom"
 if [ ! -d $ZSH ] ; then
   echo "Installing oh-my-zsh unattended..."
@@ -47,21 +47,21 @@ if [ ! -d $ZSH ] ; then
 fi
 
 # Test for existing zshrc
-if [ -f ~/.zshrc ] ; then
+if [ -f $HOME/.zshrc ] ; then
 	echo "Renaming existing .zshrc"
-	mv ~/.zshrc ~/.zshrc-REMOVEME
+	mv $HOME/.zshrc $HOME/.zshrc-REMOVEME
 fi
 
 # Test for existing bin
-if [ ! -L ~/bin ] && [ -d ~/bin ] ; then
+if [ ! -L $HOME/bin ] && [ -d $HOME/bin ] ; then
 	echo "Renaming existing bin..."
-	mv ~/bin ~/bin-REMOVEME
+	mv $HOME/bin $HOME/bin-REMOVEME
 fi
 
 # Test for existing .xinitrc
-if [ -f ~/.xinitrc ] ; then
+if [ -f $HOME/.xinitrc ] ; then
 	echo "Renaming existing .xinitrc..."
-	mv ~/.xinitrc ~/.xinitrc-REMOVEME
+	mv $HOME/.xinitrc $HOME/.xinitrc-REMOVEME
 fi
 
 # Test stow
