@@ -22,7 +22,7 @@ if [ ! -d $PACKPATH ] ; then
 	echo "Adding minpack to the dotfiles folder"
         git clone https://github.com/k-takata/minpac.git $PACKPATH/minpac/opt/minpac
 fi
-if [ -d ~/.vim ] ; then
+if [ ! -L ~/.vim ] && [ -d ~/.vim ] ; then
   echo "Renaming existing .vim dir..."
   mv ~/.vim ~/.vim-REMOVEME
 fi
@@ -53,7 +53,7 @@ if [ -f ~/.zshrc ] ; then
 fi
 
 # Test for existing bin
-if [ -d ~/bin ] ; then
+if [ ! -L ~/bin ] && [ -d ~/bin ] ; then
 	echo "Renaming existing bin..."
 	mv ~/bin ~/bin-REMOVEME
 fi
