@@ -58,6 +58,12 @@ if [ -d ~/bin ] ; then
 	mv ~/bin ~/bin-REMOVEME
 fi
 
+# Test for existing .xinitrc
+if [ -f ~/.xinitrc ] ; then
+	echo "Renaming existing .xinitrc..."
+	mv ~/.xinitrc ~/.xinitrc-REMOVEME
+fi
+
 # Test stow
 echo "Simulating stow with all lowercase packages..."
 cd $DOTFILES
