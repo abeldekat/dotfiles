@@ -1,3 +1,5 @@
+TODO fzf completion werkt niet
+
 # This repository uses stow for installation. Install using the numbered INSTALL scripts in bin/bin.
 Prerequisite:
 setxkbmap
