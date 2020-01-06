@@ -1,13 +1,16 @@
-alias ezsh="vim ~/.config/zsh/.zshrc"
-alias eozsh="vim $ZSH/.oh-my-zsh.sh"
+CFGP=$XDG_CONFIG_HOME
+alias ezsh="vim $CFGP/zsh/.zshrc"
 alias ev="vim ~/.vim/vimrc"
 alias ealiases="vim $ZSH/custom/aliases.zsh"
+alias eozsh="vim $ZSH/.oh-my-zsh.sh"
 
-alias szsh="source $HOME/config/zsh/.zshrc"
+alias ereadme="vim ~/dotfiles/README.md"
+alias cdd="cd ~/dotfiles"
 
-alias clr="clear"
+alias szsh="source $CFGP/zsh/.zshrc"
 
 # arch git alias does not work. Make a link from vim to vi in /usr/bin
-# alias vi="vim"
 alias fd="fdfind"
+alias clr="clear"
 alias dirs="dirs -v"
+

@@ -24,6 +24,8 @@ zsh
 arch: zsh-completions
 # Software to install manually, not required
 tree
+vim
+gvim
 
 # Three installation scripts:
 Prepare the system. If necessary install oh-my-zsh and vim minpac. Rename the following files or directories if they exist:
