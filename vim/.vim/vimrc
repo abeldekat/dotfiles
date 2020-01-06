@@ -92,7 +92,6 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'find %s -type f'
 
 " FZF {{{2
-set rtp+=~/.fzf
 nnoremap <C-p> :<C-u>FZF<CR>
 
 " Airline {{{2

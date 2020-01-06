@@ -21,7 +21,7 @@ stow
 fzf
 
 zsh
-arch: zsh-completions
+arch: zsh-completions, hoeft niet in .zshrc
 # Software to install manually, not required
 tree
 vim

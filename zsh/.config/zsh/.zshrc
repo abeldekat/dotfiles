@@ -10,7 +10,6 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # arch startup tty warning:
 POWERLEVEL9K_IGNORE_TERM_COLORS=true
-
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
@@ -54,26 +53,16 @@ vi-mode
 git
 fzf
 colored-man-pages
-#zsh-autosuggestions
-# TODO zsh-users/zsh-completions
+zsh-autosuggestions
 zsh-syntax-highlighting
 ) 
 
-###
+### arch
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 source $ZSH/oh-my-zsh.sh
-
-# export MANPATH="/usr/local/man:$MANPATH"
-# export LANG=en_US.UTF-8
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-# For a full list of active aliases, run `alias`.
-
+#
 ### VI mode extra:
 # $ZSH/plugins/vi-mode/vi-mode.plugin.zsh
 export KEYTIMEOUT=1
@@ -100,8 +89,3 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # Ranger
 # TODO To stop ranger from loading both the default and your custom rc.conf,
 #  please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.  
-
-# VIM Book
-export VIMCONFIG=$HOME/.vim
-export VIMDATA=$HOME/.vim
-
