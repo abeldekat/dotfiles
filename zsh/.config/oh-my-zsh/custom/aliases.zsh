@@ -7,6 +7,7 @@ alias szsh="source $HOME/config/zsh/.zshrc"
 
 alias clr="clear"
 
-alias vi="vim"
+# arch git alias does not work. Make a link from vim to vi in /usr/bin
+# alias vi="vim"
 alias fd="fdfind"
 alias dirs="dirs -v"
