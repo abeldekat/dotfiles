@@ -1,7 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# /home/chris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-
 # Path to your oh-my-zsh installation.
 export ZSH="/home/chris/.config/oh-my-zsh"
 #ZSH_THEME="robbyrussell"
@@ -51,9 +47,7 @@ ENABLE_CORRECTION="true"
 plugins=(
 vi-mode
 git
-fzf
 colored-man-pages
-zsh-autosuggestions
 zsh-syntax-highlighting
 ) 
 
@@ -75,7 +69,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # bindkey -M vicmd 'v' edit-command-line
 
 
-# FZF, ripgrep, fd
+# FZF
 #export FZF_DEFAULT_COMMAND="fdfind --hidden . $HOME"
 #export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 # $DISABLE_FZF_AUTO_COMPLETION $DISABLE_FZF_KEY_BINDINGS
@@ -84,8 +78,3 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # FZF_CTRL_R_COMMAND, FZF_CTRL_R_OPTS # FZF_ALT_C_COMMAND, FZF_ALT_C_OPTS
 #export FZF_ALT_C_COMMAND="fdfind --hidden -t d . $HOME"
 #FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Ranger
-# TODO To stop ranger from loading both the default and your custom rc.conf,
-#  please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.  
