@@ -1,80 +1,72 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/home/chris/.config/oh-my-zsh"
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-#POWERLEVEL9K_MODE='nerdfont-complete'
+# Chris's config for the Zoomer Shell
 
-# arch startup tty warning:
-POWERLEVEL9K_IGNORE_TERM_COLORS=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-#POWERLEVEL9K_COLOR_SCHEME='light'
-# Defaults:
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-DEFAULT_USER="chris"
-POWERLEVEL9K_ALWAYS_SHOW_USER="true"
-POWERLEVEL9K_VI_INSERT_MODE_STRING=''
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs vi_mode)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-# CASE_SENSITIVE="true"
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-# DISABLE_AUTO_UPDATE="true"
-# DISABLE_UPDATE_PROMPT="true"
-# export UPDATE_ZSH_DAYS=13
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-ENABLE_CORRECTION="true"
+# Load aliases and shortcuts if existent.
+[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-#COMPLETION_WAITING_DOTS="true"
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
 
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-# HIST_STAMPS="mm/dd/yyyy"
+# Include hidden files in autocomplete:
+_comp_options+=(globdots)
 
-#ZSH_CUSTOM="$HOME/.config/oh-my-zsh/custom"
-# plugins=(git vi-mode zsh-autosuggestions zsh-syntax-highlighting)
-plugins=(
-vi-mode
-git
-colored-man-pages
-zsh-syntax-highlighting
-) 
-
-### arch
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
-source $ZSH/oh-my-zsh.sh
-#
-### VI mode extra:
-# $ZSH/plugins/vi-mode/vi-mode.plugin.zsh
-export KEYTIMEOUT=1
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-### De plugin gebruikt v is e niet beter?
-# bindkey -M vicmd 'v' edit-command-line
+bindkey -v '^?' backward-delete-char
 
+export KEYTIMEOUT=1
 
-# FZF
-#export FZF_DEFAULT_COMMAND="fdfind --hidden . $HOME"
-#export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
-# $DISABLE_FZF_AUTO_COMPLETION $DISABLE_FZF_KEY_BINDINGS
-# FZF_CTRL_T_COMMAND, FZF_CTRL_T_OPTS
-#export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# FZF_CTRL_R_COMMAND, FZF_CTRL_R_OPTS # FZF_ALT_C_COMMAND, FZF_ALT_C_OPTS
-#export FZF_ALT_C_COMMAND="fdfind --hidden -t d . $HOME"
-#FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+
+# Use beam shape cursor on startup.
+echo -ne '\e[5 q'
+# Use beam shape cursor for each new prompt.
+preexec() { echo -ne '\e[5 q' ;}
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
+bindkey -s '^o' 'lfcd\n'  # zsh
+
+# Zsh completions ach package?
+# Load zsh-syntax-highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

@@ -18,21 +18,6 @@ if [ -f $HOME/.vimrc ] ; then
   mv $HOME/.vimrc $HOME/.vimrc-REMOVEME
 fi
 
-# Install oh-my-zsh
-export ZSH=$HOME/.config/oh-my-zsh
-OMY_CUSTOM="$ZSH/custom"
-if [ ! -d $ZSH ] ; then
-  echo "Installing oh-my-zsh unattended..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended 
-  echo "Installing extra themes..."
-  git clone https://github.com/bhilburn/powerlevel9k.git $OMY_CUSTOM/themes/powerlevel9k
-  git clone https://github.com/romkatv/powerlevel10k.git $OMY_CUSTOM/themes/powerlevel10k
-  echo "Installing extra plugins..."
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $OMY_CUSTOM/plugins/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-autosuggestions $OMY_CUSTOM/plugins/zsh-autosuggestions
-  #git clone https://github.com/zsh-users/zsh-completions $OMY_CUSTOM/plugins/zsh-completions
-fi
-
 # Test for existing zshrc
 if [ -f $HOME/.zshrc ] ; then
 	echo "Renaming existing .zshrc"
