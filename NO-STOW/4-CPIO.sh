@@ -1,0 +1,2 @@
+#!/bin/sh
+mkinitcpio -P

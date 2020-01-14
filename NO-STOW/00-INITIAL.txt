@@ -1,0 +1,9 @@
+Laptop
+wifi-menu
+dhcpd
+
+time-datectl set-ntp true
+
+cfdisk gebruiken,mkfs gebruiken en mounten
+dan 
+pacstrap /mnt base base-devel linux-lts linux-firmware vim connman
