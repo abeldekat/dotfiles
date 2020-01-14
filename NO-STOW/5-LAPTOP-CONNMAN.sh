@@ -1,2 +1,2 @@
 #!/bin/sh
-pacman -S bluez wpa_supplicant
+pacman -S connman bluez wpa_supplicant

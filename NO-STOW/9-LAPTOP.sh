@@ -1,3 +1,3 @@
 #!/bin/sh
-pacman -S intel-ucode broadcom-wl-dkms
+pacman -S intel-ucode
 mkinitcpio -P
