@@ -1,0 +1,95 @@
+/dev/mmcblk0p2 root partition 24G with xfce i3 and bspwm 9,2G in use. 
+/dev/mmcblk0p1 efi partition 511M
+Wifi connection met live cd
+wifi-menu
+dhcpcd 
+ping google.com
+
+[root@chris-laptop /]# lsblk
+NAME         MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+mmcblk0      179:0    0 29.1G  0 disk 
+├─mmcblk0p1  179:1    0  512M  0 part /efi
+├─mmcblk0p2  179:2    0   24G  0 part /
+└─mmcblk0p3  179:3    0  4.6G  0 part [SWAP]
+mmcblk0boot0 179:8    0    4M  1 disk 
+mmcblk0boot1 179:16   0    4M  1 disk 
+
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/mmcblk0p2
+UUID=ad68b4db-67a5-48f3-9bc7-4cafc332d6b4	/         	ext4      	noatime,rw,relatime	0 1
+
+# /dev/mmcblk0p1
+UUID=5A25-8714      	/efi      	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/mmcblk0p3
+UUID=d1c734b2-5637-48c0-8a51-d383d7bfc59c	none      	swap      	defaults  	0 0
+
+
+[root@chris-laptop /]# tree -a /efi
+/efi
+└── EFI
+    └── GRUB
+        └── grubx64.efi
+
+2 directories, 1 file
+
+root@chris-laptop /]# ls -a boot
+.  ..  grub  initramfs-linux-lts-fallback.img  initramfs-linux-lts.img	intel-ucode.img  vmlinuz-linux-lts
+
+
+root@chris-laptop /]# pacman -Qs samsung
+local/samsung-printers 1.00.37-1
+    CUPS drivers for a variety of Samsung printers
+
+[root@chris-laptop /]# pacman -Qs bcm43142a0-firmware
+local/bcm43142a0-firmware 1201710-8
+    Broadcom bluetooth firmware for BCM43142A0 based devices.
+
+Some of the network stuff installed:
+local/glib-networking 2.62.3-1
+    Network extensions for GLib
+local/ifplugd 0.28-15
+    A daemon which brings up/down network interfaces upon cable insertion/removal.
+local/inetutils 1.9.4-8
+    A collection of common network programs
+local/iputils 20190709-2
+    Network monitoring tools, including ping
+local/libnm 1.22.4-1
+    NetworkManager client library
+local/libnma 1.8.24-1
+    NetworkManager GUI client library
+local/netctl 1.20-2
+    Profile based systemd network management
+local/nm-connection-editor 1.8.24-1
+    NetworkManager GUI connection editor and widgets
+local/wpa_supplicant 2:2.9-3
+    A utility providing key negotiation for WPA wireless networks
+local/dhcpcd 8.1.5-1
+    RFC2131 compliant DHCP client daemon
+local/dnsmasq 2.80-4
+    Lightweight, easy to configure DNS forwarder and DHCP server
+local/glib-networking 2.62.3-1
+    Network extensions for GLib
+local/ifplugd 0.28-15
+    A daemon which brings up/down network interfaces upon cable insertion/removal.
+local/inetutils 1.9.4-8
+    A collection of common network programs
+local/iputils 20190709-2
+    Network monitoring tools, including ping
+local/krb5 1.17-2
+    The Kerberos network authentication system
+local/libnm 1.22.4-1
+    NetworkManager client library
+local/libnma 1.8.24-1
+    NetworkManager GUI client library
+local/mobile-broadband-provider-info 20190618-1
+    Network Management daemon
+local/netctl 1.20-2
+    Profile based systemd network management
+local/nm-connection-editor 1.8.24-1
+    NetworkManager GUI connection editor and widgets
+local/nss 3.49-1
+    Network Security Services
+local/wpa_supplicant 2:2.9-3
+    A utility providing key negotiation for WPA wireless networks
