@@ -1,0 +1,23 @@
+# todo cups en bluetooth
+#
+man-db
+# 
+man-pages
+#
+xcape
+# Laptop only lspci | grep -e VGA -e 3D
+xf86-video-intel
+# Laptop only touchpad
+xf86-input-libinput
+#
+xorg-server
+xorg-apps
+#
+xorg-xinit
+xdo
+sxhkd
+bspwm
+#
+stow
+termite
+rxvt-unicode

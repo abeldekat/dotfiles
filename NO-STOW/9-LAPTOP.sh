@@ -1,3 +1,3 @@
 #!/bin/sh
-pacman -S man-db man-pages texinfo intel-ucode
+pacman -S intel-ucode
 mkinitcpio -P
