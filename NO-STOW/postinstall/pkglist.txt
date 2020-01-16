@@ -21,3 +21,8 @@ bspwm
 stow
 termite
 rxvt-unicode
+# Firefox met noto fonts
+firefox
+#allows mupdf pdf compatibility in zathura
+zathura
+zathura-pdf-mupdf
