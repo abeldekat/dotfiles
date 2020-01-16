@@ -27,3 +27,5 @@ firefox
 #allows mupdf pdf compatibility in zathura
 zathura
 zathura-pdf-mupdf
+# 
+gvim
