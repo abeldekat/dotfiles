@@ -19,6 +19,7 @@ sxhkd
 bspwm
 #
 stow
+openssh
 termite
 rxvt-unicode
 # Firefox met noto fonts

@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo pacman -S --needed - < pkglist-tmp.txt
+sudo pacman -S --needed - < pkglist.txt
