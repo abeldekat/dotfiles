@@ -15,6 +15,9 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #
+super + alt + Escape
+	pkill -x panel; bspc quit
+
 # bspwm hotkeys
 #
 
