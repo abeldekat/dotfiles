@@ -18,6 +18,7 @@ xdo
 sxhkd
 bspwm
 # larbs
+unclutter
 xwallpaper
 #
 stow
