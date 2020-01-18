@@ -17,6 +17,8 @@ xorg-xinit
 xdo
 sxhkd
 bspwm
+# larbs
+xwallpaper
 #
 stow
 openssh
