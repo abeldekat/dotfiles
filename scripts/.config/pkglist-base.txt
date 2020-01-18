@@ -1,20 +1,19 @@
 # todo cups en bluetooth
 #
+git
+wget
+curl
+stow
 man-db
-# 
 man-pages
-#
-xcape
-# Laptop only lspci | grep -e VGA -e 3D
-xf86-video-intel
-# Laptop only touchpad
-xf86-input-libinput
+texinfo
 #
 xorg-server
 xorg-apps
 #
 xorg-xinit
 xdo
+xcape
 sxhkd
 bspwm
 dmenu
@@ -22,7 +21,6 @@ dmenu
 unclutter
 xwallpaper
 #
-stow
 openssh
 termite
 rxvt-unicode
@@ -33,6 +31,7 @@ zsh-doc
 # todo zsh-theme-powerlevel9k
 # todo zsh-completions
 # Firefox met noto fonts
+noto-fonts
 firefox
 #allows mupdf pdf compatibility in zathura
 zathura

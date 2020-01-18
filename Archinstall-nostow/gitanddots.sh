@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "git config"
-cd
+echo "git config in root"
+cd /root
 git config --global user.email "abel@nomail.com"
 git config --global user.name "abel"
 # Keep credentials 30 minutes
