@@ -18,18 +18,6 @@ if [ -f $HOME/.vimrc ] ; then
   mv $HOME/.vimrc $HOME/.vimrc-MARKEDBYABEL
 fi
 
-# Test for existing bin
-if [ ! -L $HOME/bin ] && [ -d $HOME/bin ] ; then
-	echo "Renaming existing bin..."
-	mv $HOME/bin $HOME/bin-MARKEDBYABEL
-fi
-
-# Test for existing bin
-if [ ! -L $HOME/.local/bin ] && [ -d $HOME/.local/bin ] ; then
-	echo "Renaming existing local bin..."
-	mv $HOME/.local/bin $HOME/.local/bin-MARKEDBYABEL
-fi
-
 # Test stow
 echo "Simulating stow with all lowercase packages..."
 cd $DOTFILES
