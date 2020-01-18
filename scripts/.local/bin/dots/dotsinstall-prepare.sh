@@ -11,29 +11,23 @@ if [ ! -d $PACKPATH ] ; then
 fi
 if [ ! -L $HOME/.vim ] && [ -d $HOME/.vim ] ; then
   echo "Renaming existing .vim dir..."
-  mv $HOME/.vim $HOME/.vim-REMOVEME
+  mv $HOME/.vim $HOME/.vim-MARKEDBYABEL
 fi
 if [ -f $HOME/.vimrc ] ; then
   echo "Renaming existing .vimrc ..."
-  mv $HOME/.vimrc $HOME/.vimrc-REMOVEME
-fi
-
-# Test for existing zshrc
-if [ -f $HOME/.zshrc ] ; then
-	echo "Renaming existing .zshrc"
-	mv $HOME/.zshrc $HOME/.zshrc-REMOVEME
+  mv $HOME/.vimrc $HOME/.vimrc-MARKEDBYABEL
 fi
 
 # Test for existing bin
 if [ ! -L $HOME/bin ] && [ -d $HOME/bin ] ; then
 	echo "Renaming existing bin..."
-	mv $HOME/bin $HOME/bin-REMOVEME
+	mv $HOME/bin $HOME/bin-MARKEDBYABEL
 fi
 
-# Test for existing .xinitrc
-if [ -f $HOME/.xinitrc ] ; then
-	echo "Renaming existing .xinitrc..."
-	mv $HOME/.xinitrc $HOME/.xinitrc-REMOVEME
+# Test for existing bin
+if [ ! -L $HOME/.local/bin ] && [ -d $HOME/.local/bin ] ; then
+	echo "Renaming existing local bin..."
+	mv $HOME/.local/bin $HOME/.local/bin-MARKEDBYABEL
 fi
 
 # Test stow
