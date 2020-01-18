@@ -45,7 +45,7 @@ elinks
 ffmpegthumbnailer
 highlight
 libcaca
-lynx: for previews of html pages
+lynx
 mediainfo
 odt2txt
 perl-image-exiftool

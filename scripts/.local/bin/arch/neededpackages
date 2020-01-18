@@ -1,2 +1,5 @@
 #!/bin/sh
-sudo pacman -S --needed - < pkglist.txt
+
+#sudo pacman -S --needed - < pkglist.txt
+#sudo pacman -S --needed $(sed "/#/d/" $HOME/.config/pkglist-base.txt)
+sed '/#/d/' /home/chris/dotfiles/scripts/.config/pkglist-base.txt

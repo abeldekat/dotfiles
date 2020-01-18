@@ -3,19 +3,20 @@ Tot en met stap 6: Zonder dotfile support
 0 usb boot, Laptop: wifi-menu && dhcpcd
 1 time-datectl set-ntp true
 2 cfdisk gebruiken,mkfs gebruiken en mounten. Laptop: de efi is in /mnt/efi met vfat
-3 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware vim 
-4 genfstab -U /mnt >> /mnt/etc/fstab
-5 arch-chroot, cd, pacman -S git wget curl stow
-6 git clone https://github.com/abeldekat/dotfiles
-7 script: gitanddots.sh, timeandlocal.sh
-8 script: sethosts.sh, edit de hostname
-9 Laptop: script wirelesscard.sh
-10 pacman -S networkmanager. Laptop: Ook bluez. Laptop: connman werkt ook
-11 passwd
-12 Optioneel grub:  scripts laptopefigrub.sh of desktopgrub.sh
-13 script: laptopmicrocode.sh of desktopmicrocode.sh
-14 Optioneel grub: script confgrub.sh
-15 exit, umount -R /mnt, reboot
+3 select the mirrors, met grep -A 1 Netherlands
+4 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware vim 
+5 genfstab -U /mnt >> /mnt/etc/fstab
+6 arch-chroot, cd, pacman -S git wget curl stow
+7 git clone https://github.com/abeldekat/dotfiles
+8 script: gitanddots.sh, timeandlocal.sh
+9 script: sethosts.sh, edit de hostname
+10 Laptop: script wirelesscard.sh
+11 pacman -S networkmanager. Laptop: Ook bluez. Laptop: connman werkt ook
+12 passwd
+13 Optioneel grub:  scripts laptopefigrub.sh of desktopgrub.sh
+14 script: laptopmicrocode.sh of desktopmicrocode.sh
+15 Optioneel grub: script confgrub.sh
+16 exit, umount -R /mnt, reboot
 
 Postinstallation
 1 script:user.sh, vim.sh. Aanpassen visudo /etc/sudoers. 
@@ -23,3 +24,5 @@ Postinstallation
 3 script: cleanroot.sh, exit, inloggen als gebruiker, dotfiles ophalen
 4 script: yay.sh
 5 script: laptopspecific.sh of desktopspecific.sh
+6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare en stow
+7 exit, opnieuw inloggen voor paths
