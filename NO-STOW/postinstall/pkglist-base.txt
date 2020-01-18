@@ -17,6 +17,7 @@ xorg-xinit
 xdo
 sxhkd
 bspwm
+dmenu
 # larbs
 unclutter
 xwallpaper
