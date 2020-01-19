@@ -19,6 +19,7 @@ Tot en met stap 6: Zonder dotfile support
 16 exit, umount -R /mnt, reboot
 
 Postinstallation
+0 systemctl enable NetworkManager, start en ping
 1 script:user.sh, vim.sh. Aanpassen visudo /etc/sudoers. 
 2 script: reflector.sh
 3 script: cleanroot.sh, exit, inloggen als gebruiker, dotfiles ophalen
