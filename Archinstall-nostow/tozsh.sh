@@ -1,4 +1,3 @@
 #!/bin/sh
-echo "Install zsh and switch"
-sudo pacman -S zsh
+echo "Switch to zsh"
 chsh -s /usr/bin/zsh

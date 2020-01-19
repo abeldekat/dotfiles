@@ -26,7 +26,6 @@ Postinstallation
 4 script: yay.sh
 5 script: laptopspecific.sh of desktopspecific.sh
 6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare en stow
-7 script: tozsh.sh
-8 exit, opnieuw inloggen voor paths
-9 script: sudo neededpackages
-
+7 script: .local/bin/arch. Run needpackages. Reden: login->zsh->startx...
+8 script: tozsh.sh
+9 exit, done
