@@ -15,7 +15,7 @@ Tot en met stap 6: Zonder dotfile support
 12 passwd
 13 Optioneel grub:  scripts laptopefigrub.sh of desktopmbrgrub.sh
 14 script: laptopmicrocode.sh of desktopmicrocode.sh
-15 Optioneel grub: script confgrub.sh
+15 Optioneel grub: edit /etc/default/grub.conf, script confgrub.sh
 16 exit, umount -R /mnt, reboot
 
 Postinstallation
