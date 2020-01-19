@@ -21,16 +21,6 @@ if [ -f $HOME/.vimrc ] ; then
   mv $HOME/.vimrc $HOME/.vimrc-MARKEDBYABEL
 fi
 
-# On a clean system bash will be present
-if [ -f $HOME/.bashrc ] ; then
-  echo "Renaming existing .bashrc ..."
-  mv $HOME/.bashrc $HOME/.bashrc-MARKEDBYABEL
-fi
-if [ -f $HOME/.bash_profile ] ; then
-  echo "Renaming existing .bash_profile ..."
-  mv $HOME/.bash_profile $HOME/.bash_profile-MARKEDBYABEL
-fi
-
 # Test stow
 echo "Simulating stow with all lowercase packages..."
 cd $DOTFILES
