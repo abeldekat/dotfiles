@@ -8,7 +8,7 @@ Tot en met stap 6: Zonder dotfile support
 5 genfstab -U /mnt >> /mnt/etc/fstab
 6 arch-chroot, cd, pacman -S git wget curl stow
 7 git clone https://github.com/abeldekat/dotfiles
-8 script: gitanddots.sh, timeandlocal.sh
+8 script: confgit.sh, timeandlocal.sh
 9 script: sethosts.sh, edit de hostname
 10 Laptop: script wirelesscard.sh
 11 pacman -S networkmanager. Laptop: Ook bluez. Laptop: connman werkt ook
