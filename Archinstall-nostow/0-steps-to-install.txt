@@ -23,8 +23,8 @@ Postinstallation
 1 script:user.sh, vim.sh. Aanpassen visudo /etc/sudoers. 
 2 script: reflector.sh
 3 script: cleanroot.sh, exit, inloggen als gebruiker, dotfiles ophalen
-4 script: yay.sh
-5 script: laptopspecific.sh of desktopspecific.sh
+4 script: laptopspecific.sh of desktopspecific.sh
+5 script: yay.sh
 6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare en stow
 7 script: .local/bin/arch. Run needpackages. Reden: login->zsh->startx...
 8 script: tozsh.sh
