@@ -3,7 +3,7 @@ Tot en met stap 6: Zonder dotfile support
 0 usb boot, Laptop: wifi-menu && dhcpcd
 1 time-datectl set-ntp true
 2 cfdisk gebruiken,mkfs gebruiken en mounten. Laptop: de efi is in /mnt/efi met vfat
-3 select the mirrors, met grep -A 1 Netherlands
+3 script: mirrors.sh
 4 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware vim 
 5 genfstab -U /mnt >> /mnt/etc/fstab
 6 arch-chroot, cd, pacman -S git wget curl stow
@@ -26,4 +26,5 @@ Postinstallation
 4 script: yay.sh
 5 script: laptopspecific.sh of desktopspecific.sh
 6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare en stow
-7 exit, opnieuw inloggen voor paths
+7 chsh -s /usr/bin/ch, exit, opnieuw inloggen voor paths
+
