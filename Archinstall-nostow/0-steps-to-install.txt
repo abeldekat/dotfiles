@@ -6,7 +6,7 @@ Tot en met stap 6: Zonder dotfile support
 3 script: mirrors.sh
 4 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware vim 
 5 genfstab -U /mnt >> /mnt/etc/fstab
-6 arch-chroot, cd, pacman -S git wget curl stow
+6 arch-chroot, cd, pacman -S git stow
 7 git clone https://github.com/abeldekat/dotfiles
 8 script: confgit.sh, timeandlocal.sh
 9 script: sethosts.sh, edit de hostname
