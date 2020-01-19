@@ -1,5 +1,7 @@
 # todo cups en bluetooth
 #
+#########################
+# basic:
 git
 wget
 curl
@@ -8,32 +10,51 @@ man-db
 man-pages
 texinfo
 xcape
+#
+#########################
+# xorg
+xorg-server
+xorg-apps
+xorg-xinit
+#
+#########################
+# tiling wm
+#
+# xdo is from bspwm author
 xdo
 sxhkd
 bspwm
 dmenu
-# larbs
+# taken from larbs
 unclutter
 xwallpaper
 #
+#########################
+# terminal
 openssh
 termite
 rxvt-unicode
-# also installs zsh
+vifm
+tree
+zsh
 zsh-syntax-highlighting
 zsh-doc
 # todo zsh-lovers
 # todo zsh-theme-powerlevel9k
 # todo zsh-completions
-# Firefox met noto fonts
+#
+#########################
+# gui
+#
+# firefox met noto fonts
 noto-fonts
 firefox
-#allows mupdf pdf compatibility in zathura
 zathura
 zathura-pdf-mupdf
-# 
 gvim
-#ranger
+# 
+#########################
+# ranger and deps
 ranger
 atool
 elinks
@@ -47,7 +68,3 @@ perl-image-exiftool
 poppler
 python-chardet
 w3m
-# vifm
-vifm
-# tree
-tree

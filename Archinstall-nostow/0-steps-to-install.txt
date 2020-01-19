@@ -1,9 +1,9 @@
-Tot en met stap 6: Zonder dotfile support
+Until step 6: Without dotfile support
 
 0 usb boot, Laptop: wifi-menu && dhcpcd
 1 time-datectl set-ntp true
-2 cfdisk gebruiken,mkfs gebruiken en mounten. Laptop: de efi is in /mnt/efi met vfat
-3 script: mirrors.sh
+2 use cfdisk, use mkfs and mount. Laptop: efi is in /mnt/efi,vfat
+3 mirrors etc/pacman.d grep -A 1 "Netherlands" orgmirrolist | sed /--/d > mirrorlist
 4 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware vim 
 5 genfstab -U /mnt >> /mnt/etc/fstab
 6 arch-chroot, cd, pacman -S git stow
@@ -11,21 +11,21 @@ Tot en met stap 6: Zonder dotfile support
 8 script: confgit.sh, timeandlocal.sh
 9 script: sethosts.sh, edit de hostname
 10 Laptop: script wirelesscard.sh
-11 pacman -S networkmanager. Laptop: Ook bluez. Laptop: connman werkt ook
+11 pacman -S networkmanager. Laptop: Also bluez. Laptop: connman works as well
 12 passwd
-13 Optioneel grub:  scripts laptopefigrub.sh of desktopmbrgrub.sh
-14 script: laptopmicrocode.sh of desktopmicrocode.sh
-15 Optioneel grub: edit /etc/default/grub.conf, script confgrub.sh
+13 Optional grub:  scripts laptopefigrub.sh or desktopmbrgrub.sh
+14 script: laptopmicrocode.sh or desktopmicrocode.sh
+15 Optional grub: edit /etc/default/grub.conf, script confgrub.sh
 16 exit, umount -R /mnt, reboot
 
 Postinstallation
-0 systemctl enable NetworkManager, start en ping
-1 script:user.sh, vim.sh. Aanpassen visudo /etc/sudoers. 
+0 systemctl enable NetworkManager, reboot and ping
+1 script:user.sh, vim.sh. Adjust visudo /etc/sudoers. 
 2 script: reflector.sh
-3 script: cleanroot.sh, exit, inloggen als gebruiker, dotfiles ophalen
-4 script: laptopspecific.sh of desktopspecific.sh
-5 script: yay.sh, yay -S lemonbar-git sutils-git xtitle-git.
-6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare en stow
-7 script: .local/bin/arch. Run needpackages. Reden: login->zsh->startx...
-8 script: tozsh.sh
-9 exit, done
+3 script: cleanroot.sh, exit. Login as new user, fetch dotfiles
+5 script: yay.sh
+6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare and stow
+7 script: .local/bin/arch. Run neededpackages. Stay with bash, zsh needs startx 
+8 script: .local/bin/arch. Run neededaurpackages.
+9 script: laptopspecific.sh or desktopspecific.sh
+10 script: tozsh.sh. Exit, done
