@@ -13,7 +13,7 @@ Tot en met stap 6: Zonder dotfile support
 10 Laptop: script wirelesscard.sh
 11 pacman -S networkmanager. Laptop: Ook bluez. Laptop: connman werkt ook
 12 passwd
-13 Optioneel grub:  scripts laptopefigrub.sh of desktopgrub.sh
+13 Optioneel grub:  scripts laptopefigrub.sh of desktopmbrgrub.sh
 14 script: laptopmicrocode.sh of desktopmicrocode.sh
 15 Optioneel grub: script confgrub.sh
 16 exit, umount -R /mnt, reboot
