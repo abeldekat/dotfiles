@@ -24,7 +24,7 @@ Postinstallation
 2 script: reflector.sh
 3 script: cleanroot.sh, exit, inloggen als gebruiker, dotfiles ophalen
 4 script: laptopspecific.sh of desktopspecific.sh
-5 script: yay.sh, yay -S lemonbar-git
+5 script: yay.sh, yay -S lemonbar-git sutils-git xtitle-git.
 6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare en stow
 7 script: .local/bin/arch. Run needpackages. Reden: login->zsh->startx...
 8 script: tozsh.sh

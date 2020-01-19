@@ -8,6 +8,7 @@ man-db
 man-pages
 texinfo
 xcape
+xdo
 sxhkd
 bspwm
 dmenu
