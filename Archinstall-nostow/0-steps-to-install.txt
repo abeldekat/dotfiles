@@ -26,5 +26,6 @@ Postinstallation
 4 script: yay.sh
 5 script: laptopspecific.sh of desktopspecific.sh
 6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare en stow
-7 chsh -s /usr/bin/ch, exit, opnieuw inloggen voor paths
+7 exit, opnieuw inloggen voor paths
+8 script: sudo neededpackages, daarna chsh -s /usr/bin/zsh
 
