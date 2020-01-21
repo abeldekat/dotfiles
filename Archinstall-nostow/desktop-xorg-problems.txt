@@ -1,0 +1,41 @@
+(EE) systemd-logind: failed to take device /dev/dri/card0: Operation not permitted
+(WW) Warning, couldn't open module fbdev
+(WW) Warning, couldn't open module vesa
+Unable to retrieve master
+Fatal server error (EE) Addscreen/Screeninit failed for driver 0
+
+tot 21217
+zonder video-ati gaat het ook mis. Let op het woord radeon komt nu niet voor
+met automatische login zie ik nu ook
+EE modeset(0) drmSetMaster failed: permissiom denied
+
+
+even doen:
+xf86-video-vesa
+xf86-video-fbdev
+in /etc/mkinitcpio: modules radeon, en mkinitcpio -P
+Nu heb ik nog: 
+	open /dev/fb0 permission denied. Oplossing: Toevoegen aan de video groep
+
+usermod -aG video chris: Opgelost
+Nu nog:
+xf86EnableIoPorts failed to set IOPL for I/O (Operation not permitted)
+Oplossing op internet:
+<nop> [200~sudo chmod u+s /usr/bin/xinit<nop> [201~
+Dat werkt niet. De melding lijkt onschadelijk. xorg geeft niet aan dat dit een error is
+nu nog no irq handler for vector 
+lspci -vv, zoek op Irq
+do irq 3 regels
+1
+2
+3 
+met 1.55
+staat in dmesg
+do_IRQ: 1.55 No irq handler for vector
+<nop> [200~change GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci=nomsi,noaer"<nop> [201~
+dat helpt niet
+wellicht acpi=noirq
+
+tweak bios
+peripherals 1394 disabled 
+onboard serial port 1 3F8/irq7 disabled
