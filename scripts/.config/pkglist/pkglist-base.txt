@@ -25,10 +25,10 @@ xdo
 sxhkd
 bspwm
 dmenu
+picom
 # taken from larbs
 unclutter
 xwallpaper
-xcompmgr
 #
 #########################
 # terminal
