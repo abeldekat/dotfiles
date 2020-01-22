@@ -28,6 +28,7 @@ dmenu
 # taken from larbs
 unclutter
 xwallpaper
+xcompmgr
 #
 #########################
 # terminal
