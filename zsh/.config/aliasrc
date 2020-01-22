@@ -10,13 +10,13 @@ alias \
 	mv="mv -iv" \
 	rm="rm -v" \
 	mkd="mkdir -pv" \
-	yt="youtube-dl --add-metadata -i" \
-	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
+	ll="ls -alF" \
+	la="ls -A" \
+	l="ls -CF" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"
@@ -25,37 +25,17 @@ alias \
 alias \
 	ka="killall" \
 	g="git" \
-	trem="transmission-remote" \
-	YT="youtube-viewer" \
 	sdn="sudo shutdown -h now" \
+	srn="sudo reboot now" \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="sudo pacman" \
-	xi="sudo xbps-install" \
-	xr="sudo xbps-remove -R" \
-	xq="xbps-query"
 
-# This alias is important. It enables the `pauseallmpv` command.
-alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
 
 # Some other stuff
 alias \
-	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
-	weath="less -S ~/.local/share/weatherreport" \
-
-CFGP=$XDG_CONFIG_HOME
-alias ev="vim ~/.vim/vimrc"
-alias ezsh="vim $CFGP/zsh/.zshrc"
-alias ealiases="vim $ZSH/custom/aliases.zsh"
-alias eozsh="vim $ZSH/.oh-my-zsh.sh"
-
-# dotfiles
-alias ereadme="vim ~/dotfiles/README.md"
-alias cdd="cd ~/dotfiles"
-
-alias szsh="source $CFGP/zsh/.zshrc"
 
 # arch git alias does not work. Make a link from vim to vi in /usr/bin
 # Command aliases
@@ -67,7 +47,7 @@ alias dirs="dirs -v"
 alias %=' '
 
 # Startx
-alias sxb='startx ~/.xinitrc'
+alias sxb='startx'
 alias sxx='startx ~/.xinitrc xfce'
 
 # Aliases with oh my zsh
