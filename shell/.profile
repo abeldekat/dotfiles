@@ -34,7 +34,6 @@ export FILE="ranger"
 #export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 #export LESSHISTFILE="-"
 #export INPUTRC="$HOME/.config/inputrc"
-export ZDOTDIR="$HOME/.config/zsh"
 #export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 
 # Advised
@@ -54,10 +53,8 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 #export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 
 #mpd >/dev/null 2>&1 &
+
 # Switch escape and caps if tty and no passwd required:
-#sudo -n loadkeys ~/.local/share/larbs/ttymaps.kmap 2>/dev/null
+sudo -n loadkeys ~/.local/share/larbs/ttymaps.kmap 2>/dev/null
 
 [ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
-
-# Start graphical server on tty1 if not already running.
-#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
