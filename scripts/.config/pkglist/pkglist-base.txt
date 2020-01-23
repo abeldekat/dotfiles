@@ -38,7 +38,6 @@ rxvt-unicode
 vifm
 tree
 zsh
-zsh-syntax-highlighting
 zsh-doc
 # todo zsh-lovers
 # todo zsh-theme-powerlevel9k

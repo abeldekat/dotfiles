@@ -18,6 +18,7 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 # ZSH zdotdir is defined in .zshenv
 export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/zsh_framework.zsh"
+#export ZSH_FRAMEWORK_WRAPPER=""
 
 # Panel
 PANEL_FIFO=/tmp/panel-fifo

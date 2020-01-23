@@ -9,7 +9,11 @@ if [[ ! -f $ZGEN_DIR/zgen.zsh ]]; then
 fi
 
 source $ZGEN_DIR/zgen.zsh
+ZGEN_RESET_ON_CHANGE=($ZDOTDIR/zsh_framework.zsh)
 if ! zgen saved; then
 	zgen oh-my-zsh
+	zgen oh-my-zsh plugins/git
+	zgen oh-my-zsh themes/robbyrussell
+	zgen load zsh-users/zsh-syntax-highlighting 
 	zgen save
 fi
