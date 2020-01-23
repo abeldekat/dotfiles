@@ -39,6 +39,7 @@ vifm
 tree
 zsh
 zsh-doc
+fzf
 # todo zsh-lovers
 # todo zsh-theme-powerlevel9k
 # todo zsh-completions
