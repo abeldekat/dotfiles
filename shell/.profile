@@ -13,6 +13,11 @@ fi
 # Get default LARBS WM from ~/.local/share/larbs/wm
 export LARBSWM="$(cat ~/.local/share/larbs/wm 2>/dev/null)" &&
 	[ "$LARBSWM" = "xfce" ] || export LARBSWM="bspwm"
+# Advised
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+# ZSH zdotdir is defined in .zshenv
+export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/zsh_framework.zsh"
 
 # Panel
 PANEL_FIFO=/tmp/panel-fifo
@@ -36,8 +41,6 @@ export FILE="ranger"
 #export INPUTRC="$HOME/.config/inputrc"
 #export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 
-# Advised
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 # Larbs Other program settings:
 #export DICS="/usr/share/stardict/dic/"
