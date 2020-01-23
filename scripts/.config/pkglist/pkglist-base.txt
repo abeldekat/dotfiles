@@ -18,6 +18,15 @@ xorg-apps
 xorg-xinit
 #
 #########################
+# fonts
+#
+# noto-fonts voor firefox
+noto-fonts
+#
+# ttf-inconsolata, terminal
+ttf-inconsolata
+#
+#########################
 # tiling wm
 #
 # xdo is from bspwm author
@@ -41,14 +50,10 @@ zsh
 zsh-doc
 fzf
 # todo zsh-lovers
-# todo zsh-theme-powerlevel9k
-# todo zsh-completions
 #
 #########################
 # gui
 #
-# firefox met noto fonts
-noto-fonts
 firefox
 zathura
 zathura-pdf-mupdf
