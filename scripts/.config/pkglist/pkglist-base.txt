@@ -63,6 +63,7 @@ firefox
 zathura
 zathura-pdf-mupdf
 gvim
+lxappearance-gtk3
 # 
 #########################
 # ranger and deps
