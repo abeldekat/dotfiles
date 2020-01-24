@@ -64,6 +64,7 @@ zathura
 zathura-pdf-mupdf
 gvim
 lxappearance-gtk3
+libreoffice-fresh
 # 
 #########################
 # ranger and deps
