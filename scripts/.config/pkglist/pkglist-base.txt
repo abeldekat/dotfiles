@@ -26,6 +26,11 @@ noto-fonts
 # ttf-inconsolata, terminal
 ttf-inconsolata
 #
+# Serif (Libertine) and Sans Serif (Biolinum) OpenType fonts with large Unicode coverage
+ttf-linux-libertine
+# See /etc/fonts/conf.avail/75-joypixels.conf for how to enforce rendering emojis via JoyPixels
+# It conflicts with other fonts, so either symlink it to /etc/fonts/conf.d/ or copy and modify as needed.
+ttf-joypixels
 #########################
 # tiling wm
 #

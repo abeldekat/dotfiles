@@ -6,3 +6,8 @@ sutils-git
 ##############
 # Bar example from bspwm uses xtitle and sutils 
 lemonbar-git
+##############
+#  larbs
+# "provides unicode and emoji symbols."
+# TODO Error downloading sources ttf-symbola
+gtk-theme-arc-gruvbox-git
