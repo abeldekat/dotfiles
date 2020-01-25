@@ -18,3 +18,5 @@ xdpyinfo | grep dots
 
 # To find out what settings are in effect, use fc-match --verbose. eg. 
 fc-match --verbose Sans
+
+# https://wiki.archlinux.org/index.php/X_Logical_Font_Description
