@@ -1,0 +1,6 @@
+fonts xlfd and xft
+lemonbar en polybar
+dmenu en rofi
+glyps, unicode emoji
+larbs aur kan dat package niet installeren
+hoeveel dpi heeft mijn monitor

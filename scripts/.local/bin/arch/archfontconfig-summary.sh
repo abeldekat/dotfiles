@@ -20,3 +20,4 @@ xdpyinfo | grep dots
 fc-match --verbose Sans
 
 # https://wiki.archlinux.org/index.php/X_Logical_Font_Description
+# There are a couple of different font systems used in X. XFT (fontconfig) and the older system. xfontsel uses the old style font system.

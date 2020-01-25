@@ -1,5 +1,5 @@
 ##############
-# By the author of bspwm
+# By the author of bspwm, used in lemonbar
 xtitle-git
 sutils-git
 #
@@ -11,3 +11,7 @@ lemonbar-git
 # "provides unicode and emoji symbols."
 # TODO Error downloading sources ttf-symbola
 gtk-theme-arc-gruvbox-git
+##############
+#  polybar
+polybar
+
