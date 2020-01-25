@@ -24,7 +24,9 @@ export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/zsh_framework.zsh"
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
 #PANEL_FONT="-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
-PANEL_FONT="-*-inconsolata-medium-r-bold-*-0-0-*-*-m-*-iso10646-1"
+#PANEL_FONT="-*-inconsolata-medium-*-*-*-0-0-*-*-m-*-iso8859-*"
+#PANEL_FONT="-*-linux biolinum-medium-*-*-*-*-0-*-*-*-*-iso8859-*"
+PANEL_FONT="-*-linux libertine-medium-r-*-*-*-*-*-*-*-*-iso8859-*"
 PANEL_WM_NAME=bspwm_panel
 export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
 

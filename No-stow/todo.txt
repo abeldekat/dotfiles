@@ -1,4 +1,6 @@
-kijk naar st en de surf browser
+studie lemonbar
+hoe krijgt voidrice de fp op x?
+kijk naar st en de surf browser. Staan er colors in voidrice st?
 kijk naar urxvt en xresources
 termite styles...
 fonts xlfd and xft
