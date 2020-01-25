@@ -4,3 +4,5 @@ dmenu en rofi
 glyps, unicode emoji
 larbs aur kan dat package niet installeren
 hoeveel dpi heeft mijn monitor
+verzamel alle goede dotfiles in een aparte repo submodules
+ga door de aantekeningen heen, opschonen
