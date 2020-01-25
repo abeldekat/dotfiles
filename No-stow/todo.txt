@@ -1,8 +1,15 @@
+kijk naar st en de surf browser
+kijk naar urxvt en xresources
+termite styles...
 fonts xlfd and xft
 lemonbar en polybar
 dmenu en rofi
 glyps, unicode emoji
 larbs aur kan dat package niet installeren
-hoeveel dpi heeft mijn monitor
+hoeveel dpi heeft mijn monitor: xdpy
 verzamel alle goede dotfiles in een aparte repo submodules
 ga door de aantekeningen heen, opschonen
+de muis!
+git kan onderste grijs niet lezen, not staged for commit
+ls colors
+pywall
