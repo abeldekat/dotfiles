@@ -16,6 +16,7 @@ xcape
 xorg-server
 xorg-apps
 xorg-xinit
+xorg-xfontsel
 xorg-xlsfonts
 #
 #########################
