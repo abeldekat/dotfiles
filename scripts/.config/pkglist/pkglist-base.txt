@@ -18,9 +18,13 @@ xorg-apps
 xorg-xinit
 xorg-xfontsel
 xorg-xlsfonts
+xorg-fonts-alias
 #
 #########################
 # fonts
+#
+# terminus testing lemonbar
+terminus-font
 #
 # noto-fonts voor firefox
 noto-fonts
