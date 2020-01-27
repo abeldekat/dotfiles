@@ -24,5 +24,5 @@ fi
 # Test stow
 echo "Simulating stow with all lowercase packages..."
 cd $DOTFILES
-stow -vnS `ls --ignore='[A-Z]*'`
+stow -t $HOME -vnS `ls --ignore='[A-Z]*'`
 cd -
