@@ -13,13 +13,14 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 "General enhancements {{{2
 call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-repeat')
+call minpac#add('ap/vim-css-color')
 "call minpac#add('tpope/vim-unimpaired')
 "call minpac#add('tpope/vim-surround')
 "call minpac#add('tpope/vim-commentary')
 "call minpac#add('tpope/vim-projectionist')
 "call minpac#add('tpope/vim-dispatch')
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('vim-airline/vim-airline')
+"call minpac#add('vim-airline/vim-airline')
 "call minpac#add('dense-analysis/ale')
 "call minpac#add('scrooloose/nerdtree')
 "call minpac#add('vim-syntastic/syntastic')
@@ -61,7 +62,7 @@ if has('termguicolors')
 "	set termguicolors
 endif
 "set background=light
-colorscheme elflord 
+"colorscheme elflord 
 "silent! colorscheme blue "solarized8_light
 " _high _low _flat
 "colorscheme solarized8_high
