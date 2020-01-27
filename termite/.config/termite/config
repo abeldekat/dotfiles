@@ -42,53 +42,42 @@ scrollback_lines = 20000
 
 [colors]
 
-[colors]
-# Base16 Apathy
-# Author: Jannik Siebert (https://github.com/janniks)
+# special
+foreground      = #e3d4a4
+foreground_bold = #e3d4a4
+cursor          = #e3d4a4
+background      = #0b0905
 
-foreground          = #81B5AC
-foreground_bold     = #A7CEC8
-cursor              = #A7CEC8
-cursor_foreground   = #031A16
-background          = rgba(3, 26, 22)
+# black
+color0  = #13110a
+color8  = #87c7c6
 
-# 16 color space
+# red
+color1  = #1d1b12
+color9  = #bec9e2
 
-# Black, Gray, Silver, White
-color0  = #031A16
-color8  = #2B685E
-color7  = #81B5AC
-color15 = #D2E7E4
+# green
+color2  = #302c20
+color10 = #de9ada
 
-# Red
-color1  = #3E9688
-color9  = #3E9688
+# yellow
+color3  = #494432
+color11 = #93cf9a
 
-# Green
-color2  = #883E96
-color10 = #883E96
+# blue
+color4  = #6a624a
+color12 = #94dd9c
 
-# Yellow
-color3  = #3E4C96
-color11 = #3E4C96
+# magenta
+color5  = #918767
+color13 = #dc9a9c
 
-# Blue
-color4  = #96883E
-color12 = #96883E
+# cyan
+color6  = #beb189
+color14 = #d69d9e
 
-# Purple
-color5  = #4C963E
-color13 = #4C963E
+# white
+color7  = #efe2bb
+color15 = #f1d3d3
 
-# Teal
-color6  = #963E4C
-color14 = #963E4C
-
-# Extra colors
-color16 = #3E7996
-color17 = #3E965B
-color18 = #0B342D
-color19 = #184E45
-color20 = #5F9C92
-color21 = #A7CEC8
 # vim: ft=dosini cms=#%s

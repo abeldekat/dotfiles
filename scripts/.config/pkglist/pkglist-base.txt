@@ -46,6 +46,7 @@ sxhkd
 bspwm
 dmenu
 picom
+python-pywal
 # taken from larbs
 unclutter
 xwallpaper
