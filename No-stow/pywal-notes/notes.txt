@@ -1,0 +1,23 @@
+Colorscheme in json
+De output in file colors zijn alle 15 colors op volgorde zonder background foreground en cursor. De background is hetzelfde als color0. De foreground en de cursor zijn gelijk aan color7, meest lichte.
+Dit wordt overgenomen in colors.sh
+color0 uniek
+color1 zelfde als 9
+color2 zelfde als 10
+color3 zelfde als 11
+color4 zelfde als 12
+color5 zelfde als 13
+color6 zelfde als 14
+color7 uniek
+color8 uniek
+color15 uniek
+De buitenste banden, color0 en color8, color7 en color15, matchen dus niet. 10 unieke kleuren
+black
+red
+green
+yellow
+blue
+magenta
+cyan
+white
+
