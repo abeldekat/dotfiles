@@ -1,7 +1,7 @@
 kijk naar st en de surf browser. Staan er colors in voidrice st?
 kijk naar urxvt en xresources
 termite styles...
-lemonbar en polybar
+lemonbar en polybar: Deze is interessant: https://gist.github.com/jinyeow/dd51376dfff1b8947c2f
 dmenu en rofi
 glyps, unicode emoji
 larbs aur kan dat package niet installeren
