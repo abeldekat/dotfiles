@@ -18,7 +18,11 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 # ZSH zdotdir is defined in .zshenv
 export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/zsh_framework.zsh"
+# uncomment for zsh without plugins
 #export ZSH_FRAMEWORK_WRAPPER=""
+
+# bspwm and lemonbar can source this file obtaining color variables to use 
+export COLORS_TO_SOURCE="$HOME/.cache/wal/colors.sh"
 
 # Panel
 export PANEL_FIFO=/tmp/panel-fifo
@@ -30,7 +34,6 @@ export TERMINAL="termite"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
-#export STATUSBAR="${LARBSWM}blocks"
 
 # ~/ Clean-up:
 #export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
@@ -52,8 +55,6 @@ export FILE="ranger"
 #export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 #export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 #export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
-
-#mpd >/dev/null 2>&1 &
 
 # Switch escape and caps if tty and no passwd required:
 sudo -n loadkeys ~/.local/share/larbs/ttymaps.kmap 2>/dev/null

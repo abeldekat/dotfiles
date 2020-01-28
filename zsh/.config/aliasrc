@@ -53,4 +53,5 @@ alias sxb='startx'
 
 # Command aliases, suffix aliases, global aliases
 #alias -s {yml,yaml}=vim
-#alias -g G='| grep -i'
+alias -g G='| grep -i'
+alias -g M='| more'
