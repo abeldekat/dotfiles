@@ -21,3 +21,6 @@ magenta
 cyan
 white
 
+Ik maak een colors.termite template op basis van het mocha theme van:
+https://github.com/NearHuscarl/termite-color-switcher.git
+Het resultaat is gelijk. Succes.
