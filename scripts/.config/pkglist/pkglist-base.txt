@@ -63,6 +63,7 @@ tree
 zsh
 zsh-doc
 fzf
+archey3
 # todo zsh-lovers
 #
 #########################

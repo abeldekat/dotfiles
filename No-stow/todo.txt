@@ -12,3 +12,6 @@ ls colors
 pywall
 autologin https://wiki.archlinux.org/index.php/getty
 
+Verder met lemonbar en siji:
+https://github.com/patlux/dotfiles
+
