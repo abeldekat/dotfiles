@@ -18,7 +18,9 @@ xorg-apps
 xorg-xinit
 xorg-xfontsel
 xorg-xlsfonts
+xorg-xfd
 xorg-fonts-alias
+xorg-fonts-misc
 #
 #########################
 # fonts

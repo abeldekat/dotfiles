@@ -6,6 +6,8 @@ sutils-git
 ##############
 # Bar example from bspwm uses xtitle and sutils 
 lemonbar-git
+# iconic bitmap font
+aur/siji-git
 ##############
 #  larbs
 # "provides unicode and emoji symbols."
