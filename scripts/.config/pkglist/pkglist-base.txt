@@ -20,6 +20,7 @@ xorg-xfontsel
 xorg-xlsfonts
 xorg-xfd
 xorg-fonts-alias
+# necessary for siji font
 xorg-fonts-misc
 #
 #########################
@@ -52,6 +53,10 @@ python-pywal
 # taken from larbs
 unclutter
 xwallpaper
+#
+#########################
+# sound
+alsa-utils
 #
 #########################
 # terminal

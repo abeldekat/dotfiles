@@ -1,6 +1,5 @@
 #! /bin/sh
 
-sxhkd &
 . $COLORS_TO_SOURCE
 
 [ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
