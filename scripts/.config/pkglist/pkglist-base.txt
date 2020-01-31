@@ -96,3 +96,7 @@ perl-image-exiftool
 poppler
 python-chardet
 w3m
+#
+# TIJDELIJK
+sysstat
+bc
