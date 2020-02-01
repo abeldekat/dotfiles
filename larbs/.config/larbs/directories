@@ -1,10 +1,12 @@
 # You can add comments to these files with #
 h	~/
-d	~/Documents
+d	~/dotfiles
+ddd	~/cdotfiles
 D	~/Downloads
 m	~/Music
 pp	~/Pictures
 vv	~/Videos
 cf	~/.config
 sc	~/.local/bin
+scl	~/.local/bin/lemonbar
 mn	/mnt
