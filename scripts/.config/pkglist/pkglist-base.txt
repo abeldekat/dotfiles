@@ -53,6 +53,7 @@ python-pywal
 # taken from larbs
 unclutter
 xwallpaper
+sxiv
 #
 #########################
 # sound
