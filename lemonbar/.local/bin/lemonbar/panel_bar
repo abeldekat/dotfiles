@@ -113,15 +113,19 @@ format_wm_layoutstateandflags(){
 	echo "%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG} ${name} %{B-}%{F-}"
 }
 
+format_generic(){
+	echo "%{F$1}%{B$2} ${line#?} %{B-}%{F-}"
+}
+
 while read -r line ; do
 	case $line in
 		S*)
 			# clock output
-			sys="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+			sys="$(format_generic $COLOR_SYS_FG $COLOR_SYS_BG)"
 			;;
 		T*)
 			# xtitle output
-			title="%{F$COLOR_TITLE_FG}%{B$COLOR_TITLE_BG} ${line#?} %{B-}%{F-}"
+			title="$(format_generic $COLOR_TITLE_FG $COLOR_TITLE_BG)"
 			;;
 		W*)
 			# bspwm output
