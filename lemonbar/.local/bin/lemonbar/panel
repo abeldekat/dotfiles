@@ -4,6 +4,7 @@ PANEL_HEIGHT=24
 PANEL_FONT="-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1"
 PANEL_FONT_1="-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1"
 PANEL_WM_NAME=bspwm_panel
+
 if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
 	printf "%s\n" "The panel is already running." >&2
 	exit 1
@@ -15,7 +16,7 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 mkfifo "$PANEL_FIFO"
 
 xtitle -sf 'T%s\n' > "$PANEL_FIFO" &
-clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
+clock -sf 'S %a %H:%M' > "$PANEL_FIFO" &
 bspc subscribe report > "$PANEL_FIFO" &
 
 . panel_colors
