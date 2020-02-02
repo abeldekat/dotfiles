@@ -1,9 +1,8 @@
 #! /bin/sh
 
 PANEL_HEIGHT=24
-# lemonbar cannot find this default from example
-#PANEL_FONT="-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
 PANEL_FONT="-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1"
+PANEL_FONT_1="-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1"
 PANEL_WM_NAME=bspwm_panel
 if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
 	printf "%s\n" "The panel is already running." >&2
@@ -21,7 +20,16 @@ bspc subscribe report > "$PANEL_FIFO" &
 
 . panel_colors
 
-panel_bar < "$PANEL_FIFO" | lemonbar -a 32 -u 2 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh &
+panel_bar < "$PANEL_FIFO" | lemonbar \
+	-a 32 \
+	-u 2 \
+	-n "$PANEL_WM_NAME" \
+	-g x$PANEL_HEIGHT \
+	-f "$PANEL_FONT" \
+	-f "$PANEL_FONT_1" \
+	-F "$COLOR_DEFAULT_FG" \
+	-B "$COLOR_DEFAULT_BG" \
+	| sh &
 
 wid=$(xdo id -m -a "$PANEL_WM_NAME")
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
