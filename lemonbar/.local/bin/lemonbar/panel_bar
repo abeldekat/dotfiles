@@ -6,6 +6,113 @@
 
 num_mon=$(bspc query -M | wc -l)
 
+format_wm_state(){
+	IFS=':'
+	set -- ${line#?}
+
+	case $1 in m*) on_focused_monitor=;; M*) on_focused_monitor=1 ;; esac 
+	state_result=
+	while [ $# -gt 0 ] ; do
+		item=$1
+		name=${item#?}
+		case $item in
+			[mM]*)
+				[ $num_mon -lt 2 ] || format_wm_add "$(format_wm_monitors)";;
+			[fFoOuU]*)
+				format_wm_add "$(format_wm_desktops)";;
+			[LTG]*)
+				format_wm_add "$(format_wm_layoutstateandflags)";;
+		esac
+		shift
+	done
+	echo "$state_result"
+}
+
+format_wm_add(){
+	state_result="${state_result}${1}"
+}
+
+format_wm_monitors(){
+	case $item in
+		m*)
+			FG=$COLOR_MONITOR_FG
+			BG=$COLOR_MONITOR_BG
+			;;
+		M*)
+			FG=$COLOR_FOCUSED_MONITOR_FG
+			BG=$COLOR_FOCUSED_MONITOR_BG
+			;;
+	esac
+	echo "%{F${FG}}%{B${BG}}%{A:bspc monitor -f ${name}:} ${name} %{A}%{B-}%{F-}"
+}
+
+format_wm_desktops(){
+	case $item in
+		f*)
+			# free desktop
+			FG=$COLOR_FREE_FG
+			BG=$COLOR_FREE_BG
+			UL=$BG
+			;;
+		F*)
+			if [ "$on_focused_monitor" ] ; then
+				# focused free desktop
+				FG=$COLOR_FOCUSED_FREE_FG
+				BG=$COLOR_FOCUSED_FREE_BG
+				UL=$BG
+			else
+				# active free desktop
+				FG=$COLOR_FREE_FG
+				BG=$COLOR_FREE_BG
+				UL=$COLOR_FOCUSED_FREE_BG
+			fi
+			;;
+		o*)
+			# occupied desktop
+			FG=$COLOR_OCCUPIED_FG
+			BG=$COLOR_OCCUPIED_BG
+			UL=$BG
+			;;
+		O*)
+			if [ "$on_focused_monitor" ] ; then
+				# focused occupied desktop
+				FG=$COLOR_FOCUSED_OCCUPIED_FG
+				BG=$COLOR_FOCUSED_OCCUPIED_BG
+				UL=$BG
+			else
+				# active occupied desktop
+				FG=$COLOR_OCCUPIED_FG
+				BG=$COLOR_OCCUPIED_BG
+				UL=$COLOR_FOCUSED_OCCUPIED_BG
+			fi
+			;;
+		u*)
+			# urgent desktop
+			FG=$COLOR_URGENT_FG
+			BG=$COLOR_URGENT_BG
+			UL=$BG
+			;;
+		U*)
+			if [ "$on_focused_monitor" ] ; then
+				# focused urgent desktop
+				FG=$COLOR_FOCUSED_URGENT_FG
+				BG=$COLOR_FOCUSED_URGENT_BG
+				UL=$BG
+			else
+				# active urgent desktop
+				FG=$COLOR_URGENT_FG
+				BG=$COLOR_URGENT_BG
+				UL=$COLOR_FOCUSED_URGENT_BG
+			fi
+			;;
+	esac
+	echo "%{F${FG}}%{B${BG}}%{U${UL}}%{+u}%{A:bspc desktop -f ${name}:} ${name} %{A}%{B-}%{F-}%{-u}"
+}
+
+format_wm_layoutstateandflags(){
+	echo "%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG} ${name} %{B-}%{F-}"
+}
+
 while read -r line ; do
 	case $line in
 		S*)
@@ -17,101 +124,8 @@ while read -r line ; do
 			title="%{F$COLOR_TITLE_FG}%{B$COLOR_TITLE_BG} ${line#?} %{B-}%{F-}"
 			;;
 		W*)
-			# bspwm's state
-			wm=
-			IFS=':'
-			set -- ${line#?}
-			while [ $# -gt 0 ] ; do
-				item=$1
-				name=${item#?}
-				case $item in
-					[mM]*)
-						case $item in
-							m*)
-								# monitor
-								FG=$COLOR_MONITOR_FG
-								BG=$COLOR_MONITOR_BG
-								on_focused_monitor=
-								;;
-							M*)
-								# focused monitor
-								FG=$COLOR_FOCUSED_MONITOR_FG
-								BG=$COLOR_FOCUSED_MONITOR_BG
-								on_focused_monitor=1
-								;;
-						esac
-						[ $num_mon -lt 2 ] && shift && continue
-						wm="${wm}%{F${FG}}%{B${BG}}%{A:bspc monitor -f ${name}:} ${name} %{A}%{B-}%{F-}"
-						;;
-					[fFoOuU]*)
-						case $item in
-							f*)
-								# free desktop
-								FG=$COLOR_FREE_FG
-								BG=$COLOR_FREE_BG
-								UL=$BG
-								;;
-							F*)
-								if [ "$on_focused_monitor" ] ; then
-									# focused free desktop
-									FG=$COLOR_FOCUSED_FREE_FG
-									BG=$COLOR_FOCUSED_FREE_BG
-									UL=$BG
-								else
-									# active free desktop
-									FG=$COLOR_FREE_FG
-									BG=$COLOR_FREE_BG
-									UL=$COLOR_FOCUSED_FREE_BG
-								fi
-								;;
-							o*)
-								# occupied desktop
-								FG=$COLOR_OCCUPIED_FG
-								BG=$COLOR_OCCUPIED_BG
-								UL=$BG
-								;;
-							O*)
-								if [ "$on_focused_monitor" ] ; then
-									# focused occupied desktop
-									FG=$COLOR_FOCUSED_OCCUPIED_FG
-									BG=$COLOR_FOCUSED_OCCUPIED_BG
-									UL=$BG
-								else
-									# active occupied desktop
-									FG=$COLOR_OCCUPIED_FG
-									BG=$COLOR_OCCUPIED_BG
-									UL=$COLOR_FOCUSED_OCCUPIED_BG
-								fi
-								;;
-							u*)
-								# urgent desktop
-								FG=$COLOR_URGENT_FG
-								BG=$COLOR_URGENT_BG
-								UL=$BG
-								;;
-							U*)
-								if [ "$on_focused_monitor" ] ; then
-									# focused urgent desktop
-									FG=$COLOR_FOCUSED_URGENT_FG
-									BG=$COLOR_FOCUSED_URGENT_BG
-									UL=$BG
-								else
-									# active urgent desktop
-									FG=$COLOR_URGENT_FG
-									BG=$COLOR_URGENT_BG
-									UL=$COLOR_FOCUSED_URGENT_BG
-								fi
-								;;
-						esac
-						wm="${wm}%{F${FG}}%{B${BG}}%{U${UL}}%{+u}%{A:bspc desktop -f ${name}:} ${name} %{A}%{B-}%{F-}%{-u}"
-						;;
-					[LTG]*)
-						# layout, state and flags
-						wm="${wm}%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG} ${name} %{B-}%{F-}"
-						;;
-				esac
-				shift
-			done
+			# bspwm output
+			wm="$(format_wm_state)"
 			;;
 	esac
 	printf "%s\n" "%{l}${wm}%{c}${title}%{r}${sys}"
