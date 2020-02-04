@@ -2,7 +2,10 @@
 
 COLOR_DEFAULT_FG="#a7a5a5"
 #COLOR_DEFAULT_BG="#333232"
-COLOR_DEFAULT_BG="$color0"
+COLOR_DEFAULT_BG="$background_transparent"
+
+# Let text inside title and sys be the same
+COLOR_TEXT_FG="#b1a57d"
 
 # bspwm section
 # Keep the original bspwm colors intact
@@ -26,9 +29,6 @@ COLOR_FOCUSED_URGENT_FG="#501d1f"
 COLOR_FOCUSED_URGENT_BG="#d5443e"
 COLOR_STATE_FG="#89b09c"
 COLOR_STATE_BG="$COLOR_BSPWM_BG"
-
-# Let text inside title and sys be the same
-COLOR_TEXT_FG="#b1a57d"
 
 # title section
 COLOR_TITLE_FG="$COLOR_TEXT_FG"
