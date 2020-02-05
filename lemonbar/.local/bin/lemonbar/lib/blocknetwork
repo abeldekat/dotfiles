@@ -1,0 +1,14 @@
+#!/bin/bash
+
+format_network(){
+	echo "%{F$1}%{B$2} ${network_id} %{B-}%{F-}"
+}
+
+while :; do
+	network_id=$(iwgetid -r)
+	[ -z "$network_id" ] && network_id="offline"
+	network_id=" $network_id"
+	printf "%s\n" "N$(format_network $COLOR_SYS_FG $COLOR_SYS_BG)"
+	#echo 'N' "$(icon  0) "$network_id"";
+	sleep 30;
+done > $PANEL_FIFO &

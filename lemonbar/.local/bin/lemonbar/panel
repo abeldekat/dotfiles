@@ -21,20 +21,24 @@ mkfifo "$PANEL_FIFO"
 . $PANEL_LIB/blockbspwm
 . $PANEL_LIB/blocktitle
 . $PANEL_LIB/blockclock
+. $PANEL_LIB/blocknetwork
 
 while read -r line; do
 	case $line in
 		W*)
 			wm="${line#?}" #bspwm
 			;;
-		S*)
-			sys="${line#?}" #clock
-			;;
 		T*)
 			title="${line#?}" #xtitle
 			;;
+		S*)
+			sys="${line#?}" #clock
+			;;
+		N*)
+			net="${line#?}" #clock
+			;;
 	esac
-	printf "%s\n" "%{l}${wm}%{c}${title}%{r}${sys}"
+	printf "%s\n" "%{l}${wm}%{c}${title}%{r}${net}${sys}"
 done < "$PANEL_FIFO" \
 	| lemonbar \
 	-a 32 \
