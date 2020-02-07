@@ -1,0 +1,23 @@
+!
+! ~/.Xresources
+!
+
+! Description
+! ===========
+! Initially copied from: https://gitlab.com/protesilaos/dotfiles
+! https://www.reddit.com/r/unixporn/wiki/organizing_xresources
+
+
+! Font settings (for programs that do not support fontconfig)
+! ===========================================================
+Xft*antialias: 1
+Xft*rgba: rgb
+Xft*autohint: 0
+Xft*hinting: 1
+Xft*hintstyle: hintslight
+Xft*lcdfilter: lcddefault
+
+#define mytestvar 123 
+#include ".config/xres/xterm"
+#include ".config/xres/urxvt"
+#include ".config/xres/active-tempus-theme.Xcolors"

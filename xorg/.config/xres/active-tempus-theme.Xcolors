@@ -1,0 +1,4 @@
+! Part of my dotfiles: https://gitlab.com/protesilaos/dotfiles
+!
+!#include ".local/share/my_colours/xcolors/tempus_classic.Xcolors"
+#include ".local/share/my_colours/xcolors/tempus_autumn.Xcolors"

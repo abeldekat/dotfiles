@@ -65,6 +65,7 @@ alsa-utils
 openssh
 termite
 rxvt-unicode
+xterm
 vifm
 tree
 zsh
