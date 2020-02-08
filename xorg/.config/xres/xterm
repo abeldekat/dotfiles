@@ -18,7 +18,7 @@ xterm*dynamicColors: true
 ! UI components
 xterm*toolBar: false
 xterm*scrollBar: false
-xterm*geometry: 80x24
+xterm.vt100.geometry: 80x32
 xterm*internalBorder: 0
 
 ! Cursor
@@ -47,7 +47,7 @@ xterm*highlightTextColor: XtDefaultBackground
 
 ! Font settings
 xterm*faceName: Monospace
-xterm*faceSize: 10.5
+xterm*faceSize: 12
 xterm*renderFont: true
 xterm*boldColors: false
 xterm*faceSize1: 9.5
