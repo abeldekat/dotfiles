@@ -1,4 +1,4 @@
-. $COLORS_TO_SOURCE
+. $(colors-get-base)
 
 # http://chir.ag/projects/name-that-color/#504E4E
 # https://www.color-blindness.com/color-name-hue/

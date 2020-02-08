@@ -1,3 +1,4 @@
 ! Part of my dotfiles: https://gitlab.com/protesilaos/dotfiles
 !
-#include "xcolors/tempus_future.Xcolors"
+!#include "xcolors/tempus_future.Xcolors"
+#include "colors.Xresources"

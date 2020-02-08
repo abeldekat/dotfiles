@@ -1,0 +1,4 @@
+#! /bin/bash
+
+walpath=~/.cache/wal
+echo $walpath"/colors.sh"

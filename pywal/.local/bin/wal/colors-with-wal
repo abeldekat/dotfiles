@@ -1,0 +1,85 @@
+#! /bin/bash
+
+# The purpose of this script is to make it easier to play with the 
+# colorschemes bundled with pywal.
+# Their location:
+# /usr/lib/python3.8/site-packages/pywal/
+# After pywall generation this script can install the necessecary files
+# thus removing the need to run pywal on system startup
+
+# choosen themes from termite-color-switcher
+#atelierdune
+#brewer
+#default
+#google
+#mocha
+#monokai
+#solarized
+#tomorrow
+#twilight
+
+termpath=~/.config/termite
+walpath=~/.cache/wal
+mycolorspath=~/.local/share/my_colours
+#mytheme=base16-google
+#mytheme=base16-atelier-dune
+mythemes=~/.config/wal/darkthemes.csv
+debug=/tmp/wal.out
+
+_reloadbspwm(){
+	echo "Stop panel"
+	pkill panel
+
+	echo "reload bspwm"
+	~/.config/bspwm/bspwmrc
+}
+
+_mergetermite(){
+	echo "merging termite config"
+	cat $walpath/colors.termite > /tmp/wall.out
+	cat $termpath/option >> /tmp/wall.out
+	mv /tmp/wall.out $termpath/config
+}
+
+_mergexresources(){
+	echo "copy xcolors"
+	cp $walpath/colors.Xresources $mycolorspath
+	echo "merge xrdb"
+	xrdb -merge ~/.Xresources
+}
+
+# -n skip background
+# -s skip changing colors in terminals
+# -t skip changing colors in tty
+# -q quit 
+# -a alha
+# --saturate
+_generate(){
+	wal --theme $mytheme -n
+}
+
+_marktheme(){
+	echo $mytheme > $mycolorspath/active-theme
+}
+
+_gettheme(){
+	let result
+	while IFS=, read -r tag theme comment; do
+		case "$tag" in
+			"F") result="$theme" ;; 
+		esac
+	done < $mythemes
+	echo $result 
+}
+
+_go(){
+	mytheme=$(_gettheme)
+
+	_generate
+	_reloadbspwm
+	_mergetermite
+	_mergexresources
+	_marktheme
+}
+
+_go

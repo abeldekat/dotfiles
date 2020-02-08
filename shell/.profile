@@ -21,9 +21,6 @@ export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/zsh_framework.zsh"
 # uncomment for zsh without plugins
 #export ZSH_FRAMEWORK_WRAPPER=""
 
-# bspwm and lemonbar can source this file obtaining color variables to use 
-export COLORS_TO_SOURCE="$HOME/.cache/wal/colors.sh"
-
 # Panel
 export PANEL_FIFO=/tmp/panel-fifo
 export PANEL_WM_NAME=bspwm_panel

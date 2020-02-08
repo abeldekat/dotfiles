@@ -9,4 +9,5 @@ vv	~/Videos
 cf	~/.config
 sc	~/.local/bin
 scl	~/.local/bin/lemonbar
+scw	~/.local/bin/wal
 mn	/mnt

@@ -1,6 +1,6 @@
 #! /bin/sh
 
-. $COLORS_TO_SOURCE
+. $(colors-get-base)
 
 [ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
 pgrep -x panel > /dev/null || panel &
