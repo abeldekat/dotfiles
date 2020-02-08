@@ -20,4 +20,4 @@ Xft*lcdfilter: lcddefault
 #define mytestvar 123 
 #include ".config/xres/xterm"
 #include ".config/xres/urxvt"
-#include ".config/xres/active-tempus-theme.Xcolors"
+#include ".local/share/my_colours/active-theme.Xcolors"

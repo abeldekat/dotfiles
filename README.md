@@ -38,6 +38,3 @@ Second step: Stow
 There is a script to unstow
 
 # Regarding xcape,
-
-# issues:
-Xresources does not recognize ~ out of the box. Use -I$HOME. 
