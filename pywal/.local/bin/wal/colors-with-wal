@@ -92,10 +92,10 @@ _go(){
 	mytheme=$(_gettheme)
 
 	_generate
-	_reloadbspwm
 	_mergetermite
 	_mergexresources
 	_marktheme
+	_reloadbspwm
 }
 
 _go
