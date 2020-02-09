@@ -25,6 +25,9 @@ export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/zsh_framework.zsh"
 export PANEL_FIFO=/tmp/panel-fifo
 export PANEL_WM_NAME=bspwm_panel
 
+# Themes
+export MY_COLORS="$HOME/.local/share/my_colors"
+
 # Default programs:
 export EDITOR="vim"
 export TERMINAL="termite"

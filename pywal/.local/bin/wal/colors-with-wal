@@ -20,11 +20,25 @@
 
 termpath=~/.config/termite
 walpath=~/.cache/wal
-mycolorspath=~/.local/share/my_colours
-#mytheme=base16-google
-#mytheme=base16-atelier-dune
-mythemes=~/.config/wal/darkthemes.csv
-debug=/tmp/wal.out
+mycolorspath="$MY_COLORS"
+mythemesdark=~/.config/wal/darkthemes.csv
+mythemeslight=~/.config/wal/lightthemes.csv
+mythemes=$mythemesdark
+walargs=()
+#debug=/tmp/wal.out
+
+while getopts "hlp" o; do case "${o}" in
+	h) printf "Optional arguments for custom use:\\n  -l: Light themes\\n  -p: Preview, no installation\\n  -h: Show this message\\n" && exit ;;
+	l) 
+		mythemes=$mythemeslight
+		walargs+=('-l')
+		;;
+	p) 
+		ispreview=1 ;;
+	*) 
+		printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
+	esac 
+done
 
 _reloadbspwm(){
 	echo "Stop panel"
@@ -55,7 +69,9 @@ _mergexresources(){
 # -a alha
 # --saturate
 _generate(){
-	wal --theme $mytheme -n
+	walargs+=('--theme '"$mytheme")
+	walargs+=('-n')
+	wal ${walargs[@]} 
 }
 
 _marktheme(){

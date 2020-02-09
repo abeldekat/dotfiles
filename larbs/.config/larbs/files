@@ -10,4 +10,4 @@ cfwl	~/.config/wal/lightthemes.csv
 cfwd	~/.config/wal/darkthemes.csv
 cfpb	~/.config/pkg/pkglist-base.txt
 cfpa	~/.config/pkg/pkglist-aur.txt
-cfpg	~/.config/pkg/pkglist-git.txt
+lbg	~/.local/bin/arch/pkglist-git.sh
