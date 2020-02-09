@@ -1,0 +1,62 @@
+#!/bin/bash
+
+format_color(){
+	echo "%{F$2}%{B$1}$3%{B-}%{F-}"
+}
+
+_subtractthemename(){
+	trunc=$(($themelength-$themetargetlength))
+	echo ${theme:$trunc}
+}
+
+_addthemename(){
+	add=$(($themetargetlength-$themelength))
+	result=$theme
+	for (( c=1; c<=$add; c++ ))
+	do  
+		result=$(printf "$result%s" ')')
+	done
+	echo $result
+}
+
+_makethemename16(){
+	themetargetlength=16
+	themedefault="ABCDEFGHIJKLMNOP" 
+	activethemefile="$MY_COLORS/active-theme"
+
+	[ -f $activethemefile ] && theme=$(cat "$activethemefile")
+	[ -z $theme ] && theme=$themedefault
+	# replace base16 with b 
+	theme="${theme/base16-/}"
+	themelength="${#theme}"
+
+	[ $themelength -gt $themetargetlength ] && theme=$(_subtractthemename)
+	[ $themelength -lt $themetargetlength ] && theme=$(_addthemename)
+	echo ${theme}
+}
+
+_getchar(){
+	echo '_'"${_n:$1:1}"'_'
+}
+
+_n="$(_makethemename16)"
+cols=()
+cols+=("$(format_color $color0 $color15 $(_getchar 0))")
+cols+=("$(format_color $color1 $color0 $(_getchar 1))")
+cols+=("$(format_color $color2 $color0 $(_getchar 2))")
+cols+=("$(format_color $color3 $color0 $(_getchar 3))")
+cols+=("$(format_color $color4 $color0 $(_getchar 4))")
+cols+=("$(format_color $color5 $color0 $(_getchar 5))")
+cols+=("$(format_color $color6 $color0 $(_getchar 6))")
+cols+=("$(format_color $color7 $color0 $(_getchar 7))")
+cols+=("$(format_color $color8 $color0 $(_getchar 8))")
+cols+=("$(format_color $color9 $color0 $(_getchar 9))")
+cols+=("$(format_color $color10 $color0 $(_getchar 10))")
+cols+=("$(format_color $color11 $color0 $(_getchar 11))")
+cols+=("$(format_color $color12 $color0 $(_getchar 12))")
+cols+=("$(format_color $color13 $color0 $(_getchar 13))")
+cols+=("$(format_color $color14 $color0 $(_getchar 14))")
+cols+=("$(format_color $color15 $color0 $(_getchar 15))")
+
+# cat array to string without spaces
+printf "%s\n" "C$(IFS=''; echo "${cols[*]}")" > "$PANEL_FIFO" & 
