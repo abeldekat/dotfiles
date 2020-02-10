@@ -18,6 +18,8 @@
 #tomorrow
 #twilight
 
+. colors-config
+
 termpath=~/.config/termite
 walpath=~/.cache/wal
 mycolorspath="$MY_COLORS"

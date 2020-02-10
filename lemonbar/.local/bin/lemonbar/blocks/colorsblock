@@ -13,54 +13,50 @@ _addthemename(){
 	result=$theme
 	for (( c=1; c<=$add; c++ ))
 	do  
-		result=$(printf "$result%s" ')')
+		result=$(printf "$result%s" ' ')
 	done
 	echo $result
 }
 
 _makethemename16(){
 	themetargetlength=16
-	themedefault="ABCDEFGHIJKLMNOP" 
-	activethemefile="$MY_COLORS/active-theme"
-
-	[ -f $activethemefile ] && theme=$(cat "$activethemefile")
-	[ -z $theme ] && theme=$themedefault
+	theme="$(colors-get-base16-name)"
 	# replace base16 with b 
 	theme="${theme/base16-/}"
 	themelength="${#theme}"
 
-	[ $themelength -gt $themetargetlength ] && theme=$(_subtractthemename)
-	[ $themelength -lt $themetargetlength ] && theme=$(_addthemename)
+	[ $themelength -gt $themetargetlength ] && theme="$(_subtractthemename)"
+	[ $themelength -lt $themetargetlength ] && theme="$(_addthemename)"
 	echo ${theme}
 }
 
 _getchar(){
-	echo '_'"${_name:$1:1}"'_'
+	echo -n " ${_name:$1:1} "
 }
 
 _format(){
-	echo "%{F$2}%{B$1}$3%{B-}%{F-}"
+	echo -n "%{F$2}%{B$1}$3%{B-}%{F-}"
 }
 
 _mycolors(){
 	_name="$(_makethemename16)"
 	local cols
-	cols+="$(_format $color0 $color15 $(_getchar 0))"
-	cols+="$(_format $color1 $color0 $(_getchar 1))"
-	cols+="$(_format $color2 $color0 $(_getchar 2))"
-	cols+="$(_format $color3 $color0 $(_getchar 3))"
-	cols+="$(_format $color4 $color0 $(_getchar 4))"
-	cols+="$(_format $color5 $color0 $(_getchar 5))"
-	cols+="$(_format $color6 $color0 $(_getchar 6))"
-	cols+="$(_format $color7 $color0 $(_getchar 7))"
-	cols+="$(_format $color8 $color0 $(_getchar 8))"
-	cols+="$(_format $color9 $color0 $(_getchar 9))"
-	cols+="$(_format $color10 $color0 $(_getchar 10))"
-	cols+="$(_format $color11 $color0 $(_getchar 11))"
-	cols+="$(_format $color12 $color0 $(_getchar 12))"
-	cols+="$(_format $color13 $color0 $(_getchar 13))"
-	cols+="$(_format $color14 $color0 $(_getchar 14))"
-	cols+="$(_format $color15 $color0 $(_getchar 15))"
+	cols+="$(_format $color0 $color15 "$(_getchar 0)")"
+	cols+="$(_format $color1 $color0 "$(_getchar 1)")"
+	cols+="$(_format $color2 $color0 "$(_getchar 2)")"
+	cols+="$(_format $color3 $color0 "$(_getchar 3)")"
+	cols+="$(_format $color4 $color0 "$(_getchar 4)")"
+	cols+="$(_format $color5 $color0 "$(_getchar 5)")"
+	cols+="$(_format $color6 $color0 "$(_getchar 6)")"
+	cols+="$(_format $color7 $color0 "$(_getchar 7)")"
+	cols+="$(_format $color8 $color0 "$(_getchar 8)")"
+	cols+="$(_format $color9 $color0 "$(_getchar 9)")"
+	cols+="$(_format $color10 $color0 "$(_getchar 10)")"
+	cols+="$(_format $color11 $color0 "$(_getchar 11)")"
+	cols+="$(_format $color12 $color0 "$(_getchar 12)")"
+	cols+="$(_format $color13 $color0 "$(_getchar 13)")"
+	cols+="$(_format $color14 $color0 "$(_getchar 14)")"
+	cols+="$(_format $color15 $color0 "$(_getchar 15)")"
 
 	# cat array to string without spaces
 	echo "${cols}"

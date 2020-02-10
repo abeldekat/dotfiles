@@ -1,0 +1,10 @@
+#! /bin/bash
+
+. colors-config
+
+_namedefault="undefined" 
+_file="$MY_COLORS/active-theme"
+_name=""
+[ -f $_file ] && _name=$(cat "$_file")
+[ -z $_name ] && _name=$_namedefault
+echo "$_name"
