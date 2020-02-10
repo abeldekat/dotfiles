@@ -1,6 +1,5 @@
 #!/bin/bash
 
-. panel_colors
 . bspwm_colors
 
 _monitors(){

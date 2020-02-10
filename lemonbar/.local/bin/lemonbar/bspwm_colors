@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $(colors-get-base)
+. panel_colors
 
 # http://chir.ag/projects/name-that-color/#504E4E
 # https://www.color-blindness.com/color-name-hue/
