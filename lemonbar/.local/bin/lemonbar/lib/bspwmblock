@@ -1,36 +1,9 @@
 #!/bin/bash
 
 . panel_colors
+. bspwm_colors
 
-num_mon=$(bspc query -M | wc -l)
-
-format_wm_state(){
-	IFS=':'
-	set -- ${line#?}
-
-	case $1 in m*) on_focused_monitor=;; M*) on_focused_monitor=1 ;; esac 
-	state_result=
-	while [ $# -gt 0 ] ; do
-		item=$1
-		name=${item#?}
-		case $item in
-			[mM]*)
-				[ $num_mon -lt 2 ] || format_wm_add "$(format_wm_monitors)";;
-			[fFoOuU]*)
-				format_wm_add "$(format_wm_desktops)";;
-			[LTG]*)
-				format_wm_add "$(format_wm_layoutstateandflags)";;
-		esac
-		shift
-	done
-	echo "$state_result"
-}
-
-format_wm_add(){
-	state_result="${state_result}${1}"
-}
-
-format_wm_monitors(){
+_monitors(){
 	case $item in
 		m*)
 			FG=$COLOR_MONITOR_FG
@@ -44,7 +17,7 @@ format_wm_monitors(){
 	echo "%{F${FG}}%{B${BG}}%{A:bspc monitor -f ${name}:} ${name} %{A}%{B-}%{F-}"
 }
 
-format_wm_desktops(){
+_desktops(){
 	case $item in
 		f*)
 			# free desktop
@@ -107,10 +80,33 @@ format_wm_desktops(){
 	echo "%{F${FG}}%{B${BG}}%{U${UL}}%{+u}%{A:bspc desktop -f ${name}:} ${name} %{A}%{B-}%{F-}%{-u}"
 }
 
-format_wm_layoutstateandflags(){
+_layoutstateandflags(){
 	echo "%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG} ${name} %{B-}%{F-}"
 }
 
+_mybspwm(){
+	IFS=':'
+	set -- ${line#?}
+
+	case $1 in m*) on_focused_monitor=;; M*) on_focused_monitor=1 ;; esac 
+	let res
+	while [ $# -gt 0 ] ; do
+		item=$1
+		name=${item#?}
+		case $item in
+			[mM]*)
+				[ $num_mon -lt 2 ] || res+="$(_monitors)";;
+			[fFoOuU]*)
+				res+="$(_desktops)";;
+			[LTG]*)
+				res+="$(_layoutstateandflags)";;
+		esac
+		shift
+	done
+	echo "$res"
+}
+
+num_mon=$(bspc query -M | wc -l)
 while read -r line ; do 
-	echo "W$(format_wm_state)"
+	echo "W$(_mybspwm)"
 done < <(bspc subscribe report)

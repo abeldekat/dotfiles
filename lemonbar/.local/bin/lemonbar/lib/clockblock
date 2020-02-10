@@ -1,6 +1,7 @@
 #!/bin/bash
 
 . panel_colors
+. siji-icons 
 
 myclock(){
 	local fg=$COLOR_SYS_FG

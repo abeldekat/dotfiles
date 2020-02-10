@@ -1,6 +1,8 @@
 #!/bin/bash
 
 . panel_colors
+. siji-icons 
+
 
 mynetwork(){
 	local fg=$COLOR_SYS_FG

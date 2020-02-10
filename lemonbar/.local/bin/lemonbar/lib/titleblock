@@ -1,6 +1,8 @@
 #!/bin/bash
 
 . panel_colors
+. siji-icons 
+
 
 mytitle(){
 	local fg=$COLOR_SYS_FG
