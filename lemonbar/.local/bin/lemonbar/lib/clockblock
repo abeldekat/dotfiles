@@ -3,13 +3,27 @@
 . panel_colors
 . siji-icons 
 
-myclock(){
-	local fg=$COLOR_SYS_FG
-	local bg=$COLOR_SYS_BG
-	echo "%{F$fg}%{B$bg} $ICON_CLOCK ${line} %{B-}%{F-}"
+_date() {
+  echo -n $(date "+%a %d")
 }
 
-while read -r line ; do 
-	echo "C$(myclock)"
-done < <(clock -sf '%a %H:%M')
+_time() {
+  echo -n $(date "+%H:%M")
+}
 
+_myclock() {
+	local fg1=$COLOR_SYS_FG
+	local bg1=$COLOR_SYS_BG
+	local c="%{F$fg1}%{B$bg1} $ICON_CLOCK $(_time) %{B-}%{F-}"
+
+	local fg2=$color8
+	local bg2=$color3
+	local d="%{F$fg2}%{B$bg2} $ICON_DATE $(_date) %{B-}%{F-}"
+
+	echo "$d$c"
+}
+
+while true ; do 
+	echo "C$(_myclock)"
+	sleep 10
+done

@@ -2,7 +2,8 @@
 
 # siji icons
 #ICON_CLOCK='\ue0a3'
-ICON_CLOCK='\ue0a3'
+ICON_CLOCK='\ue016'
+ICON_DATE='\ue01f'
 ICON_NETWORK='\ue04b'
 
 #ICON_MUSIC='\ue0fd'
