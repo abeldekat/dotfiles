@@ -89,7 +89,7 @@ _mybspwm(){
 	set -- ${line#?}
 
 	case $1 in m*) on_focused_monitor=;; M*) on_focused_monitor=1 ;; esac 
-	let res
+	local res
 	while [ $# -gt 0 ] ; do
 		item=$1
 		name=${item#?}

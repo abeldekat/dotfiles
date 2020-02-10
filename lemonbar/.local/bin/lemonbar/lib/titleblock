@@ -7,7 +7,15 @@
 mytitle(){
 	local fg=$COLOR_SYS_FG
 	local bg=$COLOR_SYS_BG
-	echo "%{F$fg}%{B$bg} ${line} %{B-}%{F-}"
+
+	local res=$line
+	local limit=15
+	local length="${#res}"
+	#[ $length -gt $limit ] && res='...'"${res:$((lenght-limit))}"
+	[ $length -gt $limit ] && res="${res:0:$limit}"'...'
+
+
+	echo "%{F$fg}%{B$bg} ${res} %{B-}%{F-}"
 }
 
 while read -r line ; do 
