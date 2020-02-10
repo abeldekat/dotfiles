@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. panel_colors
+
 num_mon=$(bspc query -M | wc -l)
 
 format_wm_state(){
@@ -110,7 +112,5 @@ format_wm_layoutstateandflags(){
 }
 
 while read -r line ; do 
-	printf "%s\n" "W$(format_wm_state)"
-done \
-	< <(bspc subscribe report) > "$PANEL_FIFO" &
-
+	echo "W$(format_wm_state)"
+done < <(bspc subscribe report)

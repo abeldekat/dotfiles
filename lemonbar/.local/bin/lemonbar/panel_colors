@@ -1,4 +1,7 @@
+#!/bin/bash
+
 . $(colors-get-base)
+. siji-icons
 
 # http://chir.ag/projects/name-that-color/#504E4E
 # https://www.color-blindness.com/color-name-hue/
@@ -44,13 +47,6 @@ COLOR_MONITOR_BG="$COLOR_BSPWM_BG"
 COLOR_FOCUSED_MONITOR_FG="#b1d0e8"
 COLOR_FOCUSED_MONITOR_BG="#144b6c"
 
-# non bspwm text
-COLOR_TEXT_FG="$color3"
-
-# title section
-COLOR_TITLE_FG="$COLOR_TEXT_FG"
-COLOR_TITLE_BG="$COLOR_DEFAULT_BG"
-
-# sys section
-COLOR_SYS_FG="$COLOR_TEXT_FG"
+# sys and title section
+COLOR_SYS_FG="$color3"
 COLOR_SYS_BG="$COLOR_DEFAULT_BG"
