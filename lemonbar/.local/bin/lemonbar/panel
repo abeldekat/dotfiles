@@ -17,7 +17,7 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 mkfifo "$PANEL_FIFO"
 
 . panel_colors
-for block in $PANEL_LIB/block* ; do
+for block in $PANEL_LIB/*block ; do
 	$block > $PANEL_FIFO &
 done
 
