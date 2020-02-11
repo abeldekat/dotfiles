@@ -3,31 +3,38 @@
 . panel_colors
 
 
-_subtractthemename(){
-	local trunc=$(($themelength-$themetargetlength))
-	echo ${theme:$trunc}
+_smaller(){
+	local trunc=$((namelength-$requiredlength))
+	echo ${name:$trunc}
 }
 
-_addthemename(){
-	local add=$(($themetargetlength-$themelength))
-	result=$theme
-	for (( c=1; c<=$add; c++ ))
+_filler(){
+	local res=$name
+	local fill=$(($requiredlength-$namelength))
+	local isodd=$(($fill%2))
+	if [ $isodd -eq 1 ] ; then
+		res=" $res"
+		fill=$(($fill-1))
+	fi
+
+	local centeredfill=$(($fill/2))
+	for (( c=1; c<=$centeredfill; c++ ))
 	do  
-		result+=" "
+		res=" $res "
 	done
-	echo "$result"
+	echo "$res"
 }
 
-_makethemename16(){
-	themetargetlength=16
-	theme="$(colors-get-base16-name)"
+_name16(){
+	requiredlength=16
+	name="$(colors-get-base16-name)"
 	# replace base16 with b 
-	theme="${theme/base16-/}"
-	themelength="${#theme}"
+	name="${name/base16-/}"
+	namelength="${#name}"
 
-	[ $themelength -gt $themetargetlength ] && theme="$(_subtractthemename)"
-	[ $themelength -lt $themetargetlength ] && theme="$(_addthemename)"
-	echo "${theme}"
+	[ $namelength -gt $requiredlength ] && name="$(_smaller)"
+	[ $namelength -lt $requiredlength ] && name="$(_filler)"
+	echo "${name}"
 }
 
 _getchar(){
@@ -39,7 +46,7 @@ _format(){
 }
 
 _mycolors(){
-	_name="$(_makethemename16)"
+	_name="$(_name16)"
 
 	local cols
 	cols+="$(_format $color15 $color0 "$(_getchar 0)")"
