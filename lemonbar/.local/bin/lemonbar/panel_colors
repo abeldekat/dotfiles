@@ -2,15 +2,10 @@
 
 . $(colors-get-base16)
 
-# http://chir.ag/projects/name-that-color/#504E4E
-# https://www.color-blindness.com/color-name-hue/
-# The color name is matched to one of the following main color hues: Red, Orange, Yellow, Green, Blue, Violet, Brown, Black, Grey, and White.
-# http://www.perbang.dk/rgb/504E4E/
-
-COLOR_DEFAULT_FG="#a7a5a5"
+COLOR_DEFAULT_FG="$color15"
 #COLOR_DEFAULT_BG="$background_transparent"
 COLOR_DEFAULT_BG="$background"
 
 # sys and title section
-COLOR_SYS_FG="$color3"
-COLOR_SYS_BG="$COLOR_DEFAULT_BG"
+COLOR_SYS_FG="$color10"
+COLOR_SYS_BG="$background"

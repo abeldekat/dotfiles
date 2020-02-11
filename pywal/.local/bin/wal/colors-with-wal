@@ -25,22 +25,36 @@ walpath=~/.cache/wal
 mycolorspath="$MY_COLORS"
 mythemesdark=~/.config/wal/darkthemes.csv
 mythemeslight=~/.config/wal/lightthemes.csv
+numberdark=59 #mocha
+numberlight=35 #tempus_dawn
 mythemes=$mythemesdark
+number=0
 walargs=()
-#debug=/tmp/wal.out
 
-while getopts "hlp" o; do case "${o}" in
-	h) printf "Optional arguments for custom use:\\n  -l: Light themes\\n  -p: Preview, no installation\\n  -h: Show this message\\n" && exit ;;
+while getopts "hln:p" o; do case "${o}" in
+	h) printf "Optional arguments for custom use:\\n  \
+		-l: Light themes\\n  \
+		-p: TODO Preview, no installation\\n  \
+		-n: Line number of theme in csv file\\n  \
+		-h: Show this message\\n" && exit ;;
 	l) 
 		mythemes=$mythemeslight
-		walargs+=('-l')
-		;;
-	p) 
-		ispreview=1 ;;
+		walargs+=('-l') ;;
+	n) 
+		number="$OPTARG" ;;
 	*) 
 		printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 	esac 
 done
+
+re='^[0-9]+$'
+if ! [[ $number =~ $re ]] ; then
+   echo "error: Not a number" >&2; exit 1
+fi
+[ $number -eq 0 ] && echo "Number is 0 thus switching to default..."
+[ $number -eq 0 -a $mythemes = $mythemesdark ] && number=$numberdark
+[ $number -eq 0 -a $mythemes = $mythemeslight ] && number=$numberlight
+
 
 _reloadbspwm(){
 	echo "Stop panel"
@@ -81,11 +95,13 @@ _marktheme(){
 }
 
 _gettheme(){
-	let result
-	while IFS=, read -r tag theme comment; do
-		case "$tag" in
-			"F") result="$theme" ;; 
-		esac
+	local result
+	while IFS=, read -r tag1 tag2 theme comment; do
+		#case "$tag" in
+		#	"F") result="$theme" ;; 
+		#esac
+		n=$((n+1))
+		[ $n -eq $number ] && result="$theme"
 	done < $mythemes
 	echo $result 
 }

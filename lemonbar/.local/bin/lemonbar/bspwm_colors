@@ -2,46 +2,29 @@
 
 . panel_colors
 
-# http://chir.ag/projects/name-that-color/#504E4E
-# https://www.color-blindness.com/color-name-hue/
-# The color name is matched to one of the following main color hues: Red, Orange, Yellow, Green, Blue, Violet, Brown, Black, Grey, and White.
-# http://www.perbang.dk/rgb/504E4E/
+COLOR_FREE_FG="$color10"
+COLOR_FREE_BG="$background"
 
-COLOR_DEFAULT_FG="#a7a5a5"
-#COLOR_DEFAULT_BG="$background_transparent"
-COLOR_DEFAULT_BG="$background"
+COLOR_FOCUSED_FREE_FG="$color12"
+COLOR_FOCUSED_FREE_BG="$color3"
 
-# bspwm section
-COLOR_BSPWM_BG="#333232"
-#COLOR_BSPWM_BG="$background_transparent"
+COLOR_OCCUPIED_FG="$color14"
+COLOR_OCCUPIED_BG="$background"
 
-COLOR_FREE_FG="#737171"
-COLOR_FREE_BG="$COLOR_BSPWM_BG"
+COLOR_FOCUSED_OCCUPIED_FG="$color0"
+COLOR_FOCUSED_OCCUPIED_BG="$color2"
 
-#fg black bg 
-COLOR_FOCUSED_FREE_FG="#000000"
-COLOR_FOCUSED_FREE_BG="#504e4e"
+COLOR_URGENT_FG="$color9"
+COLOR_URGENT_BG="$background"
 
-COLOR_OCCUPIED_FG="$COLOR_DEFAULT_FG"
-#COLOR_OCCUPIED_FG="#a7a5a5"
-COLOR_OCCUPIED_BG="$COLOR_BSPWM_BG"
+COLOR_FOCUSED_URGENT_FG="$color9"
+COLOR_FOCUSED_URGENT_BG="$color1"
 
-# +- swiss coffee, Light vermilionish gray, mercury
-COLOR_FOCUSED_OCCUPIED_FG="#d6d3d2"
-# +- emperor Reddish brownish gray
-COLOR_FOCUSED_OCCUPIED_BG="#504e4e"
-
-COLOR_URGENT_FG="#f15d66"
-COLOR_URGENT_BG="$COLOR_BSPWM_BG"
-
-COLOR_FOCUSED_URGENT_FG="#501d1f"
-COLOR_FOCUSED_URGENT_BG="#d5443e"
-
-COLOR_STATE_FG="#89b09c"
-COLOR_STATE_BG="$COLOR_BSPWM_BG"
+COLOR_STATE_FG="$color0"
+COLOR_STATE_BG="$color5"
 
 #bspwm I have one monitor, this is not used
 COLOR_MONITOR_FG="#8dbcdf"
-COLOR_MONITOR_BG="$COLOR_BSPWM_BG"
+COLOR_MONITOR_BG="$background"
 COLOR_FOCUSED_MONITOR_FG="#b1d0e8"
-COLOR_FOCUSED_MONITOR_BG="#144b6c"
+COLOR_FOCUSED_MONITOR_BG="$color2"
