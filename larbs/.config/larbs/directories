@@ -9,5 +9,6 @@ vv	~/Videos
 cf	~/.config
 sc	~/.local/bin
 scl	~/.local/bin/lemonbar
+scb	~/.local/bin/lemonbar/blocks
 scw	~/.local/bin/wal
 mn	/mnt
