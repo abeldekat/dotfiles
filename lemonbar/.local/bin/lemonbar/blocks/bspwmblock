@@ -102,6 +102,7 @@ _mybspwm(){
 		esac
 		shift
 	done
+	[ -n "$monitors" ] && monitors+=" "
 	echo "$monitors$desktops $state"
 }
 

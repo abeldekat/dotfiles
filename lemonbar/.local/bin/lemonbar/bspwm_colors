@@ -2,12 +2,12 @@
 
 # Given the default and a dark theme:
 # On focus the text will be darker and there will be a background highlighting the number. Unoccupied: Light. Occupied: darker
-# Unfocused desktops: When occupied fg is same as background focused occupied
-# Layout same no background highlight but with lightest fg color. 
+# Unfocused desktops: When occupied then fg is same as background focused occupied
+# Layout and state,  same no background highlight but with lightest fg color. 
 
 # Urgency: Same as the example.  Unfocussed: No background, fg is red. Clearly visible. Focussed: Red background, dark text. 
 
-# Monitors: Example, active monitor bright white fg on blue background. Inactive monitor: No background, bright text, blueish. Note that when the monitor is inactive the desktops will not have a background. They fallback to occupied, not focussed occupied. The occupied background is used as underline. 
+# Monitors: Example, active monitor bright white fg on blue background. Inactive monitor: No background, bright text, blueish. Note that when the monitor is inactive the desktops will not have a background. They fallback to occupied, not focussed occupied. The focussed occupied background is used as underline. 
 
 # Main difference to example: The hasfocus bg always looks the same. The text indicates if the desktop is occupied. In this implemenation the text is always the same on focus. The background differs
 
@@ -22,7 +22,7 @@ COLOR_OCCUPIED_FG="$occupied_fg_bg"
 COLOR_OCCUPIED_BG="$background"
 
 COLOR_FOCUSED_FREE_FG="$focussed_fg"
-COLOR_FOCUSED_FREE_BG="$color15"
+COLOR_FOCUSED_FREE_BG="$color8"
 COLOR_FOCUSED_OCCUPIED_FG="$focussed_fg"
 COLOR_FOCUSED_OCCUPIED_BG="$occupied_fg_bg"
 
