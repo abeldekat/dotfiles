@@ -1,7 +1,7 @@
 #!/bin/bash
 
 . panel_colors
-
+. siji-icons
 
 _smaller(){
 	local trunc=$((namelength-$requiredlength))
@@ -12,11 +12,13 @@ _filler(){
 	local res=$name
 	local fill=$(($requiredlength-$namelength))
 	local isodd=$(($fill%2))
+	# add one space at the beginning when not even
 	if [ $isodd -eq 1 ] ; then
 		res=" $res"
 		fill=$(($fill-1))
 	fi
 
+	# now distribute spaces evenly
 	local centeredfill=$(($fill/2))
 	for (( c=1; c<=$centeredfill; c++ ))
 	do  
@@ -28,7 +30,7 @@ _filler(){
 _name16(){
 	requiredlength=16
 	name="$(colors-get-base16-name)"
-	# replace base16 with b 
+	# remove base16 part if present
 	name="${name/base16-/}"
 	namelength="${#name}"
 
@@ -45,16 +47,31 @@ _format(){
 	echo -n "%{F$1}%{B$2}$3%{B-}%{F-}"
 }
 
+_format_range(){
+	local res
+	for (( i=$1; i<=$2; i++ )) ; do
+		_acolorref="color$i"
+		res+="$(_format $color0 "${!_acolorref}"  "$(_getchar $i)")"
+	done
+	echo "${res}"
+}
 _mycolors(){
 	_name="$(_name16)"
 
-	local cols
-	cols+="$(_format $color15 $color0 "$(_getchar 0)")"
-	for i in {1..15} ; do
-		_acolorref="color$i"
-		cols+="$(_format $color0 "${!_acolorref}"  "$(_getchar $i)")"
-	done
-	echo "${cols}"
+	local res
+	# avoid bg and fg being the same on the starting color
+	res+="$(_format $color15 $color0 "$(_getchar 0)")"
+	res+="$(_format_range 1 3)"
+	res+="$ICON_COLORS_SEPARATOR"
+	res+="$(_format_range 4 7)"
+	res+="$ICON_COLORS_SEPARATOR"
+	res+="$(_format_range 8 11)"
+	res+="$ICON_COLORS_SEPARATOR"
+	res+="$(_format_range 12 15)"
+	echo "${res}"
 }
 
-echo "O$(_mycolors)"
+while true ; do 
+	echo "O$(_mycolors)"
+	sleep 1h
+done
