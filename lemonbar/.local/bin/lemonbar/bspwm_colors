@@ -4,6 +4,9 @@
 # On focus the text will be darker and there will be a background highlighting the number. Unoccupied: Light. Occupied: darker
 # Unfocused desktops: When occupied fg is same as background focused occupied
 # Layout same no background highlight but with lightest fg color. 
+
+# Urgency: Same as the example.  Unfocussed: No background, fg is red. Clearly visible. Focussed: Red background, dark text. 
+
 . panel_colors
 
 focussed_fg="$color0"
@@ -22,15 +25,12 @@ COLOR_FOCUSED_OCCUPIED_BG="$occupied_fg_bg"
 COLOR_STATE_FG="$color15"
 COLOR_STATE_BG="$background"
 
-# Urgent will show a red background..
-COLOR_URGENT_FG="$color15"
-COLOR_URGENT_BG="$color1"
+COLOR_URGENT_FG="$color1"
+COLOR_URGENT_BG="$background"
 COLOR_FOCUSED_URGENT_FG="$focussed_fg"
 COLOR_FOCUSED_URGENT_BG="$color1"
 
-
-# TODO monitor
-COLOR_MONITOR_FG="#8dbcdf"
+COLOR_MONITOR_FG="$color15"
 COLOR_MONITOR_BG="$background"
-COLOR_FOCUSED_MONITOR_FG="#b1d0e8"
-COLOR_FOCUSED_MONITOR_BG="$background"
+COLOR_FOCUSED_MONITOR_FG="$focussed_fg"
+COLOR_FOCUSED_MONITOR_BG="$color2"
