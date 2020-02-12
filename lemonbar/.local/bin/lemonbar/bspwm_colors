@@ -7,6 +7,10 @@
 
 # Urgency: Same as the example.  Unfocussed: No background, fg is red. Clearly visible. Focussed: Red background, dark text. 
 
+# Monitors: Example, active monitor bright white fg on blue background. Inactive monitor: No background, bright text, blueish. Note that when the monitor is inactive the desktops will not have a background. They fallback to occupied, not focussed occupied. The occupied background is used as underline. 
+
+# Main difference to example: The hasfocus bg always looks the same. The text indicates if the desktop is occupied. In this implemenation the text is always the same on focus. The background differs
+
 . panel_colors
 
 focussed_fg="$color0"
@@ -30,7 +34,7 @@ COLOR_URGENT_BG="$background"
 COLOR_FOCUSED_URGENT_FG="$focussed_fg"
 COLOR_FOCUSED_URGENT_BG="$color1"
 
-COLOR_MONITOR_FG="$color15"
+COLOR_MONITOR_FG="$color3"
 COLOR_MONITOR_BG="$background"
-COLOR_FOCUSED_MONITOR_FG="$focussed_fg"
-COLOR_FOCUSED_MONITOR_BG="$color2"
+COLOR_FOCUSED_MONITOR_FG="$color0"
+COLOR_FOCUSED_MONITOR_BG="$color3"
