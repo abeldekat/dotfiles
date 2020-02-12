@@ -88,7 +88,6 @@ _mybspwm(){
 	set -- ${line#?}
 
 	case $1 in m*) on_focused_monitor=;; M*) on_focused_monitor=1 ;; esac 
-#	local res
 	local monitors desktops state
 	while [ $# -gt 0 ] ; do
 		item=$1
@@ -103,7 +102,6 @@ _mybspwm(){
 		esac
 		shift
 	done
-#	echo "$res"
 	echo "$monitors$desktops $state"
 }
 
