@@ -5,13 +5,13 @@
 ICON_CLOCK='\ue016'
 ICON_DATE='\ue01f'
 ICON_NETWORK='\ue04b'
-# colors block
-# dubble arrow
-#ICON_COLORS_SEPARATOR='\ue13f'
+
 # lambda
 #ICON_COLORS_SEPARATOR='\ue1ce'
 # dot
-ICON_COLORS_SEPARATOR='\ue190'
+#ICON_COLORS_SEPARATOR='\ue190'
+# no separator
+ICON_COLORS_SEPARATOR=''
 
 #ICON_MUSIC='\ue0fd'
 #ICON_DATE='\ue01f'
