@@ -6,24 +6,27 @@
 # Layout same no background highlight but with lightest fg color. 
 . panel_colors
 
+focussed_fg="$color0"
+occupied_fg_bg="$color3"
+
 COLOR_FREE_FG="$color5"
 COLOR_FREE_BG="$background"
-COLOR_OCCUPIED_FG="$color3"
+COLOR_OCCUPIED_FG="$occupied_fg_bg"
 COLOR_OCCUPIED_BG="$background"
 
-COLOR_FOCUSED_FREE_FG="$color0"
+COLOR_FOCUSED_FREE_FG="$focussed_fg"
 COLOR_FOCUSED_FREE_BG="$color15"
-COLOR_FOCUSED_OCCUPIED_FG="$color0"
-COLOR_FOCUSED_OCCUPIED_BG="$color3"
+COLOR_FOCUSED_OCCUPIED_FG="$focussed_fg"
+COLOR_FOCUSED_OCCUPIED_BG="$occupied_fg_bg"
 
 COLOR_STATE_FG="$color15"
 COLOR_STATE_BG="$background"
 
-# TODO Urgent
+# Urgent will show a red background..
 COLOR_URGENT_FG="$color15"
-COLOR_URGENT_BG="$background"
-COLOR_FOCUSED_URGENT_FG="$color15"
-COLOR_FOCUSED_URGENT_BG="$background"
+COLOR_URGENT_BG="$color1"
+COLOR_FOCUSED_URGENT_FG="$focussed_fg"
+COLOR_FOCUSED_URGENT_BG="$color1"
 
 
 # TODO monitor
