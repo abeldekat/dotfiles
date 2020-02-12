@@ -60,6 +60,7 @@ _mycolors(){
 
 	local res
 	# avoid bg and fg being the same on the starting color
+	res+="$ICON_COLORS_SEPARATOR"
 	res+="$(_format $color15 $color0 "$(_getchar 0)")"
 	res+="$(_format_range 1 3)"
 	res+="$ICON_COLORS_SEPARATOR"
@@ -68,6 +69,7 @@ _mycolors(){
 	res+="$(_format_range 8 11)"
 	res+="$ICON_COLORS_SEPARATOR"
 	res+="$(_format_range 12 15)"
+	res+="$ICON_COLORS_SEPARATOR"
 	echo "${res}"
 }
 
