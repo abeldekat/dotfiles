@@ -88,21 +88,23 @@ _mybspwm(){
 	set -- ${line#?}
 
 	case $1 in m*) on_focused_monitor=;; M*) on_focused_monitor=1 ;; esac 
-	local res
+#	local res
+	local monitors desktops state
 	while [ $# -gt 0 ] ; do
 		item=$1
 		name=${item#?}
 		case $item in
 			[mM]*)
-				[ $num_mon -lt 2 ] || res+="$(_monitors)";;
+				[ $num_mon -lt 2 ] || monitors+="$(_monitors)";;
 			[fFoOuU]*)
-				res+="$(_desktops)";;
+				desktops+="$(_desktops)";;
 			[LTG]*)
-				res+="$(_layoutstateandflags)";;
+				state+="$(_layoutstateandflags)";;
 		esac
 		shift
 	done
-	echo "$res"
+#	echo "$res"
+	echo "$monitors$desktops $state"
 }
 
 num_mon=$(bspc query -M | wc -l)
