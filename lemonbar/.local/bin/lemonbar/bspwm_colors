@@ -1,30 +1,35 @@
 #!/bin/bash
 
+# Given the default and a dark theme:
+# On fucos the text will be darker and there will be a background highlighting the number. Unoccupied: Light. Occupied: darker
+# Unfocused desktops: When occupied fg is same as background focused occupied
+# Layout same no background highlight but with lightest fg color. 
 . panel_colors
 
-COLOR_FREE_FG="$color10"
+COLOR_FREE_FG="$color5"
 COLOR_FREE_BG="$background"
 
-COLOR_FOCUSED_FREE_FG="$color12"
-COLOR_FOCUSED_FREE_BG="$color3"
-
-COLOR_OCCUPIED_FG="$color14"
+COLOR_OCCUPIED_FG="$color3"
 COLOR_OCCUPIED_BG="$background"
 
+COLOR_FOCUSED_FREE_FG="$color0"
+COLOR_FOCUSED_FREE_BG="$color15"
 COLOR_FOCUSED_OCCUPIED_FG="$color0"
-COLOR_FOCUSED_OCCUPIED_BG="$color2"
+COLOR_FOCUSED_OCCUPIED_BG="$color3"
 
-COLOR_URGENT_FG="$color9"
+COLOR_STATE_FG="$color15"
+COLOR_STATE_BG="$background"
+
+
+COLOR_URGENT_FG="$color15"
 COLOR_URGENT_BG="$background"
 
-COLOR_FOCUSED_URGENT_FG="$color9"
-COLOR_FOCUSED_URGENT_BG="$color1"
+COLOR_FOCUSED_URGENT_FG="$color15"
+COLOR_FOCUSED_URGENT_BG="$background"
 
-COLOR_STATE_FG="$color0"
-COLOR_STATE_BG="$color5"
 
 #bspwm I have one monitor, this is not used
 COLOR_MONITOR_FG="#8dbcdf"
 COLOR_MONITOR_BG="$background"
 COLOR_FOCUSED_MONITOR_FG="#b1d0e8"
-COLOR_FOCUSED_MONITOR_BG="$color2"
+COLOR_FOCUSED_MONITOR_BG="$background"
