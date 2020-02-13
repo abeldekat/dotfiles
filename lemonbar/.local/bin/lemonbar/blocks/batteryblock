@@ -1,0 +1,37 @@
+#!/bin/bash
+
+. panel_colors
+. siji-icons 
+
+_mybattery() {
+	local fg=$COLOR_SYS_FG 
+	local bg=$COLOR_SYS_BG
+	local battery_status=$(cat /sys/class/power_supply/BAT1/status)
+	local _percent=$(cat /sys/class/power_supply/BAT1/capacity)
+	local _icon
+
+	case "$battery_status" in
+	Charging) 
+		_icon="$ICON_BATTERY_CHARGING";;
+	Discharging)
+		if [ "$_percent" -gt 80 ] 
+		then
+			_icon="$ICON_BATTERY_LEVEL3"
+		elif [ "$_percent" -gt 30 ]  
+		then
+			_icon="$ICON_BATTERY_LEVEL2"
+		else
+			_icon="$ICON_BATTERY_LEVEL1"
+		fi
+	;;
+	Unknown|Full)  
+		_icon="$ICON_BATTERY_DEFAULT";;
+		#battery_percent="100%";;
+	esac
+	echo "%{F$fg}%{B$bg} ${_icon} ${_percent} %{B-}%{F-}"
+}
+
+while true; do
+	echo "B$(_mybattery)"
+	sleep 5m;
+done
