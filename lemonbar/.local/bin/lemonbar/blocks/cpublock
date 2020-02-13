@@ -10,7 +10,7 @@ _cpu() {
 	CPU_USAGE="$(bc <<<"100 - $CPU_IDLE")"
 
 	# alternate colors
-	echo "%{F$bg}%{B$fg} $ICON_CPU $CPU_USAGE% %{B-}%{F-}"
+	echo "%{F$bg}%{B$fg} $ICON_CPU $CPU_USAGE %{B-}%{F-}"
 }
 
 while true; do
