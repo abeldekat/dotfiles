@@ -5,6 +5,7 @@
 ICON_CLOCK='\ue016'
 ICON_DATE='\ue01f'
 ICON_NETWORK='\ue04b'
+ICON_CPU='\ue026'
 
 # lambda
 #ICON_COLORS_SEPARATOR='\ue1ce'

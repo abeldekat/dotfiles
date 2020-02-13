@@ -1,0 +1,19 @@
+#!/bin/bash
+
+. panel_colors
+. siji-icons
+
+_cpu() {
+	local fg=$COLOR_SYS_FG
+	local bg=$COLOR_SYS_BG
+	CPU_IDLE="$(mpstat | grep -Po 'all.* \K[^ ]+$')"
+	CPU_USAGE="$(bc <<<"100 - $CPU_IDLE")"
+
+	# alternate colors
+	echo "%{F$bg}%{B$fg} $ICON_CPU $CPU_USAGE% %{B-}%{F-}"
+}
+
+while true; do
+	echo "U$(_cpu)"
+	sleep 10s
+done
