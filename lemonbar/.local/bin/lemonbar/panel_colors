@@ -9,6 +9,9 @@ COLOR_DEFAULT_FG="$color15"
 COLOR_DEFAULT_BG="$background"
 COLOR_DEFAULT_UL="$background"
 
-# sys and title section
+# "right section" 
 COLOR_SYS_FG="$color11"
 COLOR_SYS_BG="$background"
+
+COLOR_DATE_FG="$COLOR_SYS_FG"
+COLOR_DATE_BG="$COLOR_SYS_BG"

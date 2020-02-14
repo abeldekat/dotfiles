@@ -3,8 +3,9 @@
 . panel_colors
 . siji-icons 
 
+# Days as two letter words...
 _date() {
-  echo -n $(date "+%a %d")
+	echo -n "$(echo $(date "+%a %d") | sed 's/^\(..\).\(.*\)/\1\2/')"
 }
 
 _time() {
@@ -12,14 +13,9 @@ _time() {
 }
 
 _myclock() {
-	local fg=$COLOR_SYS_FG
-	local bg=$COLOR_SYS_BG
-	local c="%{F$fg}%{B$bg} $ICON_CLOCK $(_time) %{B-}%{F-}"
-
-	#alternate colors
-	local d="%{F$bg}%{B$fg} $ICON_DATE $(_date) %{B-}%{F-}"
-
-	echo "$d$c"
+	local fg=$COLOR_DATE_FG
+	local bg=$COLOR_DATE_BG
+	echo "%{F$bg}%{B$fg} $ICON_DATE $(_date) $ICON_CLOCK $(_time) %{B-}%{F-}"
 }
 
 while true ; do 

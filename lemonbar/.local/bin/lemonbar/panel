@@ -30,16 +30,16 @@ while read -r line; do
 		O*) #colors
 			col="${line#?}" ;;
 		A*) #just test something
-			atest=" ${line#?} " ;;
+			atest="${line#?}" ;;
 		U*) #cpu
-			cpu=" ${line#?} " ;;
+			cpu="${line#?}" ;;
 		B*) #battery
-			bat=" ${line#?} " ;;
+			bat="${line#?}" ;;
 
 	esac
 	lblock="${wm}${atest}"
 	cblock="${title}${col}"
-	rblock="${bat}${cpu}${net}${datetime}"
+	rblock="${bat} ${cpu} ${net} ${datetime}"
 	echo -e "%{l}${lblock}%{c}${cblock}%{r}${rblock}"
 done < "$PANEL_FIFO" \
 	| lemonbar \
