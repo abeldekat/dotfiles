@@ -4,6 +4,8 @@
 
 COLOR_DEFAULT_FG="$color15"
 COLOR_DEFAULT_BG="$background"
+COLOR_DEFAULT_UL="$background"
+
 #COLOR_DEFAULT_BG="$background_transparent"
 
 # sys and title section

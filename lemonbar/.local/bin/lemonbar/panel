@@ -1,10 +1,20 @@
 #! /bin/bash
 
-PANEL_HEIGHT=24
-PANEL_FONT="-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1"
-PANEL_FONT_1="-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1"
+BAR_HEIGHT=20
+BAR_OFFSET_X=120
+BAR_OFFSET_Y=4
+BAR_UNDERLINE_WIDTH=2
+
+#BAR_FONT="-*-profont-medium-*-*-*-12-*-*-*-*-*-*-*"
+BAR_FONT="-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1"
+BAR_FONT_ICON="-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1"
+
 PANEL_WM_NAME=bspwm_panel
 PANEL_BLOCKS=$(dirname $0)/blocks
+
+# read display resolution
+read BAR_WIDTH <<< $(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $3}')
+BAR_WIDTH="$(bc <<<"$BAR_WIDTH - ( 2 * $BAR_OFFSET_X )" )"
 
 if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
 	printf "%s\n" "The panel is already running." >&2
@@ -41,17 +51,21 @@ while read -r line; do
 			bat=" ${line#?} " ;;
 
 	esac
-	echo -e "%{l}${wm}${atest}%{c}${title}${col}%{r}${bat}${cpu}${net}${datetime}"
+	lblock="${wm}${atest}"
+	cblock="${title}${col}"
+	rblock="${bat}${cpu}${net}${datetime}"
+	echo -e "%{l}${lblock}%{c}${cblock}%{r}${rblock}"
 done < "$PANEL_FIFO" \
 	| lemonbar \
-	-a 32 \
-	-u 2 \
-	-n "$PANEL_WM_NAME" \
-	-g x$PANEL_HEIGHT \
-	-f "$PANEL_FONT" \
-	-f "$PANEL_FONT_1" \
+	-g ""$BAR_WIDTH"x"$BAR_HEIGHT"+"$BAR_OFFSET_X"+"$BAR_OFFSET_Y"" \
 	-F "$COLOR_DEFAULT_FG" \
 	-B "$COLOR_DEFAULT_BG" \
+	-U "$COLOR_DEFAULT_UL" \
+	-f "$BAR_FONT" \
+	-f "$BAR_FONT_ICON" \
+	-u $BAR_UNDERLINE_WIDTH \
+	-n "$PANEL_WM_NAME" \
+#	-p
 	| sh &
 
 wid=$(xdo id -m -a "$PANEL_WM_NAME")
