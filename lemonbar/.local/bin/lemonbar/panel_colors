@@ -2,11 +2,12 @@
 
 . $(colors-get-base16)
 
+if [ -n "$BAR_TRANSPARANCY" ] ; then
+	background="#$BAR_TRANSPARANCY${background#?}"
+fi
 COLOR_DEFAULT_FG="$color15"
 COLOR_DEFAULT_BG="$background"
 COLOR_DEFAULT_UL="$background"
-
-#COLOR_DEFAULT_BG="$background_transparent"
 
 # sys and title section
 COLOR_SYS_FG="$color11"

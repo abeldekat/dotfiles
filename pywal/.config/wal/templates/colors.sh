@@ -4,8 +4,6 @@ wallpaper='{wallpaper}'
 
 # Special
 background='{background}'
-# Lemonbar rgba does not work
-background_transparent='#90{background.strip}'
 foreground='{foreground}'
 cursor='{cursor}'
 
