@@ -1,7 +1,7 @@
 ##############
 # By the author of bspwm, used in lemonbar
-xtitle-git
-sutils-git
+# todo rm xtitle-git
+# todo rm sutils-git
 #
 ##############
 # Bar example from bspwm uses xtitle and sutils 
@@ -21,4 +21,4 @@ sc-im
 #
 ##############
 #  polybar
-polybar
+# todo rm polybar

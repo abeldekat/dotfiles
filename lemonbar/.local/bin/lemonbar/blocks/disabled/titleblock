@@ -19,6 +19,9 @@ mytitle(){
 }
 
 while read -r line ; do 
-	echo "T$(mytitle)"
-done < <(xtitle -sf '%s\n')
+#	echo "T$(mytitle)"
+echo "TDummy"
+sleep 30m
+done
+#done < <(xtitle -sf '%s\n')
 
