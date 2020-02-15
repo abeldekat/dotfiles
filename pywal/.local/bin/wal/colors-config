@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Themes
-MY_COLORS="$HOME/.local/share/my_colors"
