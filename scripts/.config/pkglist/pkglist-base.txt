@@ -71,7 +71,7 @@ tree
 zsh
 zsh-doc
 fzf
-archey3
+# todo rm archey3
 # todo zsh-lovers
 #
 #########################
@@ -100,6 +100,6 @@ poppler
 python-chardet
 w3m
 #
-# TIJDELIJK
+# Lemonbar scripts:
 sysstat
 bc

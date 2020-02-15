@@ -24,8 +24,10 @@ Postinstallation
 2 script: reflector.sh
 3 script: cleanroot.sh, exit. Login as new user, fetch dotfiles
 5 script: yay.sh
-6 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare and stow
-7 script: .local/bin/arch. Run neededpackages. Stay with bash, zsh needs startx 
-8 script: .local/bin/arch. Run neededaurpackages.
-9 script: laptopspecific.sh or desktopspecific.sh
-10 script: tozsh.sh. Exit, done
+6a script: .local/bin/arch. Run neededaurpackages.
+6b script: .local/bin/arch. Run neededaurpackages.
+6c script: .local/bin/arch. Run pkglist-git.sh.
+8 script: laptopspecific.sh or desktopspecific.sh
+9 script: tozsh.sh.
+10 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare and stow
+11 reboot done
