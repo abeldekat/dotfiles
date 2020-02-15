@@ -31,3 +31,11 @@ Postinstallation
 8 script: tozsh.sh.
 9 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare and stow
 10 reboot done
+
+
+Temp, problems on desktop
+Install without the list.
+xorg xorg-xinit bspwm sxhkd xdo
+startx
+video ati
+de boosdoener: mesa. Downgrade mbv aangepaste mirrorlist, datum 10 februari. 19.3.4.1 -> 19.3.3.1

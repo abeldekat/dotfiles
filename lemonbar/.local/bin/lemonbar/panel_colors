@@ -2,9 +2,11 @@
 
 . $(colors-get-base16)
 
+BAR_TRANSPARANCY=90
 if [ -n "$BAR_TRANSPARANCY" ] ; then
 	background="#$BAR_TRANSPARANCY${background#?}"
 fi
+
 COLOR_DEFAULT_FG="$color15"
 COLOR_DEFAULT_BG="$background"
 COLOR_DEFAULT_UL="$background"
