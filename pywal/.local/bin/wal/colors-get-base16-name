@@ -1,7 +1,5 @@
 #! /bin/bash
 
-. colors-config
-
 _namedefault="undefined" 
 _file="$MY_COLORS/active-theme"
 _name=""

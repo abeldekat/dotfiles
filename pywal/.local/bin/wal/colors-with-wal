@@ -18,8 +18,6 @@
 #tomorrow
 #twilight
 
-. colors-config
-
 termpath=~/.config/termite
 walpath=~/.cache/wal
 mycolorspath="$MY_COLORS"
@@ -62,6 +60,11 @@ _reloadbspwm(){
 
 	echo "reload bspwm"
 	~/.config/bspwm/bspwmrc
+}
+
+_cpcolors(){
+	echo "cp colors.sh"
+	cp $walpath/colors.sh $mycolorspath
 }
 
 _mergetermite(){
@@ -110,6 +113,7 @@ _go(){
 	mytheme=$(_gettheme)
 
 	_generate
+	_cpcolors
 	_mergetermite
 	_mergexresources
 	_marktheme

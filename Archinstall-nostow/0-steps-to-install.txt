@@ -23,6 +23,7 @@ Postinstallation
 1 script:user.sh, vim.sh. Adjust visudo /etc/sudoers. 
 2 script: reflector.sh
 3 script: cleanroot.sh, exit. Login as new user, fetch dotfiles
+4 stow scripts
 5 script: yay.sh
 6a script: .local/bin/arch. Run neededaurpackages.
 6b script: .local/bin/arch. Run neededaurpackages.

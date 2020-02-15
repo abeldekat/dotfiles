@@ -16,6 +16,9 @@ export LARBSWM="$(cat ~/.local/share/larbs/wm 2>/dev/null)" &&
 # Advised
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
+# Themes
+export MY_COLORS="$HOME/.local/share/my_colors"
+
 # ZSH zdotdir is defined in .zshenv
 export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/zsh_framework.zsh"
 # uncomment for zsh without plugins
