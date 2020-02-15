@@ -23,12 +23,11 @@ Postinstallation
 1 script:user.sh, vim.sh. Adjust visudo /etc/sudoers. 
 2 script: reflector.sh
 3 script: cleanroot.sh, exit. Login as new user, fetch dotfiles
-4 stow scripts
+4 in dotfiles, stow scripts
 5 script: yay.sh
 6a script: .local/bin/arch. Run neededaurpackages.
 6b script: .local/bin/arch. Run neededaurpackages.
-6c script: .local/bin/arch. Run pkglist-git.sh.
-8 script: laptopspecific.sh or desktopspecific.sh
-9 script: tozsh.sh.
-10 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare and stow
-11 reboot done
+7 script: laptopspecific.sh or desktopspecific.sh
+8 script: tozsh.sh.
+9 script: In dotfiles/scripts/.local/bin/dots. Run dotsinstall prepare and stow
+10 reboot done
