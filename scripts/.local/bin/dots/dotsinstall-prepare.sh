@@ -40,6 +40,4 @@ cp -r "$MY_DEFAULTS/termite/"* "$MY_TERMITE"
 
 # Test stow
 echo "Simulating stow with all lowercase packages..."
-cd $DOTFILES
-stow -t $HOME -vnS `ls --ignore='[A-Z]*'`
-cd -
+stow -t $HOME -d $DOTFILES -vnS `ls $DOTFILES --ignore='[A-Z]*'`
