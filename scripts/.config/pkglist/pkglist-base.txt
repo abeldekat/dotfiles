@@ -83,6 +83,9 @@ zathura-pdf-mupdf
 gvim
 lxappearance-gtk3
 libreoffice-fresh
+#
+# Calibre python 2
+calibre
 # 
 #########################
 # ranger and deps

@@ -13,7 +13,9 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 
-for block in $PANEL_BLOCKS/*block ; do
+extrablocks="desktop"
+[ -d /sys/class/power_supply/BAT1 ] && extrablocks="laptop" 
+for block in $PANEL_BLOCKS/*block $PANEL_BLOCKS/$extrablocks/*block ; do
 	$block > $PANEL_FIFO &
 done
 
