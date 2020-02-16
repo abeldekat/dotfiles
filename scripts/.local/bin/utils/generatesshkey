@@ -1,0 +1,3 @@
+#!/bin/bash
+# Github valid key generation
+ssh-keygen -t rsa -b 4096 -C "abeldekat-desktop"
