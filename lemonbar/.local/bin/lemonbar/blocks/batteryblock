@@ -32,7 +32,7 @@ _mybattery() {
 }
 
 while true; do
-	if [ -f /sys/class/power_supply ] ; then 
+	if [ -d /sys/class/power_supply ] ; then 
 		echo "B$(_mybattery)"
 		sleep 5m
 	else
