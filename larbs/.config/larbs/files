@@ -8,6 +8,6 @@ cfk	~/.config/sxhkd/sxhkdrc
 cfb	~/.config/bspwm/bspwmrc
 cfwl	~/.config/wal/lightthemes.csv
 cfwd	~/.config/wal/darkthemes.csv
-cfpb	~/.config/pkg/pkglist-base.txt
-cfpa	~/.config/pkg/pkglist-aur.txt
+cfpb	~/.config/pkglist/pkglist-base.txt
+cfpa	~/.config/pkglist/pkglist-aur.txt
 lbg	~/.local/bin/arch/pkglist-git.sh

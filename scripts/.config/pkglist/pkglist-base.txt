@@ -84,9 +84,12 @@ gvim
 lxappearance-gtk3
 libreoffice-fresh
 #
-# Calibre python 2
+# Calibre python 2 qt
 calibre
 # 
+# qt
+keepassxc
+#
 #########################
 # ranger and deps
 ranger
