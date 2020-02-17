@@ -4,34 +4,28 @@ scriptencoding utf-8
 
 " Vim essential {{{1
 set nocompatible
+set nofoldenable
 filetype plugin on
 
 " Plugins Minpac {{{1
 packadd minpac
-call minpac#init({'verbose': 2})
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-"General enhancements {{{2
+if !exists('*minpac#init')
+    ! git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+    packadd minpac
+    autocmd VimEnter * PackUpdate
+endif
+call minpac#init({'verbose': 3})
 call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-repeat')
-call minpac#add('ap/vim-css-color')
-"call minpac#add('tpope/vim-unimpaired')
-"call minpac#add('tpope/vim-surround')
-"call minpac#add('tpope/vim-commentary')
-"call minpac#add('tpope/vim-projectionist')
-"call minpac#add('tpope/vim-dispatch')
+call minpac#add('tpope/vim-surround')
 call minpac#add('junegunn/fzf.vim')
-"call minpac#add('vim-airline/vim-airline')
-"call minpac#add('dense-analysis/ale')
-"call minpac#add('scrooloose/nerdtree')
-"call minpac#add('vim-syntastic/syntastic')
-"Custom textobjects {{{2
-"call minpac#add('kana/vim-textobj-user')
-"call minpac#add('kana/vim-textobj-entire')
-" For Vimscript {{{2
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+call minpac#add('kana/vim-textobj-user')
+call minpac#add('kana/vim-textobj-entire')
+
 call minpac#add('tpope/vim-scriptease')
-" Colorschemes {{{2
-"call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
-"call minpac#add('morhetz/gruvbox', {'type': 'opt'})
 " Useful commands {{{2
 command! PackUpdate source $MYVIMRC | call minpac#update()
 command! PackClean  source $MYVIMRC | call minpac#clean()
@@ -61,11 +55,7 @@ set wildmode=full
 if has('termguicolors')
 "	set termguicolors
 endif
-"set background=light
 "colorscheme elflord 
-"silent! colorscheme blue "solarized8_light
-" _high _low _flat
-"colorscheme solarized8_high
 
 " Define a group for autocommands  {{{1
 augroup vimrc
@@ -74,39 +64,24 @@ augroup END
 
 " Plugin configuration {{{1
 " netrw.vim TODO {{{2
-" Solarized8 TODO {{{2
-nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
-      \ ? substitute(g:colors_name, 'dark', 'light', '')
-      \ : substitute(g:colors_name, 'light', 'dark', '')
-      \ )<cr>
-
-function! Solarized8Contrast(delta)
-  let l:schemes = map(['_low', '_flat', '', '_high'], '"solarized8_".(&background).v:val')
-  exe 'colors' l:schemes[((a:delta+index(l:schemes, g:colors_name)) % 4 + 4) % 4]
-endfunction
-
-nmap <leader>- :<c-u>call Solarized8Contrast(-v:count1)<cr>
-nmap <leader>+ :<c-u>call Solarized8Contrast(+v:count1)<cr>
-" Ctlr-P TODO {{{2
-let g:ctrlp_jump_to_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'find %s -type f'
-
 " FZF {{{2
 nnoremap <C-p> :<C-u>FZF<CR>
-
 " Airline {{{2
 "let g:airline_powerline_fonts = 1
 
 " Mappings and commands {{{1
+
 " Override defaults {{{2
 nnoremap Q <Nop> 
 command! -nargs=0 -bang Qa qall!
 command! -nargs=0 -bang QA qall!
+
 " Fix the & command in normal+visual modes keep the flags of last search
 nnoremap & :&&<Enter>
 xnoremap & :&&<Enter>
+
 "TODO test gQ
+
 " mapleader {{{2
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -117,18 +92,34 @@ map <leader>es :sp %%
 map <leader>et :tabe %%
 " Prompt to open file with same name, different extension
 map <leader>er :e <C-R>=expand("%:r")."."<CR>
-" Faster escape
+
+" Faster escape {{{2
 inoremap jk <Esc>
 "force learning it
 inoremap <esc> <nop> 
+
 " TODO the comma
+
 " Windows {{{2
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 " TODO {{{1
 "find command: set path+=app/**
 "Ack, vim plugin also possible, grep is posix, ack is perl compliant
 "set grepprg=ack\ --nogroup\ --column\ $*
 "set grepformat=%f:%l:%c:%m
+"
+"call minpac#add('ap/vim-css-color')
+"call minpac#add('tpope/vim-unimpaired')
+"call minpac#add('tpope/vim-commentary')
+"call minpac#add('tpope/vim-projectionist')
+"call minpac#add('tpope/vim-dispatch')
+"call minpac#add('dense-analysis/ale')
+"call minpac#add('scrooloose/nerdtree')
+"call minpac#add('vim-syntastic/syntastic')
+"
+"call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
+"call minpac#add('morhetz/gruvbox', {'type': 'opt'})
