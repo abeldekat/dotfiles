@@ -2,7 +2,7 @@
 
 . $(colors-get-base16)
 
-BAR_TRANSPARANCY=95
+BAR_TRANSPARANCY=
 if [ -n "$BAR_TRANSPARANCY" ] ; then
 	background="#$BAR_TRANSPARANCY${background#?}"
 fi

@@ -19,13 +19,14 @@ call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-surround')
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('vim-airline/vim-airline')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('kana/vim-textobj-entire')
-
 call minpac#add('tpope/vim-scriptease')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('dylanaraps/wal.vim')
+
 " Useful commands {{{2
 command! PackUpdate source $MYVIMRC | call minpac#update()
 command! PackClean  source $MYVIMRC | call minpac#clean()
@@ -55,7 +56,7 @@ set wildmode=full
 if has('termguicolors')
 "	set termguicolors
 endif
-"colorscheme elflord 
+colorscheme wal 
 
 " Define a group for autocommands  {{{1
 augroup vimrc
