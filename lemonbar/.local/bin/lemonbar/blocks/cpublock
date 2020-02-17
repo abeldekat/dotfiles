@@ -4,13 +4,12 @@
 . siji-icons
 
 _cpu() {
-	local fg=$COLOR_SYS_FG
-	local bg=$COLOR_SYS_BG
+	local fg=$COLOR_CPU_FG
+	local bg=$COLOR_CPU_BG
 	CPU_IDLE="$(mpstat | grep -Po 'all.* \K[^ ]+$')"
 	CPU_USAGE="$(bc <<<"100 - $CPU_IDLE")"
 
-	# alternate colors
-	echo "%{F$bg}%{B$fg} $ICON_CPU $CPU_USAGE %{B-}%{F-}"
+	echo "%{F$fg}%{B$bg} $ICON_CPU $CPU_USAGE %{B-}%{F-}"
 }
 
 while true; do

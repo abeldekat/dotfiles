@@ -4,8 +4,8 @@
 . siji-icons 
 
 _mybattery() {
-	local fg=$COLOR_SYS_FG 
-	local bg=$COLOR_SYS_BG
+	local fg=$COLOR_BAT_FG 
+	local bg=$COLOR_BAT_BG
 	local battery_status=$(cat /sys/class/power_supply/BAT1/status)
 	local _percent=$(cat /sys/class/power_supply/BAT1/capacity)
 	local _icon

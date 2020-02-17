@@ -5,8 +5,8 @@
 
 
 mynetwork(){
-	local fg=$COLOR_SYS_FG
-	local bg=$COLOR_SYS_BG
+	local fg=$COLOR_NET_FG
+	local bg=$COLOR_NET_BG
 	local id=$(iwgetid -r)
 	[ -z "$id" ] && id="offline"
 
