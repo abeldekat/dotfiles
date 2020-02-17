@@ -24,7 +24,10 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('kana/vim-textobj-entire')
 call minpac#add('tpope/vim-scriptease')
+
 call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+"call minpac#add('itchyny/lightline.vim')
 call minpac#add('dylanaraps/wal.vim')
 
 " Useful commands {{{2
@@ -65,10 +68,15 @@ augroup END
 
 " Plugin configuration {{{1
 " netrw.vim TODO {{{2
+
 " FZF {{{2
 nnoremap <C-p> :<C-u>FZF<CR>
+
 " Airline {{{2
 "let g:airline_powerline_fonts = 1
+let g:airline_statusline_ontop=0
+let g:airline#extensions#tabline#enabled = 1
+
 
 " Mappings and commands {{{1
 
