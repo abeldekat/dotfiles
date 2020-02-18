@@ -1,0 +1,20 @@
+#!/bin/bash
+
+. panel_colors
+. siji-icons 
+
+
+mynetwork(){
+	local fg=$COLOR_NET_FG
+	local bg=$COLOR_NET_BG
+	local id=$(iwgetid -r)
+	[ -z "$id" ] && id="offline"
+
+	echo "%{F$fg}%{B$bg} ${ICON_NETWORK} ${id} %{B-}%{F-}"
+}
+
+while true; do
+#	echo "N$(mynetwork)"
+	echo "NTodo"
+	sleep 20;
+done
