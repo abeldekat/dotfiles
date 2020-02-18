@@ -1,7 +1,7 @@
 ##############
 # By the author of bspwm, used in lemonbar
-# todo rm xtitle-git
-# todo rm sutils-git
+# xtitle-git
+# sutils-git
 #
 ##############
 # Bar example from bspwm uses xtitle and sutils 
@@ -10,10 +10,12 @@ lemonbar-git
 # iconic bitmap font
 aur/siji-git
 #
+ranger-git
+python-ueberzug
+#
 ##############
 #  larbs
-# "provides unicode and emoji symbols."
-# TODO Error downloading sources ttf-symbola
+#
 gtk-theme-arc-gruvbox-git
 #
 # spreadsheet vim

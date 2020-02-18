@@ -92,20 +92,26 @@ keepassxc
 #
 #########################
 # ranger and deps
-ranger
+# todo, now from aur. v1.9.3 has ueberzug support
+#ranger
 atool
-elinks
-ffmpegthumbnailer
+file
 highlight
 libcaca
-lynx
 mediainfo
-odt2txt
-perl-image-exiftool
+#perl-image-exiftool
 poppler
-python-chardet
-w3m
+#python-bidi
+#python-chardet
+sudo
 #
 # Lemonbar scripts:
 sysstat
 bc
+# Larbs
+ffmpegthumbnailer
+lynx
+# Previous ranger:
+#w3m
+elinks
+odt2txt

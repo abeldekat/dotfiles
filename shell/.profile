@@ -36,7 +36,7 @@ export READER="zathura"
 export FILE="ranger"
 
 # Ranger loads both default and  custom rc
-#export RANGER_LOAD_DEFAULT_RC=false
+export RANGER_LOAD_DEFAULT_RC=false
 
 # ~/ Clean-up:
 #export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
