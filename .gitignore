@@ -4,4 +4,3 @@ vim/pack/
 test.*
 .zcompdump*
 pack
-termite/.config/termite/config
