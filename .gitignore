@@ -1,7 +1,1 @@
-*.swp
-vim/pack/
-.netrwhist
-test.*
 .zcompdump*
-pack
-termite/.config/termite/abc
