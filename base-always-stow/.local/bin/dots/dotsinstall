@@ -20,11 +20,12 @@ while getopts "hyD" o; do case "${o}" in
 	esac 
 done
 
-_nofolding=("vim" "termite")
+_nofolding=("vim" "termite" "base-colors-always-stow")
 _all="$(echo $(ls $DOTFILES --ignore='[A-Z]*') \
 	| sed \
 	-e 's/ '"${_nofolding[0]}"'//' \
 	-e 's/ '"${_nofolding[1]}"'//' \
+	-e 's/ '"${_nofolding[2]}"'//' \
 	)"
 cat <<EOF | xargs -t -L 1 stow -t "$HOME" -d "$DOTFILES" -v$_run$_operation
 ${_all}
