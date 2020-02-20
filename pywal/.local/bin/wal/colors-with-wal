@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # The purpose of this script is to make it easier to play with the 
 # colorschemes bundled with pywal.
@@ -69,9 +69,7 @@ _cpcolors(){
 
 _mergetermite(){
 	echo "merging termite config"
-	cat $walpath/colors.termite > /tmp/wall.out
-	cat $termpath/option >> /tmp/wall.out
-	mv /tmp/wall.out $termpath/config
+	cat $walpath/colors.termite $termpath/option > $termpath/config
 }
 
 _mergexresources(){
