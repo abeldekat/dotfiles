@@ -2,8 +2,6 @@
 # Script for easy stow on a clean arch system
 
 DOTFILES="$HOME/dotfiles"
-MY_DEFAULTS="$DOTFILES/Archinstall-nostow/defaults"
-MY_COLORS="$HOME/.local/share/my_colors"
 
 _operation="S"
 _run="n"
@@ -32,13 +30,3 @@ cat <<EOF | xargs -t -L 1 stow -t "$HOME" -d "$DOTFILES" -v$_run$_operation
 ${_all}
 ${_nofolding[*]} --no-folding
 EOF
-
-#${_options} ${_all}
-#${_options} ${_nofolding[*]} --no-folding 
-#if [ ! -d "$MY_COLORS" ] ; then
-#  echo "Adding $MY_COLORS ..."
-#  mkdir -p "$MY_COLORS"
-#fi
-#echo " adding defaults to $MY_COLORS ..."
-#cp -r "$MY_DEFAULTS/colors/"* "$MY_COLORS"
-

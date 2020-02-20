@@ -10,6 +10,7 @@ alias \
 	mv="mv -iv" \
 	rm="rm -v" \
 	mkd="mkdir -pv" \
+	tree="tree -a" \
 
 # Colorize commands when possible.
 alias \
