@@ -1,33 +1,64 @@
 #!/bin/bash
-# Script for easy stow on a clean arch system
 
-DOTFILES="$HOME/dotfiles"
-
+_dots="/home/chris/dotfiles"
+# Packages starting with this name are excluded
+_nostow=("nostow")
+# Packages starting with this name will only have their files linked
+_nofolding=("vim" "termite" "stow-always-colors")
+# Default is stow
 _operation="S"
+# Default is simulation
 _run="n"
+
 while getopts "hyD" o; do case "${o}" in
-	h) 
-		printf "No arguments: Do a simulation with -S operation\\n\
--y: No simulation, perform the supplied operation. Defaults to -S \\n\
--D: Unstow, removes the links\\n\
--h: Show this message \\n" && exit ;;
-	y) 
-		_run="" ;;
-	D) 
-		 _operation="D";;
-	*) 
-		printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
+	h) printf "No arguments: Do a simulation with -S operation\\n -y: No simulation, perform the supplied operation. Defaults to -S \\n -D: Unstow, removes the links\\n -h: Show this message \\n" && exit ;;
+	y) _run="" ;;
+	D) _operation="D";;
+	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 	esac 
 done
 
-_nofolding=("vim" "termite" "base-colors-always-stow")
-_all="$(echo $(ls $DOTFILES --ignore='[A-Z]*') \
-	| sed \
-	-e 's/ '"${_nofolding[0]}"'//' \
-	-e 's/ '"${_nofolding[1]}"'//' \
-	-e 's/ '"${_nofolding[2]}"'//' \
-	)"
-cat <<EOF | xargs -t -L 1 stow -t "$HOME" -d "$DOTFILES" -v$_run$_operation
-${_all}
+# a grep string with all unwanted folders connected by |
+_construct-grep-filter(){
+	local _tmp=""
+	for f in "${_nostow[@]}" "${_nofolding[@]}" ; do
+		_tmp="${_tmp}"'^'$f'\|'
+	done
+	echo "${_tmp::-2}"
+}
+# all directories, shell globbing, a line for each directory making an easy grep possible
+_all(){
+	printf "%s\n" "${_dots}/"*/
+}
+# remove the path
+_tobasename(){
+	xargs  -L 1 -I{} basename {} 
+}
+# filter unwanted folders
+_filter(){
+	grep -ve "\($(_construct-grep-filter)\)"
+}
+# put the line in single quotes
+_protect(){
+	sed -re "s/(.*)/'\1'/"
+}
+# shrink the lines back to one line
+_manytooneline(){
+	tr '\n' ' '
+}
+# Main for extracting dirnames
+_directories(){
+	_all \
+	| _tobasename \
+	| _filter \
+	| _protect \
+	| _manytooneline 
+}
+# Hand two lines over two xargs. Call stow twice
+_go(){
+	cat <<EOF | xargs -t -L 1 stow -t "$HOME" -d "${_dots}" -v$_run$_operation
 ${_nofolding[*]} --no-folding
+$(_directories)
 EOF
+}
+_go

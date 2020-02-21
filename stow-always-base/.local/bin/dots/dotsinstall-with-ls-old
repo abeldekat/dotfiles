@@ -1,0 +1,33 @@
+#!/bin/bash
+# Script for easy stow on a clean arch system
+
+DOTFILES="$HOME/dotfiles"
+
+_operation="S"
+_run="n"
+while getopts "hyD" o; do case "${o}" in
+	h) 
+		printf "No arguments: Do a simulation with -S operation\\n\
+-y: No simulation, perform the supplied operation. Defaults to -S \\n\
+-D: Unstow, removes the links\\n\
+-h: Show this message \\n" && exit ;;
+	y) 
+		_run="" ;;
+	D) 
+		 _operation="D";;
+	*) 
+		printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
+	esac 
+done
+
+_nofolding=("vim" "termite" "base-colors-always-stow")
+_all="$(echo $(ls $DOTFILES --ignore='[A-Z]*') \
+	| sed \
+	-e 's/ '"${_nofolding[0]}"'//' \
+	-e 's/ '"${_nofolding[1]}"'//' \
+	-e 's/ '"${_nofolding[2]}"'//' \
+	)"
+cat <<EOF | xargs -t -L 1 stow -t "$HOME" -d "$DOTFILES" -v$_run$_operation
+${_all}
+${_nofolding[*]} --no-folding
+EOF
