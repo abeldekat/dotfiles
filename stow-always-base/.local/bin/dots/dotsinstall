@@ -54,11 +54,9 @@ _directories(){
 	| _protect \
 	| _manytooneline 
 }
-# Hand two lines over two xargs. Call stow twice
+# Hand two lines over two xargs. Calls stow twice
 _go(){
-	cat <<EOF | xargs -t -L 1 stow -t "$HOME" -d "${_dots}" -v$_run$_operation
-${_nofolding[*]} --no-folding
-$(_directories)
-EOF
+	 xargs -t -L 1 stow -t "$HOME" -d "${_dots}" -v$_run$_operation \
+	 < <(echo ${_nofolding[*]} --no-folding; _directories)
 }
 _go
