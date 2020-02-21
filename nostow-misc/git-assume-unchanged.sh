@@ -7,4 +7,4 @@
 
 git update-index --assume-unchanged ../termite/.config/termite/config 
 
-git update-index --assume-unchanged $(git ls-files ../base-colors-always-stow | tr '\n' ' ')
+git update-index --assume-unchanged $(git ls-files ../stow-always-colors | tr '\n' ' ')
