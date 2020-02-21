@@ -3,7 +3,7 @@
 _dots="/home/chris/dotfiles"
 # Packages starting with this name are excluded
 _nostow=("nostow")
-# Packages starting with this name will only have their files linked
+# Packages with this exact name will only have their files linked
 _nofolding=("vim" "termite" "stow-always-colors")
 # Default is stow
 _operation="S"
@@ -22,9 +22,9 @@ done
 _construct-grep-filter(){
 	local _tmp=""
 	for f in "${_nostow[@]}" "${_nofolding[@]}" ; do
-		_tmp="${_tmp}"'^'$f'\|'
+		_tmp="${_tmp}^$f|"
 	done
-	echo "${_tmp::-2}"
+	echo "${_tmp::-1}"
 }
 # all directories, shell globbing, a line for each directory making an easy grep possible
 _all(){
@@ -36,7 +36,7 @@ _tobasename(){
 }
 # filter unwanted folders
 _filter(){
-	grep -ve "\($(_construct-grep-filter)\)"
+	grep -vE "($(_construct-grep-filter))"
 }
 # put the line in single quotes
 _protect(){
