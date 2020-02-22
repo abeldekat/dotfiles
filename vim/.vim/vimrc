@@ -6,7 +6,7 @@ scriptencoding utf-8
 set nocompatible
 filetype plugin on
 
-source ./packages.vim
+source ~/.vim/packages.vim
 
 " Personal preferences not set by sensible.vim  {{{1 
 let mapleader=','
@@ -22,7 +22,7 @@ set noswapfile
 if has('mouse') " the * register in a terminal?
   set mouse=nv
 endif
-set foldcolumn=3
+"set foldcolumn=3
 set hidden
 set clipboard^=unnamed,unnamedplus
 " set listchars=tab:▸\ ,eol:¬
@@ -32,7 +32,7 @@ set wildmode=full
 " Colorscheme {{{1
 set termguicolors
 "set background=light
-silent! colorscheme wal 
+"silent! colorscheme wal 
 
 " Define a group for autocommands  {{{1
 augroup vimrc
