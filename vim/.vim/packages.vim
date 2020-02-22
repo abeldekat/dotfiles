@@ -1,10 +1,18 @@
-" Plugins Minpac {{{1
-if !filereadable(expand('/home/chris/.vim/pack/minpac/opt/minpac/README.md'))
+
+if !filereadable(expand('~/.vim/pack/minpac/opt/minpac/README.md'))
     silent !git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
     autocmd VimEnter * PackUpdate
 endif
 
-packadd minpac
+command! PackUpdate packadd minpac | source $MYVIMRC | redraw | call minpac#update()
+command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+
+" packadd is in the command.
+if !exists('*minpac#init')
+  finish
+endif
+
 call minpac#init({'verbose': 3})
 call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-repeat')

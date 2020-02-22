@@ -1,12 +1,12 @@
 " vim: nowrap fdm=marker
-" test ssh
+
 scriptencoding utf-8
 
 " Vim essential {{{1
 set nocompatible
 filetype plugin on
 
-source packages.vim
+source ./packages.vim
 
 " Personal preferences not set by sensible.vim  {{{1 
 let mapleader=','
@@ -30,10 +30,9 @@ set clipboard^=unnamed,unnamedplus
 set wildmode=full
 
 " Colorscheme {{{1
-if has('termguicolors')
-"	set termguicolors
-endif
-"colorscheme wal 
+set termguicolors
+"set background=light
+silent! colorscheme wal 
 
 " Define a group for autocommands  {{{1
 augroup vimrc
@@ -50,7 +49,6 @@ nnoremap <C-p> :<C-u>FZF<CR>
 let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
 let g:airline#extensions#tabline#enabled = 1
-
 
 " Mappings and commands {{{1
 
