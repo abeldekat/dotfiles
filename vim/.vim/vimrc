@@ -35,7 +35,7 @@ augroup vimrc
 augroup END
 
 " Colorscheme {{{1
-set termguicolors
+"set termguicolors
 "set background=light
 silent! colorscheme wal 
 
