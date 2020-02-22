@@ -8,21 +8,20 @@ set nofoldenable
 filetype plugin on
 
 " Plugins Minpac {{{1
-packadd minpac
-if !exists('*minpac#init')
-    ! git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-    packadd minpac
+if !filereadable(expand('/home/chris/.vim/pack/minpac/opt/minpac/README.md'))
+    silent !git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
     autocmd VimEnter * PackUpdate
 endif
+packadd minpac
 call minpac#init({'verbose': 3})
 call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-surround')
+call minpac#add('kana/vim-textobj-user')
+call minpac#add('kana/vim-textobj-entire')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-call minpac#add('kana/vim-textobj-user')
-call minpac#add('kana/vim-textobj-entire')
 call minpac#add('tpope/vim-scriptease')
 
 call minpac#add('vim-airline/vim-airline')
