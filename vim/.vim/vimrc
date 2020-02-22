@@ -59,7 +59,7 @@ set wildmode=full
 if has('termguicolors')
 "	set termguicolors
 endif
-colorscheme wal 
+"colorscheme wal 
 
 " Define a group for autocommands  {{{1
 augroup vimrc
@@ -73,7 +73,7 @@ augroup END
 nnoremap <C-p> :<C-u>FZF<CR>
 
 " Airline {{{2
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
 let g:airline#extensions#tabline#enabled = 1
 
