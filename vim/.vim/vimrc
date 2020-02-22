@@ -29,15 +29,15 @@ set clipboard^=unnamed,unnamedplus
 " set ruler, already done by powerline
 set wildmode=full
 
-" Colorscheme {{{1
-set termguicolors
-"set background=light
-"silent! colorscheme wal 
-
 " Define a group for autocommands  {{{1
 augroup vimrc
   autocmd!
 augroup END
+
+" Colorscheme {{{1
+set termguicolors
+"set background=light
+silent! colorscheme wal 
 
 " Plugin configuration {{{1
 " netrw.vim TODO {{{2
@@ -46,6 +46,7 @@ augroup END
 nnoremap <C-p> :<C-u>FZF<CR>
 
 " Airline {{{2
+let g:airline_theme='base16-colors'
 let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
 let g:airline#extensions#tabline#enabled = 1
