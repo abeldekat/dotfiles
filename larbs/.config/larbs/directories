@@ -1,14 +1,16 @@
-# You can add comments to these files with #
-h	~/
+# You can add comments to these files with # h	~/
 d	~/dotfiles
-ddd	~/cdotfiles
+c	~/cdotfiles
 D	~/Downloads
 m	~/Music
 pp	~/Pictures
 vv	~/Videos
 cf	~/.config
+cg	~/.config/zgen
+cz	~/.config/zsh
 sc	~/.local/bin
-scl	~/.local/bin/lemonbar
-scb	~/.local/bin/lemonbar/blocks
-scw	~/.local/bin/wal
+sd	~/.local/bin/dots
+sl	~/.local/bin/lemonbar
+sb	~/.local/bin/lemonbar/blocks
+sw	~/.local/bin/wal
 mn	/mnt
