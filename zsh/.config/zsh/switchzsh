@@ -1,0 +1,4 @@
+#!/bin/bash
+
+[[ $1 -eq 1 ]] && cp ./.zshrczgen ./.zshrc
+[[ $1 -eq 2 ]] && cp ./.zshrcomy ./.zshrc
