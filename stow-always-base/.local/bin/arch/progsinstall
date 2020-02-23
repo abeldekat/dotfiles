@@ -1,0 +1,25 @@
+#!/bin/bash
+
+_progs="$HOME/.config/pkglist/progs.csv"
+_operation="S"
+_run="n"
+
+while getopts "hyD" o; do case "${o}" in
+	h) printf "TODO No arguments: Do a simulation with -S operation\\n -y: No simulation, perform the supplied operation. Defaults to -S \\n -D: Unstow, removes the links\\n -h: Show this message \\n" && exit ;;
+	y) _run="" ;;
+	D) _operation="D";;
+	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
+	esac 
+done
+
+_all(){
+	cat "${_progs}"
+}
+_filter(){
+	cat
+}
+_pipeline(){
+	_all \
+	| _filter \
+}
+_pipeline
