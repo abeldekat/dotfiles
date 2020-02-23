@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_dots="/home/chris/dotfiles"
+_dots="$HOME/dotfiles"
 # Packages starting with this name are excluded
 _nostow=("nostow")
 # Packages with this exact name will only have their files linked
