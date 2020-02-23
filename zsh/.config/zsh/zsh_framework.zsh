@@ -11,29 +11,24 @@ if [[ ! -f $ZGEN_DIR/zgen.zsh ]]; then
   popd
 fi
 
-# zsh autosuggestions
-# default color 8 from 256 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-ZSH_AUTOSUGGEST_USE_ASYNC="y"
-
 source $ZGEN_DIR/zgen.zsh
+
 #ZGEN_RESET_ON_CHANGE=($ZDOTDIR/zsh_framework.zsh)
 if ! zgen saved; then
 	zgen oh-my-zsh
 	zgen oh-my-zsh plugins/git
 	zgen oh-my-zsh plugins/colored-man-pages
-	zgen oh-my-zsh plugins/vi-mode
-	zgen oh-my-zsh themes/robbyrussell
+	#zgen oh-my-zsh plugins/vi-mode
+	#zgen oh-my-zsh themes/robbyrussell
 
-	#zgen load zsh-users/zsh-autosuggestions
 	zgen load zsh-users/zsh-completions src
 
 	zgen load /usr/share/fzf/key-bindings.zsh
 	zgen load /usr/share/fzf/completion.zsh
-
+	zgen load romkatv/powerlevel10k powerlevel10k
 	zgen load zsh-users/zsh-syntax-highlighting 
+	
 	#zgen load zsh-users/zsh-history-substring-search 
+	
 	zgen save
 fi
-
-bindkey '^y' autosuggest-accept
