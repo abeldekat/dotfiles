@@ -8,6 +8,7 @@ vv	~/Videos
 cf	~/.config
 ca	~/.config/pkglist
 cg	~/.config/zgen
+cw	~/.config/wal
 cz	~/.config/zsh
 sc	~/.local/bin
 sa	~/.local/bin/arch
