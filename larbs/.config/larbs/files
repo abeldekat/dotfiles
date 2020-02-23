@@ -2,6 +2,8 @@ bf	~/.config/larbs/files
 bd	~/.config/larbs/directories
 bw	~/.config/bookmarks
 cfa	~/.config/aliasrc
+cfab	~/.config/pkglist/pkglist-base.txt
+cfaa	~/.config/pkglist/pkglist-aur.txt
 cff	$ZDOTDIR/zsh_framework.zsh
 cfz	$ZDOTDIR/.zshrc
 cfv	~/.vim/vimrc
@@ -9,9 +11,8 @@ cfk	~/.config/sxhkd/sxhkdrc
 cfb	~/.config/bspwm/bspwmrc
 cfwl	~/.config/wal/lightthemes.csv
 cfwd	~/.config/wal/darkthemes.csv
-cfpb	~/.config/pkglist/pkglist-base.txt
-cfpa	~/.config/pkglist/pkglist-aur.txt
-lbg	~/.local/bin/arch/pkglist-git.sh
-scl	~/.local/bin/lemonbar/panel
+sca	~/.local/bin/arch/progsinstall
+scpp	~/.local/bin/lemonbar/panel
 scw	~/.local/bin/wal/colors-with-wal
-scs	~/.local/bin/dots/dotsinstall
+scd	~/.local/bin/dots/dotsinstall
+lbg	~/.local/bin/arch/pkglist-git.sh

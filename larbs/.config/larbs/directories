@@ -6,11 +6,14 @@ m	~/Music
 pp	~/Pictures
 vv	~/Videos
 cf	~/.config
+ca	~/.config/pkglist
 cg	~/.config/zgen
 cz	~/.config/zsh
 sc	~/.local/bin
+sa	~/.local/bin/arch
 sd	~/.local/bin/dots
 sl	~/.local/bin/lemonbar
 sb	~/.local/bin/lemonbar/blocks
 sw	~/.local/bin/wal
+le	~/.local/share
 mn	/mnt
