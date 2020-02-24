@@ -4,9 +4,11 @@
 
 # Inspired by larbs, a list with programs containing source name and a description
 _progs="$HOME/.config/pkglist/progs.csv"
-# All programs considered marked as installable. A is aur, G is git, "," is base
-_grepseq='^[ACG]*,'
-# The pipes containing packagen names per source
+# A is aur, G is git, "," is base
+# Not installable: D deleted. T todo. H on hold, maybe later. R redundant with reason
+# All programs considered marked as installable: 
+_grepseq='^[AG]*,'
+# The pipes containing packagen name per source
 _pipes=("/tmp/PROGSINSTALL_BASE_FIFO" "/tmp/PROGSINSTALL_AUR_FIFO" "/tmp/PROGSINSTALL_GIT_FIFO")
 
 # todo
@@ -48,7 +50,7 @@ _fillpipes(){
 	_input \
 	| _write '^,' 0 \
 	| _write '^A,' 1 \
-	| _write '^C,' 2 \
+	| _write '^G,' 2 \
  	>/dev/null &
 }
 # larbs:pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
