@@ -1,25 +1,76 @@
 #!/bin/bash
 
+# Required: yay and git
+
+# Inspired by larbs, a list with programs containing source name and a description
 _progs="$HOME/.config/pkglist/progs.csv"
-_operation="S"
-_run="n"
+# All programs considered marked as installable. A is aur, G is git, "," is base
+_grepseq='^[ACG]*,'
+# The pipes containing packagen names per source
+_pipes=("/tmp/PROGSINSTALL_BASE_FIFO" "/tmp/PROGSINSTALL_AUR_FIFO" "/tmp/PROGSINSTALL_GIT_FIFO")
 
-while getopts "hyD" o; do case "${o}" in
-	h) printf "TODO No arguments: Do a simulation with -S operation\\n -y: No simulation, perform the supplied operation. Defaults to -S \\n -D: Unstow, removes the links\\n -h: Show this message \\n" && exit ;;
-	y) _run="" ;;
-	D) _operation="D";;
-	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
-	esac 
+# todo
+error() { clear; printf "ERROR:\\n%s\\n" "$1"; exit;}
+#todo
+gitmakeinstall() {
+	dir=$(mktemp -d)
+	dialog --title "LARBS Installation" --infobox "Installing \`$(basename "$1")\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 5 70
+	git clone --depth 1 "$1" "$dir" >/dev/null 2>&1
+	cd "$dir" || exit
+	make >/dev/null 2>&1
+	make install >/dev/null 2>&1
+	cd /tmp || return ;
+}
+# Make all named pipes from scratch
+_makepipes(){
+	for p in "${_pipes[@]}" ; do 
+		[ -e "${p}" ] && rm "${p}" 
+		mkfifo "${p}"
+	done
+}
+# Read the input, delete the header and filter rows that are installable
+_input(){
+	cat "${_progs}" \
+	| sed '/^#/d' \
+	| grep -E "${_grepseq}" 
+}
+# Extract the package name from the second column
+_packagename(){
+	sed -r 's/'"${_grepseq}"'(.*),(".*")$/\1/' 
+}
+# Write all programs for a source to the designated pipe
+_write(){
+	tee >(grep -E "${1}" | _packagename > "${_pipes[$2]}") 
+}
+# Makes the pipes, reads and processes the input
+_fillpipes(){
+	_makepipes
+	_input \
+	| _write '^,' 0 \
+	| _write '^A,' 1 \
+	| _write '^C,' 2 \
+ 	>/dev/null &
+}
+# larbs:pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
+# larbs:sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
+# me: yay -S --needed $(sed '/#/d' $HOME/.config/pkglist/pkglist-aur.txt)
+_install(){
+	cat "${_pipes[0]}" | xargs
+	cat "${_pipes[1]}" | xargs
+	cat "${_pipes[2]}"
+}
+# Install...
+_go(){
+	_install
+	echo "All done!"
+}
+
+_fillpipes
+while true; do
+	printf "\\n Install from base? [1=Yes e=Exit] ";read -r answer
+	case "$answer" in
+		1)	_go;break;;
+		[Ee]) 	break;;
+		*)	printf "\\n input is not an option\\n\\n";;
+	esac
 done
-
-_all(){
-	cat "${_progs}"
-}
-_filter(){
-	cat
-}
-_pipeline(){
-	_all \
-	| _filter \
-}
-_pipeline
