@@ -8,7 +8,7 @@ _progs="$HOME/.config/pkglist/progs.csv"
 # Not installable: D deleted. T todo. H on hold, maybe later. R redundant with reason
 # All programs considered marked as installable: 
 _grepseq='^[AG]*,'
-# The pipes containing packagen name per source
+# The pipes containing package names per source
 _pipes=("/tmp/PROGSINSTALL_BASE_FIFO" "/tmp/PROGSINSTALL_AUR_FIFO" "/tmp/PROGSINSTALL_GIT_FIFO")
 
 # todo

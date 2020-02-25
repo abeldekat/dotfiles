@@ -1,0 +1,52 @@
+
+Name            : base
+Version         : 2-2
+Description     : Minimal package set to define a basic Arch Linux installation
+Architecture    : any
+URL             : https://www.archlinux.org
+Licenses        : GPL
+Groups          : None
+Provides        : None
+Depends On      : filesystem  gcc-libs  glibc  bash  coreutils  file  findutils  gawk  grep  procps-ng  sed  tar  gettext  pciutils  psmisc  shadow  util-linux  bzip2  gzip  xz  licenses  pacman  systemd  systemd-sysvcompat  iputils  iproute2
+Optional Deps   : linux: bare metal support
+Required By     : None
+Optional For    : None
+Conflicts With  : None
+Replaces        : None
+Installed Size  : 0.00 B
+Packager        : Evangelos Foutras <evangelos@foutrelis.com>
+Build Date      : Wed 13 Nov 2019 05:21:49 PM CET
+Install Date    : Wed 15 Jan 2020 07:12:43 PM CET
+Install Reason  : Explicitly installed
+Install Script  : No
+Validated By    : Signature
+
+base: coreutils
+pacman -Qi base
+
+util-linux:
+
+Name            : util-linux
+Version         : 2.35.1-1
+Description     : Miscellaneous system utilities for Linux
+Architecture    : x86_64
+URL             : https://github.com/karelzak/util-linux
+Licenses        : GPL2
+Groups          : None
+Provides        : rfkill
+Depends On      : pam  shadow  coreutils  systemd-libs  libcap-ng  libutil-linux
+Optional Deps   : python: python bindings to libmount [installed]
+                  words: default dictionary for look
+Required By     : base  fakeroot  mkinitcpio  rasqal  systemd  zeromq
+Optional For    : None
+Conflicts With  : rfkill
+Replaces        : rfkill
+Installed Size  : 13.00 MiB
+Packager        : Christian Hesse <arch@eworm.de>
+Build Date      : Sat 01 Feb 2020 07:36:16 PM CET
+Install Date    : Tue 04 Feb 2020 08:49:27 PM CET
+Install Reason  : Installed as a dependency for another package
+Install Script  : No
+Validated By    : Signature
+
+error: group 'util-linux' was not found

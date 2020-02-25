@@ -2,9 +2,7 @@ bf	~/.config/larbs/files
 bd	~/.config/larbs/directories
 bw	~/.config/bookmarks
 cfa	~/.config/aliasrc
-cfab	~/.config/pkglist/pkglist-base.txt
-cfaa	~/.config/pkglist/pkglist-aur.txt
-cfap	~/.config/pkglist/progs.csv
+cfp	~/.config/pkglist/progs.csv
 cff	$ZDOTDIR/zsh_framework.zsh
 cfz	$ZDOTDIR/.zshrc
 cfv	~/.vim/vimrc

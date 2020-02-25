@@ -1,3 +1,0 @@
-#!/bin/sh
-
-yay -S --needed $(sed '/#/d' $HOME/.config/pkglist/pkglist-aur.txt)

@@ -1,4 +1,4 @@
 #!/bin/sh
 
-#sudo pacman -S --needed - < pkglist.txt
-sudo pacman -S --needed $(sed '/#/d' $HOME/.config/pkglist/pkglist-base.txt)
+sudo pacman -S --needed base base-devel \
+	git stow man-db man-pages 
