@@ -1,0 +1,9 @@
+
+─ p -S --noconfirm --needed firefox                                       ─╯
+resolving dependencies...
+:: There are 8 providers available for ttf-font:
+:: Repository extra
+   1) gnu-free-fonts  2) noto-fonts  3) ttf-bitstream-vera  4) ttf-croscore
+   5) ttf-dejavu
+:: Repository community
+   6) ttf-droid  7) ttf-ibm-plex  8) ttf-liberation
