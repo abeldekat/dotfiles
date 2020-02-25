@@ -96,3 +96,6 @@ T,https://github.com/abeldekat/dmenu.git,"runs commands and provides a UI for se
 T,https://github.com/abeldekat/st.git,"is my custom build of suckless's terminal emulator."
 T,https://github.com/andreafabrizi/Dropbox-Uploader.git,"is a BASH script which can be used to upload, download, list or delete files from Dropbox."
 T,https://gitlab.com/protesilaos/tempus-themes.git "is a collection of themes for Vim, text editors, and terminal emulators."
+R,cgit,"is a web interface for git written in plain C. Community. Needs a web server."
+,giggle,"is a git repository viewer. Community. Gtk3, vte3, gtksourceview3."
+A,tig,"is a text-mode interface for git. Aur. Ncurses."
