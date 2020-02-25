@@ -53,23 +53,24 @@ _fillpipes(){
 	| _write '^G,' 2 \
  	>/dev/null &
 }
-# larbs:pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
-# larbs:sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
-# me: yay -S --needed $(sed '/#/d' $HOME/.config/pkglist/pkglist-aur.txt)
+# Install per source
 _install(){
-	cat "${_pipes[0]}" | xargs
-	cat "${_pipes[1]}" | xargs
+	echo "Installing from base..."
+	cat "${_pipes[0]}" | xargs -t sudo pacman -S --noconfirm --needed
+	echo "Installing from aur..."
+	cat "${_pipes[1]}" | xargs -t yay -S --noconfirm --needed
 	cat "${_pipes[2]}"
 }
 # Install...
 _go(){
+	echo "Start installation"
 	_install
 	echo "All done!"
 }
 
 _fillpipes
 while true; do
-	printf "\\n Install from base? [1=Yes e=Exit] ";read -r answer
+	printf "\\n Install ? [1=Yes e=Exit] ";read -r answer
 	case "$answer" in
 		1)	_go;break;;
 		[Ee]) 	break;;
