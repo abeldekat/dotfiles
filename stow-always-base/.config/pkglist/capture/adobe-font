@@ -1,0 +1,11 @@
+─ p -Rns adobe-source-code-pro-fonts                                                                                                                               ─╯
+checking dependencies...
+error: failed to prepare transaction (could not satisfy dependencies)
+:: removing adobe-source-code-pro-fonts breaks dependency 'adobe-source-code-pro-fonts' required by gsettings-desktop-schemas
+gsettings-desktop-schemas: requires the adobe font and also cantarell
+glib-networking is dependant
+libsoup
+rest
+gtk3
+
+Thus: The adobe and cantarell fonts are very indirectly required by gtk3
