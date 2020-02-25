@@ -1,19 +1,13 @@
 kijk naar st en de surf browser. Staan er colors in voidrice st?
 kijk naar urxvt en xresources
-termite styles...
-lemonbar en polybar: Deze is interessant: https://gist.github.com/jinyeow/dd51376dfff1b8947c2f
-dmenu en rofi
+dmenu
 glyps, unicode emoji
-larbs aur kan dat package niet installeren
 hoeveel dpi heeft mijn monitor: xdpy
 ga door de aantekeningen heen, opschonen
 git kan onderste grijs niet lezen, not staged for commit
 ls colors
-pywall
 autologin https://wiki.archlinux.org/index.php/getty
 
-Verder met lemonbar en siji:
-https://github.com/patlux/dotfiles
-
 dircolors protsdots
+notmuch, larbs, mutt email. vim client
 
