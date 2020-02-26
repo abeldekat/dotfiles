@@ -19,16 +19,15 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/git
 	zgen oh-my-zsh plugins/colored-man-pages
 	zgen oh-my-zsh plugins/vi-mode
-	#zgen oh-my-zsh themes/robbyrussell
+	zgen oh-my-zsh themes/robbyrussell
 
 	zgen load zsh-users/zsh-completions src
 
 	zgen load /usr/share/fzf/key-bindings.zsh
 	zgen load /usr/share/fzf/completion.zsh
+	#zgen load bhilburn/powerlevel9k powerlevel9k
 	zgen load romkatv/powerlevel10k powerlevel10k
 	zgen load zsh-users/zsh-syntax-highlighting 
-	
-	#zgen load zsh-users/zsh-history-substring-search 
 	
 	zgen save
 fi
