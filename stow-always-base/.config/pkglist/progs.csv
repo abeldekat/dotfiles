@@ -83,6 +83,8 @@ T,slock,"allows you to lock your computer, and quickly unlock with your password
 R,zsh-syntax-highlighting,"provides fish-like syntax highlighting in the shell.Installed with zgen from github."
 T,zsh-lovers,"is a collection of tips, tricks and examples for the Z shell."
 ,tree,"is a directory listing program displaying a depth indented list of files"
+,fd,"is a simple, fast and user-friendly alternative to find. Configured for fzf"
+,ripgrep,"is a search tool that combines the usability of ag with the raw speed of grep."
 ,openssh,"is a premier connectivity tool for remote login with the SSH protocol "
 ,termite,"is the terminal in use."
 ,xterm,"is a terminal for backup. Investigate."

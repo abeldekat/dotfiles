@@ -12,3 +12,6 @@ dircolors protsdots
 notmuch, larbs, mutt email. vim client
 fonts.conf... Symbola?
 
+
+fzf as dmenu replacement. Examples github fzf
+

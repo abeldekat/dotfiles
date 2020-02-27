@@ -41,15 +41,11 @@ alias \
 
 # arch git alias does not work. Make a link from vim to vi in /usr/bin
 # Command aliases
-alias fd="fdfind"
-alias clr="clear"
+#alias fd="fdfind"
 alias dirs="dirs -v"
 
 # ZSH guide pdf copy helper
 alias %=' '
-
-# Startx
-alias sxb='startx'
 
 #alias | grep -i git | sort -R | head -10
 
