@@ -1,0 +1,8 @@
+lpstat -s
+system default destination: Samsung_M283x_Series
+device for Samsung_M283x_Series: dnssd://Samsung%20M283x%20Series%20(SEC30CDA79F900C)._printer._tcp.local/
+echo "hello" | lpr -p
+lpstat -a
+Samsung_M283x_Series accepting requests since Sat 29 Feb 2020 04:39:55 PM CET
+
+commands lp en lpr lijken op elkaar. lp heeft meer opties waaronder een pages optie.

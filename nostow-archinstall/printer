@@ -1,0 +1,79 @@
+todo socked activation
+Samsung M283x Series (SEC30CDA79F900C)
+M2835DW
+http://www.openprinting.org/printers
+http://www.openprinting.org/printer/Samsung/Samsung-M283x
+root@chris-laptop /]# pacman -Qs samsung
+local/samsung-printers 1.00.37-1
+    CUPS drivers for a variety of Samsung printers
+
+let op: als root inloggen
+--> install the cups package
+Packages (7) cups-filters-1.27.1-1  ijs-0.35-2  liblouis-3.12.0-1
+             libpaper-1.1.28-1  qpdf-9.1.1-1  run-parts-4.8.6.1-2
+             cups-2.3.1-1
+
+--> sudo systemctl enable org.cups.cupsd.service
+sudo systemctl list-unit-files | grep -E "cups"          
+avahi: controleer systemd.resolved. Die staat op disabled
+sudo systemctl list-unit-files | grep -E "resolved"          
+systemd-resolved.service                                         disabled 
+avahi is een required dependency van lib-cups en dus al geinstalleerd
+sudo systemctl list-unit-files | grep -E "avahi"
+avahi-daemon.service                                             disabled       
+avahi-dnsconfd.service                                           disabled       
+avahi-daemon.socket                                              disabled  
+-->sudo systemctl enable avahi-daemon        
+Created symlink /etc/systemd/system/dbus-org.freedesktop.Avahi.service → /usr/lib/systemd/system/avahi-daemon.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/avahi-daemon.service → /usr/lib/systemd/system/avahi-daemon.service.
+Created symlink /etc/systemd/system/sockets.target.wants/avahi-daemon.socket → /usr/lib/systemd/system/avahi-daemon.socket.
+
+Dit is ook nodig:
+Avahi provides local hostname resolution using a "hostname.local" naming scheme. To enable it, install the nss-mdns package and start avahi-daemon.service. 
+--> p -S nss-mdns
+Then, edit the file /etc/nsswitch.conf and change the hosts line to include mdns_minimal [NOTFOUND=return] before resolve and dns: 
+regel
+hosts: files mymachines myhostname resolve [!UNAVAIL=return] dns
+Note: If you experience slowdowns in resolving .local hosts try to use mdns4_minimal instead of mdns_minimal.
+reboot
+avahi-browse --all --ignore-local --resolve --terminate
+--> Nu toevoegen met cups. Ik krijg een "driverless"
+Model M283x Series, driverless,  cups-filters 1.27.1 (en)
+--> yay -S samsung-printers
+Het lukt nu: De queue heet Samsung_M283x_Series
+
+Referentie:
+
+Optional dependencies for cups
+    xdg-utils: xdg .desktop file support [installed]
+    colord: for ICC color profile support [installed]
+    logrotate: for logfile rotation support
+Optional dependencies for cups-filters
+    ghostscript: for non-PostScript printers to print with CUPS to convert
+    PostScript to raster images
+    foomatic-db: drivers use Ghostscript to convert PostScript to a printable
+    form directly
+    foomatic-db-engine: drivers use Ghostscript to convert PostScript to a
+    printable form directly
+    foomatic-db-nonfree: drivers use Ghostscript to convert PostScript to a
+    printable form directly
+    antiword: needed to convert MS Word documents (requires also docx2txt
+    (AUR)
+
+Network:
+    Avahi is a free Zero-configuration networking (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to. It is licensed under the GNU Lesser General Public License (LGPL).
+
+-------
+
+The drivers for a printer may come from any of the sources shown below. See CUPS/Printer-specific problems for an incomplete list of drivers that others have managed to get working.
+
+To drive a printer, CUPS needs a PPD file and, for most printers, some filters. For details on how CUPS uses PPDs and filters, see [1].
+
+The OpenPrinting Printer List provides driver recommendations for many printers. It also supplies PPD files for each printer, but most are available through foomatic or the recommended driver package.
+
+When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD files and save them in /etc/cups/ppd/.
+
+----- openprinting:
+Black & White laser printer, max. 1200x1200 dpi, works Perfectly		
+	Recommended Driver: pxlmono-Samsung (Home page, Driver packages: All architectures: 20161207 (RPM for LSB 3.2) (Signed), 20161207 (DEB for LSB 3.2) (Signed) (How to install))	
+	Generic Instructions: CUPS, LPD, LPRng, PPR, PDQ, no spooler

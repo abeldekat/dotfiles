@@ -179,9 +179,6 @@ root@chris-laptop /]# ls -a boot
 .  ..  grub  initramfs-linux-lts-fallback.img  initramfs-linux-lts.img	intel-ucode.img  vmlinuz-linux-lts
 
 
-root@chris-laptop /]# pacman -Qs samsung
-local/samsung-printers 1.00.37-1
-    CUPS drivers for a variety of Samsung printers
 
 [root@chris-laptop /]# pacman -Qs bcm43142a0-firmware
 local/bcm43142a0-firmware 1201710-8
