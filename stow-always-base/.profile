@@ -38,6 +38,9 @@ export FILE="ranger"
 # Ranger loads both default and  custom rc
 export RANGER_LOAD_DEFAULT_RC=false
 
+# The printer, using cups
+export PRINTER_DESTINATION="Samsung_M283x_Series"
+
 # ~/ Clean-up:
 #export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 #export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"

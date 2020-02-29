@@ -1,21 +1,17 @@
-todo socked activation
 Samsung M283x Series (SEC30CDA79F900C)
 M2835DW
-http://www.openprinting.org/printers
-http://www.openprinting.org/printer/Samsung/Samsung-M283x
-root@chris-laptop /]# pacman -Qs samsung
-local/samsung-printers 1.00.37-1
-    CUPS drivers for a variety of Samsung printers
 
-let op: als root inloggen
 --> install the cups package
 Packages (7) cups-filters-1.27.1-1  ijs-0.35-2  liblouis-3.12.0-1
              libpaper-1.1.28-1  qpdf-9.1.1-1  run-parts-4.8.6.1-2
              cups-2.3.1-1
 
 --> sudo systemctl enable org.cups.cupsd.service
+--> sudo systemctl disable org.cups.cupsd.service
+--> sudo systemctl enable org.cups.cupsd.socket
+
 sudo systemctl list-unit-files | grep -E "cups"          
-avahi: controleer systemd.resolved. Die staat op disabled
+avahi: controleer systemd.resolved. Die staat op disabled. Prima
 sudo systemctl list-unit-files | grep -E "resolved"          
 systemd-resolved.service                                         disabled 
 avahi is een required dependency van lib-cups en dus al geinstalleerd
@@ -77,3 +73,6 @@ When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD fil
 Black & White laser printer, max. 1200x1200 dpi, works Perfectly		
 	Recommended Driver: pxlmono-Samsung (Home page, Driver packages: All architectures: 20161207 (RPM for LSB 3.2) (Signed), 20161207 (DEB for LSB 3.2) (Signed) (How to install))	
 	Generic Instructions: CUPS, LPD, LPRng, PPR, PDQ, no spooler
+Openprinting levert niets op:
+http://www.openprinting.org/printers
+http://www.openprinting.org/printer/Samsung/Samsung-M283x
