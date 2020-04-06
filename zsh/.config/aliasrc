@@ -25,6 +25,7 @@ alias \
 # These common commands are just too long! Abbreviate them.
 alias \
 	ka="killall" \
+	stop="kill -TSTP" \
 	g="git" \
 	sdn="sudo shutdown -h now" \
 	srn="sudo reboot now" \
