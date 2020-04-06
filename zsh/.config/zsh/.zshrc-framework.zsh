@@ -12,21 +12,26 @@ if [[ ! -f $ZGEN_DIR/zgen.zsh ]]; then
 fi
 
 source $ZGEN_DIR/zgen.zsh
-
+#
+#export POWERLEVEL9K_MODE='nerdfont-complete'
 #ZGEN_RESET_ON_CHANGE=($ZDOTDIR/zsh_framework.zsh)
+#
 if ! zgen saved; then
 	zgen oh-my-zsh
 	zgen oh-my-zsh plugins/git
 	zgen oh-my-zsh plugins/colored-man-pages
-	zgen oh-my-zsh plugins/vi-mode
+	#zgen oh-my-zsh plugins/vi-mode
 	#zgen oh-my-zsh themes/robbyrussell
 
 	zgen load zsh-users/zsh-completions src
 
 	zgen load /usr/share/fzf/key-bindings.zsh
 	zgen load /usr/share/fzf/completion.zsh
+	#zgen load denysdovhan/spaceship-prompt spaceship
 	#zgen load bhilburn/powerlevel9k powerlevel9k
-	zgen load romkatv/powerlevel10k powerlevel10k
+	#zgen load romkatv/powerlevel10k powerlevel10k
+        zgen load mafredri/zsh-async
+        zgen load sindresorhus/pure
 	zgen load zsh-users/zsh-syntax-highlighting 
 	
 	zgen save
