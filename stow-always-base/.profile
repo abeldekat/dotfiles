@@ -1,5 +1,7 @@
 # Profile file. Runs on login. Environmental variables are set here.
 
+# todo MANPATH PAGER
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
@@ -34,12 +36,16 @@ export TERMINAL="termite"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
+export PAGER="less"
 
 # Ranger loads both default and  custom rc
 export RANGER_LOAD_DEFAULT_RC=false
 
 # The printer, using cups
 export PRINTER_DESTINATION="Samsung_M283x_Series"
+
+# cdpath
+export CDPATH=:~/cdotfiles
 
 # ~/ Clean-up:
 #export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
