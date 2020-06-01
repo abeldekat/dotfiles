@@ -29,6 +29,8 @@ fi
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # LARBS WM is determined in your `~/.profile` on login.
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
 # Map arguments to commands.
 case "$LARBSWM" in
