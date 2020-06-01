@@ -2,4 +2,4 @@
 
 # TODO cups and bluetooth
 sudo pacman -S --needed base base-devel \
-	curl git stow man-db man-pages 
+	curl git stow man-db man-pages pacman-contrib 
