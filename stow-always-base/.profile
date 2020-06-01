@@ -12,6 +12,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$PATH:$(du -L --max-depth=1 "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 fi
 
+# Arch wiki use gnome-keyring, see also /etc/pam.d/login
+export eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
 # Get default LARBS WM from ~/.local/share/larbs/wm
 export LARBSWM="$(cat ~/.local/share/larbs/wm 2>/dev/null)" &&
 	[ "$LARBSWM" = "xfce" ] || export LARBSWM="bspwm"
