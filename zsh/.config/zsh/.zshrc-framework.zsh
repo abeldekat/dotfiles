@@ -20,7 +20,7 @@ if ! zgen saved; then
 	zgen oh-my-zsh
 	zgen oh-my-zsh plugins/git
 	zgen oh-my-zsh plugins/colored-man-pages
-	#zgen oh-my-zsh plugins/vi-mode
+	zgen oh-my-zsh plugins/vi-mode
 	#zgen oh-my-zsh themes/robbyrussell
 
 	zgen load zsh-users/zsh-completions src
