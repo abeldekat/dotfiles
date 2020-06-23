@@ -126,3 +126,9 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# firefox
+#
+super + x;{1,2,3,4} 
+	firefox -P {Personal,Daily,Hardened,default-release}
