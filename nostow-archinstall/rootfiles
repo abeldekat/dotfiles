@@ -1,0 +1,16 @@
+https://wiki.archlinux.org/index.php/samba
+https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD
+Samba
+/etc/samba/smb.conf
+
+If you are using a firewall, do not forget to open required ports (usually 137-139 + 445). For a complete list, see Samba port usage
+Samba requires a Linux user account - you may use an existing user account or create a new one. 
+
+Although the user name is shared with Linux system, Samba uses a password separate from that of the Linux user accounts. Replace samba_user with the chosen Samba user account:
+
+Samba users can be listed using the pdbedit(8) command: 
+
+useradd emma
+usermod --shell /usr/bin/nologin --lock emma
+eerste keer smbpasswd met de -a optie
+smbpasswd -a emma
