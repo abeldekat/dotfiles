@@ -208,6 +208,7 @@ T,https://gitlab.com/protesilaos/tempus-themes.git "is a collection of themes fo
 A,tig,"is a text-mode interface for git. Aur. Ncurses."
 A,simple-mtpfs-git,"enables the mounting of cell phones."
 ,pavucontrol,"is a pulse audio volume control gui."
+,fsarchiver,"is a safe and flexible file-system backup and deployment tool"
 ,wireguard-tools,"is a next generation secure network tunnel."
 ,wireguard-lts,"is wireguard for linux lts."
 ,openresolv,"is a resolv.conf management framework. Used by wireguard."
