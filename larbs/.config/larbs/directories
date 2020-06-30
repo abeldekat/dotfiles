@@ -1,6 +1,5 @@
 # You can add comments to these files with # h	~/
 d	~/dotfiles
-c	~/cdotfiles
 D	~/Downloads
 m	~/Music
 pp	~/Pictures
@@ -18,3 +17,4 @@ sb	~/.local/bin/lemonbar/blocks
 sw	~/.local/bin/wal
 le	~/.local/share
 mn	/mnt
+bv	/var/lib/libvirt
