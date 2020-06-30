@@ -130,5 +130,5 @@ super + {Left,Down,Up,Right}
 #
 # firefox
 #
-super + x;{1,2,3,4} 
-	firefox -P {Personal,Hardened,NoAddons,default-release}
+super + x;{1,2,3} 
+	firefox -P {Personal,Hardened,default-release}
