@@ -35,6 +35,5 @@ export SSH_AUTH_SOCK
 # Map arguments to commands.
 case "$LARBSWM" in
     bspwm ) exec bspwm        ;;
-    xfce  ) exec startxfce4   ;;
     *) echo "No valid LARBS window manager detected." ;;
 esac
