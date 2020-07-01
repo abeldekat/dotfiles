@@ -14,3 +14,9 @@ useradd emma
 usermod --shell /usr/bin/nologin --lock emma
 eerste keer smbpasswd met de -a optie
 smbpasswd -a emma
+
+
+*******************
+qemu.conf: Gebruiker chris, folder sharing makkelijker
+libvirt.conf in dotfiles, qemu system
+
