@@ -20,3 +20,6 @@ smbpasswd -a emma
 qemu.conf: Gebruiker chris, folder sharing makkelijker
 libvirt.conf in dotfiles, qemu system
 
+
+###############################
+encrypted root, see no stow misc mkinitcpio.conf and arch.conf

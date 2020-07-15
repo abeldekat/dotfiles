@@ -94,7 +94,7 @@ R,zsh-syntax-highlighting,"provides fish-like syntax highlighting in the shell.I
 ,virt-manager,"is a desktop user interface for managing virtual machines. Requires and installs libvirt an api for controlling virtualizatoin engines"
 A,polybar,"is a fast and easy-to-use status bar."
 A,ranger-git,"is an extensive terminal file manager that everyone likes. Most of the optional deps are installed. Todo as of 1.9.3 ranger ueberzug support."
-A,python-ueberzug,"generates image previews in ranger and other terminal programs."
+A,python-ueberzug,"TODO replaced by community ueberzug...generates image previews in ranger and other terminal programs."
 A,tig,"is a text-mode interface for git. Aur. Ncurses."
 A,simple-mtpfs-git,"enables the mounting of cell phones."
 A,sc-im,"is an Excel-like terminal spreadsheet manager."
