@@ -91,6 +91,7 @@ R,zsh-syntax-highlighting,"provides fish-like syntax highlighting in the shell.I
 ,openbsd-netcat,"is a TCP/IP swiss army knife. OpenBSD variant. Is optional for virt-manager for remote management over ssh."
 ,dmidecode,"are desktop management interface table related utilities and keeps libvirt daemon from complaining."
 ,virt-manager,"is a desktop user interface for managing virtual machines. Requires and installs libvirt an api for controlling virtualizatoin engines"
+,edk2-ovmf,"supports firmware for Virtual Machines. Open Virtual Machine Firmware. Used for uefi support."
 A,polybar,"is a fast and easy-to-use status bar."
 A,ranger-git,"is an extensive terminal file manager that everyone likes. Most of the optional deps are installed. Todo as of 1.9.3 ranger ueberzug support."
 A,python-ueberzug,"TODO replaced by community ueberzug...generates image previews in ranger and other terminal programs."
