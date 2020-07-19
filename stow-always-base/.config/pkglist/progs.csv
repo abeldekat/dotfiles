@@ -77,7 +77,7 @@ R,zsh-syntax-highlighting,"provides fish-like syntax highlighting in the shell.I
 ,samba,"is a SMB Fileserver and AD Domain server."
 ,openresolv,"is a resolv.conf management framework.Needed for wireguard."
 ,wireguard-tools,"is a next generation secure network tunnel."
-,wireguard-lts,"is wireguard for linux lts."
+R,wireguard-lts,"is wireguard for linux lts. Do not install on linux..."
 ,openresolv,"is a resolv.conf management framework. Used by wireguard."
 ,qrencode,"encodes data in a QR code symbol."
 ,nextcloud-client,"is a client app for the Nextcloud server"
