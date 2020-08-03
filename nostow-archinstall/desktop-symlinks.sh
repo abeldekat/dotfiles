@@ -2,7 +2,7 @@
 
 _date="$(echo $(date "+%Y%d%m"))"
 _bak="$HOME/bak/$_date"
-_storage="/mnt/storage/data/$USER"
+_storage="/mnt/extendedhome/$USER"
 echo "User is $USER"
 echo "Backup dir is $_bak"
 echo "Storage dir is $_storage"
@@ -31,8 +31,11 @@ _apply(){
 	fi
 }
 
+_apply "Audiobooks"
 _apply "Documents"
 _apply "Downloads"
 _apply "Music"
 _apply "Pictures"
+_apply "Software"
+_apply "Todo"
 _apply "Videos"
