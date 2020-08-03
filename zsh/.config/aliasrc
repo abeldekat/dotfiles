@@ -38,6 +38,7 @@ alias \
 # Some other stuff
 alias \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
 	myco="cat $MY_COLORS/active-theme $MY_COLORS/theme-in-test" 
 
 # arch git alias does not work. Make a link from vim to vi in /usr/bin
