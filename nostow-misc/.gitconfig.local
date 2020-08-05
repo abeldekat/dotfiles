@@ -1,3 +1,5 @@
 [user]
-	email = changeme
-	name = changeme
+	email = abel@nomail.com
+	name = abel
+[core]
+	excludesfile = todo
