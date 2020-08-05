@@ -4,6 +4,8 @@
 
 # terminal emulator
 super + Return
+	st
+super + shitft + Return
 	termite
 
 # program launcher
