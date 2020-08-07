@@ -1,0 +1,11 @@
+!
+! ~/.Xresources
+!
+
+! Description
+! ===========
+! Initially copied from: https://gitlab.com/protesilaos/dotfiles
+! https://www.reddit.com/r/unixporn/wiki/organizing_xresources
+! =====
+st.alpha: 0.7 
+st.font: monospace:size=18

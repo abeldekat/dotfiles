@@ -1,4 +1,5 @@
 #!/bin/sh
+# Interesting vms: dwm, xmonad, herbstluftwm
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
