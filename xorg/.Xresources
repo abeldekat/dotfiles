@@ -17,7 +17,10 @@ Xft*hinting: 1
 Xft*hintstyle: hintslight
 Xft*lcdfilter: lcddefault
 
-#define mytestvar 123 
-#include ".config/xres/xterm"
-#include ".config/xres/urxvt"
-#include ".local/share/my_colors/active-theme.Xcolors"
+! St testing
+st.font: monospace:size=18
+st.alpha: 0.7 
+
+!#include ".config/xres/xterm"
+!#include ".config/xres/st"
+!#include ".local/share/my_colors/active-theme.Xcolors"
