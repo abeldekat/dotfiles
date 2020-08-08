@@ -2,5 +2,5 @@
 ! ~/.Xresources
 !
 
-st.alpha: 0.7 
-st.font: monospace:size=18
+st.alpha: 0.9 
+st.font: monospace:pixelsize=18:antialias=true:autohint=true
