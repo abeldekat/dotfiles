@@ -10,3 +10,4 @@
 /snaps/
 *.o
 st
+config.h
