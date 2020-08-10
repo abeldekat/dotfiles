@@ -5,9 +5,11 @@ D	~/Downloads
 m	~/Music
 pp	~/Pictures
 vv	~/Videos
-cf	~/.config
+c	~/.config
 ca	~/.config/pkglist
+cf	~/.config/fontconfig
 cg	~/.config/zgen
+cx	~/.config/xres
 cw	~/.config/wal
 cz	~/.config/zsh
 sc	~/.local/bin

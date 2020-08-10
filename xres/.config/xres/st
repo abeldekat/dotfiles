@@ -2,6 +2,8 @@
 ! ~/.Xresources
 !
 
-st.alpha: 0.9 
-st.borderpx: 6 
-st.font: monospace:pixelsize=16:antialias=true:autohint=true;
+st.alpha: 1 
+st.borderpx: 6
+!st.font: JetBrains Mono Medium:size=18:antialias=true:autohint=true;
+st.font: monospace:size=16:antialias=true:autohint=true;
+
