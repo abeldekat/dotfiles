@@ -4,9 +4,9 @@
 
 # terminal emulator
 super + Return
-	termite
-super + shift + Return
 	st
+super + shift + Return
+	termite
 
 # program launcher
 super + @space
