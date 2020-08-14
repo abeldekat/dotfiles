@@ -24,7 +24,7 @@ background-alt = ${xrdb:color7}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color7}
 
-foreground-wm-alt = ${xrdb:color2}
+foreground-wm-empty = ${xrdb:color2}
 primary = ${xrdb:color3}
 alert = ${xrdb:color1}
 
@@ -130,7 +130,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 ;
 label-empty = %index%
-label-empty-foreground = ${colors.foreground-wm-alt}
+label-empty-foreground = ${colors.foreground-wm-empty}
 label-empty-padding = 1
 
 ; Separator in between workspaces

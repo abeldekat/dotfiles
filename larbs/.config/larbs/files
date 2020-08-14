@@ -15,5 +15,5 @@ cfz	$ZDOTDIR/.zshrc
 sca	~/.local/bin/arch/progsinstall
 scd	~/.local/bin/dots/dotsinstall
 scg	~/.local/bin/arch/pkglist-git.sh
-scpp	~/.local/bin/polybar/polybar-launch.sh
+scpp	~/.local/bin/polybar/launchpolybar
 scw	~/.local/bin/wal/colors-with-wal
