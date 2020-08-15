@@ -2,20 +2,14 @@
 
 . $(colors-get-base16)
 
-#[ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
-#pgrep -x panel > /dev/null || panel &
-
 launchpolybar &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
-#bspc monitor -d I II III IV V
-#bspc monitor -d 1 2 3 4 5 6 7 8 9
 
 bspc config border_width         2
-bspc config window_gap           8
+bspc config window_gap           4
 
 bspc config split_ratio          0.52
-#bspc config single_monocle       true
 bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 
@@ -24,9 +18,8 @@ bspc config gapless_monocle      false
 
 # Set the border colors.
 bspc config normal_border_color "$color0"
-# This does not seem to work:
 bspc config active_border_color "$color2"
-bspc config focused_border_color "$color11"
+bspc config focused_border_color "$color8"
 bspc config presel_feedback_color "$color15"
 
 bspc rule -a Zathura state=tiled
