@@ -12,6 +12,8 @@ _check() {
 }
 
 launchpolybar &
+#pgrep -x sxhkd > /dev/null || sxhkd &
+
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -36,11 +38,11 @@ _bc automatic_scheme spiral
 
 ## Set the border colors.
 # background alt
-#bspc config normal_border_color "$color8"
-#bspc config active_border_color "$color3"
-#bspc config focused_border_color "$color6"
+bspc config normal_border_color "$color8"
+bspc config active_border_color "$color3"
+bspc config focused_border_color "$color6"
 # backgrouddim todo
-#bspc config presel_feedback_color "$color8"
+bspc config presel_feedback_color "$color8"
 
 #bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^5' state=floating follow=on
