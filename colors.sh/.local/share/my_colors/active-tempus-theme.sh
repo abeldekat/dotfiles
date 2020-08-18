@@ -5,4 +5,4 @@
 # IMPORTANT do not edit manually!!!  All themes (Xcolors, shell, bspwm,
 # etc.) are changed by a single script: tempus.
 
-source "$HOME"/.local/share/my_colors/shell/tempus_classic.sh
+source "$HOME"/.local/share/my_colors/shell/tempus_autumn.sh

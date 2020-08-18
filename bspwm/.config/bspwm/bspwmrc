@@ -69,10 +69,10 @@ _bc automatic_scheme spiral
 
 # colours
 # -------
-_bc normal_border_color "#312e30"
-_bc active_border_color "#b1942b"
-_bc focused_border_color "#6da280"
-_bc presel_feedback_color "#2a2829"
+_bc normal_border_color "#312e2a"
+_bc active_border_color "#ac9440"
+_bc focused_border_color "#52a485"
+_bc presel_feedback_color "#302925"
 
 #bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^5' state=floating follow=on

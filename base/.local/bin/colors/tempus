@@ -87,61 +87,6 @@ _depcheck() {
 	command -v "$1" > /dev/null || { echo "Missing dependency: $1."; return 1; }
 }
 
-# Debian Buster optional dependencies:
-# 	apt install papirus-icon-theme arc-theme
-_gtk() {
-	_gtk_common() {
-		# GTK 2
-		_sed "s,\(gtk-theme-name=\).*,\1\'${1}\', ; s,\(gtk-icon-theme-name=\).*,\1\'${2}\'," \
-             "$HOME"/.gtkrc-2.0
-
-		# GTK 3
-		_sed "s,\(gtk-theme-name=\).*,\1${1}, ; s,\(gtk-icon-theme-name=\).*,\1${2}," \
-             "$HOME"/.config/gtk-3.0/settings.ini
-	}
-
-	_gtk_variant() {
-        local path
-        path=/usr/share
-
-        # TODO what if one has one but not the other?
-		if [ -d "$path"/themes/"$1" ] && [ -d "$path"/icons/"$2" ]; then
-			_gtk_common "$1" "$2"
-		else
-			_gtk_common Adwaita Adwaita
-		fi
-	}
-
-	_gtk_live() {
-		_depcheck xsettingsd
-
-        local xsettingsd
-        xsettingsd="$HOME"/.config/xsettingsd/xsettingsd.conf
-
-        if [ -f "$xsettingsd" ]; then
-            _sed "s,\(.*\/ThemeName\) \"[a-zA-Z-]*\",\1 \"${1}\"," "$xsettingsd"
-            _sed "s,\(.*\/IconThemeName\) \"[a-zA-Z-]*\",\1 \"${2}\"," "$xsettingsd"
-        fi
-
-        # This is a very lightweight program that simply loads the
-        # settings it reads from the file.  Kill and run again to read
-        # the new values.
-        pgrep -xo xsettingsd && pkill -xo xsettingsd
-        xsettingsd -c "$xsettingsd"
-	}
-
-	case "$theme_variant" in
-		l*)
-			_gtk_variant 'Arc' 'Papirus-Light' &
-			_gtk_live 'Arc' 'Papirus-Light' &
-			;;
-		d*)
-			_gtk_variant 'Arc-Dark' 'Papirus-Dark' &
-			_gtk_live 'Arc-Dark' 'Papirus-Dark' &
-			;;
-	esac
-}
-
 _vim() {
 	_depcheck vim
 
@@ -178,8 +123,6 @@ _x_and_shell() {
 	# emulators, by using escape sequences.
 	#repaint_terminals &
 
-	_depcheck xterm
-
 	xresources="$HOME"/.Xresources
 	if [ -f "$xresources" ]; then
 		xrdb -I "$HOME" -merge "$xresources"
@@ -187,48 +130,39 @@ _x_and_shell() {
 }
 
 _bspwm() {
-    _depcheck bspwm
-
+	_depcheck bspwm
 	pgrep -x bspwm || return 1
 
-	_bc() {
-		bspc config "$@"
-	}
-
-	_bc normal_border_color "$backgroundalt"
-	_bc presel_feedback_color "$backgrounddim"
+	_active_border_color="$color3"	
+	_focused_border_color="$color6"	
 	if [ "$theme_variant" = 'light' ]; then
-		_bc active_border_color "$color1"
-		_bc focused_border_color "$color4"
-	else
-		_bc active_border_color "$color3"
-		_bc focused_border_color "$color6"
+		_active_border_color="$color1"	
+		_focused_border_color="$color4"	
 	fi
+	bspc config normal_border_color "$backgroundalt"
+	bspc config presel_feedback_color "$backgrounddim"
+	bspc config active_border_color "$_active_border_color"
+	bspc config focused_border_color "$_focused_border_color"
 
 	bspwmrc="$HOME/.config/bspwm/bspwmrc"
 
 	[ -x "$bspwmrc" ] || { echo "Missing bspwmrc."; return 1; }
 
-	case "$theme_variant" in
-		l*)
-			_sed "/^[^#].*active_border_color/ s,#[a-zA-Z0-9]*,$color1, ; \
-			/^[^#].*focused_border_color/ s,#[a-zA-Z0-9]*,$color4, ; \
-			/^[^#].*normal_border_color/ s,#[a-zA-Z0-9]*,$backgroundalt, ; \
-			/^[^#].*presel_feedback_color/ s,#[a-zA-Z0-9]*,$backgrounddim," "$bspwmrc"
-			;;
-		d*)
-			_sed "/^[^#].*active_border_color/ s,#[a-zA-Z0-9]*,$color3, ; \
-			/^[^#].*focused_border_color/ s,#[a-zA-Z0-9]*,$color6, ; \
-			/^[^#].*normal_border_color/ s,#[a-zA-Z0-9]*,$backgroundalt, ; \
-			/^[^#].*presel_feedback_color/ s,#[a-zA-Z0-9]*,$backgrounddim," "$bspwmrc"
-			;;
-	esac
+	_sed "/^[^#].*active_border_color/ s,#[a-zA-Z0-9]*,$_active_border_color, ; \
+		/^[^#].*focused_border_color/ s,#[a-zA-Z0-9]*,$_focused_border_color, ; \
+		/^[^#].*normal_border_color/ s,#[a-zA-Z0-9]*,$backgroundalt, ; \
+		/^[^#].*presel_feedback_color/ s,#[a-zA-Z0-9]*,$backgrounddim," "$bspwmrc"
 }
 
+_polybar(){
+	pgrep -x polybar || return 1
+	_depcheck launchpolybar
+	launchpolybar &
+}
 
 # Function call cascade
 # ---------------------
 _x_and_shell
-#_gtk
-#_bspwm
+_bspwm
+_polybar
 #_vim
