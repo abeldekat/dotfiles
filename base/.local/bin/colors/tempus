@@ -57,7 +57,7 @@ case "$tempus_theme" in
 	dawn|day|fugit|past|totus)
 		theme_variant=light
 		;;
-	autumn|classic|dusk|future|night|rift|spring|summer|tempest|warp|winter)
+	autumn|classic|dusk|future|night|rift|spring|summer|tempest|warp|winter,fromwall)
 		theme_variant=dark
 		;;
 	*)
@@ -91,6 +91,10 @@ _vim() {
 	_depcheck vim
 
 	_sed "s,\(colorscheme \).*,\1tempus_${tempus_theme}," "$HOME"/.vimrc
+}
+
+_tmux(){
+	echo "todo tmux"
 }
 
 _x_and_shell() {
@@ -166,4 +170,5 @@ _polybar(){
 _x_and_shell
 _bspwm
 _polybar
+#_tmux
 #_vim
