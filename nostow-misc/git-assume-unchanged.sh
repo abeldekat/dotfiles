@@ -5,6 +5,6 @@
 # Revert with --no-assume-unchanged
 # List with git ls-files -v | grep '^[[:lower:]]'
 
-git update-index --assume-unchanged ../termite/.config/termite/config 
+#git update-index --assume-unchanged ../termite/.config/termite/config 
 
-git update-index --assume-unchanged $(git ls-files ../stow-always-colors | tr '\n' ' ')
+#git update-index --assume-unchanged $(git ls-files ../stow-always-colors | tr '\n' ' ')
