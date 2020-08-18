@@ -6,7 +6,7 @@
 super + Return
 	st
 super + shift + Return
-	termite
+	xterm
 
 # program launcher
 super + @space
