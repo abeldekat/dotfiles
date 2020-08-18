@@ -1,8 +1,0 @@
-!
-! ~/.Xresources
-!
-
-st.alpha: 1.0 
-st.borderpx: 0
-!st.font: JetBrains Mono Medium:size=18:antialias=true:autohint=true;
-!st.fontalt0: Joy Pixels:size=16:antialias=true:autohint=true
