@@ -39,7 +39,7 @@ _help_message() {
 	while IFS= read -r -d $'\0' line; do
 		line="${line##[a-z/_]*tempus_}"
 		printf "\\t%s\\n" "${line%.sh}"
-	done < <(find "$HOME"/.local/share/my_colours/shell/ -type f -name '*.sh' -print0 | sort -z)
+	done < <(find "$HOME"/.local/share/my_colors/shell/ -type f -name '*.sh' -print0 | sort -z)
 
 	echo "This assumes you have used STOW on my 'colours' directory (part of my dotfiles)"
 }
@@ -57,7 +57,7 @@ case "$tempus_theme" in
 	dawn|day|fugit|past|totus)
 		theme_variant=light
 		;;
-	autumn|classic|dusk|future|night|rift|spring|summer|tempest|warp|winter,fromwall)
+	autumn|classic|dusk|future|night|rift|spring|summer|tempest|warp|winter|fromwall)
 		theme_variant=dark
 		;;
 	*)
