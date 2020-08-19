@@ -11,8 +11,6 @@ ba	~/builds/abel-st
 c	~/.config
 ca	~/.config/pkglist
 cf	~/.config/fontconfig
-cg	~/.config/zgen
-cx	~/.config/xres
 cw	~/.config/wal
 cz	~/.config/zsh
 sc	~/.local/bin
@@ -22,4 +20,4 @@ sp	~/.local/bin/polybar
 sw	~/.local/bin/wal
 le	~/.local/share
 mn	/mnt
-bv	/var/lib/libvirt
+vl	/var/lib/libvirt
