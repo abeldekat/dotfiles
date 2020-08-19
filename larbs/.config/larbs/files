@@ -9,11 +9,9 @@ cfp	~/.config/pkglist/progs.csv
 cfpb	~/.config/polybar/config
 cft	~/.config/tmux/tmux.conf
 cfv	~/.vim/vimrc
-cfwl	~/.config/wal/lightthemes.csv
-cfwd	~/.config/wal/darkthemes.csv
 cfz	$ZDOTDIR/.zshrc
 sca	~/.local/bin/arch/progsinstall
+sct	~/.local/bin/colors/tempus
 scd	~/.local/bin/dots/dotsinstall
 scg	~/.local/bin/arch/pkglist-git.sh
 scpp	~/.local/bin/polybar/launchpolybar
-scw	~/.local/bin/wal/colors-with-wal

@@ -123,8 +123,7 @@ _tmux() {
 	tmux source-file "$HOME/.config/tmux/tmux.conf"
 
 	# NOTE this is another script that is part of my dotfiles.
-	#TODO
-	#!tmux_update_vim &
+	tmux_update_vim &
 }
 
 _x_and_shell() {
@@ -155,8 +154,7 @@ _x_and_shell() {
 
 	# Another one of my scripts for live recolouring running terminal
 	# emulators, by using escape sequences.
-	#TODO
-	#repaint_terminals &
+	repaint_terminals &
 
 	xresources="$HOME"/.Xresources
 	if [ -f "$xresources" ]; then

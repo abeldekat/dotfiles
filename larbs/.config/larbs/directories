@@ -13,11 +13,12 @@ ca	~/.config/pkglist
 cf	~/.config/fontconfig
 cw	~/.config/wal
 cz	~/.config/zsh
-sc	~/.local/bin
+s	~/.local/bin
 sa	~/.local/bin/arch
+sc	~/.local/bin/colors
 sd	~/.local/bin/dots
 sp	~/.local/bin/polybar
-sw	~/.local/bin/wal
+lc	~/.local/share/my_colors
 le	~/.local/share
 mn	/mnt
 vl	/var/lib/libvirt
