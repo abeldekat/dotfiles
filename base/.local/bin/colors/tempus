@@ -87,14 +87,44 @@ _depcheck() {
 	command -v "$1" > /dev/null || { echo "Missing dependency: $1."; return 1; }
 }
 
+_wallpaper() {
+	# the wallpapers are defined manually at
+	# ~/Pictures/theme/{light,dark}.jpg
+	wall_path="$HOME/Wallpapers/theme"
+	wall_jpg="$wall_path/dark.jpg"
+	case "$theme_variant" in
+		l*) 
+			wall_jpg="$wall_path/light.jpg"
+			;;
+	esac
+	[ -d "$wall_path" ] || { echo "No path to: $wall_path"; return 1; }
+	[ -f "$wall_jpg" ] || { echo "No path to: $wall_jpg"; return 1; }
+
+	setbg "$wall_jpg"
+}
+
 _vim() {
 	_depcheck vim
 
 	_sed "s,\(colorscheme \).*,\1tempus_${tempus_theme}," "$HOME"/.vimrc
 }
 
-_tmux(){
-	echo "todo tmux"
+_tmux() {
+	_depcheck tmux
+
+	_sed_sync "s/tempus_fg=\"#[a-zA-Z0-9]*\"/tempus_fg=\"${foreground}\"/ ; \
+	s/tempus_bg=\"#[a-zA-Z0-9]*\"/tempus_bg=\"${background}\"/ ; \
+	s/tempus_fg_alt=\"#[a-zA-Z0-9]*\"/tempus_fg_alt=\"${foregroundalt}\"/ ; \
+	s/tempus_bg_alt=\"#[a-zA-Z0-9]*\"/tempus_bg_alt=\"${backgroundalt}\"/ ; \
+	s/tempus_bg_dim=\"#[a-zA-Z0-9]*\"/tempus_bg_dim=\"${backgrounddim}\"/" "$HOME"/.config/tmux/tmux.conf
+
+	pgrep tmux > /dev/null || return 1
+
+	tmux source-file "$HOME/.config/tmux/tmux.conf"
+
+	# NOTE this is another script that is part of my dotfiles.
+	#TODO
+	#!tmux_update_vim &
 }
 
 _x_and_shell() {
@@ -125,6 +155,7 @@ _x_and_shell() {
 
 	# Another one of my scripts for live recolouring running terminal
 	# emulators, by using escape sequences.
+	#TODO
 	#repaint_terminals &
 
 	xresources="$HOME"/.Xresources
@@ -168,7 +199,8 @@ _polybar(){
 # Function call cascade
 # ---------------------
 _x_and_shell
-_bspwm
-_polybar
-#_tmux
+_tmux
 #_vim
+_bspwm
+_wallpaper
+_polybar
