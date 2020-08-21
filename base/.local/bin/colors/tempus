@@ -106,7 +106,7 @@ _wallpaper() {
 _vim() {
 	_depcheck vim
 
-	_sed "s,\(colorscheme \).*,\1tempus_${tempus_theme}," "$HOME"/.vimrc
+	_sed "s,\(colorscheme \).*,\1tempus_${tempus_theme}," "$HOME"/.vim/vimrc
 }
 
 _tmux() {
@@ -198,7 +198,7 @@ _polybar(){
 # ---------------------
 _x_and_shell
 _tmux
-#_vim
+_vim
 _bspwm
 _wallpaper
 _polybar

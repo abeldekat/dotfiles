@@ -37,9 +37,12 @@ augroup END
 " set Vim-specific sequences for RGB colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
+" Termguicolors has no use with wal or tempus. The colors are the same.
+" termguicolors disables transparancy with tempus
+"set termguicolors
 "set background=dark
-silent! colorscheme wal 
+"silent! colorscheme tempus_autumn
+silent! colorscheme tempus_autumn
 
 " Plugin configuration {{{1
 " netrw.vim TODO {{{2
