@@ -39,6 +39,7 @@ alias \
 alias \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+	tmuxt="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmuxt.conf" \
 	myco="cat $MY_COLORS/active-theme $MY_COLORS/theme-in-test" 
 
 # make st
