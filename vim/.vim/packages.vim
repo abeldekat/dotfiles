@@ -15,6 +15,7 @@ endif
 
 call minpac#init({'verbose': 3})
 call minpac#add('tpope/vim-sensible')
+call minpac#add('christoomey/vim-tmux-navigator')
 "call minpac#add('tpope/vim-repeat')
 "call minpac#add('tpope/vim-surround')
 "call minpac#add('kana/vim-textobj-user')
