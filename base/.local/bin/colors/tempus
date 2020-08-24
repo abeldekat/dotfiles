@@ -47,6 +47,7 @@ _help_message() {
 [ "$#" -eq 1 ] || { _help_message; exit 1; }
 
 tempus_theme="$1"
+vim_theme="tempus_${tempus_theme}"
 
 # Is the theme light or dark?
 #
@@ -57,8 +58,12 @@ case "$tempus_theme" in
 	dawn|day|fugit|past|totus)
 		theme_variant=light
 		;;
-	autumn|classic|dusk|future|night|rift|spring|summer|tempest|warp|winter|fromwall|frombrodie)
+	autumn|classic|dusk|future|night|rift|spring|summer|tempest|warp|winter)
 		theme_variant=dark
+		;;
+	fromwall|frombrodie)
+		theme_variant=dark
+		vim_theme="tempus_autumn"
 		;;
 	*)
 		echo "_$1_ is not a valid Tempus theme."
@@ -105,8 +110,7 @@ _wallpaper() {
 
 _vim() {
 	_depcheck vim
-
-	_sed "s,\(colorscheme \).*,\1tempus_${tempus_theme}," "$HOME"/.vim/vimrc
+	_sed "s,\(colorscheme \).*,\1${vim_theme}," "$HOME"/.vim/vimrc
 }
 
 _tmux() {
