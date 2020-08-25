@@ -55,6 +55,9 @@ nnoremap <C-p> :<C-u>FZF<CR>
 "let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
 
+" Vim-tmux-runner VTR {{{2
+let g:VtrUseVtrMaps = 1
+
 " Mappings and commands {{{1
 
 " Override defaults {{{2
