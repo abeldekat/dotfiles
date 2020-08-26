@@ -1,5 +1,6 @@
 # seems to defaults to color7 on color2 which is unreadable on several dark themes
-color cursor color15 color9
+#color cursor color15 color9
+color cursor color15 color8 bold
 # seems to defaults to color7 on color4 which is unreadable on several dark themes
 color title-focus color15 color8
 color title-blur color15 color8

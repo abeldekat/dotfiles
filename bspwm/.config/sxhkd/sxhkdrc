@@ -134,3 +134,7 @@ super + {Left,Down,Up,Right}
 #
 super + x;{1,2,3} 
 	firefox -P {Personal,Hardened,default-release}
+
+# Control the laptop's screen brightness (requires `xbacklight`).
+XF86MonBrightness{Down,Up}
+	xbacklight {-dec 15,-inc 15}

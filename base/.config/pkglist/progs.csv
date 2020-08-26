@@ -2,7 +2,7 @@
 ,xorg-server,"is the graphical server."
 ,xorg-apps,"contains program utilities for x.  Is a group."
 R,xorg-xwininfo,"allows querying information about windows. Is part of xorg-apps."
-R,xorg-xbacklight,"enables changing screen brightness levels. Is part of xorg-apps."
+,acpilight,"is a backward-compatibile xbacklight replacement. Remember to add udev rules." 
 R,xorg-xdpyinfo,"aids with resolution determination and screen recording. Is part of xorg-apps."
 R,xorg-xprop,"is a tool for detecting window properties. Is part of xorg-apps."
 ,gvim,"is an improved version of the vi text editor. Includes a gui."
