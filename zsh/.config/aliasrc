@@ -33,13 +33,14 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="sudo pacman" \
+	t="tat"
 
 
 # Some other stuff
 alias \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
-	tmuxt="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmuxt.conf"
+	tmuxt="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmuxtest.conf"
 
 # make st
 alias \

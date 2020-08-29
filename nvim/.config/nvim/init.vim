@@ -14,6 +14,7 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('vim-airline/vim-airline')
 "call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('morhetz/gruvbox', {'type': 'opt'})
+call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
 call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
 
 command! Pupdate source $MYVIMRC | call minpac#update()
@@ -22,16 +23,25 @@ command! Pstatus source $MYVIMRC | call minpac#status()
 
 let mapleader=','
 
+" Colors and theme  {{{2
 set termguicolors
-" medium hard soft
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'medium'
 " use yob mapping vim impaired
 set background=dark 
 
-let g:airline_powerline_fonts = 1
+"packadd onedark.vim
+"packadd gruvbox
 
+" gruvbox medium hard soft
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'medium'
 autocmd vimenter * colorscheme gruvbox
+
+" onedark
+"let g:airline_theme='onedark'
+"autocmd vimenter * colorscheme onedark
+
+" powerline
+let g:airline_powerline_fonts = 1
 
 " Vim-tmux-runner VTR {{{2
 let g:VtrUseVtrMaps = 1

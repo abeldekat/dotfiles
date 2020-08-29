@@ -8,10 +8,10 @@ cfk	~/.config/sxhkd/sxhkdrc
 cfp	~/.config/pkglist/progs.csv
 cfpb	~/.config/polybar/config
 cft	~/.config/tmux/tmux.conf
-cfv	~/.vim/vimrc
+cfv	~/.config/nvim/init.vim
 cfz	$ZDOTDIR/.zshrc
 sca	~/.local/bin/arch/progsinstall
-sct	~/.local/bin/colors/tempus
+sct	~/.local/bin/colors/theme
 scd	~/.local/bin/dots/dotsinstall
 scg	~/.local/bin/arch/pkglist-git.sh
 scpp	~/.local/bin/polybar/launchpolybar

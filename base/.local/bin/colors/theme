@@ -20,7 +20,7 @@ _change(){
 
 _activate(){
 	echo "Merging xresources"
-	xrdb -merge $HOME/.Xresources
+	xrdb -remove $HOME/.Xresources && xrdb -merge $HOME/.Xresources
 	echo "Restarting bspwm"
 	$HOME/.config/bspwm/bspwmrc
 }

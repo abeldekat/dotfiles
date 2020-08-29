@@ -3,6 +3,7 @@ b	~/builds
 d	~/dotfiles
 D	~/Downloads
 m	~/Music
+h	~/
 ct	~/inspiration/christoomey/dotfiles
 pd	~/inspiration/protesilaos/cpdfd
 lsx	~/inspiration/luke/voidrice
@@ -12,7 +13,8 @@ ba	~/builds/abel-st
 c	~/.config
 ca	~/.config/pkglist
 cf	~/.config/fontconfig
-cw	~/.config/wal
+cv	~/.config/nvim
+cm	~/.config/nvim/pack/minpac
 cz	~/.config/zsh
 s	~/.local/bin
 sa	~/.local/bin/arch

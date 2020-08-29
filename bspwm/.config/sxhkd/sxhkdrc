@@ -19,7 +19,8 @@ super + e ; {c,t,x}
         { \
         toggle-picom, \
         thememenu, \
-        xrdb -I "$HOME" -merge "$HOME"/.Xresources \
+        xrdb -I "$HOME" -remove "$HOME"/.Xresources \
+	&& xrdb -I "$HOME" -merge "$HOME"/.Xresources \
         }
 
 # firefox
