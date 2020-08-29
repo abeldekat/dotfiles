@@ -19,7 +19,7 @@ sa	~/.local/bin/arch
 sc	~/.local/bin/colors
 sd	~/.local/bin/dots
 sp	~/.local/bin/polybar
-lc	~/.local/share/my_colors
+lc	~/.local/share/colors
 le	~/.local/share
 mn	/mnt
 vl	/var/lib/libvirt

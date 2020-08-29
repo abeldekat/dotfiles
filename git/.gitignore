@@ -11,3 +11,5 @@
 *.o
 st
 config.h
+pack
+.netrwhist

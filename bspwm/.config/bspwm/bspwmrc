@@ -35,6 +35,8 @@
 #    * focused_border_color  == focused window, focused monitor
 #    * presel_feedback_color == area for a manual split (preselection)
 
+source ~/.local/share/my_colors/active-theme-content
+
 # Truncate a couple of common commands that are used herein.
 _bc() {
 	bspc config "$@"
@@ -42,6 +44,10 @@ _bc() {
 
 _check() {
 	command -v "$1" > /dev/null
+}
+
+_xrdb(){
+	echo $(xrdb -query | grep $1 | cut -d: -f2 | sed s/\\s//)
 }
 
 launchpolybar &
@@ -69,10 +75,10 @@ _bc automatic_scheme spiral
 
 # colours
 # -------
-_bc normal_border_color "#312e2a"
-_bc active_border_color "#ac9440"
-_bc focused_border_color "#52a485"
-_bc presel_feedback_color "#302925"
+_bc presel_feedback_color $(_xrdb "color8")
+_bc normal_border_color $(_xrdb "color8")
+_bc active_border_color $(_xrdb "color3")
+_bc focused_border_color $(_xrdb "color6")
 
 #bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^5' state=floating follow=on

@@ -21,4 +21,3 @@ export KEYTIMEOUT=1
 if [ ! x"$ZSH_FRAMEWORK_WRAPPER" = x ] ; then
   source $ZSH_FRAMEWORK_WRAPPER
 fi
-unalias vim

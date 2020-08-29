@@ -106,6 +106,4 @@ xterm*translations: #override \n\
 	Ctrl Shift <KeyPress>Prior: larger-vt-font() \n\
 	Ctrl Shift <KeyPress>Home: set-vt-font(d)
 
-! DO NOT EDIT THIS.  IT IS CONTROLLED PROGRAMMATICALLY.
-! Use my active Tempus theme.
-#include ".local/share/my_colors/active-tempus-theme.Xcolors"
+#include ".local/share/colors/active-theme.Xcolors"

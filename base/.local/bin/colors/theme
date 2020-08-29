@@ -1,0 +1,33 @@
+#!/bin/bash
+
+thecolors="$HOME/.local/share/colors/"
+theactivexres="$thecolors/active-theme.Xcolors"
+theactivename="$thecolors/active-theme.name"
+
+thetheme=$(basename --suffix=.Xcolors $1)
+thefile=$thecolors/xcolors/$thetheme.Xcolors
+
+_change(){
+	if [ -f $thefile ] ; then 
+		echo $thetheme
+		cp $thecolors/xcolors/$thetheme.Xcolors $theactivexres
+		echo $thetheme > $theactivename
+	else 
+		echo "Not a valid theme: $thetheme"
+		exit 1
+	fi
+}
+
+_activate(){
+	echo "Merging xresources"
+	xrdb -merge $HOME/.Xresources
+	echo "Restarting bspwm"
+	$HOME/.config/bspwm/bspwmrc
+}
+
+_apply(){
+	_change	
+	_activate
+}
+
+_apply

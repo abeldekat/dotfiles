@@ -34,8 +34,8 @@ export PANEL_FIFO=/tmp/panel-fifo
 export PANEL_WM_NAME=bspwm_panel
 
 # Default programs:
-export EDITOR="vim"
-export TERMINAL="termite"
+export EDITOR="nvim"
+export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
