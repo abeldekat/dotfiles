@@ -15,23 +15,14 @@ fi
 # Arch wiki use gnome-keyring, see also /etc/pam.d/login
 export eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 
-# Get default LARBS WM from ~/.local/share/larbs/wm
-export LARBSWM="$(cat ~/.local/share/larbs/wm 2>/dev/null)" &&
-	[ "$LARBSWM" = "xfce" ] || export LARBSWM="bspwm"
 # Advised
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
-# Themes
-export MY_COLORS="$HOME/.local/share/my_colors"
 
 # ZSH zdotdir is defined in .zshenv
 export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/.zshrc-framework.zsh"
 # uncomment for zsh without plugins
 #export ZSH_FRAMEWORK_WRAPPER=""
-
-# Panel
-export PANEL_FIFO=/tmp/panel-fifo
-export PANEL_WM_NAME=bspwm_panel
 
 # Default programs:
 export EDITOR="nvim"

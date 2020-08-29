@@ -15,7 +15,7 @@ ensure_tmux_is_running() {
 # todo v mode 
 # \c-o, accept-line-and-down-history, bound in emacs mode by default
 
-ensure_tmux_is_running
+#ensure_tmux_is_running
 
 export KEYTIMEOUT=1
 if [ ! x"$ZSH_FRAMEWORK_WRAPPER" = x ] ; then

@@ -29,12 +29,13 @@ fi
 # Load capslock as control and escape
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-# LARBS WM is determined in your `~/.profile` on login.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
+exec bspwm
+
 # Map arguments to commands.
-case "$LARBSWM" in
-    bspwm ) exec bspwm        ;;
-    *) echo "No valid LARBS window manager detected." ;;
-esac
+# case "$LARBSWM" in
+#     bspwm ) exec bspwm        ;;
+#     *) echo "No valid LARBS window manager detected." ;;
+# esac

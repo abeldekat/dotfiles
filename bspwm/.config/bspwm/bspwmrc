@@ -35,8 +35,6 @@
 #    * focused_border_color  == focused window, focused monitor
 #    * presel_feedback_color == area for a manual split (preselection)
 
-source ~/.local/share/my_colors/active-theme-content
-
 # Truncate a couple of common commands that are used herein.
 _bc() {
 	bspc config "$@"
