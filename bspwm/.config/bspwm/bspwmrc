@@ -54,7 +54,7 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 # window management
 # -----------------
-_bc border_width 2
+_bc border_width 4
 _bc window_gap 4
 _bc split_ratio 0.50
 _bc single_monocle false
@@ -73,9 +73,9 @@ _bc automatic_scheme spiral
 
 # colours
 # -------
-_bc presel_feedback_color $(_xrdb "color8")
-_bc normal_border_color $(_xrdb "color8")
-_bc active_border_color $(_xrdb "color3")
+_bc presel_feedback_color $(_xrdb "color0")
+_bc normal_border_color $(_xrdb "color0")
+_bc active_border_color $(_xrdb "color0")
 _bc focused_border_color $(_xrdb "color6")
 
 #bspc rule -a Zathura state=tiled

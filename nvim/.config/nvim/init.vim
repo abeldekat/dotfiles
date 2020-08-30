@@ -28,17 +28,18 @@ set termguicolors
 " use yob mapping vim impaired
 set background=dark 
 
-"packadd onedark.vim
-"packadd gruvbox
+" tempus
+" colorscheme tempus_warp
 
 " gruvbox medium hard soft
 let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'medium'
+let g:gruvbox_contrast_light = 'hard'
 autocmd vimenter * colorscheme gruvbox
 
 " onedark
+" packadd onedark.vim
 "let g:airline_theme='onedark'
-"autocmd vimenter * colorscheme onedark
+" autocmd vimenter * colorscheme onedark
 
 " powerline
 let g:airline_powerline_fonts = 1
