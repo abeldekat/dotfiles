@@ -19,6 +19,7 @@ call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
 call minpac#add('NLKNguyen/papercolor-theme', {'type': 'opt'})
 call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
 " call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
+call minpac#add('dracula/vim', {'type': 'opt', 'name': 'dracula'})
 
 command! Pupdate source $MYVIMRC | call minpac#update()
 command! Pclean  source $MYVIMRC | call minpac#clean()
@@ -33,10 +34,10 @@ set background=dark
 syntax on
 
 " --- gruvbox medium hard soft: dark and light
-packadd gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'hard'
-colorscheme gruvbox
+" packadd gruvbox
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_contrast_light = 'hard'
+" colorscheme gruvbox
 " --- onedark: Only dark, atom text editor
 " packadd onedark.vim
 " colorscheme onedark
@@ -45,25 +46,31 @@ colorscheme gruvbox
 " packadd papercolor-theme
 " colorscheme PaperColor
 " --- Classic solarized: dark and light, needs vim-airline themes
-" --- Light will only apply when using the proper xres theme for the terminal
+" Light will only apply when using the proper xres theme for the terminal
 " packadd vim-airline-themes 
 " packadd vim-colors-solarized
 " let g:solarized_contrast = 'normal'
 " colorscheme solarized
+" --- Dracula: A dark theme
+packadd dracula
+colorscheme dracula
 " " --- tempus
 " colorscheme tempus_warp
 
 " statusbar
 set noshowmode
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'onedark'
 " let g:airline_theme = 'papercolor'
 " let g:airline_theme = 'solarized'
+let g:airline_theme = 'dracula'
 packadd vim-airline
 " let g:lightline = { 'colorscheme': 'gruvbox' }
 " let g:lightline = { 'colorscheme': 'onedark' } 
 " let g:lightline = { 'colorscheme': 'PaperColor' }
+" let g:lightline = { 'colorscheme': 'solarized' }
+" let g:lightline = { 'colorscheme': 'dracula' }
 " packadd lightline.vim
 
 " Faster escape {{{2
