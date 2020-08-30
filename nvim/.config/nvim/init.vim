@@ -2,20 +2,20 @@
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('tpope/vim-repeat')
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-unimpaired')
+" call minpac#add('tpope/vim-repeat')
+" call minpac#add('tpope/vim-surround')
+" call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-commentary')
-call minpac#add('kana/vim-textobj-user')
-call minpac#add('kana/vim-textobj-entire')
-call minpac#add('christoomey/vim-tmux-navigator')
-call minpac#add('christoomey/vim-tmux-runner')
-call minpac#add('junegunn/fzf.vim')
+" call minpac#add('kana/vim-textobj-user')
+" call minpac#add('kana/vim-textobj-entire')
+" call minpac#add('christoomey/vim-tmux-navigator')
+" call minpac#add('christoomey/vim-tmux-runner')
+" call minpac#add('junegunn/fzf.vim')
 call minpac#add('vim-airline/vim-airline')
-"call minpac#add('vim-airline/vim-airline-themes')
+" call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('morhetz/gruvbox', {'type': 'opt'})
 call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
-call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
+" call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
 
 command! Pupdate source $MYVIMRC | call minpac#update()
 command! Pclean  source $MYVIMRC | call minpac#clean()
@@ -27,19 +27,22 @@ let mapleader=','
 set termguicolors
 " use yob mapping vim impaired
 set background=dark 
+syntax on
 
 " tempus
 " colorscheme tempus_warp
 
 " gruvbox medium hard soft
+packadd gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
-autocmd vimenter * colorscheme gruvbox
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
 
 " onedark
 " packadd onedark.vim
-"let g:airline_theme='onedark'
-" autocmd vimenter * colorscheme onedark
+" colorscheme onedark
+" let g:airline_theme='onedark'
 
 " powerline
 let g:airline_powerline_fonts = 1
