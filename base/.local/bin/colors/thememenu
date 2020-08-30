@@ -11,7 +11,7 @@ _dmenu() {
 }
 
 _xrdb(){
-	echo $(xrdb -query | grep $1 | cut -d: -f2 | sed s/\\s//)
+	echo $(xrdb -query | grep "^*$1:" | cut -d: -f2 | sed s/\\s//)
 }
 
 _name(){
