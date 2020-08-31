@@ -23,6 +23,7 @@ call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
 call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
 call minpac#add('dracula/vim', {'type': 'opt', 'name': 'dracula'})
 call minpac#add('nanotech/jellybeans.vim', {'type': 'opt'})
+call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
 
 command! Pupdate source $MYVIMRC | call minpac#update()
 command! Pclean  source $MYVIMRC | call minpac#clean()
@@ -51,8 +52,8 @@ syntax on
 " --- palenight.vim: atom text editor
 " A dark color scheme based off Material Pale Night. Based on onedark.vim.
 " Needs packadd!
-packadd palenight.vim
-colorscheme palenight
+" packadd palenight.vim
+" colorscheme palenight
 " --- Papercolor: dark and light
 " packadd vim-airline-themes 
 " packadd papercolor-theme
@@ -76,20 +77,27 @@ colorscheme palenight
 " --- Jellybeans: A colorful, dark color scheme, inspired by ir_black and twilight.
 " packadd vim-airline-themes 
 " colorscheme jellybeans
+" --- Ayu: Simple bright and elegant.
+packadd ayu-vim
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 " " --- tempus
 " colorscheme tempus_warp
 
 " statusbar
 set noshowmode
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'onedark'
 " let g:airline_theme = 'one'
-let g:airline_theme = 'palenight'
+" let g:airline_theme = 'palenight'
 " let g:airline_theme = 'papercolor'
 " let g:airline_theme = 'solarized'
 " let g:airline_theme = 'dracula'
 " let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'ayu'
 packadd vim-airline
 " let g:lightline = { 'colorscheme': 'gruvbox' }
 " let g:lightline = { 'colorscheme': 'onedark' } 
@@ -99,6 +107,7 @@ packadd vim-airline
 " let g:lightline = { 'colorscheme': 'solarized' }
 " let g:lightline = { 'colorscheme': 'dracula' }
 " let g:lightline = { 'colorscheme': 'jellybeans' }
+" let g:lightline = { 'colorscheme': 'ayu' }
 " packadd lightline.vim
 
 " Faster escape {{{2
