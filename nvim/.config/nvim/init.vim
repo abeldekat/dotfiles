@@ -18,8 +18,9 @@ call minpac#add('morhetz/gruvbox', {'type': 'opt'})
 call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
 call minpac#add('NLKNguyen/papercolor-theme', {'type': 'opt'})
 call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
-" call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
+call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
 call minpac#add('dracula/vim', {'type': 'opt', 'name': 'dracula'})
+call minpac#add('nanotech/jellybeans.vim', {'type': 'opt'})
 
 command! Pupdate source $MYVIMRC | call minpac#update()
 command! Pclean  source $MYVIMRC | call minpac#clean()
@@ -41,7 +42,7 @@ syntax on
 " --- onedark: Only dark, atom text editor
 " packadd onedark.vim
 " colorscheme onedark
-" --- Papercolor: dark and light, needs vim-airline themes
+" --- Papercolor: dark and light
 " packadd vim-airline-themes 
 " packadd papercolor-theme
 " colorscheme PaperColor
@@ -51,9 +52,19 @@ syntax on
 " packadd vim-colors-solarized
 " let g:solarized_contrast = 'normal'
 " colorscheme solarized
+" --- Solarized 8: dark and light
+" If you use Vim packages, there is no need to packadd solarized8. Keep your runtimepath clean!
+" The color palette is exactly the same as in Solarized...
+" Adds guifg and guibg better suited for truecolor
+" colorscheme solarized8, and _high _low _flat
+" packadd vim-airline-themes 
+" colorscheme solarized8_high
 " --- Dracula: A dark theme
-packadd dracula
-colorscheme dracula
+" packadd dracula
+" colorscheme dracula
+" --- Jellybeans: A colorful, dark color scheme, inspired by ir_black and twilight.
+packadd vim-airline-themes 
+colorscheme jellybeans
 " " --- tempus
 " colorscheme tempus_warp
 
@@ -64,13 +75,15 @@ let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'onedark'
 " let g:airline_theme = 'papercolor'
 " let g:airline_theme = 'solarized'
-let g:airline_theme = 'dracula'
+" let g:airline_theme = 'dracula'
+let g:airline_theme = 'jellybeans'
 packadd vim-airline
 " let g:lightline = { 'colorscheme': 'gruvbox' }
 " let g:lightline = { 'colorscheme': 'onedark' } 
 " let g:lightline = { 'colorscheme': 'PaperColor' }
 " let g:lightline = { 'colorscheme': 'solarized' }
 " let g:lightline = { 'colorscheme': 'dracula' }
+" let g:lightline = { 'colorscheme': 'jellybeans' }
 " packadd lightline.vim
 
 " Faster escape {{{2

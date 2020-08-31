@@ -15,6 +15,7 @@ ca	~/.config/pkglist
 cf	~/.config/fontconfig
 cv	~/.config/nvim
 cm	~/.config/nvim/pack/minpac
+co	~/.config/nvim/pack/minpac/opt
 cz	~/.config/zsh
 s	~/.local/bin
 sa	~/.local/bin/arch
