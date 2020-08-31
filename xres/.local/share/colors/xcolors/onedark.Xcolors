@@ -1,3 +1,4 @@
+! From vim theme onedark. Can also be used with vim theme one on a dark background
 ! special
 *.foreground:   #ABB2BF
 *.background:   #282C34

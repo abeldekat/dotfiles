@@ -16,6 +16,7 @@ call minpac#add('vim-airline/vim-airline', {'type': 'opt'})
 call minpac#add('vim-airline/vim-airline-themes', {'type': 'opt'})
 call minpac#add('morhetz/gruvbox', {'type': 'opt'})
 call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
+call minpac#add('rakr/vim-one', {'type': 'opt'})
 call minpac#add('NLKNguyen/papercolor-theme', {'type': 'opt'})
 call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
 call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
@@ -42,6 +43,10 @@ syntax on
 " --- onedark: Only dark, atom text editor
 " packadd onedark.vim
 " colorscheme onedark
+" --- vim-one: atom text editor
+"  packadd is necessary for the airline theme in autoload
+" packadd vim-one
+colorscheme one
 " --- Papercolor: dark and light
 " packadd vim-airline-themes 
 " packadd papercolor-theme
@@ -63,28 +68,30 @@ syntax on
 " packadd dracula
 " colorscheme dracula
 " --- Jellybeans: A colorful, dark color scheme, inspired by ir_black and twilight.
-packadd vim-airline-themes 
-colorscheme jellybeans
+" packadd vim-airline-themes 
+" colorscheme jellybeans
 " " --- tempus
 " colorscheme tempus_warp
 
 " statusbar
 set noshowmode
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'onedark'
+" let g:airline_theme = 'one'
 " let g:airline_theme = 'papercolor'
 " let g:airline_theme = 'solarized'
 " let g:airline_theme = 'dracula'
-let g:airline_theme = 'jellybeans'
-packadd vim-airline
+" let g:airline_theme = 'jellybeans'
+" packadd vim-airline
 " let g:lightline = { 'colorscheme': 'gruvbox' }
 " let g:lightline = { 'colorscheme': 'onedark' } 
+let g:lightline = { 'colorscheme': 'one' } 
 " let g:lightline = { 'colorscheme': 'PaperColor' }
 " let g:lightline = { 'colorscheme': 'solarized' }
 " let g:lightline = { 'colorscheme': 'dracula' }
 " let g:lightline = { 'colorscheme': 'jellybeans' }
-" packadd lightline.vim
+packadd lightline.vim
 
 " Faster escape {{{2
 inoremap jj <Esc>

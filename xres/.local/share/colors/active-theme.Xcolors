@@ -1,22 +1,37 @@
-*background: #111111
-*foreground: #dedede
-*cursorColor: #ffa460
-! selection_background #464d91
-*color0: #919191
-*color8: #bdbdbd
-*color1: #e17373
-*color9: #ffa0a0
-*color2: #94b978
-*color10: #bddeab
-*color3: #ffb97b
-*color11: #ffdba0
-*color4: #96bddb
-*color12: #b1d7f6
-*color5: #e1c0fa
-*color13: #fbdaff
-*color6: #00988e
-*color14: #19b2a7
-*color7: #dedede
-*color15: #ffffff
-! selection_foreground #111111
+! From vim theme onedark. Can also be used with vim theme one on a dark background
+! special
+*.foreground:   #ABB2BF
+*.background:   #282C34
+*.cursorColor:  #ABB2BF
 
+! black
+*.color0:       #5C6370
+*.color8:       #4B5263
+
+! red
+*.color1:       #E06C75
+*.color9:       #BE5046
+
+! green
+*.color2:       #98C379
+*.color10:      #98C379
+
+! yellow
+*.color3:       #E5C07B
+*.color11:      #D19A66
+
+! blue
+*.color4:       #61AFEF
+*.color12:      #61AFEF
+
+! magenta
+*.color5:       #C678DD
+*.color13:      #C678DD
+
+! cyan
+*.color6:       #56B6C2
+*.color14:      #56B6C2
+
+! white
+*.color7:       #ABB2BF
+*.color15:      #3E4452
