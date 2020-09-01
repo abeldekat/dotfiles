@@ -16,6 +16,7 @@ call minpac#add('vim-airline/vim-airline', {'type': 'opt'})
 call minpac#add('vim-airline/vim-airline-themes', {'type': 'opt'})
 call minpac#add('morhetz/gruvbox', {'type': 'opt'})
 call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
+call minpac#add('sonph/onehalf', {'type': 'opt', 'subdir': 'vim/'})
 call minpac#add('rakr/vim-one', {'type': 'opt'})
 call minpac#add('drewtempelmeyer/palenight.vim', {'type': 'opt'})
 call minpac#add('NLKNguyen/papercolor-theme', {'type': 'opt'})
@@ -38,18 +39,22 @@ set clipboard+=unnamedplus
 " Colors and theme  {{{2
 set termguicolors
 " use yob mapping vim impaired
-" set background=dark 
-set background=light 
+set background=dark 
+" set background=light 
 syntax on
 
 " --- gruvbox medium hard soft: dark and light
-packadd gruvbox
+" packadd gruvbox
 " let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'soft'
-colorscheme gruvbox
+" let g:gruvbox_contrast_light = 'hard'
+" colorscheme gruvbox
 " --- onedark: Only dark, atom text editor
 " packadd onedark.vim
 " colorscheme onedark
+" --- onehalf: atom text editor
+packadd onehalf
+" colorscheme onehalfdark
+colorscheme onehalflight
 " --- vim-one: atom text editor
 "  packadd is necessary for the airline theme in autoload
 " packadd vim-one
@@ -93,9 +98,11 @@ colorscheme gruvbox
 
 " statusbar
 set noshowmode
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'onedark'
+" let g:airline_theme = 'onehalfdark'
+" let g:airline_theme = 'onehalflight'
 " let g:airline_theme = 'one'
 " let g:airline_theme = 'palenight'
 " let g:airline_theme = 'papercolor'
@@ -103,9 +110,10 @@ let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'dracula'
 " let g:airline_theme = 'jellybeans'
 " let g:airline_theme = 'ayu'
-packadd vim-airline
+" packadd vim-airline
 " let g:lightline = { 'colorscheme': 'gruvbox' }
 " let g:lightline = { 'colorscheme': 'onedark' } 
+let g:lightline = { 'colorscheme': 'onehalfdark' } 
 " let g:lightline = { 'colorscheme': 'one' } 
 " let g:lightline = { 'colorscheme': 'palenight' } 
 " let g:lightline = { 'colorscheme': 'PaperColor' }
@@ -113,7 +121,7 @@ packadd vim-airline
 " let g:lightline = { 'colorscheme': 'dracula' }
 " let g:lightline = { 'colorscheme': 'jellybeans' }
 " let g:lightline = { 'colorscheme': 'ayu' }
-" packadd lightline.vim
+packadd lightline.vim
 
 " Faster escape {{{2
 inoremap jj <Esc>
