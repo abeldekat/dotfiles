@@ -25,23 +25,28 @@ call minpac#add('dracula/vim', {'type': 'opt', 'name': 'dracula'})
 call minpac#add('nanotech/jellybeans.vim', {'type': 'opt'})
 call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
 
+" Todo Molokai and onehalf https://www.dunebook.com/best-vim-themes/
+" gruvbox controleer cursorColor met iterm repo van ayu
+
 command! Pupdate source $MYVIMRC | call minpac#update()
 command! Pclean  source $MYVIMRC | call minpac#clean()
 command! Pstatus source $MYVIMRC | call minpac#status()
 
 let mapleader=','
+set clipboard+=unnamedplus
 
 " Colors and theme  {{{2
 set termguicolors
 " use yob mapping vim impaired
-set background=dark 
+" set background=dark 
+set background=light 
 syntax on
 
 " --- gruvbox medium hard soft: dark and light
-" packadd gruvbox
+packadd gruvbox
 " let g:gruvbox_contrast_dark = 'hard'
-" let g:gruvbox_contrast_light = 'hard'
-" colorscheme gruvbox
+let g:gruvbox_contrast_light = 'soft'
+colorscheme gruvbox
 " --- onedark: Only dark, atom text editor
 " packadd onedark.vim
 " colorscheme onedark
@@ -78,18 +83,18 @@ syntax on
 " packadd vim-airline-themes 
 " colorscheme jellybeans
 " --- Ayu: Simple bright and elegant.
-packadd ayu-vim
-let ayucolor="light"  " for light version of theme
+" packadd ayu-vim
+" let ayucolor="light"  " for light version of theme
 " let ayucolor="mirage" " for mirage version of theme
 " let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+" colorscheme ayu
 " " --- tempus
 " colorscheme tempus_warp
 
 " statusbar
 set noshowmode
 let g:airline_powerline_fonts = 1
-" let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'onedark'
 " let g:airline_theme = 'one'
 " let g:airline_theme = 'palenight'
@@ -97,7 +102,7 @@ let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'solarized'
 " let g:airline_theme = 'dracula'
 " let g:airline_theme = 'jellybeans'
-let g:airline_theme = 'ayu'
+" let g:airline_theme = 'ayu'
 packadd vim-airline
 " let g:lightline = { 'colorscheme': 'gruvbox' }
 " let g:lightline = { 'colorscheme': 'onedark' } 
@@ -112,7 +117,7 @@ packadd vim-airline
 
 " Faster escape {{{2
 inoremap jj <Esc>
-inoremap <esc> <nop> 
+" inoremap <esc> <nop> 
 
 " Windows {{{2
 nnoremap <C-h> <C-w>h
