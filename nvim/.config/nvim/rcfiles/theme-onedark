@@ -1,0 +1,12 @@
+" --- onedark: Only dark, atom text editor
+packadd onedark.vim
+colorscheme onedark
+
+set noshowmode
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'onedark'
+packadd vim-airline
+" let g:lightline = { 'colorscheme': 'onedark' } 
+" packadd lightline.vim
+
+" vim:ft=vim

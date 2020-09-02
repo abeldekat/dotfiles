@@ -1,5 +1,5 @@
 " Surround - Mappings for adding, removing, and changing surrounding characters
 
-call minpac#add('tpope/vim-surround')
+call AddPluginToManager('tpope/vim-surround')
 
 " vim:ft=vim

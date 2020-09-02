@@ -1,0 +1,15 @@
+" --- Papercolor: dark and light
+packadd vim-airline-themes 
+packadd papercolor-theme
+colorscheme PaperColor
+
+set noshowmode
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'papercolor'
+packadd vim-airline
+
+" let g:lightline = { 'colorscheme': 'PaperColor' }
+" packadd lightline.vim
+
+" vim:ft=vim

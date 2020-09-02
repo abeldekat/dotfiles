@@ -1,6 +1,6 @@
 " Vim Tmux Runner - Connect Vim and tmux to allow running lines & commands
 
-call minpac#add('christoomey/vim-tmux-runner')
+call AddPluginToManager('christoomey/vim-tmux-runner')
 "Plug '~/code/vim/tmux-runner'
 
 " Accept default mappings on the leader key:

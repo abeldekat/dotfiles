@@ -1,5 +1,5 @@
 " Repeat - Repeat custom mappings with `.`
 
-call minpac#add('tpope/vim-repeat')
+call AddPluginToManager('tpope/vim-repeat')
 
 " vim:ft=vim

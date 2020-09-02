@@ -1,7 +1,7 @@
 " fzf - the fuzzy finder of all the things
 
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-call minpac#add('junegunn/fzf.vim')
+call AddPluginToManager('junegunn/fzf.vim')
 
 " let g:fzf_files_options =
 "   \ '--reverse ' .

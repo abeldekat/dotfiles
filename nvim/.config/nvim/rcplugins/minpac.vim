@@ -1,6 +1,6 @@
 " Minpac - A minimal package manager for Vim 8 (and Neovim)
 "-------------------------------------------------------------------
 
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+call AddPluginToManager('k-takata/minpac', {'type': 'opt'})
 
 " vim:ft=vim
