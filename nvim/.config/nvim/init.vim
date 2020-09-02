@@ -65,8 +65,8 @@ syntax on
 " packadd palenight.vim
 " colorscheme palenight
 " --- Papercolor: dark and light
-" packadd vim-airline-themes 
-" packadd papercolor-theme
+packadd vim-airline-themes 
+packadd papercolor-theme
 " colorscheme PaperColor
 " --- Classic solarized: dark and light, needs vim-airline themes
 " Light will only apply when using the proper xres theme for the terminal
@@ -80,7 +80,7 @@ syntax on
 " Adds guifg and guibg better suited for truecolor
 " colorscheme solarized8, and _high _low _flat
 " packadd vim-airline-themes 
-colorscheme solarized8_high
+" colorscheme solarized8_high
 " --- Dracula: A dark theme
 " packadd dracula
 " colorscheme dracula
@@ -98,14 +98,14 @@ colorscheme solarized8_high
 
 " statusbar
 set noshowmode
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'gruvbox'
 " let g:airline_theme = 'onedark'
 " let g:airline_theme = 'onehalfdark'
 " let g:airline_theme = 'onehalflight'
 " let g:airline_theme = 'one'
 " let g:airline_theme = 'palenight'
-" let g:airline_theme = 'papercolor'
+let g:airline_theme = 'papercolor'
 " let g:airline_theme = 'solarized'
 " let g:airline_theme = 'dracula'
 " let g:airline_theme = 'jellybeans'
@@ -117,11 +117,11 @@ set noshowmode
 " let g:lightline = { 'colorscheme': 'one' } 
 " let g:lightline = { 'colorscheme': 'palenight' } 
 " let g:lightline = { 'colorscheme': 'PaperColor' }
-let g:lightline = { 'colorscheme': 'solarized' }
+" let g:lightline = { 'colorscheme': 'solarized' }
 " let g:lightline = { 'colorscheme': 'dracula' }
 " let g:lightline = { 'colorscheme': 'jellybeans' }
 " let g:lightline = { 'colorscheme': 'ayu' }
-packadd lightline.vim
+" packadd lightline.vim
 
 " Faster escape {{{2
 inoremap jj <Esc>
