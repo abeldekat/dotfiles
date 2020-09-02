@@ -1,0 +1,10 @@
+" TextObj - Custom text objects for the line, indent level, entier file, etc
+
+call minpac#add('kana/vim-textobj-user')
+call minpac#add('kana/vim-textobj-line')
+call minpac#add('kana/vim-textobj-indent')
+call minpac#add('kana/vim-textobj-entire')
+" call minpac#add('beloglazov/vim-textobj-quotes')
+" call minpac#add('christoomey/vim-textobj-codeblock')
+
+" vim:ft=vim

@@ -1,0 +1,5 @@
+" Unimpaired - Pairs of mappings for changing options, adding lines, etc.
+
+call minpac#add('tpope/vim-unimpaired')
+
+" vim:ft=vim

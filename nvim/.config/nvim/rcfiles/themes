@@ -1,0 +1,10 @@
+" Themes: 
+"--------
+
+set termguicolors
+" use yob mapping vim impaired
+" set background=dark 
+set background=light 
+syntax on
+
+" vim:ft=vim
