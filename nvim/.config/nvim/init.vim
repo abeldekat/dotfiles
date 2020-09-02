@@ -39,8 +39,8 @@ set clipboard+=unnamedplus
 " Colors and theme  {{{2
 set termguicolors
 " use yob mapping vim impaired
-set background=dark 
-" set background=light 
+" set background=dark 
+set background=light 
 syntax on
 
 " --- gruvbox medium hard soft: dark and light
@@ -52,9 +52,9 @@ syntax on
 " packadd onedark.vim
 " colorscheme onedark
 " --- onehalf: atom text editor
-packadd onehalf
+" packadd onehalf
 " colorscheme onehalfdark
-colorscheme onehalflight
+" colorscheme onehalflight
 " --- vim-one: atom text editor
 "  packadd is necessary for the airline theme in autoload
 " packadd vim-one
@@ -80,7 +80,7 @@ colorscheme onehalflight
 " Adds guifg and guibg better suited for truecolor
 " colorscheme solarized8, and _high _low _flat
 " packadd vim-airline-themes 
-" colorscheme solarized8_high
+colorscheme solarized8_high
 " --- Dracula: A dark theme
 " packadd dracula
 " colorscheme dracula
@@ -113,11 +113,11 @@ set noshowmode
 " packadd vim-airline
 " let g:lightline = { 'colorscheme': 'gruvbox' }
 " let g:lightline = { 'colorscheme': 'onedark' } 
-let g:lightline = { 'colorscheme': 'onehalfdark' } 
+" let g:lightline = { 'colorscheme': 'onehalfdark' } 
 " let g:lightline = { 'colorscheme': 'one' } 
 " let g:lightline = { 'colorscheme': 'palenight' } 
 " let g:lightline = { 'colorscheme': 'PaperColor' }
-" let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = { 'colorscheme': 'solarized' }
 " let g:lightline = { 'colorscheme': 'dracula' }
 " let g:lightline = { 'colorscheme': 'jellybeans' }
 " let g:lightline = { 'colorscheme': 'ayu' }

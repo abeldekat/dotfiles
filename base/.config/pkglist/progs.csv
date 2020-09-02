@@ -70,7 +70,7 @@ T,bsp-layout,"supports dynamic layout management for bspwm with tall, wide, even
 ,firetools,"is the graphical user interface of Firejail."
 ,zathura,"is a pdf viewer with vim-like bindings."
 ,zathura-pdf-mupdf,"allows mupdf pdf compatibility in zathura."
-,dmenu,"runs commands and provides a UI for selection."
+A,dmenu2,"runs commands and provides a UI for selection. Version 4.9 has a problem with focus. This one is patched."
 ,zsh,"is the interactive shell."
 ,zsh-doc,"provides docmentation for zsh."
 ,zsh-syntax-highlighting,"provides fish-like syntax highlighting in the shell.Installed with zgen from github."

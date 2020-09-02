@@ -1,18 +1,19 @@
 #!/bin/bash
 
 _dmenu() {
-	color5=$(_xrdb "color5")
-	background=$(_xrdb "background")
-	foreground=$(_xrdb "foreground")
+	# color5=$(_xrdb "color5")
+	# background=$(_xrdb "background")
+	# foreground=$(_xrdb "foreground")
 	activemenu=$(<$theactivename)
-	dmenu -p "Select theme ($activemenu)" -nb "${background:-'#000000'}" -nf "${foreground:-'#ffffff'}" \
-	-sb "${color5:-'#bb6688'}" -sf "${background:-'#000000'}" -i -l 60
+	dmenu -p "Select theme ($activemenu)" -i -l 100 
+	#-nb "${background:-'#000000'}" -nf "${foreground:-'#ffffff'}" \
+	#-sb "${color5:-'#bb6688'}" -sf "${background:-'#000000'}" -i -l 60
 	#-sb "${color5:-'#bb6688'}" -sf "${background:-'#000000'}" -fn "${my_custom_ui_font:-'DejaVu Sans-10'}"
 }
 
-_xrdb(){
-	echo $(xrdb -query | grep "^*$1:" | cut -d: -f2 | sed s/\\s//)
-}
+# _xrdb(){
+# 	echo $(xrdb -query | grep "^*$1:" | cut -d: -f2 | sed s/\\s//)
+# }
 
 _name(){
 	echo $(basename --suffix=.Xcolors $file)
