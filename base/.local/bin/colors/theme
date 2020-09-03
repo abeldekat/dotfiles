@@ -30,6 +30,9 @@ _activate(){
 
 _vim(){
 	thevimtheme="$(cat $themappingtovim | grep "$thetheme" | cut -d, -f2)"
+	if [ -z $thevimtheme ] ; then
+		thevimtheme="tempus"
+	fi
 	thevimfile="$thepathtovimthemes/theme-$thevimtheme"
 	if [ -f $thevimfile ] ; then
 		cp "$thevimfile" "$thepathtovimthemes/theme-active.vim"
