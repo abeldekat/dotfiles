@@ -30,8 +30,7 @@ endif
 
 function! CurrentLinuxThemeIsLight()
 	let l:name = readfile(expand('~/.local/share/colors/active-theme.name'))[0]
-	let l:isLight = match(l:name, 'light')
-	if l:isLight != -1 
+	if match(l:name, 'light') != -1 
 		return v:true
 	else
 		return v:false
