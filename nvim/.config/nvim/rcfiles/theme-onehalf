@@ -1,12 +1,19 @@
 " --- onehalf: atom text editor
 packadd onehalf
-" colorscheme onehalfdark
-colorscheme onehalflight
+let isLight = CurrentLinuxThemeIsLight()
+if (isLight)
+	colorscheme onehalflight
+else	
+	colorscheme onehalfdark
+endif
 
 set noshowmode
 let g:airline_powerline_fonts = 1
-" let g:airline_theme = 'onehalfdark'
-let g:airline_theme = 'onehalflight'
+if (isLight)
+	let g:airline_theme = 'onehalflight'
+else
+	let g:airline_theme = 'onehalfdark'
+endif
 packadd vim-airline
 
 " onehalflight for lightline does not exist
