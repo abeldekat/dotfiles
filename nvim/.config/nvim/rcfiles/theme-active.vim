@@ -1,23 +1,15 @@
-" --- onehalf: atom text editor
-packadd onehalf
-let isLight = CurrentLinuxThemeIsLight()
-if (isLight)
-	colorscheme onehalflight
-else	
-	colorscheme onehalfdark
-endif
+" --- palenight.vim: atom text editor
+" A dark color scheme based off Material Pale Night. Based on onedark.vim.
+" Needs packadd!
+packadd palenight.vim
+colorscheme palenight
 
 set noshowmode
 let g:airline_powerline_fonts = 1
-if (isLight)
-	let g:airline_theme = 'onehalflight'
-else
-	let g:airline_theme = 'onehalfdark'
-endif
+let g:airline_theme = 'palenight'
 packadd vim-airline
 
-" onehalflight for lightline does not exist
-" let g:lightline = { 'colorscheme': 'onehalfdark' } 
+" let g:lightline = { 'colorscheme': 'palenight' } 
 " packadd lightline.vim
 
 " vim:ft=vim
