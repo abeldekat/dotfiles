@@ -1,20 +1,18 @@
-" --- Classic solarized: dark and light, needs vim-airline themes
-" Light will only apply when using the proper xres theme for the terminal
-packadd vim-airline-themes 
+" --- gruvbox medium hard soft: dark and light
+packadd gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'hard'
 set background=dark
 if (CurrentLinuxThemeIsLight())
 	set background=light
 endif
-packadd vim-colors-solarized
-let g:solarized_contrast = 'normal'
-colorscheme solarized
+colorscheme gruvbox
 
 set noshowmode
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'gruvbox'
 packadd vim-airline
-
-" let g:lightline = { 'colorscheme': 'solarized' }
+" let g:lightline = { 'colorscheme': 'gruvbox' }
 " packadd lightline.vim
 
 " vim:ft=vim
