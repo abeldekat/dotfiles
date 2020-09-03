@@ -1,8 +1,11 @@
 #!/bin/bash
 
-thecolors="$HOME/.local/share/colors/"
+thecolors="$HOME/.local/share/colors"
 theactivexres="$thecolors/active-theme.Xcolors"
 theactivename="$thecolors/active-theme.name"
+themappingtovim="$thecolors/xresourcestovim"
+
+thepathtovimthemes="$HOME/.config/nvim/rcfiles"
 
 thetheme=$(basename --suffix=.Xcolors $1)
 thefile=$thecolors/xcolors/$thetheme.Xcolors
@@ -25,9 +28,19 @@ _activate(){
 	bspc wm --restart
 }
 
+_vim(){
+	thevimtheme="$(cat $themappingtovim | grep "$thetheme" | cut -d, -f2)"
+	thevimfile="$thepathtovimthemes/theme-$thevimtheme"
+	if [ -f $thevimfile ] ; then
+		cp "$thevimfile" "$thepathtovimthemes/theme-active.vim"
+	fi
+	
+}
+
 _apply(){
 	_change	
 	_activate
+	_vim
 }
 
 _apply

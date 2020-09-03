@@ -1,14 +1,14 @@
-" --- Jellybeans: A colorful, dark color scheme, inspired by ir_black and twilight.
-packadd vim-airline-themes 
-colorscheme jellybeans
+" --- Dracula: A dark theme
+" --- Script sets background to dark
+packadd dracula
+colorscheme dracula
 
 set noshowmode
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'dracula'
 packadd vim-airline
 
-
-" let g:lightline = { 'colorscheme': 'jellybeans' }
+" let g:lightline = { 'colorscheme': 'dracula' }
 " packadd lightline.vim
 
 " vim:ft=vim

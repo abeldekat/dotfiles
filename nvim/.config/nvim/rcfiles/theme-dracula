@@ -1,4 +1,5 @@
 " --- Dracula: A dark theme
+" --- Script sets background to dark
 packadd dracula
 colorscheme dracula
 

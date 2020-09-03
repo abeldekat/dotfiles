@@ -10,9 +10,6 @@
 let mapleader = "\<Space>"
 
 set termguicolors
-" use yob mapping vim impaired
-" set background=dark 
-set background=light 
 syntax on
 
 " Only load minpac when one of these commands is issued:
