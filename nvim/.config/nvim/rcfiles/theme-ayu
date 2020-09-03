@@ -1,13 +1,17 @@
 " --- Ayu: Simple bright and elegant.
 " --- Provides airline and lightline themes
-" --- The script sets the background
+" --- Do not set the background.  Three versions.
 
 packadd ayu-vim
-let ayucolor="light"  " for light version of theme
-" let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
 
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+if (CurrentLinuxThemeIsLight())
+	let ayucolor="light"
+endif
+
+colorscheme ayu
 
  let g:airline_powerline_fonts = 1
  let g:airline_theme = 'ayu'

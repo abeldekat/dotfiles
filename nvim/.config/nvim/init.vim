@@ -28,6 +28,16 @@ else
 	endfunction
 endif
 
+function! CurrentLinuxThemeIsLight()
+	let l:name = readfile(expand('~/.local/share/colors/active-theme.name'))[0]
+	let l:isLight = match(l:name, 'light')
+	if l:isLight != -1 
+		return v:true
+	else
+		return v:false
+	endif
+endfunction
+
 " Source all files in the specified directory
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.config/nvim/' . a:directory . '/*.vim'
@@ -37,6 +47,7 @@ function! s:SourceConfigFilesIn(directory)
     endif
   endfor
 endfunction 
+
 " Source the plugins and their settings
 call s:SourceConfigFilesIn('rcplugins')
 " Source personal settings
