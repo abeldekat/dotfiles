@@ -1,45 +1,22 @@
-!
-! Generated with :
-! XRDB2Xreources.py
-! https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/Xresources/ayu_dark
-!
-*foreground:  #e6e1cf
-*background:  #0f1419
-*cursorColor: #f29718
-!
-! Black
-*color0:      #000000
-*color8:      #323232
-!
-! Red
-*color1:      #ff3333
-*color9:      #ff6565
-!
-! Green
-*color2:      #b8cc52
-*color10:     #eafe84
-!
-! Yellow
-*color3:      #e7c547
-*color11:     #fff779
-!
-! Blue
-*color4:      #36a3d9
-*color12:     #68d5ff
-!
-! Magenta
-*color5:      #f07178
-*color13:     #ffa3aa
-!
-! Cyan
-*color6:      #95e6cb
-*color14:     #c7fffd
-!
-! White
-*color7:      #ffffff
-*color15:     #ffffff
-!
-! Bold, Italic, Underline
-*colorBD:     #e6e1cf
-!*.colorIT:
-!*.colorUL:
+*background: #111111
+*foreground: #dedede
+*cursorColor: #ffa460
+! selection_background #464d91
+*color0: #919191
+*color8: #bdbdbd
+*color1: #e17373
+*color9: #ffa0a0
+*color2: #94b978
+*color10: #bddeab
+*color3: #ffb97b
+*color11: #ffdba0
+*color4: #96bddb
+*color12: #b1d7f6
+*color5: #e1c0fa
+*color13: #fbdaff
+*color6: #00988e
+*color14: #19b2a7
+*color7: #dedede
+*color15: #ffffff
+! selection_foreground #111111
+
