@@ -1,36 +1,37 @@
-# special
-*foreground:		#d0d0d0
-*background:		#1c1c1c
-*cursorColor:		#d0d0d0
+! Copied dark vim theme onedark. Use with vim-one on a dark background
+! special
+*foreground:   #ABB2BF
+*background:   #282C34
+*cursorColor:  #ABB2BF
 
-# black
-*color0:		#1c1c1c
-*color8:		#585858
+! black
+*color0:       #5C6370
+*color8:       #4B5263
 
-# red
-*color1:		#af005f
-*color9:		#5faf5f
+! red
+*color1:       #E06C75
+*color9:       #BE5046
 
-# green
-*color2:		#5faf00
-*color10:		#afd700
+! green
+*color2:       #98C379
+*color10:      #98C379
 
-# yellow
-*color3:		#d7af5f
-*color11:		#af87d7
+! yellow
+*color3:       #E5C07B
+*color11:      #D19A66
 
-# blue
-*color4:		#5fafd7
-color12			#ffaf00
+! blue
+*color4:       #61AFEF
+*color12:      #61AFEF
 
-# magenta
-*color5:		#808080
-*color13:		#ff5faf
+! magenta
+*color5:       #C678DD
+*color13:      #C678DD
 
-# cyan
-*color6:		#d7875f
-*color14:		#00afaf
+! cyan
+*color6:       #56B6C2
+*color14:      #56B6C2
 
-# white
-*color7:		#d0d0d0
-*color15:		#5f8787
+! white
+*color7:       #ABB2BF
+*color15:      #3E4452

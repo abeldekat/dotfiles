@@ -1,7 +1,10 @@
-
 " --- vim-one: atom text editor
 "  packadd is necessary for the airline theme in autoload
 packadd vim-one
+set background=dark
+if (CurrentLinuxThemeIsLight())
+	set background=light
+endif
 colorscheme one
 
 set noshowmode
