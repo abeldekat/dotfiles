@@ -1,4 +1,6 @@
 " --- Papercolor: dark and light
+" --- Documentation:
+"  https://github.com/NLKNguyen/papercolor-theme/blob/master/DESIGN.md
 packadd vim-airline-themes 
 packadd papercolor-theme
 set background=dark
