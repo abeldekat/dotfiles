@@ -1,15 +1,19 @@
-" --- palenight.vim: atom text editor
-" A dark color scheme based off Material Pale Night. Based on onedark.vim.
-" Needs packadd!
-packadd palenight.vim
-colorscheme palenight
+" --- Papercolor: dark and light
+packadd vim-airline-themes 
+packadd papercolor-theme
+set background=dark
+if (CurrentLinuxThemeIsLight())
+	set background=light
+endif
+colorscheme PaperColor
 
 set noshowmode
+
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'palenight'
+let g:airline_theme = 'papercolor'
 packadd vim-airline
 
-" let g:lightline = { 'colorscheme': 'palenight' } 
+" let g:lightline = { 'colorscheme': 'PaperColor' }
 " packadd lightline.vim
 
 " vim:ft=vim

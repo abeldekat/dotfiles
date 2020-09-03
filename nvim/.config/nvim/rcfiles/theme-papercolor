@@ -1,6 +1,10 @@
 " --- Papercolor: dark and light
 packadd vim-airline-themes 
 packadd papercolor-theme
+set background=dark
+if (CurrentLinuxThemeIsLight())
+	set background=light
+endif
 colorscheme PaperColor
 
 set noshowmode
