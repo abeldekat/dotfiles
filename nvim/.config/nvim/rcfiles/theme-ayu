@@ -1,5 +1,6 @@
 " --- Ayu: Simple bright and elegant.
 " --- Provides airline and lightline themes
+" --- The script sets the background
 
 packadd ayu-vim
 let ayucolor="light"  " for light version of theme
