@@ -9,6 +9,10 @@
 " load the variant you want
 "
 packadd vim-airline-themes 
+set background=dark
+if (CurrentLinuxThemeIsLight())
+	set background=light
+endif
 colorscheme solarized8_high
 
 set noshowmode
