@@ -15,5 +15,6 @@ call AddPluginToManager('lifepillar/vim-solarized8', {'type': 'opt'})
 call AddPluginToManager('dracula/vim', {'type': 'opt', 'name': 'dracula'})
 call AddPluginToManager('nanotech/jellybeans.vim', {'type': 'opt'})
 call AddPluginToManager('ayu-theme/ayu-vim', {'type': 'opt'})
+call AddPluginToManager('junegunn/seoul256.vim', {'type': 'opt'})
 
 " vim:ft=vim
