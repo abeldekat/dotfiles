@@ -1,23 +1,37 @@
-! seoul256 (light) theme adapted for 
-! append the content of this file to your .Xresources
-*background: #dadada
-*foreground: #4e4e4e
-*color0: #4e4e4e
-*color1: #af5f5f
-*color2: #5f885f
-*color3: #af8760
-*color4: #5f87ae
-*color5: #875f87
-*color6: #5f8787
-*color7: #e4e4e4
-*color8: #3a3a3a
-*color9: #870100
-*color10: #005f00
-*color11: #d8865f
-*color12: #0087af
-*color13: #87025f
-*color14: #008787
-*color15: #eeeeee
-*cursorColor: #4e4e4e
-*cursorColor2: #dadada
-*colorBD: #3a3a3a
+! -----------------------------------------------------------------------------
+! File: gruvbox-light.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+! hard contrast: *background: #f9f5d7
+! *background: #fbf1c7
+*background: #f2e5bc
+*foreground: #3c3836
+*cursorColor: #7c6f64 
+! Black + DarkGrey
+*color0:  #fdf4c1
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #9d0006
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #79740e
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #b57614
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #076678
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #8f3f71
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #427b58
+! LightGrey + White
+*color7:  #7c6f64
+*color15: #3c3836
