@@ -1,6 +1,6 @@
 " --- onehalf: atom text editor
 packadd onehalf
-let isLight = CurrentLinuxThemeIsLight()
+let isLight = colorlib#currentLinuxThemeIsLight()
 if (isLight)
 	colorscheme onehalflight
 else	

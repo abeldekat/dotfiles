@@ -10,7 +10,7 @@
 "
 packadd vim-airline-themes 
 set background=dark
-if (CurrentLinuxThemeIsLight())
+if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
 colorscheme solarized8_high

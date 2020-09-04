@@ -1,22 +1,22 @@
 #!/bin/bash
 
-thecolors="$HOME/.local/share/colors"
-theactivexres="$thecolors/active-theme.Xcolors"
-theactivename="$thecolors/active-theme.name"
-themappingtovim="$thecolors/xresourcestovim"
+colorsdir="$HOME/.local/share/colors"
+activecolors="$colorsdir/active-theme.Xcolors"
+activename="$colorsdir/active-theme.name"
 
-thepathtovimthemes="$HOME/.config/nvim/rcfiles"
+mappingtovim="$colorsdir/xresourcestovim"
+vimcolorsdir="$HOME/.config/nvim/rcfiles"
+activevimname="$vimcolorsdir/theme-active.vim"
 
-thetheme=$(basename --suffix=.Xcolors $1)
-thefile=$thecolors/xcolors/$thetheme.Xcolors
+theme=$(basename --suffix=.Xcolors $1)
+themecolors=$colorsdir/xcolors/$theme.Xcolors
 
 _change(){
-	if [ -f $thefile ] ; then 
-		echo $thetheme
-		cp $thecolors/xcolors/$thetheme.Xcolors $theactivexres
-		echo $thetheme > $theactivename
+	if [ -f $themecolors ] ; then 
+		cp $themecolors $activecolors
+		echo $theme > $activename
 	else 
-		echo "Not a valid theme: $thetheme"
+		echo "Not a valid theme: $theme"
 		exit 1
 	fi
 }
@@ -29,20 +29,22 @@ _activate(){
 }
 
 _vim(){
-	thevimtheme="$(cat $themappingtovim | grep "$thetheme" | cut -d, -f2)"
-	if [ -z $thevimtheme ] ; then
-		thevimtheme="tempus"
+	vimtheme="$(cat $mappingtovim | grep "^$theme," | cut -d, -f2)"
+	if [ -z "$vimtheme" ] ; then
+		vimtheme="default"
+	elif [ ! -f "$(_vimThemeToFile $vimtheme)" ] ; then 
+		vimtheme="default"
 	fi
-	thevimfile="$thepathtovimthemes/theme-$thevimtheme"
-	if [ -f $thevimfile ] ; then
-		cp "$thevimfile" "$thepathtovimthemes/theme-active.vim"
-	fi
-	
+	cp "$(_vimThemeToFile $vimtheme)" "$activevimname"
 }
 
+_vimThemeToFile(){
+	echo "$vimcolorsdir/theme-$1"
+} 
+
 _apply(){
-	_change	
-	_activate
+	 _change
+	 _activate
 	_vim
 }
 

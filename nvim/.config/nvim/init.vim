@@ -6,9 +6,7 @@
 "
 " All files in the rcplugin directory will interact with minpac through function AddPluginToManager 
 
-" Mapleader is space
 let mapleader = "\<Space>"
-
 set termguicolors
 syntax on
 
@@ -27,15 +25,6 @@ else
 	function! AddPluginToManager(...) abort
 	endfunction
 endif
-
-function! CurrentLinuxThemeIsLight()
-	let l:name = readfile(expand('~/.local/share/colors/active-theme.name'))[0]
-	if match(l:name, 'light') != -1 
-		return v:true
-	else
-		return v:false
-	endif
-endfunction
 
 " Source all files in the specified directory
 function! s:SourceConfigFilesIn(directory)

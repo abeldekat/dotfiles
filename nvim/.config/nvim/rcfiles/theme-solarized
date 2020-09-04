@@ -2,7 +2,7 @@
 " Light will only apply when using the proper xres theme for the terminal
 packadd vim-airline-themes 
 set background=dark
-if (CurrentLinuxThemeIsLight())
+if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
 packadd vim-colors-solarized

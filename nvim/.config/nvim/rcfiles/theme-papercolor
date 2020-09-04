@@ -4,7 +4,7 @@
 packadd vim-airline-themes 
 packadd papercolor-theme
 set background=dark
-if (CurrentLinuxThemeIsLight())
+if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
 colorscheme PaperColor

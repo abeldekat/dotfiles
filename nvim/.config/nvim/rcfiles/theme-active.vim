@@ -3,7 +3,7 @@ packadd gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
 set background=dark
-if (CurrentLinuxThemeIsLight())
+if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
 colorscheme gruvbox

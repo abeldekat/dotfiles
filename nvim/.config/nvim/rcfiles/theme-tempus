@@ -1,2 +1,2 @@
 " --- tempus
-colorscheme tempus_warp
+exe "colors" colorlib#nameOfCurrentLinuxTheme()

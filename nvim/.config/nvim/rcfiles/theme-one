@@ -2,7 +2,7 @@
 "  packadd is necessary for the airline theme in autoload
 packadd vim-one
 set background=dark
-if (CurrentLinuxThemeIsLight())
+if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
 colorscheme one

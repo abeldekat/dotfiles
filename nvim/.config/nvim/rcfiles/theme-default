@@ -1,0 +1,2 @@
+" ---  Default when there is no vim theme to accompany an xcolors theme
+colorscheme default
