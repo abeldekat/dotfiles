@@ -1,7 +1,7 @@
 " --- gruvbox medium hard soft: dark and light
 packadd gruvbox
 let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_contrast_light = 'soft'
 set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
