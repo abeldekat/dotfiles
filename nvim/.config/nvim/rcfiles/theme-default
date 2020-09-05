@@ -1,2 +1,9 @@
 " ---  Default when there is no vim theme to accompany an xcolors theme
+" --- Default colorscheme: Applied when there is no suitable vim theme configured for the xcolors theme
+set background=dark
+if (colorlib#currentLinuxThemeIsLight())
+	set background=light
+endif
 colorscheme default
+
+" vim:ft=vim
