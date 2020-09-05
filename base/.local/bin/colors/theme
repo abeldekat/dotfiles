@@ -3,10 +3,10 @@
 colorsdir="$HOME/.local/share/colors"
 activecolors="$colorsdir/active-theme.Xcolors"
 activename="$colorsdir/active-theme.name"
-
 mappingtovim="$colorsdir/xresourcestovim"
+
 vimcolorsdir="$HOME/.config/nvim/rcfiles"
-activevimname="$vimcolorsdir/theme-active.vim"
+activevimname="$vimcolorsdir/active-theme.vim"
 
 theme=$(basename --suffix=.Xcolors $1)
 themecolors=$colorsdir/xcolors/$theme.Xcolors
