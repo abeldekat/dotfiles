@@ -58,8 +58,7 @@ _install(){
 	echo "Installing from base..."
 	cat "${_pipes[0]}" | xargs -t sudo pacman -S --noconfirm --needed
 	echo "Installing from aur..."
-	#cat "${_pipes[1]}" | xargs -t yay -S --noconfirm --needed
-	cat "${_pipes[1]}"
+	cat "${_pipes[1]}" | xargs -t yay -S --noconfirm --needed
 	cat "${_pipes[2]}"
 }
 # Install...
