@@ -1,18 +1,21 @@
-" --- gruvbox medium hard soft: dark and light
-packadd gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'soft'
+" --- Papercolor: dark and light
+" --- Documentation:
+"  https://github.com/NLKNguyen/papercolor-theme/blob/master/DESIGN.md
+packadd vim-airline-themes 
+packadd papercolor-theme
 set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
-colorscheme gruvbox
+colorscheme PaperColor
 
 set noshowmode
+
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'papercolor'
 packadd vim-airline
-" let g:lightline = { 'colorscheme': 'gruvbox' }
+
+" let g:lightline = { 'colorscheme': 'PaperColor' }
 " packadd lightline.vim
 
 " vim:ft=vim
