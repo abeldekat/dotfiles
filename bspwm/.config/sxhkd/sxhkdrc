@@ -34,6 +34,10 @@ super + g ; {d,p}
 XF86MonBrightness{Down,Up}
 	xbacklight {-dec 15,-inc 15}
 
+# Speaker/output volume.  Requires `amixer` and dedicated keys.
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+	amixer set Master {toggle,5%-,5%+}
+
 # bspwm hotkeys
 
 # quit bspwm normally
