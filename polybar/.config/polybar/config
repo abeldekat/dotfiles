@@ -69,8 +69,8 @@ font-0 = JetBrainsMonoMedium:pixelsize=10;
 font-1 = HackNerdFont:pixelsize=10;
 font-2 = JoyPixels:fontformat=truetype:scale=10:antialias=false;
 
-modules-left = bspwm xwindow
-modules-right = battery
+modules-left = bspwm
+modules-right =
 ;modules-left = bspwm xwindow
 ;modules-right = pacman-packages cpu-usage cpu-temperature memory volume weather time
 ;modules-center = mpd
@@ -103,7 +103,7 @@ scroll-down = bspwm-deskprev
 ; ;
 ; ; Available tokens:
 ; ;   None
-label-monocle = ♪
+label-monocle = M
 label-tiled =
 label-fullscreen =
 label-floating =
@@ -114,7 +114,7 @@ label-sticky =
 ; ;label-sticky-foreground = #fba922
 label-private =
 ; ;label-private-foreground = #bd2c40
-label-marked = M
+label-marked = A
 
 label-focused = %index%
 label-focused-foreground = ${colors.background}
@@ -136,21 +136,4 @@ label-empty-padding = 1
 ; Separator in between workspaces
 ;label-separator = |
 
-;[module/pacman-packages]
-;type = custom/ipc
-;hook-0 = sudo pacman -Qu | wc -l
-;format-prefix = "📦 "
-;click-left = updatepackages
-;initial = 1
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/battery]
-type = custom/script
-exec = polybattery
-label = "%output%"
-interval = 30
-
-; vim:ft=dosini
+;vim:ft=dosini

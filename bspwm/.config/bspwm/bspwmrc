@@ -48,7 +48,7 @@ _xrdb(){
 	echo $(xrdb -query | grep "^*$1:" | cut -d: -f2 | sed s/\\s//)
 }
 
-#launchpolybar &
+launchpolybar &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
