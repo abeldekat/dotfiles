@@ -7,6 +7,7 @@ mappingtovim="$colorsdir/xresourcestovim"
 
 vimcolorsdir="$HOME/.config/nvim/rcfiles"
 activevimname="$vimcolorsdir/active-theme.vim"
+vimthemedir="$HOME/.config/nvim/themes-available"
 
 theme=$(basename --suffix=.Xcolors $1)
 themecolors=$colorsdir/xcolors/$theme.Xcolors
@@ -39,7 +40,7 @@ _vim(){
 }
 
 _vimThemeToFile(){
-	echo "$vimcolorsdir/theme-$1"
+	echo "$vimthemedir/theme-$1"
 } 
 
 _apply(){
