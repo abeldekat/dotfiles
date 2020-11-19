@@ -8,4 +8,6 @@ autocmd VimResized * :wincmd =
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
+" Remember: ctrl-f, more editing power from command line to window.
+" set cmdwinheight=25
 " vim:ft=vim

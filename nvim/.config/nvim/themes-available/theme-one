@@ -8,11 +8,12 @@ endif
 colorscheme one
 
 set noshowmode
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'one'
-packadd vim-airline
 
-" let g:lightline = { 'colorscheme': 'one' } 
-" packadd lightline.vim
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'one'
+" packadd vim-airline
+
+let g:lightline = { 'colorscheme': 'one' } 
+packadd lightline.vim
 
 " vim:ft=vim

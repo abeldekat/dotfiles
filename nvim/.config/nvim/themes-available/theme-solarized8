@@ -7,8 +7,8 @@
 " colorscheme solarized8, and _high _low _flat
 " To use a Solarized 8 color scheme, set the background (dark or light) then
 " load the variant you want
-"
-packadd vim-airline-themes 
+
+" packadd vim-airline-themes 
 set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
@@ -16,12 +16,13 @@ endif
 colorscheme solarized8_high
 
 set noshowmode
-let g:airline_powerline_fonts = 1
-" Same as classic solarized:
-let g:airline_theme = 'solarized'
-packadd vim-airline
 
-" let g:lightline = { 'colorscheme': 'solarized' }
-" packadd lightline.vim
+" let g:airline_powerline_fonts = 1
+" " Same as classic solarized:
+" let g:airline_theme = 'solarized'
+" packadd vim-airline
+
+let g:lightline = { 'colorscheme': 'solarized' }
+packadd lightline.vim
 
 " vim:ft=vim

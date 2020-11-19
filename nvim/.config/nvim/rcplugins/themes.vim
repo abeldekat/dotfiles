@@ -1,9 +1,6 @@
 " Todo Molokai and onehalf https://www.dunebook.com/best-vim-themes/
 " gruvbox controleer cursorColor met iterm repo van ayu
 
-call AddPluginToManager('itchyny/lightline.vim', {'type': 'opt'})
-call AddPluginToManager('vim-airline/vim-airline', {'type': 'opt'})
-call AddPluginToManager('vim-airline/vim-airline-themes', {'type': 'opt'})
 call AddPluginToManager('morhetz/gruvbox', {'type': 'opt'})
 call AddPluginToManager('joshdick/onedark.vim', {'type': 'opt'})
 call AddPluginToManager('sonph/onehalf', {'type': 'opt', 'subdir': 'vim/'})
