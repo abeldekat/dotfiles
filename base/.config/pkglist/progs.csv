@@ -35,6 +35,7 @@ T,bsp-layout,"supports dynamic layout management for bspwm with tall, wide, even
 ,unclutter,"hides an inactive mouse."
 ,tree,"is a directory listing program displaying a depth indented list of files"
 ,fd,"is a simple, fast and user-friendly alternative to find. Configured for fzf"
+,ack,"is a Perl-based grep replacement aimed at programmers with large trees of heterogeneous source code"
 ,fzf,"is a fuzzy finder tool."
 ,mlocate,"merges locate and updatedb optional for pacman-contrib."
 ,jq,"is a command line json processor."
