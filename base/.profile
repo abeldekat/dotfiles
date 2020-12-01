@@ -26,11 +26,15 @@ export ZSH_FRAMEWORK_WRAPPER="$ZDOTDIR/.zshrc-framework.zsh"
 
 # Default programs:
 export EDITOR="nvim"
+export VISUAL="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
 export PAGER="less"
+
+export VIMCONFIG=~/.config/nvim
+export VIMDATA=~/.local/share/nvim
 
 # Ranger loads both default and  custom rc
 export RANGER_LOAD_DEFAULT_RC=false
@@ -40,6 +44,7 @@ export PRINTER_DESTINATION="Samsung_M283x_Series"
 
 # cdpath
 export CDPATH=:~/cdotfiles
+
 
 # ~/ Clean-up:
 #export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
