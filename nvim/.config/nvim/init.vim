@@ -16,7 +16,9 @@ source ~/.config/nvim/rcplugins/text-objects.vim
 source ~/.config/nvim/rcplugins/surround.vim
 source ~/.config/nvim/rcplugins/unimpaired.vim
 source ~/.config/nvim/rcplugins/abolish.vim
+source ~/.config/nvim/rcplugins/fugitive.vim
 source ~/.config/nvim/rcplugins/fzf.vim
+source ~/.config/nvim/rcplugins/ack.vim
 source ~/.config/nvim/rcplugins/tmux-navigator.vim
 " many leader keys: source ~/.config/nvim/rcplugins/tmux-runner.vim
 source ~/.config/nvim/rcplugins/statusline.vim
@@ -29,3 +31,4 @@ source ~/.config/nvim/rcfiles/systemcopy.vim
 source ~/.config/nvim/rcfiles/visual.vim
 source ~/.config/nvim/rcfiles/active-theme.vim
 source ~/.config/nvim/rcfiles/experiment.vim
+" source ~/.config/nvim/vim-plug/plugins.vim
