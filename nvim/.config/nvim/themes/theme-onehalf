@@ -1,13 +1,13 @@
 " --- onehalf: atom text editor
-packadd onehalf
+Plug 'sonph/onehalf' { rtp: 'vim' }
 let isLight = colorlib#currentLinuxThemeIsLight()
 if (isLight)
 	colorscheme onehalflight
 else	
 	colorscheme onehalfdark
 endif
-
-set noshowmode
+" onehalflight for lightline does not exist
+let g:lightline = { 'colorscheme': 'onehalfdark' } 
 
 " let g:airline_powerline_fonts = 1
 " if (isLight)
@@ -15,10 +15,5 @@ set noshowmode
 " else
 " 	let g:airline_theme = 'onehalfdark'
 " endif
-" packadd vim-airline
-
-" onehalflight for lightline does not exist
-let g:lightline = { 'colorscheme': 'onehalfdark' } 
-packadd lightline.vim
 
 " vim:ft=vim

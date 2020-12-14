@@ -1,5 +1,5 @@
 " Ack - Integrata ack (grep replacement) into vim
-call AddPluginToManager('mileszs/ack.vim')
+Plug 'mileszs/ack.vim'
 
 nmap <LEADER>ck :Ack!<space>
 " nnoremap <leader>cc :cclose<cr>:pclose<cr>

@@ -1,0 +1,11 @@
+" --- palenight.vim: atom text editor
+" A dark color scheme based off Material Pale Night. Based on onedark.vi
+
+Plug 'drewtempelmeyer/palenight.vim'
+colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' } 
+
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'palenight'
+
+" vim:ft=vim

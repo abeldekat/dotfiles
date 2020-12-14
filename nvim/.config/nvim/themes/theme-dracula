@@ -1,0 +1,11 @@
+" --- Dracula: Dark theme for Vim and 142+ apps
+" --- Script sets background to dark
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+colorscheme dracula
+let g:lightline = { 'colorscheme': 'dracula' }
+
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'dracula'
+
+" vim:ft=vim

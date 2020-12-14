@@ -1,12 +1,13 @@
 " --- seoul256.vim is a low-contrast Vim color scheme based on Seoul Colors
 
-" packadd vim-airline-themes
+Plug 'junegunn/seoul256.vim'
 let g:seoul256_srgb = 1
 colorscheme seoul256
 set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
+let g:lightline = { 'colorscheme': 'seoul256' }
 
 " " Unified color scheme (default: dark)
 " colo seoul256
@@ -34,13 +35,7 @@ endif
 " colo seoul256
 " colo seoul256-light
 
-set noshowmode
-
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'seoul256'
-" packadd vim-airline
-
-let g:lightline = { 'colorscheme': 'seoul256' }
-packadd lightline.vim
 
 " vim:ft=vim
