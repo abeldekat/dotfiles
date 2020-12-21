@@ -8,7 +8,6 @@ mappingtovim="$colorsdir/xresourcestovim"
 vimcolorsdir="$HOME/.config/nvim/rcfiles"
 vimthemedir="$HOME/.config/nvim/themes"
 activevimplugname="$vimthemedir/active-theme.vim"
-activevimname="$vimcolorsdir/active-theme.vim"
 
 theme=$(basename --suffix=.Xcolors $1)
 themecolors=$colorsdir/xcolors/$theme.Xcolors
@@ -38,8 +37,7 @@ _vim(){
 		vimtheme="default"
 	fi
 	# separate the vim-plug line from the rest of the config
-	awk -e '/Plug/' "$(_vimThemeToFile $vimtheme)" > "$activevimplugname"
-	awk -e '!/Plug/' "$(_vimThemeToFile $vimtheme)" > "$activevimname"
+	cp "$(_vimThemeToFile $vimtheme)" "$activevimplugname"
 }
 
 _vimThemeToFile(){

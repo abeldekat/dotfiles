@@ -8,7 +8,7 @@ endif
 
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_contrast = 'normal'
-colorscheme solarized
+let g:my_colorscheme_plugin = "solarized"
 let g:lightline = { 'colorscheme': 'solarized' }
 
 " let g:airline_powerline_fonts = 1

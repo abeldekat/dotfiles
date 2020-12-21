@@ -1,6 +1,6 @@
 " --- onedark: Only dark, atom text editor
 Plug 'joshdick/onedark.vim'
-colorscheme onedark
+let g:my_colorscheme_plugin = "onedark"
 let g:lightline = { 'colorscheme': 'onedark' } 
 
 " let g:airline_powerline_fonts = 1

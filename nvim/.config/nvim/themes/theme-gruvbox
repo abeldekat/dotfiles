@@ -6,7 +6,7 @@ set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
-colorscheme gruvbox
+let g:my_colorscheme_plugin = "gruvbox"
 let g:lightline = { 'colorscheme': 'gruvbox' }
 
 " let g:airline_powerline_fonts = 1

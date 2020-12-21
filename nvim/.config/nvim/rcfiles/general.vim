@@ -1,6 +1,9 @@
 " General Vim Settings
 " --------------------
 
+if exists("g:my_colorscheme_plugin")
+	exe "colors" g:my_colorscheme_plugin
+endif
 set nobackup
 set nowritebackup
 set noswapfile

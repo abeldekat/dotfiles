@@ -1,2 +1,5 @@
 " --- tempus
-exe "colors" colorlib#nameOfCurrentLinuxTheme()
+let g:my_colorscheme_plugin = colorlib#nameOfCurrentLinuxTheme()
+"exe "colors" colorlib#nameOfCurrentLinuxTheme()
+
+" vim:ft=vim

@@ -4,6 +4,5 @@ set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
-colorscheme default
 
 " vim:ft=vim

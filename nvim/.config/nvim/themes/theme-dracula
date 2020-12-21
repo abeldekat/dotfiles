@@ -2,7 +2,7 @@
 " --- Script sets background to dark
 
 Plug 'dracula/vim', { 'as': 'dracula' }
-colorscheme dracula
+let g:my_colorscheme_plugin = "dracula"
 let g:lightline = { 'colorscheme': 'dracula' }
 
 " let g:airline_powerline_fonts = 1

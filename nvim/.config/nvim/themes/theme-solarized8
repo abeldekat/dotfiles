@@ -11,7 +11,7 @@ set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
-colorscheme solarized8_high
+let g:my_colorscheme_plugin =  "solarized8_high"
 let g:lightline = { 'colorscheme': 'solarized' }
 
 " let g:airline_powerline_fonts = 1

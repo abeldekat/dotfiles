@@ -1,6 +1,6 @@
 " --- Jellybeans: A colorful, dark color scheme, inspired by ir_black and twilight.
 Plug 'nanotech/jellybeans.vim'
-colorscheme jellybeans
+let g:my_colorscheme_plugin = "jellybeans"
 let g:lightline = { 'colorscheme': 'jellybeans' }
 
 " let g:airline_powerline_fonts = 1
