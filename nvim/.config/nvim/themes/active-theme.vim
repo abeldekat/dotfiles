@@ -1,15 +1,16 @@
-" --- gruvbox medium hard soft: dark and light
-Plug 'morhetz/gruvbox'
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'hard'
+" --- Papercolor: dark and light
+" --- Documentation:
+"  https://github.com/NLKNguyen/papercolor-theme/blob/master/DESIGN.md
+
+Plug 'NLKNguyen/papercolor-theme'
 set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
-let g:my_colorscheme_plugin = "gruvbox"
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:my_colorscheme_plugin = "PaperColor"
+let g:lightline = { 'colorscheme': 'PaperColor' }
 
 " let g:airline_powerline_fonts = 1
-" let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'papercolor'
 
 " vim:ft=vim

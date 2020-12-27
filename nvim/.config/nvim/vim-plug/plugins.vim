@@ -34,7 +34,7 @@ source ~/.config/nvim/rcplugins/ack.vim
 " TextObj - Custom text objects for the line, indent level, entier file, etc
 source ~/.config/nvim/rcplugins/text-objects.vim
 
-"source ~/.config/nvim/rcplugins/fzf.vim
+source ~/.config/nvim/rcplugins/fzf.vim
 
 " many leader keys: source ~/.config/nvim/rcplugins/tmux-runner.vim
 

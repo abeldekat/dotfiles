@@ -45,6 +45,7 @@ export PRINTER_DESTINATION="Samsung_M283x_Series"
 # cdpath
 export CDPATH=:~/cdotfiles
 
+export FZF_DEFAULT_COMMAND='rg --files'
 
 # ~/ Clean-up:
 #export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"

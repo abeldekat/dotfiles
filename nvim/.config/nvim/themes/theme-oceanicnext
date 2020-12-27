@@ -1,0 +1,11 @@
+" --- Oceanic-next, sublime
+
+Plug 'mhartington/oceanic-next'
+let g:my_colorscheme_plugin = "OceanicNext"
+let g:lightline = { 'colorscheme': 'oceanicnext' }
+if (colorlib#currentLinuxThemeIsLight())
+	let g:my_colorscheme_plugin = "OceanicNextLight"
+	let g:lightline = { 'colorscheme': 'oceanicnext' }
+endif
+
+" vim:ft=vim

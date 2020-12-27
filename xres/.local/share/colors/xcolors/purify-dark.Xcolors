@@ -1,0 +1,69 @@
+! ==============================================================================
+! Purify colors 
+! Author:     Kyoz
+! Repository: https://github.com/kyoz/purify/
+! License:    The MIT License (MIT)
+! Copyright:  Kyoz (banminkyoz@gmail.com)
+! ==============================================================================
+
+!BLACK - Cursor
+#define _color0        #282C34
+#define _color8        #282C34
+!RED - Tag
+#define _color1        #FF6059
+#define _color9        #FF6059
+!GREEN - SpecialKey
+#define _color2        #5FFF87
+#define _color10       #5FFF87
+!YELLOW - Keyword
+#define _color3        #FFFF87
+#define _color11       #FFFF87
+!BLUE - Number
+#define _color4        #5FAFFF
+#define _color12       #5FAFFF
+!MAGENTA - Precondit
+#define _color5        #AF87FF
+#define _color13       #AF87FF
+!CYAN - Float
+#define _color6        #5FAFFF
+#define _color14       #5FAFFF
+!WHITE - Search
+#define _color7        #FFFFFF
+#define _color15       #FFFFFF
+!FMT - Include, StatusLine, ErrorMsg
+#define _colorBD       #FF875F
+#define _colorUL       #FFFF87
+#define _colorIT       #5FFF87
+!TXT - Normal, Normal, Cursor
+#define _foreground    #FAFAFA
+#define _background    #313440
+#define _cursorColor   #FCE6FF
+!Highlight
+#define _highlightFg   #FAFAFA
+#define _highlightBg   #2B2E3B
+
+*color0             : _color0
+*color1             : _color1
+*color2             : _color2
+*color3             : _color3
+*color4             : _color4
+*color5             : _color5
+*color6             : _color6
+*color7             : _color7
+*color8             : _color8
+*color9             : _color9
+*color10            : _color10
+*color11            : _color11
+*color12            : _color12
+*color13            : _color13
+*color14            : _color14
+*color15            : _color15
+*colorBD            : _colorBD
+*colorIT            : _colorIT
+*colorUL            : _colorUL
+*foreground         : _foreground
+*background         : _background
+*cursorColor        : _cursorColor
+*highlightColor     : _highlightBg
+*highlightTextColor : _highlightFg
+*highlightReverse   : true

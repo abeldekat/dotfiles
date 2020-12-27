@@ -1,0 +1,8 @@
+" --- Ayu: Dark theme
+
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+
+let g:my_colorscheme_plugin = "purify"
+let g:lightline = { 'colorscheme': 'purify' }
+
+" vim:ft=vim

@@ -1,12 +1,13 @@
 " fzf - the fuzzy finder of all the things
 
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-call AddPluginToManager('junegunn/fzf.vim')
+Plug 'junegunn/fzf.vim'
+" call AddPluginToManager('junegunn/fzf.vim')
 
 " let g:fzf_files_options =
 "   \ '--reverse ' .
 "   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
-let g:fzf_layout = { 'down': '~60%' }
+" let g:fzf_layout = { 'down': '~60%' }
 nnoremap <C-p> :Files<cr>
 " let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
 " Dit had ik: nnoremap <C-p> :<C-u>FZF<CR>
