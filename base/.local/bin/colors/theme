@@ -44,10 +44,21 @@ _vimThemeToFile(){
 	echo "$vimthemedir/theme-$1"
 } 
 
+_tmuxline(){
+	if [ -f ~/.config/tmux/tmuxline.conf ] ; then
+		rm ~/.config/tmux/tmuxline.conf
+	fi
+	tmux-generate-statusline
+	if [ -f ~/.config/tmux/tmuxlinetmp.conf ] ; then
+		mv ~/.config/tmux/tmuxlinetmp.conf ~/.config/tmux/tmuxline.conf
+	fi
+}
+
 _apply(){
 	 _change
 	 _activate
 	_vim
+	_tmuxline
 }
 
 _apply

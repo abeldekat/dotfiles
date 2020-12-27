@@ -1,0 +1,7 @@
+#! /bin/bash
+
+tmux new-session -d -s "gen"
+tmux send-keys -t '=gen:1' 'v' Enter
+sleep 1 && tmux send-keys -t '=gen:1' ':Tmuxline lightline' Enter
+sleep 1 && tmux send-keys -t '=gen:1' ':TmuxlineSnapshot ~/.config/tmux/tmuxlinetmp.conf' Enter
+sleep 1 && tmux kill-session -t "gen"
