@@ -2,11 +2,10 @@
 
 Plug 'junegunn/seoul256.vim'
 let g:seoul256_srgb = 1
-set background=dark
-if (colorlib#currentLinuxThemeIsLight())
-	set background=light
-endif
 let g:my_colorscheme_plugin = "seoul256"
+if (colorlib#currentLinuxThemeIsLight())
+	let g:my_colorscheme_plugin = "seoul256-light"
+endif
 let g:lightline = { 'colorscheme': 'seoul256' }
 
 " " Unified color scheme (default: dark)
