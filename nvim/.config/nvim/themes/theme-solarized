@@ -1,12 +1,13 @@
 " --- Classic solarized: dark and light, needs vim-airline themes
 " Light will only apply when using the proper xres theme for the terminal
 
+
+Plug 'altercation/vim-colors-solarized'
+
 set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
-
-Plug 'altercation/vim-colors-solarized'
 let g:solarized_contrast = 'normal'
 let g:my_colorscheme_plugin = "solarized"
 let g:lightline = { 'colorscheme': 'solarized' }

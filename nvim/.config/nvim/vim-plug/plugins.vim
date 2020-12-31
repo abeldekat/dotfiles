@@ -25,7 +25,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
 " Fugitive - Vim meets git. Gstatus, Gdiff, etc.
 Plug 'tpope/vim-fugitive'
-
+" Vinegar enhances netrw, the built-in file browser
+Plug 'tpope/vim-vinegar'
 " Vim Tmux Navigator - Seamlessly navigate between vim splits and tmux panes
 Plug 'christoomey/vim-tmux-navigator'
 

@@ -6,7 +6,7 @@
 " To use a Solarized 8 color scheme, set the background (dark or light) then
 " load the variant you want
 
-Plug 'lifepillar/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
