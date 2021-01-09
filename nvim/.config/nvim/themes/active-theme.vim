@@ -20,7 +20,7 @@ function! Solarized8Contrast()
   exe 'colors' l:schemes[((1+index(l:schemes, g:colors_name))) % 4] | colo
 endfunction
 
-nnoremap <leader>so :<c-u>call Solarized8Contrast()<cr>
+nnoremap <leader>co :<c-u>call Solarized8Contrast()<cr>
 
 " let g:airline_powerline_fonts = 1
 " " Same as classic solarized:

@@ -1,0 +1,13 @@
+" A light (and dark) color scheme for Vim inspired by iA Writer
+Plug 'reedes/vim-colors-pencil'
+Plug 'yami-beta/lightline-pencil.vim'
+
+set background=dark
+let g:lightline = { 'colorscheme': 'pencil_dark' }
+if (colorlib#currentLinuxThemeIsLight())
+	set background=light
+	let g:lightline = { 'colorscheme': 'pencil_light' }
+endif
+let g:my_colorscheme_plugin = "pencil"
+
+" vim:ft=vim
