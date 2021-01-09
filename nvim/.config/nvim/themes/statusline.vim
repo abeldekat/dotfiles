@@ -1,8 +1,9 @@
 " Configure status bar
-" TODO  tmuxline plugin
 
 Plug 'itchyny/lightline.vim'
 set noshowmode
+let g:lightline.tabline = {
+    \ 'right': [ [ '' ] ] }
 
 "call AddPluginToManager('vim-airline/vim-airline', {'type': 'opt'})
 "call AddPluginToManager('vim-airline/vim-airline-themes', {'type': 'opt'})
