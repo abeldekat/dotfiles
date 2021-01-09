@@ -11,6 +11,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Tabs
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+
 " Improve editing vimrc --------------------{{{
 " Quick edit of vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
