@@ -33,17 +33,17 @@ Plug 'tpope/vim-scriptease'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Projectionist provides granular project configuration using "projections".
-"source ~/.config/nvim/rcplugins/projectionist.vim
+source ~/.config/nvim/rcplugins/projectionist.vim
 " Ack - Integrata ack (grep replacement) into vim
 source ~/.config/nvim/rcplugins/ack.vim
-" TODO TextObj - Custom text objects for the line, indent level, entier file, etc
-" source ~/.config/nvim/rcplugins/text-objects.vim
 " Fuzzy everything...
 source ~/.config/nvim/rcplugins/fzf.vim
 " Tmux statusline generator
 source ~/.config/nvim/rcplugins/tmuxline.vim
 
-" todo many leader keys: 
+" TODO TextObj - Custom text objects for the line, indent level, entier file, etc
+" source ~/.config/nvim/rcplugins/text-objects.vim
+" TODO many leader keys: 
 " source ~/.config/nvim/rcplugins/tmux-runner.vim
 
 " Initialize plugin system. Plugins become visible to vim.
