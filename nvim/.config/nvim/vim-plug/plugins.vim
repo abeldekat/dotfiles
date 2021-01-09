@@ -10,8 +10,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " Statusline, showmode etc
-source ~/.config/nvim/themes/statusline.vim
 source ~/.config/nvim/themes/active-theme.vim
+source ~/.config/nvim/themes/statusline.vim
 
 " Commentary - Comment / uncomment via text operator w/ text objects
 Plug 'tpope/vim-commentary'
@@ -27,19 +27,24 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 " Vinegar enhances netrw, the built-in file browser
 Plug 'tpope/vim-vinegar'
+" A Vim plugin for making Vim plugins
+Plug 'tpope/vim-scriptease'
 " Vim Tmux Navigator - Seamlessly navigate between vim splits and tmux panes
 Plug 'christoomey/vim-tmux-navigator'
 
+" Projectionist provides granular project configuration using "projections".
+"source ~/.config/nvim/rcplugins/projectionist.vim
 " Ack - Integrata ack (grep replacement) into vim
 source ~/.config/nvim/rcplugins/ack.vim
-" TextObj - Custom text objects for the line, indent level, entier file, etc
-source ~/.config/nvim/rcplugins/text-objects.vim
+" TODO TextObj - Custom text objects for the line, indent level, entier file, etc
+" source ~/.config/nvim/rcplugins/text-objects.vim
 " Fuzzy everything...
 source ~/.config/nvim/rcplugins/fzf.vim
 " Tmux statusline generator
 source ~/.config/nvim/rcplugins/tmuxline.vim
 
-" many leader keys: source ~/.config/nvim/rcplugins/tmux-runner.vim
+" todo many leader keys: 
+" source ~/.config/nvim/rcplugins/tmux-runner.vim
 
 " Initialize plugin system. Plugins become visible to vim.
 call plug#end()
@@ -49,3 +54,5 @@ autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | source $MYVIMRC 
   \| endif
+
+" vim:ft=vim
