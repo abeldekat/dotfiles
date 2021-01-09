@@ -1,8 +1,12 @@
-" --- Ayu: Dark theme
-
+" Purify dark theme for vim (neovim)
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 let g:my_colorscheme_plugin = "purify"
 let g:lightline = { 'colorscheme': 'purify' }
+
+" let g:purify_override_colors = {
+"     \ 'pink':  { 'gui': '#FF87FF', 'cterm': '213' },
+"     \ 'green': { 'gui': '#5FD700', 'cterm': '76' }
+" \ }
 
 " vim:ft=vim

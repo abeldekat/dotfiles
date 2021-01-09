@@ -1,7 +1,6 @@
 " --- Classic solarized: dark and light, needs vim-airline themes
 " Light will only apply when using the proper xres theme for the terminal
 
-
 Plug 'altercation/vim-colors-solarized'
 
 set background=dark
