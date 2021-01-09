@@ -14,6 +14,14 @@ endif
 let g:my_colorscheme_plugin =  "solarized8_high"
 let g:lightline = { 'colorscheme': 'solarized' }
 
+" Nelstrom
+function! Solarized8Contrast()
+  let l:schemes = map(['_low', '_flat', '', '_high'], '"solarized8".v:val')
+  exe 'colors' l:schemes[((1+index(l:schemes, g:colors_name))) % 4] | colo
+endfunction
+
+nnoremap <leader>so :<c-u>call Solarized8Contrast()<cr>
+
 " let g:airline_powerline_fonts = 1
 " " Same as classic solarized:
 " let g:airline_theme = 'solarized'
