@@ -26,7 +26,9 @@ Plug 'tpope/vim-surround'
 " Fugitive - Vim meets git. Gstatus, Gdiff, etc.
 Plug 'tpope/vim-fugitive'
 " Vinegar enhances netrw, the built-in file browser
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
+" Path navigator designed to work with Vim's built-in mechanisms and complementary plugins.
+Plug 'justinmk/vim-dirvish'
 " A Vim plugin for making Vim plugins
 Plug 'tpope/vim-scriptease'
 " Vim Tmux Navigator - Seamlessly navigate between vim splits and tmux panes
