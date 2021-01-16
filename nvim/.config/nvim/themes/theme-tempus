@@ -1,5 +1,5 @@
 " --- tempus
 let g:my_colorscheme_plugin = colorlib#nameOfCurrentLinuxTheme()
-"exe "colors" colorlib#nameOfCurrentLinuxTheme()
+let g:lightline = {}
 
 " vim:ft=vim

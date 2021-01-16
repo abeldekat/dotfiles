@@ -4,5 +4,6 @@ set background=dark
 if (colorlib#currentLinuxThemeIsLight())
 	set background=light
 endif
+let g:lightline = {}
 
 " vim:ft=vim
