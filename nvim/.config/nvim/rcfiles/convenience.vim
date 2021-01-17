@@ -18,15 +18,6 @@ nnoremap <leader>3 3gt
 nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
 
-" Improve editing vimrc --------------------{{{
-" Quick edit of vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" Quick sourcing of vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-" Quick sourcing of the current file, allowing for quick vimrc testing
-nnoremap <leader>sp :source %<cr>
-" }}}
-
 " Better flow to command mode
 nnoremap <leader>; :
 " Better flow to command window
