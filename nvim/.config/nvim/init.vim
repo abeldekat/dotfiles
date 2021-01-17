@@ -5,18 +5,22 @@ set termguicolors
 syntax on
 
 " Improve editing vimrc --------------------{{{
-" Quick edit of vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" edit vimrc
+nnoremap <leader>ev :e $MYVIMRC<cr>
+" edit plugins
+nnoremap <leader>ep :e ~/.config/nvim/plugins.vim<cr>
+" edit config
+nnoremap <leader>ec :e ~/.config/nvim/config.vim<cr>
 " Quick sourcing of vimrc
-nnoremap <leader>sv :w | source $MYVIMRC<cr>
+nnoremap <leader>sv :w<cr>:source $MYVIMRC<cr>
 " Quick sourcing of the current file, allowing for quick vimrc testing
-nnoremap <leader>sp :w | source %<cr>
+nnoremap <leader>sp :w<cr>:source %<cr>
 " }}}
-"
+
 " Source plugins and their config
 source ~/.config/nvim/plugins.vim
 
-" General config {{{1
+" Source vim config
 source ~/.config/nvim/config.vim
 
 " vim:ft=vim
