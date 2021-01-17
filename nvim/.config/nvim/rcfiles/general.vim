@@ -1,41 +1,49 @@
 " General Vim Settings
 " --------------------
 
+" General {{{1
 if exists("g:my_colorscheme_plugin")
 	exe "colors" g:my_colorscheme_plugin
 endif
+set noswapfile
 set nobackup
 set nowritebackup
-set noswapfile
-set history=200
+set undofile
 set formatoptions-=t " Don't auto-break long lines (re-enable this for prose)
-
-" Tabs {{{1
-" Softtabs, 4 spaces
-" set tabstop=4
-" set shiftwidth=4
-" set shiftround
-" set expandtab
+set ignorecase smartcase
+set scrolloff=8
+set path+=**
+set hidden
 " }}}
 
+" Tabs {{{1
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" set shiftround
+set smartindent
+" }}}
+
+" Space {{{1
 " Display extra whitespace
 " set list listchars=tab:»·,trail:·,nbsp:·
-
 " Use one space, not two, after punctuation.
 set nojoinspaces
+"}}}
 
+" Line numbers {{{1
 " Display relative line numbers, with absolute line number for current line
-set number
-set numberwidth=4
-set relativenumber
+set number relativenumber numberwidth=4
+" }}}
 
-" When the type of shell script is /bin/sh, assume a POSIX-compatible
-" shell for syntax highlighting purposes.
-let g:is_posix = 1
+" Diffs {{{1
 " Always use vertical diffs
 set diffopt+=vertical
-" Don't require saving before closing a buffer
-set hidden
+"}}}
+
+" TODO {{{1
+" When the type of shell script is /bin/sh, assume a POSIX-compatible
+" shell for syntax highlighting purposes.
+" let g:is_posix = 1
+" }}}
 
 " Spell {{{1
 " Set spellfile to location that is guaranteed to exist, can be symlinked to

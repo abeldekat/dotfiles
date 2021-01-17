@@ -1,5 +1,3 @@
-" TODO
-
 " Tmux
 " Chris Toomey tmux vim layout balancing
 " automatically rebalance windows on vim resize
