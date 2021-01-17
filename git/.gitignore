@@ -14,3 +14,4 @@ config.h
 pack
 plugged
 .netrwhist
+.netrwbook
