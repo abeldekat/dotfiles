@@ -7,7 +7,7 @@ endif
 
 " Plugins and config {{{1
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/_plugged')
 
 " Statusline, showmode etc
 source ~/.config/nvim/themes/active-theme.vim

@@ -13,5 +13,6 @@ st
 config.h
 pack
 plugged
+_plugged
 .netrwhist
 .netrwbook
