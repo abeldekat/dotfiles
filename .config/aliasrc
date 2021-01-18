@@ -4,9 +4,10 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 #https://www.ackama.com/blog/posts/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained
-alias dgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 
+alias dgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME' 
+# do not forget: dgit config --local status.showUntrackedFiles no
 
-# Verbosity and settings that you pretty much just always are going to want.
+# Verbosity and settings that you pretty much just always are going to want. 
 alias \
 	bat="cat /sys/class/power_supply/BAT?/capacity" \
 	cp="cp -iv" \

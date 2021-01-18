@@ -10,7 +10,9 @@ endif
 call plug#begin('~/.config/nvim/_plugged')
 
 " Statusline, showmode etc
-source ~/.config/nvim/themes/active-theme.vim
+if !empty(glob('~/.config/nvim/themes/active-theme.vim'))
+    source ~/.config/nvim/themes/active-theme.vim
+endif
 source ~/.config/nvim/themes/statusline.vim
 
 " Commentary - Comment / uncomment via text operator w/ text objects
