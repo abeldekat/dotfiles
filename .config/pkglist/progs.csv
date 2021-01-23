@@ -33,6 +33,8 @@ T,bsp-layout,"supports dynamic layout management for bspwm with tall, wide, even
 ,wireless_tools,"are tools allowing to manipulate the Wireless Extensions. Used in lemonbar."
 ,bc,"is used for a dropdown calculator. Is used by lemonbar."
 ,unclutter,"hides an inactive mouse."
+,awesome-terminal-fonts,"are fonts/icons for powerlines. Required by lsd"
+,lsd,"is a modern ls with a lot of pretty colors and awesome icons"
 ,tree,"is a directory listing program displaying a depth indented list of files"
 ,fd,"is a simple, fast and user-friendly alternative to find. Configured for fzf"
 ,ack,"is a Perl-based grep replacement aimed at programmers with large trees of heterogeneous source code"
