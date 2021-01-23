@@ -8,8 +8,8 @@ alias dgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 # do not forget: dgit config --local status.showUntrackedFiles no
 
 # Verbosity and settings that you pretty much just always are going to want. 
+	# bat="cat /sys/class/power_supply/BAT?/capacity" \
 alias \
-	bat="cat /sys/class/power_supply/BAT?/capacity" \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -v" \
