@@ -80,6 +80,7 @@ A,dmenu2,"runs commands and provides a UI for selection. Version 4.9 has a probl
 ,zsh,"is the interactive shell."
 ,zsh-doc,"provides docmentation for zsh."
 ,zsh-syntax-highlighting,"provides fish-like syntax highlighting in the shell.Installed with zgen from github."
+A,zsh-z-git,"jumps quickly to directories that you have visited"
 ,firefox,"is a browser."
 ,lxappearance-gtk3,"is a feature-rich theme switcher."
 ,keepassxc,"is a community-driven port of Keepass password manager. Qt based."
