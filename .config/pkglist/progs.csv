@@ -81,6 +81,8 @@ A,dmenu2,"runs commands and provides a UI for selection. Version 4.9 has a probl
 ,zsh-doc,"provides docmentation for zsh."
 ,zsh-syntax-highlighting,"provides fish-like syntax highlighting in the shell.Installed with zgen from github."
 A,zsh-z-git,"jumps quickly to directories that you have visited"
+A,zsh-you-should-use,"is a ZSH plugin that reminds you to use existing aliases for commands you just typed"
+A,spaceship-prompt-git,"is a Zsh prompt for Astronauts"
 ,firefox,"is a browser."
 ,lxappearance-gtk3,"is a feature-rich theme switcher."
 ,keepassxc,"is a community-driven port of Keepass password manager. Qt based."
