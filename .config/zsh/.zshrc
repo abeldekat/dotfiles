@@ -1,23 +1,27 @@
-# Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+# Inspiriation: Brodie Robertson and Chris Toomey
+neofetch
 
-_not_inside_tmux() {
-  [[ -z "$TMUX" ]]
-}
+# Sourcing steps
+source ~/.config/zsh/config/colors.zsh
+source ~/.config/zsh/config/history.zsh
+source ~/.config/zsh/config/completion.zsh
+source ~/.config/zsh/config/vimode.zsh
+#source ~/.config/zsh/config/todo.zsh
+source ~/.config/zsh/config/aliasrc.zsh
+source ~/.config/zsh/config/alias-git.zsh
+source ~/.config/zsh/config/alias-enhancedshell.zsh
+source ~/.config/zsh/config/alias-applications.zsh
+source ~/.config/zsh/config/alias-misc.zsh
 
-ensure_tmux_is_running() {
-  if _not_inside_tmux; then
-    tat
-  fi
-}
+for zsh_source in $HOME/.config/zsh/ct/*.zsh; do
+  source $zsh_source
+done
 
-# todo v mode 
-# \c-o, accept-line-and-down-history, bound in emacs mode by default
+# ensure_tmux_is_running
 
-#ensure_tmux_is_running
+source ~/.config/zsh/config/thirdparty.zsh
+source ~/.config/zsh/config/prompt.zsh
 
-export KEYTIMEOUT=1
-if [ ! x"$ZSH_FRAMEWORK_WRAPPER" = x ] ; then
-  source $ZSH_FRAMEWORK_WRAPPER
-fi
+# TODO With zgen, init, compinit is done lastly
+# autoload -Uz compinit && \
+#    compinit -C 
