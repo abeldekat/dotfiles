@@ -7,11 +7,10 @@ source ~/.config/zsh/config/history.zsh
 source ~/.config/zsh/config/completion.zsh
 source ~/.config/zsh/config/vimode.zsh
 #source ~/.config/zsh/config/todo.zsh
-source ~/.config/zsh/config/aliasrc.zsh
-source ~/.config/zsh/config/alias-git.zsh
+source ~/.config/zsh/config/alias-misc.zsh
 source ~/.config/zsh/config/alias-enhancedshell.zsh
 source ~/.config/zsh/config/alias-applications.zsh
-source ~/.config/zsh/config/alias-misc.zsh
+source ~/.config/zsh/config/alias-git.zsh
 
 for zsh_source in $HOME/.config/zsh/ct/*.zsh; do
   source $zsh_source
