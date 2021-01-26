@@ -19,7 +19,4 @@ done
 
 source ~/.config/zsh/config/thirdparty.zsh
 source ~/.config/zsh/config/prompt.zsh
-
-# TODO With zgen, init, compinit is done lastly
-# autoload -Uz compinit && \
-#    compinit -C 
+source ~/.config/zsh/config/run-completion.zsh
