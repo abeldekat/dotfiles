@@ -43,8 +43,16 @@ alias \
 alias \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc"
 
-# other
+# other #######################################################################
 alias \
     ka="killall" \
     stop="kill -TSTP" \
 	batt="cat /sys/class/power_supply/BAT?/capacity"
+    
+# Load aliases and shortcuts if existent.
+[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
+# alias trp='trash-put'
+# alias tre='trash-empty'
+# alias trl='trash-list'
+# alias trr='trash-restore'
+# alias trm='trash-rm'
