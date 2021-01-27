@@ -8,7 +8,8 @@
 alias \
     ls='exa --icons -a --group-directories-first' \
 	l="ls -alF" \
-	la="ls -A"
+	la="ls -A" \
+    lt="ls --tree"
 
 # cp etc
 alias \

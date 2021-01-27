@@ -1,5 +1,5 @@
 # Inspiriation: Brodie Robertson and Chris Toomey
-neofetch
+# neofetch
 
 # Sourcing steps
 source ~/.config/zsh/config/colors.zsh
@@ -19,4 +19,3 @@ done
 
 source ~/.config/zsh/config/thirdparty.zsh
 source ~/.config/zsh/config/prompt.zsh
-source ~/.config/zsh/config/run-completion.zsh
