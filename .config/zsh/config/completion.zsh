@@ -22,6 +22,7 @@ compinit -u -C -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 # Easily reset completion
 alias rmdump="rm $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
+# TODO have a look at OMZ/lib
 zstyle ':completion:*' menu select
 # case-insensitive (all), partial-word and then substring completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

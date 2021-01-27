@@ -1,14 +1,8 @@
 # TODO setopt COMPLETE_ALIASES for dgit
 # TODO run-help autoload
 
-# TODO general christoomey
-sz() { source ~/.zshrc }
-first() { awk '{print $1}' }
-second() { awk '{print $2}' }
-
 # TODO Brodie zsh:
 #
-
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
 

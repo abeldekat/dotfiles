@@ -2,6 +2,7 @@
 # neofetch
 
 # Sourcing steps
+# source ~/.config/zsh/config/general.zsh
 source ~/.config/zsh/config/colors.zsh
 source ~/.config/zsh/config/history.zsh
 source ~/.config/zsh/config/completion.zsh
