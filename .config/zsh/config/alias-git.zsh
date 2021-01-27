@@ -28,12 +28,16 @@ alias gunignore='git update-index --no-assume-unchanged'
 
 alias gl='git pull'
 
+# --graph?
 alias glo='git log --oneline --decorate'
 
 alias gp='git push'
 alias gpd='git push --dry-run'
 
 alias grhh='git reset --hard'
+
+alias gr='git remote'
+alias grs='git remote show'
 
 alias gsh='git show'
 

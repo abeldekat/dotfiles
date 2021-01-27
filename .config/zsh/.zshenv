@@ -13,8 +13,6 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 # export LESSHISTFILE=-
 
 # Fixing Paths
-# TODO in cache?
-export HISTFILE="$XDG_DATA_HOME"/zsh/history
 # export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 # Default Apps
