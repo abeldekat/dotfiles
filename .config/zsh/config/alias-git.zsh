@@ -4,6 +4,8 @@ alias dgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 alias g="git"
 alias ga='git add'
+alias dga='dgit add'
+
 alias gaa='git add --all'
 
 alias gb='git branch'
@@ -42,5 +44,6 @@ alias grs='git remote show'
 alias gsh='git show'
 
 alias gst='git status'
+alias dgst='dgit status'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
