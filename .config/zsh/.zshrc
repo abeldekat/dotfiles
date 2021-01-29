@@ -2,7 +2,7 @@
 # neofetch
 
 # Sourcing steps
-# source ~/.config/zsh/config/general.zsh
+source ~/.config/zsh/config/general.zsh
 source ~/.config/zsh/config/colors.zsh
 source ~/.config/zsh/config/history.zsh
 source ~/.config/zsh/config/completion.zsh
@@ -11,6 +11,7 @@ source ~/.config/zsh/config/vimode.zsh
 source ~/.config/zsh/config/alias-enhancedshell.zsh
 source ~/.config/zsh/config/alias-applications.zsh
 source ~/.config/zsh/config/alias-git.zsh
+source ~/.config/zsh/config/dotfiles-git.zsh
 
 for zsh_source in $HOME/.config/zsh/ct/*.zsh; do
   source $zsh_source

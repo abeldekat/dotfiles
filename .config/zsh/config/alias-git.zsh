@@ -1,11 +1,5 @@
-#https://www.ackama.com/blog/posts/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained
-alias dgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME' 
-# do not forget: dgit config --local status.showUntrackedFiles no
-
 alias g="git"
 alias ga='git add'
-alias dga='dgit add'
-
 alias gaa='git add --all'
 
 alias gb='git branch'
@@ -44,6 +38,5 @@ alias grs='git remote show'
 alias gsh='git show'
 
 alias gst='git status'
-alias dgst='dgit status'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
