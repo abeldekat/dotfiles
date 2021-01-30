@@ -1,4 +1,5 @@
 # overwrite commands
+# add flags
 
 # alias vim='vim -u "$XDG_CONFIG_HOME/vim/vimrc"'
 

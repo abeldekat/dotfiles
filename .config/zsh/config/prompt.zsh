@@ -80,7 +80,6 @@ SPACESHIP_EXIT_CODE_SHOW=true
 # SPACESHIP_EXIT_CODE_SYMBOL="${SPACESHIP_EXIT_CODE_SYMBOL="✘"}"
 # SPACESHIP_EXIT_CODE_COLOR="${SPACESHIP_EXIT_CODE_COLOR="red"}"
 
-
 SPACESHIP_PROMPT_ORDER=(
     # time          # Time stamps section
     user          # Username section
