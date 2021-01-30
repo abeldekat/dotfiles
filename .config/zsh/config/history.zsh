@@ -1,7 +1,10 @@
 ## Command history configuration
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE="$XDG_DATA_HOME"/zsh/history
+# HISTFILE="$XDG_DATA_HOME"/zsh/history
+HISTFILE=$HOME/.zsh_history
+
+# Looking at OMZ:histchars !^#
 
 # TODO Show history
 # case $HIST_STAMPS in
@@ -10,6 +13,7 @@ HISTFILE="$XDG_DATA_HOME"/zsh/history
 #   "yyyy-mm-dd") alias history='fc -il 1' ;;
 #   *) alias history='fc -l 1' ;;
 # esac
+alias history='fc -l 1'
 
 # OMZ
 setopt extended_history       # record timestamp of command in HISTFILE
