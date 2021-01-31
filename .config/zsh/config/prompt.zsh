@@ -89,7 +89,7 @@ SPACESHIP_PROMPT_ORDER=(
     exec_time     # Execution time
     # line_sep      # Line break
     # battery       # Battery level and status
-    vi_mode       # Vi-mode indicator
+    # vi_mode       # Vi-mode indicator
     # exit_code     # Exit code section
     char          # Prompt character
   )
@@ -104,7 +104,7 @@ SPACESHIP_RPROMPT_ORDER=(
 autoload -U promptinit; promptinit
 prompt spaceship
 # Normal mode does not show. This is the fix:
-eval spaceship_vi_mode_enable
+# eval spaceship_vi_mode_enable
 
 # TODO 
 # Manage your Environment Variable collections. 
