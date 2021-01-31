@@ -48,9 +48,15 @@ alias \
     ka="killall" \
     stop="kill -TSTP" \
 	batt="cat /sys/class/power_supply/BAT?/capacity"
+
+# TODO Test this fragment from the ZSH book
+# pdf copy helper
+# alias %=' '
     
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
+
+# TODO Examine trash
 # alias trp='trash-put'
 # alias tre='trash-empty'
 # alias trl='trash-list'

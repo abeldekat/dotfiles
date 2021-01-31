@@ -7,6 +7,9 @@ colors
 # enable colored output from ls, etc. on FreeBSD-based systems
 export CLICOLOR=1
 
+# TODO LS_COLORS is empty
+# eval "$(dircolors -b)"
+
 # # Colourized less output
 # cless() {
 #   case "$1" in

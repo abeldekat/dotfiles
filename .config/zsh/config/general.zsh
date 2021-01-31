@@ -1,5 +1,4 @@
 # General ZSH configurations
-setopt autocd
 
 # zsh correction. If used add some aliases like:
 # alias sudo='nocorrect sudo'

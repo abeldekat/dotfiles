@@ -9,6 +9,7 @@ source ~/.config/zsh/config/completion.zsh
 
 # Compinit has run
 source ~/.config/zsh/config/vimode.zsh
+source ~/.config/zsh/config/navigation.zsh
 #source ~/.config/zsh/config/todo.zsh
 source ~/.config/zsh/config/alias-enhancedshell.zsh
 source ~/.config/zsh/config/alias-general.zsh

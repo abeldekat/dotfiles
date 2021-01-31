@@ -22,13 +22,19 @@ autoload -U compinit
 zmodload zsh/complist
 
 # Load from all found directories. Avoid security tests.
-# The check performed to see if there are new functions can be omitted by giving  the  op‐ tion  -C.   In  this  case the dump file will only be created if there isn't one al‐ ready.
+# The check performed to see if there are new functions can be omitted by giving the option  -C.
+# In  this  case the dump file will only be created if there isn't one already.
 compinit -u -C -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
 zstyle ':completion:*' menu select
 # case-insensitive (all), partial-word and then substring completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ''
+
+# TODO omz lib/theme.zsh Take advantage of $LS_COLORS for completion as well.
+# TODO LS_COLORS is empty
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)		# Include hidden files.
 
