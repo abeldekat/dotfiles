@@ -1,4 +1,3 @@
-# TODO setopt COMPLETE_ALIASES for dgit
 # TODO run-help autoload
 
 # TODO Brodie zsh:

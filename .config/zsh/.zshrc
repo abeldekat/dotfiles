@@ -23,6 +23,5 @@ for zsh_source in $HOME/.config/zsh/ct/*.zsh; do
   source $zsh_source
 done
 
-
 source ~/.config/zsh/config/thirdparty.zsh
 source ~/.config/zsh/config/prompt.zsh

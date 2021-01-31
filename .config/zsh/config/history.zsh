@@ -1,12 +1,12 @@
 ## Command history configuration
 HISTSIZE=10000
 SAVEHIST=10000
+# This did not work:
 # HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTFILE=$HOME/.zsh_history
 
 # Looking at OMZ:histchars !^#
 
-# TODO Show history
 # case $HIST_STAMPS in
 #   "mm/dd/yyyy") alias history='fc -fl 1' ;;
 #   "dd.mm.yyyy") alias history='fc -El 1' ;;
