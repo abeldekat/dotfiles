@@ -10,5 +10,6 @@ tmux-man-for-current-word() {
     tmux split-window -h "man $cmd"
   fi
 }
-# zle -N tmux-man-for-current-word
-# bindkey '^Q' tmux-man-for-current-word
+# TODO Does not work yet
+zle -N tmux-man-for-current-word
+bindkey '^Q' tmux-man-for-current-word
