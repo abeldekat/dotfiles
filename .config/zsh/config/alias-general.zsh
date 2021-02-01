@@ -24,6 +24,8 @@ alias \
 alias \
 	f="$FILE" \
 	e="$EDITOR" \
+	vim="$EDITOR" \
+	vi="$EDITOR" \
 	v="$EDITOR"
 
 # arch

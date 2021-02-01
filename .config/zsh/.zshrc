@@ -17,6 +17,7 @@ source ~/.config/zsh/config/alias-git.zsh
 source ~/.config/zsh/config/dotfiles-git.zsh
 source ~/.config/zsh/config/tmux.zsh
 source ~/.config/zsh/config/tmux_man.zsh
+# source ~/.config/zsh/config/widget-playground.zsh
 # ensure_tmux_is_running
 
 # for zsh_source in $HOME/.config/zsh/ct/*.zsh; do
