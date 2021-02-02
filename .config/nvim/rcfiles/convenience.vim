@@ -5,19 +5,6 @@
 inoremap jk <Esc>
 " inoremap <esc> <nop> 
 
-" Windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" Tabs
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-
 " Better flow to command mode
 nnoremap <leader>; :
 " Better flow to command window
