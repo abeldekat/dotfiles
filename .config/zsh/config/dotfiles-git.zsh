@@ -28,7 +28,7 @@ dgd (){
     [[ -f $result ]] && dg diff $result
 }
 # Easily use tig with the dotfiles. No untracked files for performance
-dtig () {
+dt () {
     TIGRC_USER=$XDG_CONFIG_HOME/tig/dotfilesconfig GIT_DIR=$DOTFILES GIT_WORK_TREE=$HOME tig status
 }
 # Untested
