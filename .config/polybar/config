@@ -19,6 +19,7 @@
 [colors]
 ; colors.sh: Often, background equals color0
 background = ${xrdb:background}
+;background = #0000
 background-alt = ${xrdb:color7}
 ; colors.sh: Often, foreground equals color7
 foreground = ${xrdb:foreground}
@@ -41,7 +42,7 @@ bottom = false
 separator =
 
 width = 100%
-height = 32
+height = 20
 offset-x = 0
 offset-y = 0
 ;offset-x = 1%
@@ -135,5 +136,8 @@ label-empty-padding = 1
 
 ; Separator in between workspaces
 ;label-separator = |
+
+[settings]
+;pseudo-transparency = true
 
 ;vim:ft=dosini
