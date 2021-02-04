@@ -9,11 +9,16 @@
 
 " Windows navigation and splits, will be overwritten by tmux_navigator.vim
 " plugin. Plugins are loaded after vimrc, see help startup
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-\> <C-w>p
+" Also: on source vimrc the mappings below will apply thus overwriting the 
+" functions tmux-navigator calls. So, only nnoremap if there is no
+" tmux_navigator
+if !exists("g:loaded_tmux_navigator")
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-j> <C-w>j
+    nnoremap <C-k> <C-w>k
+    nnoremap <C-l> <C-w>l
+    nnoremap <C-\> <C-w>p
+endif
 " Easier split, c-s is available
 nnoremap <C-s> <C-w>s
 " Easier split, c-v is not available, this activates visual block mode
