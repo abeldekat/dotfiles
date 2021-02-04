@@ -80,4 +80,5 @@ nnoremap <leader>tmz :call Tabswitch('zsh', '~/.config/zsh')<CR>
 function! Tabswitch(name,dir)
     exe 'TabooOpen '.a:name
     exe 'tcd '.a:dir
+    exe 'normal -'
 endfunction
