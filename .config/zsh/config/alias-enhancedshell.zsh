@@ -25,7 +25,9 @@ alias \
 
 # tmux
 alias \
-    tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
+    tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+    fzf="fzf-tmux"
+
  
 # Command aliases, suffix aliases, global aliases
 # alias -s {yml,yaml}=vim
