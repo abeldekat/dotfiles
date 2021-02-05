@@ -131,7 +131,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    # alignment = left
     alignment = center
 
     # Vertical alignment of message text and icon.

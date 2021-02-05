@@ -71,10 +71,12 @@ nnoremap <leader>to :TabooOpen
 nnoremap <leader>tc :tabclose<CR> 
 nnoremap <leader>tr :TabooRename 
 
-nnoremap <leader>tib :call Tabswitch('br', '~/inspiration/brodie/dotfiles')<CR> 
-nnoremap <leader>tic :call Tabswitch('ctoo', '~/inspiration/christoomey/dotfiles')<CR> 
-nnoremap <leader>tio :call Tabswitch('omz', '~/inspiration/ohmyzsh/oh-my-zsh-master')<CR> 
+nnoremap <leader>tib :call Tabswitch('bro', '~/inspiration/brodie/dotfiles')<CR> 
+nnoremap <leader>tic :call Tabswitch('cto', '~/inspiration/christoomey/dotfiles')<CR> 
+nnoremap <leader>til :call Tabswitch('luk', '~/inspiration/luke/voidrice/')<CR> 
 nnoremap <leader>tir :call Tabswitch('rah', '~/inspiration/rahatzamancse/linux-dots')<CR> 
+nnoremap <leader>tio :call Tabswitch('omz', '~/inspiration/ohmyzsh/oh-my-zsh-master')<CR> 
+nnoremap <leader>tip :call Tabswitch('cpd', '~/inspiration/protesilaos/cpdfd')<CR> 
 nnoremap <leader>tmv :call Tabswitch('vim', '~/.config/nvim')<CR> 
 nnoremap <leader>tmz :call Tabswitch('zsh', '~/.config/zsh')<CR> 
 

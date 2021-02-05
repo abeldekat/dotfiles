@@ -1,0 +1,27 @@
+# environment
+super + e ; {c,t,x}
+        { \
+        toggle-picom, \
+        thememenu, \
+        xrdb -I "$HOME" -remove "$HOME"/.Xresources \
+	&& xrdb -I "$HOME" -merge "$HOME"/.Xresources \
+        }
+
+# gui
+super + g ; {d,p} 
+	{ \
+	firefox -P default-release, \
+	firefox -P personal \
+ 	}
+
+# Control the laptop's screen brightness (requires `xbacklight`).
+XF86MonBrightness{Down,Up}
+	xbacklight {-dec 15,-inc 15}
+
+# Speaker/output volume.  Requires `amixer` and dedicated keys.
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+	amixer set Master {toggle,5%-,5%+}
+
+# scratchpad according to arch wiki
+super + u
+    scratchpad.sh dropdown
