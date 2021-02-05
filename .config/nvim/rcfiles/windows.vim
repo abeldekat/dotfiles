@@ -74,6 +74,7 @@ nnoremap <leader>tr :TabooRename
 nnoremap <leader>tib :call Tabswitch('br', '~/inspiration/brodie/dotfiles')<CR> 
 nnoremap <leader>tic :call Tabswitch('ctoo', '~/inspiration/christoomey/dotfiles')<CR> 
 nnoremap <leader>tio :call Tabswitch('omz', '~/inspiration/ohmyzsh/oh-my-zsh-master')<CR> 
+nnoremap <leader>tir :call Tabswitch('rah', '~/inspiration/rahatzamancse/linux-dots')<CR> 
 nnoremap <leader>tmv :call Tabswitch('vim', '~/.config/nvim')<CR> 
 nnoremap <leader>tmz :call Tabswitch('zsh', '~/.config/zsh')<CR> 
 
