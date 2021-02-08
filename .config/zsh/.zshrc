@@ -17,7 +17,7 @@ source ~/.config/zsh/config/alias-git.zsh
 source ~/.config/zsh/config/dotfiles-git.zsh
 source ~/.config/zsh/config/tmux.zsh
 source ~/.config/zsh/config/tmux_man.zsh
-# source ~/.config/zsh/config/tryout.zsh
+source ~/.config/zsh/config/bspwm.zsh
 # ensure_tmux_is_running
 source ~/.config/zsh/config/thirdparty.zsh
 source ~/.config/zsh/config/prompt.zsh

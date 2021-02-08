@@ -9,7 +9,7 @@ sudo -n loadkeys ~/.local/share/larbs/ttymaps.kmap 2>/dev/null
 # Arch wiki: Zprofile, typically used to autostart graphical sessions:
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   # remove exec to remain loggedin
-  exec startx
+  startx
 fi
 
 # eval "$(gh completion -s zsh)"
