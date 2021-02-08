@@ -87,4 +87,4 @@ _bc focused_border_color $(_xrdb "color6")
 
 #Scratchpad according to arch wiki
 bspc rule -a dropdown sticky=on state=floating hidden=on
-st -c dropdown &
+# st -c dropdown &
