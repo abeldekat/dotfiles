@@ -1,9 +1,7 @@
 # You can add comments to these files with # h	~/
-b	~/builds
 D	~/Downloads
 m	~/Music
 h	~/
-ba	~/builds/abel-st
 c	~/.config
 ca	~/.config/pkglist
 cf	~/.config/fontconfig
