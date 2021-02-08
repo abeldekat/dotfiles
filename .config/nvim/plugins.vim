@@ -35,6 +35,8 @@ Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-scriptease'
 " Vim Tmux Navigator - Seamlessly navigate between vim splits and tmux panes
 Plug 'christoomey/vim-tmux-navigator'
+" Vim stuff for indent, highlight syntax and detect sxhkd - Simple X hotkey daemon configuration files.
+Plug 'kovetskiy/sxhkd-vim'
 
 " Projectionist provides granular project configuration using "projections".
 source ~/.config/nvim/rcplugins/projectionist.vim

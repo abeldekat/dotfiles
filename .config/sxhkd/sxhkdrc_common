@@ -1,10 +1,26 @@
-# environment
-super + e ; {c,t,x}
+# TODO Terminal files, htop, fuzzy sxhkd 
+# Return is standard
+# terminal emulator
+super + {_, shift + } Return
+	{st, xterm}
+
+# Standard is @space
+# program launcher
+super + d
+	dmenu_run
+
+# Lock the screen todo betterlockscreen
+super + Delete
+	slock
+
+# environment picom theme xrdb
+super + e ; {c,s,t,x}
         { \
         toggle-picom, \
+        sxhkd-help, \
         thememenu, \
         xrdb -I "$HOME" -remove "$HOME"/.Xresources \
-	&& xrdb -I "$HOME" -merge "$HOME"/.Xresources \
+	        && xrdb -I "$HOME" -merge "$HOME"/.Xresources \
         }
 
 # gui

@@ -1,124 +1,261 @@
-# Only reload keyboard shortcuts with sxhkd
-super + shift + Escape
+# Search sections: '# -'
+# sxhkd
+# bspwm hotkeys
+# state/flags
+# Focus and swap 
+# preselect
+# move/resize
+# testing
+#
+# Search keys, example p: /\v\+ .*p
+#
+# Key chord chains are used for less common or ancillary commands, or
+# for when assigning direct keybindings would become unwieldy.  The idea
+# is to scope bindings so as to avoid conflicts.
+# Try to use shift for extending related functionality
+#
+# Occupied letters using super key
+# a (CHAIN advanced) (focus node: p,b,comma,period) (set flags:lmsp)
+# b (swap biggest): TODO could be made available as namespace when adding an extra mod to the b
+# c (focus next) 
+# d (dmenu)
+# e (_common: CHAIN environment)
+# f (fullscreen)
+# g (_common: CHAIN gui applications)
+# h j k l (navigation, replace, resize. Most important vim like keys)
+# i (focus newer node in history)
+# m (monocle)
+# n AVAILABLE
+# o (focus older node in history)
+# p (CHAIN preselect using hjkl 0-9 and space)
+# q AVAILABLE
+# r (CHAIN resize hjkl. Advantage over super-alt: No need to keep the keys pressed)
+# s (floating window)
+# t (tiled, pseudo tiled)
+# u (_common: scratchpad) TODO could be on x CHAIN for terminal applications
+# v (CHAIN move selected windown hjkl)
+# w (close or kill node)
+# x (_common, terminal programs)
+# y (sends marked to preselected area)
+# z AVAILABLE
+#
+# grave: (last focused node)
+# bracked: (last focused desktop)
+# escape: (reload sxhkd)
+# alt (bspc quit restart: uses qr)
+# alt (expand and contract : uses hjkl)
+# {Left,Down,Up,Right} move floating window
+# {0-9} focus desktop or send node to desktop
+# delete: (_common lockscreen)
+
+# ----
+#  sxhkd
+# ----
+
+# Standard mode
+# reload keyboard shortcuts with sxhkd
+super + Escape
 	pkill -u $USER -USR1 -x sxhkd && dunstify -r 500 "SXHKD" "config reloaded"
 
+# ----
+# bspwm hotkeys
+# ----
+
+# Standard
 # quit/restart bspwm
-super + shift + {q,r}
+super + alt + {q,r}
 	bspc {quit,wm -r}
 
-# close and kill
+# Standard
+# close or kill the windows rooted at the selected node.
 super + {_,shift + }w
 	bspc node -{c,k}
 
-# terminal emulator
-super + {_, shift + } Return
-	{st, xterm}
-
-# program launcher
-super + d
-	dmenu_run
-
-
-
-# bspwm hotkeys
-
-
-# arch quit/restart bspwm
-#super + alt + {q,r}
-#	bspc {quit,wm -r}
-
-
-# alternate between the tiled and monocle layout
+# Standard
+# alternate between the tiled and monocle desktop layout
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
+# Standard
+# -n is to-node
+# send the newest marked node to the newest preselected node on the ***current*** desktop
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest node
-# super + g
-# 	bspc node -s biggest
+# Not standard, uses g on any biggest window
+# TODO This is quick operation which can also be done with hjkl
+# Note: super + g is already in use, see _common
+# swap the current node and the biggest existing window on current desktop
+super + b
+	bspc node -s biggest.local
 
-#
+# ----
 # state/flags
-#
+# ----
 
+# Standard
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
-
+# super + {t,shift + t,s,f}
+# 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 #
-# focus/swap
+# Not standard,protsdots, frees letter s
+# Toggle tiled, pseudo_tiled, floating, fullscreen view.  Tiled is what
+# is used by default.  Pseudo-tiled presents the window in its original
+# dimensions inside the split it would normally occupy as a tile (I have
+# never found a practical use for this).  Floating windows have their
+# own dimensions and can be stacked on top of each other.
 #
+# NOTE the presence of the tilde ~.  If current state matches the given
+# state, then the argument is interpreted as the last state.
+super + {t,shift + space,space,f}
+ 	bspc node -t '~{tiled,pseudo_tiled,floating,fullscreen}'
 
-# focus the node in the given direction
+# Not standard, super + control + mxyz
+# Note: super-control was used by preselect, now with p keychord
+# TODO no hidden flag
+# set node flags: marked,locked, sticky,private
+super + a ; {l,m,s,z}
+	bspc node -g {locked,marked,sticky,private}
+
+# ----
+# Focus and swap 
+# ----
+
+# Standard
+# TODO nice to have: prot smart move script, creates receptacles when there is no 
+# window in the given direction.
+# focus or swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
+# Not standard, without the a directly on super
+# Advanced namespace focus operations
+# focus the node for the given path jump:parent, brother, first, second
+super + a ; {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
+# Standard
+# man: Selects the node in the given (cyclic) direction relative to the reference node within a depth-first in-order traversal of the tree.
+# Cyclic behaviour
+# Old way: focus the next/previous node in the current desktop
+# bspc node -f {next,prev}.local
+# focus foCus the next/previous window in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
+# Standard
+# Cyclic
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
+# Standard
+# focus the last focused node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
+# Standard
+# focus older or newer node in focus history
 super + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
+# Standard
+# node -d: to-desktop
+# focus desktop or send to the given desktop without requesting focus
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
+# ----
 # preselect
-#
+# ----
 
+# Not Standard, tilde cancels preselection
+# Thus, bspc node -p cancel is redundant
+# A node with a preselected area is said to be in "manual insertion mode".
+# super + ctrl + {h,j,k,l}
 # preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+super + p ; {h,j,k,l}
+	bspc node -p '~{west,south,north,east}'
 
-# preselect the ratio
-super + ctrl + {1-9}
+# Not Standard
+# super + ctrl + {1-9}
+# Set the splitting ratio of the preselection area to 0.1 to 0.9
+super + p ; {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
+# Not Standard
+# super + ctrl + space
+# 	bspc node -p cancel
+# super + ctrl + shift + space
+# 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# cancel the preselection for the focused node or desktop
+super + p ; space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
+# ----
 # move/resize
-#
+# ----
 
-# expand a window by moving one of its side outward
+# Standard
+# resize: expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
+# Standard
+# A vim mode would be great here. Four keys!
+# resize: contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+# Not Standard, first column is expand, second is contract
+# Also possible: r and shift r
+# continues resize: expand(increment) or contract(decrement) window by moving one of its side outward or inward
+super + r ; {i,d} : {h,j,k,l}
+	bspc node -z \
+		{ \
+			left -20 0,right -20 0, \
+			bottom 0 20,top 0 20, \
+			top 0 -20,bottom 0 -20, \
+			right 20 0,left 20 0, \
+		}
+
+# > Will always grow for floating nodes. <
+# Decision: Not really useful yet
+# Smart resize, will grow or shrink depending on location.
+# super + ctrl + alt + {h,j,k,l}
+# 	n=10; \
+#   	{ d1=left;   d2=right;  dx=-$n; dy=0;   \
+#   	, d1=bottom; d2=top;    dx=0;   dy=$n;  \
+#   	, d1=top;    d2=bottom; dx=0;   dy=-$n; \
+#   	, d1=right;  d2=left;   dx=$n;  dy=0;   \
+#   } \
+#   bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
+
+
+# Standard
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+# Not standard
+# continues move a floating window
+super + v : {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# ----
+# Testing:
+# ----
+
+# super + v ; {a,b} : {c,d}
+# 		dunstify {"a","b"} \
+# 	 	{ \
+# 			"ac", "bc", \ 
+# 			"ad", "bd" \
+# 		}
+# super + v ; {a,b} : {c,d}
+# 	 	{ \
+# 			dunstify "t" "ac", dunstify "t" "bc", \ 
+# 			dunstify "t" "ad", dunstify "t" "bd" \
+# 		} 
+# dunstify "test" {"ac","bc","ad","bd"}
