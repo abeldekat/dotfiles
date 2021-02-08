@@ -7,5 +7,6 @@
 
 #git update-index --assume-unchanged $(git ls-files ../stow-always-colors | tr '\n' ' ')
 
-dgit update-index --assume-unchanged .local/share/colors/active-theme.{name,Xcolors}
+dg update-index --assume-unchanged .local/share/colors/active-theme.{name,Xcolors}
+dg update-index --assume-unchanged .config/larbs/wall.png
 
