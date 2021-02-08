@@ -7,6 +7,8 @@
 # move/resize
 # testing
 #
+# TODO rotate flip circulate insert-receptacle hidden en layer
+# Note: Setting the split ratio of the parent internal node is a direct resize
 # Note: st terminal,zoom text with TERMMOD: shift control pageup/down
 #
 # Search keys, example p: /\v\+ .*p
@@ -60,7 +62,7 @@
 # Standard mode
 # reload keyboard shortcuts with sxhkd
 super + Escape
-	pkill -u $USER -USR1 -x sxhkd && notify-send -r 500 "SXHKD" "config reloaded"
+	pkill -u $USER -USR1 -x sxhkd && notify-send "SXHKD" "config reloaded"
 
 # ----
 # bspwm hotkeys
@@ -126,16 +128,20 @@ super + a ; {l,m,s,z}
 # Applies to the next window, or when using the next set of commands that equalise the tree or balance the
 # parent node.
 # Set the split ratio on demand.
-super + s ; {2,3,4}
+super + s ; {1,2,3,4,5}
 	bspc config split_ratio { \
+	0.25 && notify-send "BSPWM configuration" "Split ratio set to 0.25", \
+	0.34 && notify-send "BSPWM configuration" "Split ratio set to 0.34", \
 	0.50 && notify-send "BSPWM configuration" "Split ratio set to 0.50", \
 	0.66 && notify-send "BSPWM configuration" "Split ratio set to 0.66", \
 	0.75 && notify-send "BSPWM configuration" "Split ratio set to 0.75" \
 	}
 
 # Not standard, protsdots
-# Equalize applies to the root of the tree to equalise all split ratios.  
+# Equalize applies to the root of the tree.
 # Balance applies to the parent node to even out manually-split windows.
+# Man equalize: Reset the split ratios of the tree rooted at the selected node to their default value.
+# Man balance: Adjust the split ratios of the tree rooted at the selected node so that all windows occupy the same area.
 # Make node split ratios equal or balance
 super + s ; {e,b}
 	bspc node {@/ --equalize,@parent --balance}
