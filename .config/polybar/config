@@ -140,4 +140,4 @@ label-empty-padding = 1
 [settings]
 ;pseudo-transparency = true
 
-;vim:ft=dosini
+; vim:set ft=dosini:
