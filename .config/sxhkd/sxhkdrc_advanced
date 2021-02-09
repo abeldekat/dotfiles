@@ -1,0 +1,22 @@
+
+# reload keyboard shortcuts with sxhkd
+super + Escape
+	pkill -u $USER -USR1 -x sxhkd && notify-send "SXHKD" "config reloaded"
+
+# Change config to base mode
+super + n
+	_td=$XDG_CONFIG_HOME/sxhkd; \
+	mv -f $_td/sxhkdrc $_td/sxhkdrc_advanced && \
+	cat $_td/sxhkdrc_base > $_td/sxhkdrc && \
+	notify-send "sxhkd mode" "base is ready, reload sxhkd" && \
+	sxhkd-reload
+
+# ----
+# bspwm hotkeys
+# ----
+
+# Standard
+# # quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
