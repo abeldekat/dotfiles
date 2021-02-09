@@ -13,10 +13,11 @@ super + d
 super + Delete
 	slock
 
-# environment picom theme xrdb
-super + e ; {c,s,t,x}
+# environment polybar picom theme xrdb
+super + e ; {c,p,s,t,x}
         { \
         toggle-picom, \
+		reloadpolybar, \
         sxhkd-help, \
         thememenu, \
         xrdb -I "$HOME" -remove "$HOME"/.Xresources \

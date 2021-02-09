@@ -1,3 +1,2 @@
 #!/bin/sh
-
-pkill -u $USER -USR1 -x sxhkd && notify-send "SXHKD" "config reloaded"
+pkill -u $USER -USR1 -x sxhkd

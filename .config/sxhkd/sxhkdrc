@@ -62,15 +62,15 @@
 # Standard mode
 # reload keyboard shortcuts with sxhkd
 super + Escape
-	sxhkd-reload
+	sxhkd-reload && notify-send "SXHKD" "config reloaded"
 
 # Change config to advanced mode
 super + n
 	_td=$XDG_CONFIG_HOME/sxhkd; \
 	mv -f $_td/sxhkdrc $_td/sxhkdrc_base && \
 	mv -f $_td/sxhkdrc_advanced $_td/sxhkdrc && \
-	notify-send "sxhkd mode" "advanced is ready, reload sxhkd" && \
-	sxhkd-reload
+	sxhkd-reload && \
+	polybar-msg hook window-mode 2 > /dev/null
 
 # ----
 # bspwm hotkeys
