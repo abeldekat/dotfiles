@@ -25,7 +25,7 @@ foreground-wm-empty = ${xrdb:color2}
 primary = ${xrdb:color3}
 alert = ${xrdb:color1}
 
-[bar/bar]
+[bar/top]
 monitor-strict = false
 monitor-exact = true
 override-redirect = false
