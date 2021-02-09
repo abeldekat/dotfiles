@@ -280,6 +280,14 @@ super + {Left,Down,Up,Right}
 super + v : {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# ---
+# Misc
+# ---
+
+# Vimlike only: Keep the focussed node and close all others 
+super + z ; o
+	bspc query --nodes --node .\!focused.leaf | xargs -I id bspc node id -c
+
 # ----
 # Testing:
 # ----
