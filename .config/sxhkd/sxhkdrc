@@ -29,7 +29,7 @@
 # h j k l (navigation, replace, resize. Most important vim like keys)
 # i (focus newer node in history)
 # m (monocle)
-# n AVAILABLE
+# n AVAILABLE: Temporarily mode switch
 # o (focus older node in history)
 # p (CHAIN preselect using hjkl 0-9 and space)
 # q AVAILABLE
@@ -41,7 +41,7 @@
 # w (close or kill node)
 # x (_common, terminal programs)
 # y (sends marked to preselected area)
-# z AVAILABLE
+# z AVAILABLE: Temporarily misc options (o)
 #
 # space: (window state: switch to floating, pseudo-tiled)
 # grave: (last focused node)
@@ -199,7 +199,7 @@ super + {o,i}
 	bspc wm -h on
 
 # Standard
-# node -d: to-desktop
+# node -d: means to-desktop
 # focus desktop or send to the given desktop without requesting focus
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
