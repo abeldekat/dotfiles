@@ -68,7 +68,7 @@ super + Escape
 super + n
 	_td=$XDG_CONFIG_HOME/sxhkd; \
 	mv -f $_td/sxhkdrc $_td/sxhkdrc_base && \
-	cat $_td/sxhkdrc_advanced > $_td/sxhkdrc && \
+	mv -f $_td/sxhkdrc_advanced $_td/sxhkdrc && \
 	notify-send "sxhkd mode" "advanced is ready, reload sxhkd" && \
 	sxhkd-reload
 
