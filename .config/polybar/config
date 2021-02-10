@@ -64,7 +64,7 @@ font-1 = HackNerdFont:pixelsize=10;
 font-2 = JoyPixels:fontformat=truetype:scale=10:antialias=false;
 
 modules-left = bspwm
-modules-right = window-mode battery date
+modules-right = window-mode cpu battery date
 
 tray-position = right
 tray-padding = 0
@@ -146,5 +146,25 @@ format-full-prefix = "🔋 "
 format-charging-underline = ${xrdb:color9}
 format-discharging-underline = ${xrdb:color9}
 format-full-underline = ${xrdb:color9}
+
+[module/cpu]
+type = internal/cpu
+; Seconds to sleep between updates Default: 1
+interval = 5
+format-prefix = "💻 "
+format-underline = ${xrdb:color11}
+; label = CPU %percentage%%
+; format = <label> <ramp-coreload>
+format =<ramp-load>
+; Spacing between individual per-core ramps
+ramp-load-spacing = 1
+ramp-load-0 = ▁
+ramp-load-1 = ▂
+ramp-load-2 = ▃
+ramp-load-3 = ▄
+ramp-load-4 = ▅
+ramp-load-5 = ▆
+ramp-load-6 = ▇
+ramp-load-7 = █
 
 ; vim:set ft=dosini:
