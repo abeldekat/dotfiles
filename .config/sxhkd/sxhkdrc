@@ -33,7 +33,7 @@
 # o (focus older node in history)
 # p (CHAIN preselect using hjkl 0-9 and space)
 # q AVAILABLE
-# r (CHAIN resize hjkl. Advantage over super-alt: No need to keep the keys pressed)
+# r AVAILABLE
 # s (CHAIN split ratio, equalize, balance)
 # t (tiled)
 # u AVAILABLE
@@ -41,7 +41,7 @@
 # w (close or kill node)
 # x (_common, terminal programs)
 # y (sends marked to preselected area)
-# z AVAILABLE: Temporarily misc options (o)
+# z (CHAIN resiZe hjkl. Advantage over super-alt: No need to keep the keys pressed)
 #
 # space: (window state: switch to floating, pseudo-tiled)
 # grave: (last focused node)
@@ -239,24 +239,21 @@ super + p ; space
 # resize: expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+# Not standard
+# resize continuesly: expand a window by moving one of its side outward
+super + z : {h,j,k,l}
+	n=20; bspc node -z {left -$n 0,bottom 0 $n,top 0 -$n,right $n 0}
 
 # Standard
 # A vim mode would be great here. Four keys!
 # resize: contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# Not standard
+# resize continuesly: contract a window by moving one of its side inward
+super + z : {H,J,K,L}
+	n=20; bspc node -z {right -$n 0,top 0 $n,bottom 0 -$n,left $n 0}
 
-# Not Standard, first column is expand, second is contract
-# Also possible: r and shift r
-# continuesly resize: expand(increment) or contract(decrement) window by moving one of its side outward or inward
-super + r ; {i,d} : {h,j,k,l}
-	bspc node -z \
-		{ \
-			left -20 0,right -20 0, \
-			bottom 0 20,top 0 20, \
-			top 0 -20,bottom 0 -20, \
-			right 20 0,left 20 0, \
-		}
 
 # > Will always grow for floating nodes. <
 # Decision: Not really useful yet
@@ -284,9 +281,9 @@ super + v : {h,j,k,l}
 # Misc
 # ---
 
-# Vimlike only: Keep the focussed node and close all others 
-super + z ; o
-	bspc query --nodes --node .\!focused.leaf | xargs -I id bspc node id -c
+# TODO Vimlike only: Keep the focussed node and close all others 
+# super + z ; o
+# 	bspc query --nodes --node .\!focused.leaf | xargs -I id bspc node id -c
 
 # ----
 # Testing:
