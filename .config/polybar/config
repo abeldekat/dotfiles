@@ -1,3 +1,10 @@
+;Most modules define a format-NAME field, which lets you configure the output format of the module.
+;https://github.com/polybar/polybar/wiki/Formatting
+;Tokens can be used in many labels to display dynamic values set by the module. For example in the internal/date module, %time% will be replaced with the formatted time string.
+;A label is simply text. You may include a token which represents a value.
+;Ramp entries are based on labels which means that you can define all properties that are available for a <label>
+;Polybar has built-in support for basic lemonbar tags.
+
 [colors]
 background = ${xrdb:background}
 background-alt = ${xrdb:background}
@@ -10,15 +17,18 @@ tray-background = #00000000
 background-wm-focussed = ${xrdb:color7}
 foreground-wm-empty = ${xrdb:color2}
 
+; Application settings:
 [settings]
+screenchange-reload = true
+; Define fallback values used by all module formats
 format-foreground =
-format-underline = ${colors.primary}
 format-background = ${colors.background-alt}
-format-padding = 1
+format-underline = ${colors.primary}
 format-overline =
+format-spacing =
+format-padding = 1
 format-margin = 0
 format-offset =
-screenchange-reload = true
 
 [global/wm]
 margin-top = 0
@@ -54,7 +64,7 @@ font-1 = HackNerdFont:pixelsize=10;
 font-2 = JoyPixels:fontformat=truetype:scale=10:antialias=false;
 
 modules-left = bspwm
-modules-right = window-mode date
+modules-right = window-mode battery date
 
 tray-position = right
 tray-padding = 0
@@ -117,5 +127,24 @@ time-alt = %H:%M:%S
 label = %date% %time%
 format-prefix = "🕰  "
 format-margin = 1
+
+[module/battery]
+type = internal/battery
+full-at = 99 
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = AC
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs. Disable polling by setting the interval to 0.
+; Default: 5
+poll-interval = 120
+format-charging-prefix = "🔋 "
+format-discharging-prefix = "🔋 "
+format-full-prefix = "🔋 "
+format-charging-underline = ${xrdb:color9}
+format-discharging-underline = ${xrdb:color9}
+format-full-underline = ${xrdb:color9}
 
 ; vim:set ft=dosini:
