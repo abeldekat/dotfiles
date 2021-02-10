@@ -1,3 +1,4 @@
+# Advanced mode, hjkl to focus, swap, expand, contract, and move
 
 # reload keyboard shortcuts with sxhkd
 super + Escape
@@ -7,16 +8,30 @@ super + Escape
 super + n
 	_td=$XDG_CONFIG_HOME/sxhkd; \
 	mv -f $_td/sxhkdrc $_td/sxhkdrc_advanced && \
-	mv $_td/sxhkdrc_base $_td/sxhkdrc && \
+	mv -f $_td/sxhkdrc_base $_td/sxhkdrc && \
 	sxhkd-reload && \
 	polybar-msg hook window-mode 1 > /dev/null
 
-# ----
-# bspwm hotkeys
-# ----
+#
+{t,shift + space,space,f}
+ 	bspc node -t '~{tiled,pseudo_tiled,floating,fullscreen}'
 
-# Standard
-# # quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+# plain navigation
+{h,j,k,l}
+	bspc node -f {west,south,north,east}
 
+# goto desktop or send node to desktop
+{_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# expand node
+super + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+#contract node
+super + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move node
+ctrl + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
