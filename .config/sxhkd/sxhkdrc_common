@@ -13,7 +13,7 @@ super + d
 super + Delete
 	slock
 
-# environment polybar picom theme xrdb
+# environment: piCom,polybar,sxhd-help,theme,xrdb merge
 super + e ; {c,p,s,t,x}
         { \
         toggle-picom, \
@@ -31,6 +31,11 @@ super + g ; {d,p}
 	firefox -P personal \
  	}
 
+# scratchpad according to arch wiki
+# terminal: scratchpad
+super + x ; u
+    scratchpad.sh dropdown
+
 # Control the laptop's screen brightness (requires `xbacklight`).
 XF86MonBrightness{Down,Up}
 	xbacklight {-dec 15,-inc 15}
@@ -38,7 +43,3 @@ XF86MonBrightness{Down,Up}
 # Speaker/output volume.  Requires `amixer` and dedicated keys.
 XF86Audio{Mute,LowerVolume,RaiseVolume}
 	amixer set Master {toggle,5%-,5%+}
-
-# scratchpad according to arch wiki
-super + u
-    scratchpad.sh dropdown

@@ -19,7 +19,7 @@
 # Try to use shift for extending related functionality
 #
 # Overview letters using super key
-# a (CHAIN advanced) (focus node: p,b,comma,period) (set flags:lmsp)
+# a (CHAIN advanced) (focus node jump: p,b,comma,period) (set flags:lmsp)
 # b (swap biggest): TODO could be made available as namespace when adding an extra mod to the b
 # c (focus next) 
 # d (dmenu)
@@ -36,7 +36,7 @@
 # r (CHAIN resize hjkl. Advantage over super-alt: No need to keep the keys pressed)
 # s (CHAIN split ratio, equalize, balance)
 # t (tiled)
-# u (_common: scratchpad) TODO could be on x CHAIN for terminal applications
+# u AVAILABLE
 # v (CHAIN move selected windown hjkl)
 # w (close or kill node)
 # x (_common, terminal programs)
@@ -48,7 +48,7 @@
 # bracked: (last focused desktop)
 # escape: (reload sxhkd)
 # alt (bspc quit restart: uses qr)
-# alt (expand and contract : uses hjkl)
+# alt (expand and contract : uses shift hjkl)
 # {Left,Down,Up,Right} move floating window
 # {0-9} focus desktop or send node to desktop
 # delete: (_common lockscreen)
