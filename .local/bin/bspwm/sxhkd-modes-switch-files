@@ -1,0 +1,10 @@
+#! /bin/sh
+
+_td=$XDG_CONFIG_HOME/sxhkd
+if [ $2 -eq 1 ]; then
+    mv -f $_td/sxhkdrc_mode_placeholder $_td/sxhkdrc_mode_placeholder.bak
+    mv -f $_td/sxhkdrc_$1 $_td/sxhkdrc_mode_placeholder
+else
+    mv -f $_td/sxhkdrc_mode_placeholder $_td/sxhkdrc_$1
+    mv -f $_td/sxhkdrc_mode_placeholder.bak $_td/sxhkdrc_mode_placeholder
+fi

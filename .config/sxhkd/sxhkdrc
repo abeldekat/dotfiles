@@ -64,11 +64,9 @@
 super + Escape
 	sxhkd-reload && notify-send "SXHKD" "config reloaded"
 
-# Change config to advanced mode
+# Change config to visual mode
 super + n
-	_td=$XDG_CONFIG_HOME/sxhkd; \
-	mv -f $_td/sxhkdrc $_td/sxhkdrc_base && \
-	mv -f $_td/sxhkdrc_advanced $_td/sxhkdrc && \
+	sxhkd-modes-switch-files visual 1
 	sxhkd-reload && \
 	polybar-msg hook window-mode 2 > /dev/null
 
