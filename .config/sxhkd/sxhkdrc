@@ -57,18 +57,18 @@
 #  sxhkd
 # ----
 
-# Note investigate: Another mode could be reloaded by overwriting file sxhkdrc...
-#
-# Standard mode
-# reload keyboard shortcuts with sxhkd
+# Reload keyboard shortcuts with sxhkd. Resets to normal mode. Does not kill the process
 super + Escape
-	sxhkd-reload && notify-send "SXHKD" "config reloaded"
+	sxhkd-mirror-files ; \
+	sxhkd-reload && \
+	polybar-msg hook sxhkd-mode 1 && \
+	notify-send "SXHKD" "config reloaded"
 
 # Change config to visual mode
 super + n
 	sxhkd-modes-switch-files visual 1 ; \
 	sxhkd-reload && \
-	polybar-msg hook window-mode 2 > /dev/null
+	polybar-msg hook sxhkd-mode 2 > /dev/null
 
 # ----
 # bspwm hotkeys

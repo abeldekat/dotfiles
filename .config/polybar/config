@@ -64,7 +64,7 @@ font-1 = HackNerdFont:pixelsize=10;
 font-2 = JoyPixels:fontformat=truetype:scale=10:antialias=false;
 
 modules-left = bspwm
-modules-right = window-mode cpu battery date
+modules-right = sxhkd-mode cpu battery date
 
 tray-position = right
 tray-padding = 0
@@ -105,7 +105,7 @@ label-empty = %index%
 label-empty-foreground = ${colors.foreground-wm-empty}
 label-empty-padding = 0
 
-[module/window-mode]
+[module/sxhkd-mode]
 type = custom/ipc
 content = 
 hook-0 = echo "📌 N "

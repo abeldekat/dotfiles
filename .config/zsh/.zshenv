@@ -29,7 +29,8 @@ export PAGER="less"
 export WM="bspwm"
 
 # SXHKD config location. Enable tempfs for speed and modes
-export SXHKD_ACTIVE_CONFIG="$HOME/.config/sxhkd"
+# export SXHKD_ACTIVE_CONFIG="$HOME/.config/sxhkd"
+export SXHKD_ACTIVE_CONFIG="/dev/shm/sxhkd"
 
 # TODO LF
 # export LF_ICONS=""

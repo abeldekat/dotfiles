@@ -4,10 +4,10 @@
 # All super keys still work
 
 # vim like change config to base mode, empties file sxhkdrc_modes_placeholder
-Escape
+super + n
 	sxhkd-modes-switch-files visual 0 ; \
 	sxhkd-reload && \
-	polybar-msg hook window-mode 1 > /dev/null
+	polybar-msg hook sxhkd-mode 1 > /dev/null
 
 # set the window state
 {t,shift + space,space,f}
@@ -29,10 +29,6 @@ ctrl + {h,j,k,l}
 #  Safety
 #  ----
 
-# override the switch to visual mode as defined in sxhkdrc. Sxhkd will crash otherwise.
-super + n
-	notify-send "SXHKD V" "Invalid key,use escape!"
-
 # make an effort to disable any other typing
 {0-9,a-z,A-Z}
-	notify-send "SXHKD V" "Invalid key, switch back to normal mode!"
+	echo "dummy" > /dev/null
