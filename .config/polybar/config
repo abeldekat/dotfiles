@@ -126,7 +126,7 @@ date-alt = %A, %d %B %Y
 time-alt = %H:%M:%S
 label = %date% %time%
 format-prefix = "🕰  "
-format-margin = 1
+; format-margin = 1
 
 [module/battery]
 type = internal/battery
