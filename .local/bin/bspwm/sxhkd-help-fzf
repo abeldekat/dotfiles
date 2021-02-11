@@ -1,4 +1,4 @@
 #!/bin/bash
 
-awk '/^[a-z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/sxhkd/sxhkdrc{,_common} |
+awk '/^[a-z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/sxhkd/{sxhkdrc_mode_placeholder,sxhkdrc,sxhkdrc_common} |
     column -t -s $'\t' | fzf
