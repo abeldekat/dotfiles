@@ -1,10 +1,15 @@
-# Change config to base mode
+# Add a visual layer on top of sxhkdrc in which direct keys manipulate the node 
+# Most important operations: Expand, contract, move, window state 
+# Read only, digits and letters are disabled for normal typing. 
+# All super keys still work
+
+# vim like change config to base mode, empties file sxhkdrc_modes_placeholder
 Escape
 	sxhkd-modes-switch-files visual 0 ; \
 	sxhkd-reload && \
 	polybar-msg hook window-mode 1 > /dev/null
 
-#
+# set the window state
 {t,shift + space,space,f}
  	bspc node -t '~{tiled,pseudo_tiled,floating,fullscreen}'
 
@@ -19,3 +24,15 @@ shift + {h,j,k,l}
 # move node
 ctrl + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# ----
+#  Safety
+#  ----
+
+# override the switch to visual mode as defined in sxhkdrc. Sxhkd will crash otherwise.
+super + n
+	notify-send "SXHKD V" "Invalid key,use escape!"
+
+# make an effort to disable any other typing
+{0-9,a-z,A-Z}
+	notify-send "SXHKD V" "Invalid key, switch back to normal mode!"

@@ -18,9 +18,9 @@
 # is to scope bindings so as to avoid conflicts.
 # Try to use shift for extending related functionality
 #
-# Overview letters using super key
+# Overview letters prepended by the super key:
 # a (CHAIN advanced) (focus node jump: p,b,comma,period) (set flags:lmsp)
-# b (swap biggest): TODO could be made available as namespace when adding an extra mod to the b
+# b (swap biggest)
 # c (focus next) 
 # d (dmenu)
 # e (_common: CHAIN environment)
@@ -29,7 +29,7 @@
 # h j k l (navigation, replace, resize. Most important vim like keys)
 # i (focus newer node in history)
 # m (monocle)
-# n AVAILABLE: Temporarily mode switch
+# n (switch to visual mode)
 # o (focus older node in history)
 # p (CHAIN preselect using hjkl 0-9 and space)
 # q AVAILABLE
@@ -41,7 +41,7 @@
 # w (close or kill node)
 # x (_common, terminal programs)
 # y (sends marked to preselected area)
-# z (CHAIN resiZe hjkl. Advantage over super-alt: No need to keep the keys pressed)
+# z (CHAIN resiZe hjkl. Advantage over super-alt: No need to keep the keys pressed. Super-shift-alt is awkward. Disadvantage: Only continues key pressing on one operation, expand or contract. Needs escape and another 'z' to switch operation)
 #
 # space: (window state: switch to floating, pseudo-tiled)
 # grave: (last focused node)
