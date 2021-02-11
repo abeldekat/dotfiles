@@ -1,6 +1,6 @@
 # Change config to base mode
 Escape
-	sxhkd-modes-switch-files visual 0
+	sxhkd-modes-switch-files visual 0 ; \
 	sxhkd-reload && \
 	polybar-msg hook window-mode 1 > /dev/null
 
