@@ -1,0 +1,58 @@
+# This readme belongs to file sxhkdrc
+
+# Search sections: '# -'
+# sxhkd
+# bspwm hotkeys
+# state/flags
+# Focus and swap 
+# preselect
+# move/resize
+# manipulate the workspace
+# misc
+# testing
+#
+# TODO rotate flip circulate insert-receptacle hidden en layer
+# Note: Setting the split ratio of the parent internal node is a direct resize
+# Note: st terminal,zoom text with TERMMOD: shift control pageup/down
+#
+# Search keys, example p: /\v\+ .*p
+# 
+# Key chord chains are used for less common or ancillary commands, or
+# for when assigning direct keybindings would become unwieldy.  The idea
+# is to scope bindings so as to avoid conflicts.
+# Try to use shift for extending related functionality
+#
+# Overview letters prepended by the super key:
+# a (CHAIN advanced) (focus node jump: p,b,comma,period) (set flags:lmsp)
+# b (swap biggest)
+# c (focus next) 
+# d (dmenu)
+# e (_common: CHAIN environment)
+# f (fullscreen)
+# g (_common: CHAIN gui applications)
+# h j k l (navigation, replace, resize. Most important vim like keys)
+# i (focus newer node in history)
+# m (monocle)
+# n (switch to visual mode)
+# o (focus older node in history)
+# p (CHAIN preselect using hjkl 0-9 and space)
+# q AVAILABLE. Note q is used with super+alt
+# r (rotate). Note r is used with super+alt
+# s (CHAIN split ratio, equalize, balance)
+# t (tiled)
+# u AVAILABLE
+# v (flip Vlip)
+# w (close or kill node)
+# x (_common, terminal programs)
+# y (sends marked to preselected area)
+# z (dynamic gapZ)
+#
+# space: (window state: switch to floating, pseudo-tiled)
+# grave: (last focused node)
+# bracked: (last focused desktop)
+# escape: (reload sxhkd)
+# alt (bspc quit restart: uses qr)
+# alt (expand and contract : uses shift hjkl)
+# {Left,Down,Up,Right} move floating window
+# {0-9} focus desktop or send node to desktop
+# delete: (_common lockscreen)

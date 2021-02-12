@@ -1,58 +1,4 @@
-# Search sections: '# -'
-# sxhkd
-# bspwm hotkeys
-# state/flags
-# Focus and swap 
-# preselect
-# move/resize
-# testing
-#
-# TODO rotate flip circulate insert-receptacle hidden en layer
-# Note: Setting the split ratio of the parent internal node is a direct resize
-# Note: st terminal,zoom text with TERMMOD: shift control pageup/down
-#
-# Search keys, example p: /\v\+ .*p
-# 
-# Key chord chains are used for less common or ancillary commands, or
-# for when assigning direct keybindings would become unwieldy.  The idea
-# is to scope bindings so as to avoid conflicts.
-# Try to use shift for extending related functionality
-#
-# Overview letters prepended by the super key:
-# a (CHAIN advanced) (focus node jump: p,b,comma,period) (set flags:lmsp)
-# b (swap biggest)
-# c (focus next) 
-# d (dmenu)
-# e (_common: CHAIN environment)
-# f (fullscreen)
-# g (_common: CHAIN gui applications)
-# h j k l (navigation, replace, resize. Most important vim like keys)
-# i (focus newer node in history)
-# m (monocle)
-# n (switch to visual mode)
-# o (focus older node in history)
-# p (CHAIN preselect using hjkl 0-9 and space)
-# q AVAILABLE
-# r AVAILABLE
-# s (CHAIN split ratio, equalize, balance)
-# t (tiled)
-# u AVAILABLE
-# v (CHAIN move selected windown hjkl)
-# w (close or kill node)
-# x (_common, terminal programs)
-# y (sends marked to preselected area)
-# z (CHAIN resiZe hjkl. Advantage over super-alt: No need to keep the keys pressed. Super-shift-alt is awkward. Disadvantage: Only continues key pressing on one operation, expand or contract. Needs escape and another 'z' to switch operation)
-#
-# space: (window state: switch to floating, pseudo-tiled)
-# grave: (last focused node)
-# bracked: (last focused desktop)
-# escape: (reload sxhkd)
-# alt (bspc quit restart: uses qr)
-# alt (expand and contract : uses shift hjkl)
-# {Left,Down,Up,Right} move floating window
-# {0-9} focus desktop or send node to desktop
-# delete: (_common lockscreen)
-
+# README: See file readme in this folder
 # ----
 #  sxhkd
 # ----
@@ -226,8 +172,10 @@ super + p ; space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # ----
-# move/resize
+# move/resize. Better handled in layout mode
 # ----
+# Inactive: z (CHAIN resiZe hjkl. Advantage over super-alt: No need to keep the keys pressed. Super-shift-alt is awkward. Disadvantage: Only continues key pressing on one operation, expand or contract. Needs escape and another 'z' to switch operation)
+# Inactive: v. Same as above
 
 # Standard
 # resize: expand a window by moving one of its side outward
@@ -235,8 +183,8 @@ super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 # Not standard
 # resize continuesly: expand a window by moving one of its side outward
-super + z : {h,j,k,l}
-	n=20; bspc node -z {left -$n 0,bottom 0 $n,top 0 -$n,right $n 0}
+# super + z : {h,j,k,l}
+# 	n=20; bspc node -z {left -$n 0,bottom 0 $n,top 0 -$n,right $n 0}
 
 # Standard
 # A vim mode would be great here. Four keys!
@@ -245,8 +193,8 @@ super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 # Not standard
 # resize continuesly: contract a window by moving one of its side inward
-super + z : {H,J,K,L}
-	n=20; bspc node -z {right -$n 0,top 0 $n,bottom 0 -$n,left $n 0}
+# super + z : {H,J,K,L}
+# 	n=20; bspc node -z {right -$n 0,top 0 $n,bottom 0 -$n,left $n 0}
 
 
 # > Will always grow for floating nodes. <
@@ -268,8 +216,25 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 # Not standard
 # continuesly move a floating window
-super + v : {h,j,k,l}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+# Inactive (CHAIN move selected windown hjkl)
+# super + v : {h,j,k,l}
+# 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# ----
+# Manipulate the workspace
+# ----
+
+# Rotate all windows {counter-}clockwise by 90 degrees.
+super + {_,shift + }r
+	bspc node @/ --rotate {90,-90}
+
+# Flip (Vlip) starting at parent.
+super + {_,shift + }v
+	bspc node @parent --flip {vertical,horizontal}
+
+# Dynamic gapZ.
+super + {_,shift + }z
+	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {+,-j} 5 ))"
 
 # ---
 # Misc

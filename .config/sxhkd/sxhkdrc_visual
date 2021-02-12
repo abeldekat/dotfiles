@@ -3,16 +3,18 @@
 # Read only, digits and letters are disabled for normal typing. 
 # All super keys still work
 
-# vim like change config to base mode, empties file sxhkdrc_modes_placeholder
 ########
 # MODE #
 ########
-Escape
+
+# this mode explicitly overrides super + n effictively producing a toggle
+# Back to normal mode.
+{Escape, super + n}
     . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
-# set the window state
-{t,shift + space,space,f}
- 	bspc node -t '~{tiled,pseudo_tiled,floating,fullscreen}'
+# ----
+# move/resize
+# ---
 
 # expand node
 {h,j,k,l}
@@ -22,14 +24,23 @@ Escape
 shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move node
+# move a floating node
 ctrl + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # ----
-#  Safety
+
+# Rotate all windows {counter-}clockwise by 90 degrees.
+{_,shift + }r
+	bspc node @/ --rotate {90,-90}
+
+# Flip starting at parent. Better than Vlip mnemonic in normal mode
+{_,shift + }f
+	bspc node @parent --flip {vertical,horizontal}
+
+# ----
+#  Safety make an effort to disable any other typing
 #  ----
 
-# make an effort to disable any other typing
 {0-9,a-z,A-Z}
 	echo "dummy" > /dev/null
