@@ -59,16 +59,12 @@
 
 # Reload keyboard shortcuts with sxhkd. Resets to normal mode. Does not kill the process
 super + Escape
-	sxhkd-mirror-files ; \
-	sxhkd-reload && \
-	polybar-msg hook sxhkd-mode 1 && \
-	notify-send "SXHKD" "config reloaded"
+    notify-send "sxhkd reloaded"; \
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
 # Change config to visual mode
 super + n
-	sxhkd-modes-switch-files visual 1 ; \
-	sxhkd-reload && \
-	polybar-msg hook sxhkd-mode 2 > /dev/null
+    . $XDG_CONFIG_HOME/sxhkd/layout.mode
 
 # ----
 # bspwm hotkeys

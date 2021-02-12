@@ -1,6 +1,7 @@
 #!/bin/bash
 
+# _td=$SXHKD_ACTIVE_CONFIG
+_td=$XDG_CONFIG_HOME/sxhkd
 sxhkd.mode 1 \
-    $SXHKD_ACTIVE_CONFIG/sxhkdrc_mode_placeholder \
-    $SXHKD_ACTIVE_CONFIG/sxhkdrc \
-    $SXHKD_ACTIVE_CONFIG/sxhkdrc_common
+    $_td/sxhkdrc \
+    $_td/sxhkdrc_common

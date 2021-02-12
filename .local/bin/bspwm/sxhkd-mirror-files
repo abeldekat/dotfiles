@@ -1,5 +1,7 @@
 #! /bin/sh
 
+# TODO remove
+
 # Note: Do not sync it these dirs are equal and no tmpfs is used
 # Makes directory sxhkd in target if not exists
 rsync -a $XDG_CONFIG_HOME/sxhkd/sxhkdrc*  $SXHKD_ACTIVE_CONFIG/

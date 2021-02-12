@@ -1,2 +1,3 @@
 #!/bin/sh
+# TODO remove
 pkill -u $USER -USR1 -x sxhkd

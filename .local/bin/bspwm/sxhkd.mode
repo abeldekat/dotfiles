@@ -7,7 +7,7 @@ killall -e -q sxhkd
 while pgrep -u $UID -x sxhkd >/dev/null; do sleep 0.1; done
 
 # send all files to tmpfs
-sxhkd-mirror-files
+# sxhkd-mirror-files
 
 # Send hook to polybar sxhkd-mode module
 polybar-msg hook sxhkd-mode $1

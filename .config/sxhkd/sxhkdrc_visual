@@ -4,10 +4,11 @@
 # All super keys still work
 
 # vim like change config to base mode, empties file sxhkdrc_modes_placeholder
-super + n
-	sxhkd-modes-switch-files visual 0 ; \
-	sxhkd-reload && \
-	polybar-msg hook sxhkd-mode 1 > /dev/null
+########
+# MODE #
+########
+Escape
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
 # set the window state
 {t,shift + space,space,f}
