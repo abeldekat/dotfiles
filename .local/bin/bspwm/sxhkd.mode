@@ -1,13 +1,14 @@
 #!/bin/bash
 
+# Note, when just reloading the process without termination:
+# pkill -u $USER -USR1 -x sxhkd
+# The above tends to crash if performed often
+
 # Kill current sxhkd instance
 killall -e -q sxhkd 
 
 # Wait for sxhkd to terminate
 while pgrep -u $UID -x sxhkd >/dev/null; do sleep 0.1; done
-
-# send all files to tmpfs
-# sxhkd-mirror-files
 
 # Send hook to polybar sxhkd-mode module
 polybar-msg hook sxhkd-mode $1
@@ -18,4 +19,3 @@ shift
 # Start new sxhkd instance with specified config file(s)
 # Wait 2 seconds before recording key strokes
 sxhkd -t 2 -c $@ &
-# pgrep -x sxhkd > /dev/null || sxhkd -t 2 -c $@ &
