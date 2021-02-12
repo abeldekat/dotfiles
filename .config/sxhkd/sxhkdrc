@@ -60,7 +60,7 @@
 # Reload keyboard shortcuts with sxhkd. Resets to normal mode. Does not kill the process
 super + Escape
     notify-send "sxhkd reloaded"; \
-    . $XDG_CONFIG_HOME/sxhkd/normal.mode
+    . $XDG_CONFIG_HOME/sxhkd/startup.mode
 
 # Change config to visual mode
 super + n
