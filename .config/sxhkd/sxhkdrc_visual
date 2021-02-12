@@ -29,6 +29,8 @@ ctrl + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # ----
+# manipulate the workspace
+# ----
 
 # Rotate all windows {counter-}clockwise by 90 degrees.
 {_,shift + }r
@@ -37,6 +39,12 @@ ctrl + {h,j,k,l}
 # Flip starting at parent. Better than Vlip mnemonic in normal mode
 {_,shift + }f
 	bspc node @parent --flip {vertical,horizontal}
+
+# Replaces the window inside the current node with other windows from the selected node.
+# Does not change layout nor focus but otherwise resembles rotate
+# Circulate the windows of the tree rooted at the selected node.
+{_,shift + }c
+	bspc node @parent --circulate {forward,backward}
 
 # ----
 #  Safety make an effort to disable any other typing

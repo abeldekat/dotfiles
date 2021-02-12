@@ -40,7 +40,7 @@
 # r (rotate). Note r is used with super+alt
 # s (CHAIN split ratio, equalize, balance)
 # t (tiled)
-# u AVAILABLE
+# u (circUlate)
 # v (flip Vlip)
 # w (close or kill node)
 # x (_common, terminal programs)

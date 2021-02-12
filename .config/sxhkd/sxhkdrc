@@ -228,6 +228,7 @@ super + {Left,Down,Up,Right}
 super + {_,shift + }r
 	bspc node @/ --rotate {90,-90}
 
+# *** Note: mnemonic differs from visual mode
 # Flip (Vlip) starting at parent.
 super + {_,shift + }v
 	bspc node @parent --flip {vertical,horizontal}
@@ -235,6 +236,13 @@ super + {_,shift + }v
 # Dynamic gapZ.
 super + {_,shift + }z
 	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {+,-j} 5 ))"
+
+# *** Note: mnemonic differs from visual mode
+# Replaces the window inside the current node with other windows from the selected node.
+# Does not change layout nor focus but otherwise resembles rotate
+# Circulate the windows of the tree rooted at the selected node.
+super + {_,shift + }u
+	bspc node @parent --circulate {forward,backward}
 
 # ---
 # Misc
