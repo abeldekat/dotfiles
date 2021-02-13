@@ -71,17 +71,18 @@ _bc pointer_action2 resize_side
 _bc click_to_focus any
 _bc swallow_first_click false
 _bc ignore_ewmh_focus true
-# _bc automatic_scheme spiral
-# _bc initial_polarity first_child
-_bc automatic_scheme alternate
-_bc initial_polarity second_child
+_bc automatic_scheme spiral
+# _bc automatic_scheme alternate
+# _bc automatic_scheme longest_side
+# _bc initial_polarity second_child
+_bc initial_polarity first_child
 
 # colours
 # -------
-_bc presel_feedback_color $(_xrdb "color0")
+_bc presel_feedback_color $(_xrdb "color1")
 _bc normal_border_color $(_xrdb "color0")
 _bc active_border_color $(_xrdb "color0")
-_bc focused_border_color $(_xrdb "color6")
+_bc focused_border_color $(_xrdb "color3")
 
 #bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^5' state=floating follow=on
