@@ -48,12 +48,10 @@ _xrdb(){
 	echo $(xrdb -query | grep "^*$1:" | cut -d: -f2 | sed s/\\s//)
 }
 
-#########
-# SXHKD #
-#########
+###---Autostart---###
 . $XDG_CONFIG_HOME/sxhkd/startup.mode
-
 launchpolybar &
+nm-applet &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -72,9 +70,11 @@ _bc pointer_action1 move
 _bc pointer_action2 resize_side
 _bc click_to_focus any
 _bc swallow_first_click false
-_bc initial_polarity first_child
 _bc ignore_ewmh_focus true
-_bc automatic_scheme spiral
+# _bc automatic_scheme spiral
+# _bc initial_polarity first_child
+_bc automatic_scheme alternate
+_bc initial_polarity second_child
 
 # colours
 # -------
