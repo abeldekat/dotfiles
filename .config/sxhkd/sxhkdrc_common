@@ -38,7 +38,7 @@ super + x ; u
 
 # Control the laptop's screen brightness (requires `xbacklight`).
 XF86MonBrightness{Down,Up}
-	xbacklight {-dec 15,-inc 15}
+	xbacklight {-dec 10,-inc 10}
 
 # Speaker/output volume.  Requires `amixer` and dedicated keys.
 XF86Audio{Mute,LowerVolume,RaiseVolume}

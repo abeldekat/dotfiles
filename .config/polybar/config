@@ -64,7 +64,7 @@ font-1 = HackNerdFont:pixelsize=10;
 font-2 = JoyPixels:fontformat=truetype:scale=10:antialias=false;
 
 modules-left = bspwm
-modules-right = sxhkd-mode cpu battery date
+modules-right = sxhkd-mode cpu battery backlight date 
 
 tray-position = right
 tray-padding = 0
@@ -166,5 +166,19 @@ ramp-load-4 = ▅
 ramp-load-5 = ▆
 ramp-load-6 = ▇
 ramp-load-7 = █
+
+[module/backlight]
+type = internal/backlight
+; Use the following command to list available cards:
+; ; $ ls -1 /sys/class/backlight/
+card = intel_backlight
+format-underline = ${xrdb:color10}
+format = <ramp>
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
 
 ; vim:set ft=dosini:
