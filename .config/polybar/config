@@ -6,7 +6,12 @@
 ;Polybar has built-in support for basic lemonbar tags.
 
 [colors]
+; 
+; Turn off transparancy:
 background = ${xrdb:background}
+; Turn on transparancy:
+; background = #00000000
+;
 background-alt = ${xrdb:background}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color7}
@@ -50,7 +55,7 @@ offset-x = 0
 offset-y = 0
 radius = 0.0
 
-underline-size = 3
+underline-size = 0
 overline-size = 0
 
 background = ${colors.background}
@@ -64,7 +69,8 @@ font-1 = HackNerdFont:pixelsize=10;
 font-2 = JoyPixels:fontformat=truetype:scale=10:antialias=false;
 
 modules-left = bspwm
-modules-right = sxhkd-mode cpu battery backlight date 
+modules-center =
+modules-right = sxhkd-mode memory cpu temperature battery backlight pulseaudio date 
 
 tray-position = right
 tray-padding = 0
@@ -89,7 +95,9 @@ label-marked = A
 label-sticky = S
 
 label-focused = %index%
-label-focused-foreground = ${colors.background}
+; Transparancy:
+; used to be the colors.background which is not invisible when background is 0000 
+label-focused-foreground = ${colors.background-alt}
 label-focused-background = ${colors.background-wm-focussed}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 1
@@ -107,13 +115,13 @@ label-empty-padding = 0
 
 [module/sxhkd-mode]
 type = custom/ipc
-content = 
+format = <output>
+; content = 
 hook-0 = echo "📌 N "
 hook-1 = echo "📌%{R} V %{R-}"
 initial = 1
 ; format-background = ${xrdb:color6}
 ; format-foreground = ${xrdb:color0}
-; format-prefix = "📌  "
 format-padding = 0
 format-underline = ${xrdb:color6}
 
@@ -126,7 +134,6 @@ date-alt = %A, %d %B %Y
 time-alt = %H:%M:%S
 label = %date% %time%
 format-prefix = "🕰  "
-; format-margin = 1
 
 [module/battery]
 type = internal/battery
@@ -135,10 +142,7 @@ full-at = 99
 battery = BAT1
 adapter = AC
 ; If an inotify event haven't been reported in this many
-; seconds, manually poll for new values.
-; Needed as a fallback for systems that don't report events
-; on sysfs/procfs. Disable polling by setting the interval to 0.
-; Default: 5
+; seconds, manually poll for new values. Fallback, disable with 0. Default: 5
 poll-interval = 120
 format-charging-prefix = "🔋 "
 format-discharging-prefix = "🔋 "
@@ -156,7 +160,6 @@ format-underline = ${xrdb:color11}
 ; label = CPU %percentage%%
 ; format = <label> <ramp-coreload>
 format =<ramp-load>
-; Spacing between individual per-core ramps
 ramp-load-spacing = 1
 ramp-load-0 = ▁
 ramp-load-1 = ▂
@@ -169,16 +172,55 @@ ramp-load-7 = █
 
 [module/backlight]
 type = internal/backlight
-; Use the following command to list available cards:
-; ; $ ls -1 /sys/class/backlight/
+; Use the following command to list available cards: ; $ ls -1 /sys/class/backlight/
 card = intel_backlight
 format-underline = ${xrdb:color10}
-format = <ramp>
-; Only applies if <ramp> is used
+format = <ramp> <label>
 ramp-0 = 🌕
 ramp-1 = 🌔
 ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
+
+[module/memory]
+type = internal/memory
+; Seconds to sleep between updates Default: 1
+interval = 10
+format-underline = ${xrdb:color13}
+format-prefix = "🧠 "
+
+[module/temperature]
+; Terminal: sensors
+type = internal/temperature
+; Seconds to sleep between updates Default: 1
+interval = 10
+; Thermal zone to use, ; Default: 0 To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+thermal-zone = 0
+format-underline = ${xrdb:color10}
+format-prefix = "🔥 "
+
+[module/pulseaudio]
+type = internal/pulseaudio
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+; sink = alsa_output.pci-0000_12_00.3.analog-stereo
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+; Interval for volume increase/decrease (in percent points) Default: 5
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+format-muted = <label-muted>
+label-volume = %percentage%%
+label-muted = 🔇 muted
+; label-muted-foreground = #666
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+; Right and Middle click
+click-right = pavucontrol
+format-volume-underline = ${xrdb:color5}
 
 ; vim:set ft=dosini:
