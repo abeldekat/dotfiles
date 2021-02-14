@@ -95,9 +95,12 @@ super + s ; {e,b}
 	bspc node {@/ --equalize,@parent --balance}
 
 # Not standard
-# Tmux like highlight indicating the focussed window
+# Toggle borders
 super + q
-	bspc config -n focused border_width 50 && sleep 0.2 && bspc config -n focused border_width 0
+	{bspc config border_width 0,bspc config border_width 6}
+# Tmux like highlight indicating the focussed window
+# super + q
+# 	bspc config -n focused border_width 50 && sleep 0.2 && bspc config -n focused border_width 0
 
 # ----
 # Focus and swap 
