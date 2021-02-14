@@ -1,41 +1,5 @@
 #! /bin/sh
 
-# Visual options
-# ==============
-#
-# Things to bear in mind about certain configurations:
-#
-# 1. single_monocle true == Does not recognise receptacles, so if you
-#    have a single window and insert a receptacle, the window will
-#    remain in monocle view.  Desired behaviour is to tile accordingly.
-# 2. borderless_monocle true == Smart borders are bad in multi-monitor
-#    setups because you cannot tell which window has focus when
-#    a monocle exists on each monitor.  Single monitor is okay.
-# 3. ignore_ewmh_focus true == This is very opinionated as it completely
-#    prevents focus stealing.  Adapt accordingly.
-# 4. pointer_modifier mod1 == enables mouse actions while holding down
-#    the Alt key (see below---bonus: the following two also work in the
-#    popular desktop environments).
-# 5. pointer_action1 move == Alt + Right Click allows you to drag
-#    a floating window.  Also works for switching the position of tiled
-#    windows, if that is your thing.
-# 6. pointer_action2 resize_side == Alt + Left Click allows you to
-#    resize the nearest side of the focused window.  Works for both
-#    tiled and floating windows.
-# 7. external_rules_command bspwm_external_rules == References the
-#    script of mine that implements window rules and some custom
-#    behaviours.  The script is also part of my dotfiles.  Window rules
-#    can be included herein, but I prefer to keep them separate.
-# 8. Colours are edited programmatically by my `tempus` script.  Do not
-#    edit them manually (edit the script instead).  These colours
-#    concern the following:
-#
-#    * normal_border_color   == unfocused windows
-#    * active_border_color   == focused window, unfocused monitor
-#    * focused_border_color  == focused window, focused monitor
-#    * presel_feedback_color == area for a manual split (preselection)
-
-# Truncate a couple of common commands that are used herein.
 _bc() {
 	bspc config "$@"
 }
@@ -48,34 +12,54 @@ _xrdb(){
 	echo $(xrdb -query | grep "^*$1:" | cut -d: -f2 | sed s/\\s//)
 }
 
+bspc rule -r "*"
+
 ###---Autostart---###
 . $XDG_CONFIG_HOME/sxhkd/startup.mode
 launchpolybar &
 nm-applet &
 
+# killall bspswallow
+# pidof bspswallow | bspswallow &
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 # window management
 # -----------------
-_bc border_width 4
-_bc window_gap 4
-_bc split_ratio 0.50
-_bc single_monocle false
-_bc borderless_monocle true
-_bc gapless_monocle false
-_bc focus_follows_pointer false
-_bc pointer_follows_monitor true
 _bc pointer_modifier mod1
 _bc pointer_action1 move
 _bc pointer_action2 resize_side
+_bc pointer_action3 resize_corner
 _bc click_to_focus any
+_bc pointer_follows_monitor true
 _bc swallow_first_click false
+# Can be very distracting with a touchpad
+_bc focus_follows_pointer false
+
+_bc remove_disabled_monitors true
+_bc remove_unplugged_monitors true
+_bc merge_overlapping_monitors true
+
+_bc top_padding 0
+_bc bottom_padding 0
+_bc left_padding 0
+_bc right_padding 0
+_bc window_gap 4 
+
+_bc border_width 4
+
+_bc split_ratio 0.50
+
+_bc single_monocle false
+_bc borderless_monocle true
+_bc gapless_monocle false
+
 _bc ignore_ewmh_focus true
 _bc automatic_scheme spiral
 # _bc automatic_scheme alternate
 # _bc automatic_scheme longest_side
-# _bc initial_polarity second_child
 _bc initial_polarity first_child
+# _bc initial_polarity second_child
 
 # colours
 # -------
@@ -91,6 +75,6 @@ _bc focused_border_color $(_xrdb "color3")
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
 
-#Scratchpad according to arch wiki
+# Scratchpad according to arch wiki
 bspc rule -a dropdown sticky=on state=floating hidden=on
 # st -c dropdown &

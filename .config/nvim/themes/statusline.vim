@@ -33,6 +33,16 @@ let g:lightline.tab_component_function = {
     \ 'filename': 'Taboo_or_lightline_filename' 
     \}
 
+let g:lightline.active = {
+      \     'left': [['mode', 'paste'], ['readonly', 'relativepath', 'modified']],
+      \     'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+      \}
+
+let g:lightline.inactive = {
+      \     'left': [['absolutepath']],
+      \     'right': [['lineinfo'], ['percent']]
+      \   }
+
 " Let lightline show the filename as set with Taboo
 function! Taboo_or_lightline_filename(n)
     let taboo_name = TabooTabName(a:n)
