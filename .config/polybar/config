@@ -8,7 +8,7 @@
 [colors]
 ; 
 ; Turn off transparancy:
-background = ${xrdb:background}
+background = ${xrdb:color0}
 ; Turn on transparancy:
 ; background = #00000000
 ;
@@ -32,7 +32,7 @@ format-underline = ${colors.primary}
 format-overline =
 format-spacing =
 format-padding = 1
-format-margin = 0
+format-margin =
 format-offset =
 
 [global/wm]
@@ -133,7 +133,8 @@ time = %H:%M
 date-alt = %A, %d %B %Y
 time-alt = %H:%M:%S
 label = %date% %time%
-format-prefix = "🕰  "
+format-prefix = "🕘  "
+; format-prefix = "🕰  "
 
 [module/battery]
 type = internal/battery
@@ -198,7 +199,8 @@ interval = 10
 ; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
 thermal-zone = 0
 format-underline = ${xrdb:color10}
-format-prefix = "🔥 "
+format-prefix = "🌡 "
+; format-prefix = "🔥 "
 
 [module/pulseaudio]
 type = internal/pulseaudio
