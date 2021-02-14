@@ -8,7 +8,7 @@
 [colors]
 ; 
 ; Turn off transparancy:
-background = ${xrdb:color0}
+background = ${xrdb:background}
 ; Turn on transparancy:
 ; background = #00000000
 ;
@@ -22,7 +22,7 @@ tray-background = #00000000
 background-wm-focussed = ${xrdb:color7}
 foreground-wm-empty = ${xrdb:color2}
 
-; Application settings:
+; --> Application settings:
 [settings]
 screenchange-reload = true
 ; Define fallback values used by all module formats
@@ -35,26 +35,42 @@ format-padding = 1
 format-margin =
 format-offset =
 
+; Enables pseudo-transparency for the bar
+; If set to true the bar can be transparent without a compositor.
+pseudo-transparency = false
+
+; Compositing operators
+; ; @see: https://www.cairographics.org/manual/cairo-cairo-t.html#cairo-operator-t
+; compositing-background = source
+; compositing-foreground = over
+; compositing-overline = over
+; compositing-underline = over
+; compositing-border = over
+
+; --> global settings
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 
+; --> bar settings
 [bar/top]
 monitor-strict = false
 monitor-exact = true
 override-redirect = false
 wm-restack = bspwm
 enable-ipc = true
-fixed-center = false
+; fixed-center = false
+fixed-center = true
 bottom = false
 separator =
 
 width = 100%
-height = 32
+height =32 
 offset-x = 0
 offset-y = 0
 radius = 0.0
-
+; border-size = 2
+; border-color = ${colors.foreground}
 underline-size = 0
 overline-size = 0
 
@@ -79,6 +95,17 @@ tray-offset-x = 0
 tray-offset-y = 0
 tray-scale = 1.0
 
+; Fallback click handlers that will be called if
+; ; there's no matching module handler found.
+; click-left = 
+; click-middle = 
+; click-right =
+; scroll-up =
+; scroll-down =
+; double-click-left =
+; double-click-middle =
+; double-click-right =
+
 cursor-click = pointer
 cursor-scroll = default
 
@@ -97,7 +124,7 @@ label-sticky = S
 label-focused = %index%
 ; Transparancy:
 ; used to be the colors.background which is not invisible when background is 0000 
-label-focused-foreground = ${colors.background-alt}
+label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.background-wm-focussed}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 1
