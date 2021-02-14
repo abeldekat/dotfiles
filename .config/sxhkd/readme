@@ -36,7 +36,7 @@
 # n (switch to visual mode)
 # o (focus older node in history)
 # p (CHAIN preselect using hjkl 0-9 and space)
-# q AVAILABLE. Note q is used with super+alt
+# q (highlight focussed window). Note q is used with super+alt
 # r (rotate). Note r is used with super+alt
 # s (CHAIN split ratio, equalize, balance)
 # t (tiled)

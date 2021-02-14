@@ -94,6 +94,11 @@ super + s ; {1,2,3,4,5}
 super + s ; {e,b}
 	bspc node {@/ --equalize,@parent --balance}
 
+# Not standard
+# Tmux like highlight indicating the focussed window
+super + q
+	bspc config -n focused border_width 50 && sleep 0.2 && bspc config -n focused border_width 0
+
 # ----
 # Focus and swap 
 # ----
@@ -152,7 +157,7 @@ super + {_,shift + }{1-9,0}
 # Thus, bspc node -p cancel is redundant
 # A node with a preselected area is said to be in "manual insertion mode".
 # super + ctrl + {h,j,k,l}
-# preselect the direction
+# preselect the direction or cancel
 super + p ; {h,j,k,l}
 	bspc node -p '~{west,south,north,east}'
 
@@ -167,7 +172,7 @@ super + p ; {1-9}
 # 	bspc node -p cancel
 # super + ctrl + shift + space
 # 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-# cancel the preselection for the focused node or desktop
+# cancel the preselection for the all nodes on desktop
 super + p ; space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
@@ -235,7 +240,7 @@ super + {_,shift + }v
 
 # Dynamic gapZ.
 super + {_,shift + }z
-	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {+,-j} 5 ))"
+	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {+,-} 5 ))"
 
 # *** Note: mnemonic differs from visual mode
 # Replaces the window inside the current node with other windows from the selected node.
