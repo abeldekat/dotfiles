@@ -13,7 +13,6 @@ _xrdb(){
 }
 
 bspc rule -r "*"
-
 ###---Autostart---###
 . $XDG_CONFIG_HOME/sxhkd/startup.mode
 launchpolybar &
@@ -40,33 +39,33 @@ _bc remove_disabled_monitors true
 _bc remove_unplugged_monitors true
 _bc merge_overlapping_monitors true
 
-_bc top_padding 0
-_bc bottom_padding 0
-_bc left_padding 0
-_bc right_padding 0
-_bc window_gap 4 
-
-_bc border_width 6
-
-_bc split_ratio 0.50
-
-_bc single_monocle false
-_bc borderless_monocle true
-_bc gapless_monocle false
-
-_bc ignore_ewmh_focus true
+_bc ignore_ewmh_focus false
 _bc automatic_scheme spiral
 # _bc automatic_scheme alternate
 # _bc automatic_scheme longest_side
 _bc initial_polarity first_child
 # _bc initial_polarity second_child
 
+_bc top_padding 0
+_bc bottom_padding 0
+_bc left_padding 0
+_bc right_padding 0
+_bc window_gap 4 
+_bc split_ratio 0.50
+_bc single_monocle false
+_bc borderless_monocle true
+_bc gapless_monocle false
+_bc border_width 1
 # colours
 # -------
 _bc presel_feedback_color $(_xrdb "color1")
-_bc normal_border_color $(_xrdb "color0")
-_bc active_border_color $(_xrdb "color0")
-_bc focused_border_color $(_xrdb "color3")
+_bc normal_border_color $(_xrdb "background")
+_bc active_border_color $(_xrdb "background")
+_bc focused_border_color $(_xrdb "color15")
+if [[ "$(theme-is-light)">0 ]]; then
+    _bc border_width 4
+    _bc focused_border_color $(_xrdb "foreground")
+fi
 
 #bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^5' state=floating follow=on

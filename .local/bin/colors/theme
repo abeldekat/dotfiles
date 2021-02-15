@@ -1,21 +1,20 @@
 #!/bin/bash
 
 colorsdir="$HOME/.local/share/colors"
-activecolors="$colorsdir/active-theme.Xcolors"
-activename="$colorsdir/active-theme.name"
-mappingtovim="$colorsdir/xresourcestovim"
+activecolorsfile="$colorsdir/active-theme.Xcolors"
+activenamefile="$colorsdir/active-theme.name"
+mappingtovimfile="$colorsdir/xresourcestovim"
 
-vimcolorsdir="$HOME/.config/nvim/rcfiles"
 vimthemedir="$HOME/.config/nvim/themes"
-activevimplugname="$vimthemedir/active-theme.vim"
+activevimthemefile="$vimthemedir/active-theme.vim"
 
 theme=$(basename --suffix=.Xcolors $1)
-themecolors=$colorsdir/xcolors/$theme.Xcolors
+themecolorsfile=$colorsdir/xcolors/$theme.Xcolors
 
 _change(){
-	if [ -f $themecolors ] ; then 
-		cp $themecolors $activecolors
-		echo $theme > $activename
+	if [ -f $themecolorsfile ] ; then 
+		cp $themecolorsfile $activecolorsfile
+		echo $theme > $activenamefile
 	else 
 		echo "Not a valid theme: $theme"
 		exit 1
@@ -30,14 +29,12 @@ _activate(){
 }
 
 _vim(){
-	vimtheme="$(cat $mappingtovim | grep "^$theme," | cut -d, -f2)"
-	if [ -z "$vimtheme" ] ; then
-		vimtheme="default"
-	elif [ ! -f "$(_vimThemeToFile $vimtheme)" ] ; then 
+	vimtheme="$(cat $mappingtovimfile | grep "^$theme," | cut -d, -f2)"
+    vimthemefile="$(_vimThemeToFile $vimtheme)"
+	if [ -z "$vimtheme" -o ! -f "$vimthemefile"] ; then
 		vimtheme="default"
 	fi
-	# separate the vim-plug line from the rest of the config
-	cp "$(_vimThemeToFile $vimtheme)" "$activevimplugname"
+	cp "$vimthemefile" "$activevimthemefile"
 }
 
 _vimThemeToFile(){
@@ -54,9 +51,20 @@ _tmuxline(){
 	fi
 }
 
+_wallpaper(){
+    if [[ "$(theme-is-light)">0 ]]; then
+        wallpaperdir=~/Wallpapers/light
+    else
+        wallpaperdir=~/Wallpapers/dark
+    fi
+    echo $wallpaperdir
+    setbg "$wallpaperdir/default.jpg"
+}
+
 _apply(){
-	 _change
-	 _activate
+	_change
+    _wallpaper
+	_activate
 	_vim
 	_tmuxline
 }

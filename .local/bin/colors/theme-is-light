@@ -1,0 +1,7 @@
+#! /bin/bash
+
+is_light(){
+    theme=~/.local/share/colors/active-theme.name
+    [[ -f $theme ]] && echo "$(cat $theme | head -1 | grep -c light)"
+}
+echo "$(is_light)"
