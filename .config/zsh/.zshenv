@@ -1,7 +1,9 @@
 typeset -U PATH path
 # Path
-_b="$HOME/.local/bin"
-path=("$_b" "$_b/arch" "$_b/bspwm" "$_b/colors" "$_b/larbs" "$_b/polybar" "$_b/utils" "$path[@]")
+_bin="$HOME/.local/bin"
+_sxhkd="$HOME/.config/sxhkd/scripts"
+_bspwm="$HOME/.config/bspwm/scripts"
+path=("$_bin" "$_bspwm" "$_sxhkd" "$_bin/polybar"   "$_bin/colors" "$_bin/larbs"  "$_bin/utils" "$_bin/arch" "$path[@]")
 export PATH
 
 # Other XDG paths

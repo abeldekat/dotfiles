@@ -143,9 +143,19 @@ label-empty-padding = 0
 [module/sxhkd-mode]
 type = custom/ipc
 format = <output>
-; content = 
+; content =
+;
+; Normal mode, the basic
 hook-0 = echo "📌 N "
+; Layout mode
 hook-1 = echo "📌%{R} V %{R-}"
+; Node mode, test node selectors
+hook-2 = echo "📌%{R} O %{R-}"
+; Bsp-layout mode, test bsp-layout
+hook-3 = echo "📌%{R} B %{R-}"
+; Cpdfd-layout mode, test prots dots for debian
+hook-4 = echo "📌%{R} P %{R-}"
+
 initial = 1
 ; format-background = ${xrdb:color6}
 ; format-foreground = ${xrdb:color0}

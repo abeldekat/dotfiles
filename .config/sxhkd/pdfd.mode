@@ -2,6 +2,7 @@
 
 _td=$SXHKD_ACTIVE_CONFIG
 
-sxhkd.mode 1 \
+sxhkd.mode 5 \
+    $_td/pdfd.sxhkdrc \
     $_td/normal.sxhkdrc \
     $_td/common.sxhkdrc

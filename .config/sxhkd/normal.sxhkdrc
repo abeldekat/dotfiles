@@ -8,9 +8,11 @@ super + Escape
     notify-send "sxhkd reloaded"; \
     . $XDG_CONFIG_HOME/sxhkd/startup.mode
 
-# Change config to visual mode
-super + n
-    . $XDG_CONFIG_HOME/sxhkd/layout.mode
+# Temporarily this is a chain to allow for testing other bindings
+# Note that super + n; n is changes to layout mode for faster access
+# Change config to modes: layout, nodes, bsp-layout, cpdfd
+super + n ; {n,o,b,p}
+    . $XDG_CONFIG_HOME/sxhkd/{layout.mode,nodes.mode,bsp-layout.mode,pdfd.mode}
 
 # ----
 # bspwm hotkeys
@@ -96,8 +98,8 @@ super + s ; {e,b}
 
 # Not standard
 # Toggle borders
-super + q
-	{bspc config border_width 0,bspc config border_width 6}
+# super + q
+# 	{bspc config border_width 0,bspc config border_width 6}
 # Tmux like highlight indicating the focussed window
 # super + q
 # 	bspc config -n focused border_width 50 && sleep 0.2 && bspc config -n focused border_width 0

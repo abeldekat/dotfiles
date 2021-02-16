@@ -33,6 +33,7 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 exec bspwm
+# exec ~/builds/abel-dwm/dwm
 
 # Map arguments to commands.
 # case "$LARBSWM" in
