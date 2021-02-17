@@ -1,7 +1,8 @@
-# Add a visual layer on top of sxhkdrc in which direct keys manipulate the node 
-# Most important operations: Expand, contract, move, window state 
+# Add a layout layer on top of sxhkdrc in which direct keys manipulate the nodes in the tree 
+# Most important operations: 
+# Expand, contract, move, rotate, flip, circulate
 # Read only, digits and letters are disabled for normal typing. 
-# All super keys still work
+# All super keys still apply. So, for example, navigation with super + hjkl is possible
 
 ########
 # MODE #
@@ -36,15 +37,17 @@ ctrl + {h,j,k,l}
 {_,shift + }r
 	bspc node @/ --rotate {90,-90}
 
-# Flip starting at parent. Better than Vlip mnemonic in normal mode
+# Better than Vlip mnemonic in normal mode
+# Note: First select an internal node to be flipped
+# Flip the tree rooted at selected node. Defaults is vertical 
 {_,shift + }f
-	bspc node @parent --flip {vertical,horizontal}
+	bspc node --flip {vertical,horizontal}
 
 # Replaces the window inside the current node with other windows from the selected node.
 # Does not change layout nor focus but otherwise resembles rotate
-# Circulate the windows of the tree rooted at the selected node.
+# Circulate the windows of the tree
 {_,shift + }c
-	bspc node @parent --circulate {forward,backward}
+	bspc node @/ --circulate {forward,backward}
 
 # ----
 #  Safety make an effort to disable any other typing

@@ -44,8 +44,8 @@
 # v (flip Vlip. Note: Select a parent manually)
 # w (close or kill node)
 # x (common.sxhkdrc, terminal programs)
-# y (sends marked to preselected area)
-# z (dynamic gapZ)
+# y (sends newest marked to preselected area)
+# z (CHAIN continuous input mode)
 #
 # space: (window state: switch to floating, pseudo-tiled)
 # grave: (last focused node)
