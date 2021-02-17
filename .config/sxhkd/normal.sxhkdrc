@@ -67,12 +67,12 @@ super + b
 super + {t,shift + space,space,f}
  	bspc node -t '~{tiled,pseudo_tiled,floating,fullscreen}'
 
-# Not standard, super + control + mxyz
+# Not standard, super + control + mxyz. Also added hidden flag
 # Note: super-control was used by preselect, now with p keychord
 # TODO no hidden flag
 # set node flags: marked,locked, sticky,private
-super + a ; {l,m,s,z}
-	bspc node -g {locked,marked,sticky,private}
+super + a ; {h,l,m,s,z}
+	bspc node -g {hidden,locked,marked,sticky,private}
 
 # Not standard, protsdots
 # Applies to the next window, or when using the next set of commands that equalise the tree or balance the
@@ -115,11 +115,12 @@ super + s ; {e,b}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# Not standard, without the a directly on super
+# Not standard, without the a directly on super. Added root
+# super + {p,b,comma,period}
 # Advanced namespace focus operations
-# focus the node for the given path jump:parent, brother, first, second
-super + a ; {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# focus the node for the given path jump:root, parent, brother, first, second
+super + a ; {slash,p,b,comma,period}
+	bspc node -f @{/,parent,brother,first,second}
 
 # Standard
 # man: Selects the node in the given (cyclic) direction relative to the reference node within a depth-first in-order traversal of the tree.

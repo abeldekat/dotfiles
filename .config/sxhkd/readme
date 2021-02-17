@@ -23,7 +23,7 @@
 # Try to use shift for extending related functionality
 #
 # Overview letters prepended by the super key:
-# a (CHAIN advanced) (focus node jump: p,b,comma,period) (set flags:lmsp)
+# a (CHAIN advanced) (focus node jump: r,p,b,comma(first),period(second)) (set flags:hlmsp)
 # b (swap biggest)
 # c (focus next/previous node) 
 # d (dmenu)

@@ -45,6 +45,13 @@ alias bqnd='bspc query --nodes -d'
 # query focussed node
 alias bqnn='bspc query --nodes -n'
 
+# receptacles
+alias bqr='bspc query --nodes -n .leaf.\!window'
+alias bqrl='bspc query --nodes -n .leaf.\!window.local'
+# hidden
+alias bqh='bspc query --nodes -n .hidden.local'
+alias bqhl='bspc query --nodes -n .hidden'
+
 # sxhkd testing
 # process
 alias psxhkd='ps -x | grep sxhkd'

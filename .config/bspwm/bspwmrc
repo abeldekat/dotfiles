@@ -67,6 +67,9 @@ if [[ "$(theme-is-light)">0 ]]; then
     _bc focused_border_color $(_xrdb "foreground")
 fi
 
+# window rules
+# _check bspwm_external_rules && _bc external_rules_command "$(command -v bspwm_external_rules)"
+
 #bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^5' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
