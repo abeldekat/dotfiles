@@ -7,9 +7,10 @@ super + {_, shift + } Return
 # Standard is @space
 # program launcher
 super + d
-	dmenu_run
+	dmenu_run -fn "JetBrains Mono Medium-10"
 
-# Lock the screen todo betterlockscreen
+# todo betterlockscreen
+# Lock the screen 
 super + Delete
 	slock
 
@@ -24,17 +25,23 @@ super + e ; {c,p,s,t,x}
 	        && xrdb -I "$HOME" -merge "$HOME"/.Xresources \
         }
 
-# gui
-super + g ; {d,p} 
+# gui firefox default and personal profile. Google chrome
+super + g ; {c,d,p} 
 	{ \
+	google-chrome-stable, \
 	firefox -P default-release, \
 	firefox -P personal \
  	}
 
 # scratchpad according to arch wiki
-# terminal: scratchpad
-super + x ; u
-    scratchpad.sh dropdown
+# TODO calcurse?
+# terminal: scratchpad, htop, pulsemixer
+super + x ; {d,h,p}
+	{ \
+    scratchpad.sh dropdown, \
+	$TERMINAL -e htop, \
+	$TERMINAL -e pulsemixer \
+	}
 
 # Control the laptop's screen brightness (requires `xbacklight`).
 XF86MonBrightness{Down,Up}

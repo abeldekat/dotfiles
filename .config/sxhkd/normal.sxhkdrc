@@ -9,9 +9,8 @@ super + Escape
     . $XDG_CONFIG_HOME/sxhkd/startup.mode
 
 # Temporarily this is a chain to allow for testing other bindings
-# Note that super + n; n is changes to layout mode for faster access
 # Change config to modes: layout, nodes, bsp-layout, cpdfd
-super + n ; {n,o,b,p}
+super + q ; {l,o,b,p}
     . $XDG_CONFIG_HOME/sxhkd/{layout.mode,nodes.mode,bsp-layout.mode,pdfd.mode}
 
 # ----
@@ -239,10 +238,10 @@ super + {Left,Down,Up,Right}
 super + {_,shift + }r
 	bspc node @/ --rotate {90,-90}
 
-# *** Note: mnemonic differs from visual mode
-# Flip (Vlip) starting at parent.
+# *** Note: mnemonic differs from visual Note: First select an internal node to be flipped
+# Flip the tree rooted at selected node. Defaults is vertical 
 super + {_,shift + }v
-	bspc node @parent --flip {vertical,horizontal}
+	bspc node --flip {vertical,horizontal}
 
 # Dynamic gapZ.
 super + {_,shift + }z
@@ -251,9 +250,33 @@ super + {_,shift + }z
 # *** Note: mnemonic differs from visual mode
 # Replaces the window inside the current node with other windows from the selected node.
 # Does not change layout nor focus but otherwise resembles rotate
-# Circulate the windows of the tree rooted at the selected node.
+# Circulate the windows of the tree
 super + {_,shift + }u
-	bspc node @parent --circulate {forward,backward}
+	bspc node @/ --circulate {forward,backward}
+
+# ----
+#  Advanced operations, receptacles and scripted actions
+# ----
+
+# Insert a receptacle
+super + n ; r
+	bspc node -i
+
+# Kill/remove the first matching receptacle from the current desktop. With shift, kill them all at once.
+super + n ; super + {_, shift + }r
+	{ \
+	bspc node 'any.leaf.!window.local' -k, \
+	bspwm_multifaceted_operation --kill-all-receptacles \
+	}
+
+# Note: Move node to receptacle: The result is still marked!
+# Insert the marked or focused window in the first matching receptacle or preselection
+super + n ; i
+	bspwm_smart_presel
+
+# Summon all marked windows across all desktops to the current desktop.
+super + n ; m
+	bspwm_multifaceted_operation --summon-all-marked
 
 # ---
 # Misc

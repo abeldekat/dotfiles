@@ -1,4 +1,4 @@
-# this mode explicitly overrides super + n effictively producing a toggle
+# this mode explicitly overrides super + q effictively producing a toggle
 # Back to normal mode.
-{Escape, super + n}
+{Escape, super + q}
     . $XDG_CONFIG_HOME/sxhkd/normal.mode

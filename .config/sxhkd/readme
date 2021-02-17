@@ -23,7 +23,7 @@
 # Try to use shift for extending related functionality
 #
 # Overview letters prepended by the super key:
-# a (CHAIN advanced) (focus node jump: r,p,b,comma(first),period(second)) (set flags:hlmsp)
+# a (CHAIN advanced node actions) (focus node jump: r,p,b,comma(first),period(second)) (set flags:hlmsp)
 # b (swap biggest)
 # c (focus next/previous node) 
 # d (dmenu)
@@ -33,15 +33,15 @@
 # h j k l (navigation, replace, resize. Most important vim like keys)
 # i (focus newer node in history)
 # m (monocle)
-# n (switch to visual mode)
+# n (advanced operations, receptacles and scripted actions)
 # o (focus older node in history)
 # p (CHAIN preselect using hjkl 0-9 and space)
-# q AVAILABLE
+# q (switch to other sxhkd mode)
 # r (rotate). Note r is used with super+alt
 # s (CHAIN split ratio, equalize, balance)
 # t (tiled)
 # u (circUlate)
-# v (flip Vlip)
+# v (flip Vlip. Note: Select a parent manually)
 # w (close or kill node)
 # x (common.sxhkdrc, terminal programs)
 # y (sends marked to preselected area)

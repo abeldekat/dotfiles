@@ -40,9 +40,9 @@ alias bn='bspc node'
 alias bq='bspc query'
 # query nodes command
 alias bqn='bspc query --nodes'
-# query nodes in focused desktop
+# query nodes and constrian by desktop. Defaults to focussed
 alias bqnd='bspc query --nodes -d'
-# query focussed node
+# query nodes and constain by node. Defaults to focussed
 alias bqnn='bspc query --nodes -n'
 
 # receptacles
@@ -51,11 +51,10 @@ alias bqrl='bspc query --nodes -n .leaf.\!window.local'
 # hidden
 alias bqh='bspc query --nodes -n .hidden.local'
 alias bqhl='bspc query --nodes -n .hidden'
+# marked
+alias bqm='bspc query --nodes -n .marked'
+alias bqml='bspc query --nodes -n .marked.local'
 
-# sxhkd testing
-# process
-alias psxhkd='ps -x | grep sxhkd'
-# kill
-alias ksxhkd='killall -e sxhkd'
-# start, test warnings in terminal
-alias rsxhkd='sxhkd -c ~/.config/sxhkd/sxhkdrc{,_common}'
+# bspc node action
+# pipe the results of a previous bspq query into xargs
+alias -g BNA='| xargs -I {} bspc node {}'
