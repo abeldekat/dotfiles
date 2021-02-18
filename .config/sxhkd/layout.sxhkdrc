@@ -17,17 +17,25 @@
 # move/resize
 # ---
 
-# expand node
+# Not standard
+# > Will always grow for floating nodes. <
+# Smart resize, will grow or shrink depending on location. Floating only grows
 {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	n=50; \
+  	{ d1=left;   d2=right;  dx=-$n; dy=0;   \
+  	, d1=bottom; d2=top;    dx=0;   dy=$n;  \
+  	, d1=top;    d2=bottom; dx=0;   dy=-$n; \
+  	, d1=right;  d2=left;   dx=$n;  dy=0;   \
+  } \
+  bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
 
-# contract node
+# contract node, needed for floating
 shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	n=50; bspc node --resize {right -$n 0,top 0 $n,bottom 0 -$n,left $n 0}
 
 # move a floating node
 ctrl + {h,j,k,l}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	n=50; bspc node -v {-$n 0,0 $n,0 -$n,$n 0}
 
 # ----
 # manipulate the workspace
@@ -39,9 +47,9 @@ ctrl + {h,j,k,l}
 
 # Better than Vlip mnemonic in normal mode
 # Note: First select an internal node to be flipped
-# Flip the tree rooted at selected node. Defaults is vertical 
+# Flip the tree rooted at parent of selected node. Defaults is vertical 
 {_,shift + }f
-	bspc node --flip {vertical,horizontal}
+	bspc node @parent --flip {vertical,horizontal}
 
 # Replaces the window inside the current node with other windows from the selected node.
 # Does not change layout nor focus but otherwise resembles rotate

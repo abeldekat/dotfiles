@@ -45,7 +45,7 @@
 # w (close or kill node)
 # x (common.sxhkdrc, terminal programs)
 # y (sends newest marked to preselected area)
-# z (CHAIN continuous input mode)
+# z (CHAIN continuous input mode: expand contract move gaps)
 #
 # space: (window state: switch to floating, pseudo-tiled)
 # grave: (last focused node)
