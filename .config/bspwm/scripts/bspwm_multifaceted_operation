@@ -49,7 +49,7 @@ case "$1" in
 		_query_nodes '.marked' -d focused --follow
 		;;
 	--db|--bring-desktop-here)
-		for i in $(bspc query -N -d "$2" -n '.window'); do
+		for i in $(bspc query -N -d "^$2" -n '.window'); do
 			bspc node "$i" -d 'focused.focused'
 		done
 		;;

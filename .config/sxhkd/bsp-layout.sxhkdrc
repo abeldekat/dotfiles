@@ -1,4 +1,67 @@
+# Adds a layer in which bsp-layout can be used
 # this mode explicitly overrides super + q effictively producing a toggle
 # Back to normal mode.
 {Escape, super + q}
     . $XDG_CONFIG_HOME/sxhkd/normal.mode
+
+# Layouts:
+# tall
+# wide
+# rtall
+# rwide
+# grid
+# rgrid
+# even
+# tiled
+# monocle
+
+# Apply to selected desktop and recalculate when a node is added or removed. 
+# Once recalculates at once. Sets scheme and polarity to longest and first
+# Note: first child is most natural. 
+# Note: Spiral has a bug in rtall. On delete of an item in the stack the layout of the stack is broken
+# Bsplayout: set,once: tall
+{_,shift + }s
+	bspc config automatic_scheme longest_side; \
+	bspc config initial_polarity first-child; \
+	bsp-layout {set,once} tall
+
+# Set other layouts: tall wide grid even monocle
+{_,shift + }l;{t,w,g,e,m}
+	bspc config automatic_scheme longest_side; \
+	bspc config initial_polarity first-child; \
+	bsp-layout {set,once} {tall,wide,grid,even,monocle}
+
+# Set inverse layouts: rtall rwide rgrid
+{_,shift + }i;{t,w,g}
+	bspc config automatic_scheme longest_side; \
+	bspc config initial_polarity first-child; \
+	bsp-layout {set,once} {rtall,rwide,rgrid}
+
+# Cycle through all avaible layouts
+c
+	bsp-layout cycle --layouts tall,wide,rtall,rwide,grid,rgrid,even
+
+
+# Removes bsp-layout from current desktop and resets scheme and polarity 
+r
+	bspc config automatic_scheme spiral; \
+	bspc config initial_polarity first-child; \
+	bsp-layout remove
+
+# TODO increase decrease master size
+# Note: Desktopname must be classic, like I
+# bsp-layout get
+
+# Reloads layouts for all desktops
+# l
+# 	bsp-layout reload
+
+# List all available layouts. Not needed
+# bsp-layout layouts
+
+# ----
+#  Safety make an effort to disable any other typing
+#  ----
+
+{0-9,a-z,A-Z}
+	echo "dummy" > /dev/null

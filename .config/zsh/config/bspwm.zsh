@@ -28,9 +28,11 @@
 
 # already assigned bd and bf
 alias b='bspc'
-alias bc='bspc config'
+# do not override bc the calculator
+alias bco='bspc config'
 # alias bd='bspc desktop'
-alias bn='bspc node'
+alias bno='bspc node'
+alias bde='bspc desktop'
 
 # bspc query, on three domains
 # list, like --nodes
@@ -45,6 +47,9 @@ alias bqnd='bspc query --nodes -d'
 # query nodes and constain by node. Defaults to focussed
 alias bqnn='bspc query --nodes -n'
 
+# bsp-layout, appending desktop name is possible
+alias bla='bsp-layout get'
+
 # receptacles
 alias bqr='bspc query --nodes -n .leaf.\!window'
 alias bqrl='bspc query --nodes -n .leaf.\!window.local'
@@ -54,7 +59,18 @@ alias bqhl='bspc query --nodes -n .hidden'
 # marked
 alias bqm='bspc query --nodes -n .marked'
 alias bqml='bspc query --nodes -n .marked.local'
+# locked
+alias bql='bspc query --nodes -n .locked'
+alias bqll='bspc query --nodes -n .locked.local'
+# private
+alias bqp='bspc query --nodes -n .private'
+alias bqpl='bspc query --nodes -n .private.local'
+# sticky
+alias bqs='bspc query --nodes -n .sticky'
+alias bqsl='bspc query --nodes -n .sticky.local'
 
 # bspc node action
 # pipe the results of a previous bspq query into xargs
 alias -g BNA='| xargs -I {} bspc node {}'
+# pipe the resuts to bspc query tree
+alias -g BQNT='| xargs -I {} bspc query --tree -n {}'

@@ -265,9 +265,25 @@ super + n ; i
 super + n ; m
 	bspwm_multifaceted_operation --summon-all-marked
 
+# TODO This removes desktops on my setup...!
+# Bring the windows of the given desktop to the current one.  With
+# shift, send the current window to the given one.
+super + n ; super + {_, shift + }{0-9}
+	bspwm_multifaceted_operation {--bring-desktop-here,--send-desktop-there} {0-9}
+
+# Assign the locked flag to all windows in the current desktop.  With
+# shift, remove the locked flag from all.
+super + n ; {_, shift + }l
+	bspwm_multifaceted_operation {--lock-all-local,--unlock-all-local}
+
 # ----
 # Continuous input mode
 # ----
+
+# TODO can be removed
+# Resize node in the given direction. No operation on floating windows
+super + z : {h,j,k,l}
+	own_script_bspwm_node_resize {west,south,north,east} 50
 
 # Mode for dynamic gaps.
 super + z : bracket{left,right}
