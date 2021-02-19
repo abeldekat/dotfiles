@@ -19,34 +19,31 @@
 # Once recalculates at once. Sets scheme and polarity to longest and first
 # Note: first child is most natural. 
 # Note: Spiral has a bug in rtall. On delete of an item in the stack the layout of the stack is broken
-# Bsplayout: set,once: tall
-{_,shift + }s
-	bspc config automatic_scheme longest_side; \
-	bspc config initial_polarity first-child; \
-	bsp-layout {set,once} tall
 
-# Set other layouts: tall wide grid even monocle
-{_,shift + }l;{t,w,g,e,m}
-	bspc config automatic_scheme longest_side; \
-	bspc config initial_polarity first-child; \
-	bsp-layout {set,once} {tall,wide,grid,even,monocle}
+# bsp-layout Set: tall wide grid even monocle
+{t,w,g,e,m}
+	bspc config automatic_scheme alternate; \
+ 	bspc config initial_polarity first_child; \
+	bsp-layout set {tall,wide,grid,even,monocle}; \
+	polybar-msg hook bsp-layout-mode 2;
 
 # Set inverse layouts: rtall rwide rgrid
-{_,shift + }i;{t,w,g}
-	bspc config automatic_scheme longest_side; \
-	bspc config initial_polarity first-child; \
-	bsp-layout {set,once} {rtall,rwide,rgrid}
+{T,W,G}
+	bspc config automatic_scheme alternate; \
+	bspc config initial_polarity first_child; \
+	bsp-layout set {rtall,rwide,rgrid}; \
+	polybar-msg hook bsp-layout-mode 2;
 
 # Cycle through all avaible layouts
 c
 	bsp-layout cycle --layouts tall,wide,rtall,rwide,grid,rgrid,even
 
-
 # Removes bsp-layout from current desktop and resets scheme and polarity 
-r
+q
 	bspc config automatic_scheme spiral; \
-	bspc config initial_polarity first-child; \
-	bsp-layout remove
+	bspc config initial_polarity first_child; \
+	bsp-layout remove; \
+	polybar-msg hook bsp-layout-mode 1;
 
 # TODO increase decrease master size
 # Note: Desktopname must be classic, like I

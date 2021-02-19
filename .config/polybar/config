@@ -86,7 +86,7 @@ font-2 = JoyPixels:fontformat=truetype:scale=10:antialias=false;
 
 modules-left = bspwm
 modules-center =
-modules-right = sxhkd-mode memory cpu temperature battery backlight pulseaudio date 
+modules-right = bsp-layout-mode sxhkd-mode memory cpu temperature battery backlight pulseaudio date 
 
 tray-position = right
 tray-padding = 0
@@ -161,6 +161,28 @@ initial = 1
 ; format-foreground = ${xrdb:color0}
 format-padding = 0
 format-underline = ${xrdb:color6}
+
+[module/bsp-layout-mode]
+type = custom/ipc
+format = <output>
+; bsp-layout off
+hook-0 = echo ""
+; bsp-layout on
+hook-1 = echo "📌%{R} $(bsp-layout get $(bspc query -D -d --names)) %{R-}"
+initial = 1
+; format-background = ${xrdb:color6}
+; format-foreground = ${xrdb:color0}
+format-padding = 0
+format-underline = ${xrdb:color6}
+
+; [module/bsp-layout]
+; type = custom/script
+; #exec = echo " $(bsp-layout get $(bspc query -D -d --names)) "
+; exec = . $XDG_CONFIG_HOME/bspwm/scripts/polybar-bsp-layout.sh
+; interval = 1
+; format = <label>
+; ; format-foreground = ${colors.foreground}
+; ; format-background = ${colors.background-module}
 
 [module/date]
 type = internal/date
