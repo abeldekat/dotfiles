@@ -7,7 +7,7 @@ super + {_, shift + } Return
 # Standard is @space
 # program launcher
 super + d
-	dmenu_run -fn "JetBrains Mono Medium-10"
+	dmenu_run -fn "Monospace-14-medium"
 
 # todo betterlockscreen
 # Lock the screen 
