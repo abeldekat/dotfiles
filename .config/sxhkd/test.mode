@@ -2,7 +2,7 @@
 
 _td=$SXHKD_ACTIVE_CONFIG
 
-sxhkd.mode 3 \
-    $_td/nodes.sxhkdrc \
+sxhkd.mode 4 \
+    $_td/test.sxhkdrc \
     $_td/normal.sxhkdrc \
     $_td/common.sxhkdrc

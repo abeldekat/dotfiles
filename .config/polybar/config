@@ -143,39 +143,28 @@ label-empty-padding = 0
 [module/sxhkd-mode]
 type = custom/ipc
 format = <output>
-; content =
-;
 ; Normal mode, the basic
 hook-0 = echo "📌 N "
 ; Layout mode
-hook-1 = echo "📌%{R} V %{R-}"
-; Node mode, test node selectors
-hook-2 = echo "📌%{R} O %{R-}"
-; Bsp-layout mode, test bsp-layout
-hook-3 = echo "📌%{R} B %{R-}"
-; Cpdfd-layout mode, test prots dots for debian
-hook-4 = echo "📌%{R} P %{R-}"
-
+hook-1 = echo "📌%{R} L %{R-}"
+; Bsp-layout mode
+hook-2 = echo "📌%{R} B %{R-}"
+; Test mode
+hook-3 = echo "📌%{R} T %{R-}"
 initial = 1
-; format-background = ${xrdb:color6}
-; format-foreground = ${xrdb:color0}
 format-padding = 0
 format-underline = ${xrdb:color6}
 
 [module/bsp-layout-mode]
 type = custom/ipc
 format = <output>
-; bsp-layout off
 hook-0 = echo ""
-; bsp-layout on
 hook-1 = echo "📌%{R} $(bsp-layout get $(bspc query -D -d --names)) %{R-}"
 initial = 1
-; format-background = ${xrdb:color6}
-; format-foreground = ${xrdb:color0}
 format-padding = 0
 format-underline = ${xrdb:color6}
 
-; [module/bsp-layout]
+; [module/bsp-layout] See github palmdrop
 ; type = custom/script
 ; #exec = echo " $(bsp-layout get $(bspc query -D -d --names)) "
 ; exec = . $XDG_CONFIG_HOME/bspwm/scripts/polybar-bsp-layout.sh

@@ -1,0 +1,10 @@
+# this mode explicitly overrides super + z effectively producing a toggle back to normal mode.
+{Escape, super + z}
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
+
+# ----
+#  Safety make an effort to disable any other typing
+#  ----
+
+{0-9,a-z,A-Z}
+	echo "dummy" > /dev/null
