@@ -21,8 +21,8 @@
 
 # bsp-layout Set: tall wide grid even monocle
 {t,w,g,e,m}
-	bspc config automatic_scheme alternate; \
- 	bspc config initial_polarity first_child; \
+ 	bspc config automatic_scheme alternate; \
+  	bspc config initial_polarity first_child; \
 	bsp-layout set {tall,wide,grid,even,monocle}; \
 	polybar-msg hook bsp-layout-mode 2;
 

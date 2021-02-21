@@ -9,7 +9,7 @@ super + Escape
     . $XDG_CONFIG_HOME/sxhkd/startup.mode
 
 # Change config to modes: layout, bsp-layout, cpdfd. The z is the most used layout mode
-super + z ; {l,z,t}
+super + z ; {l,b,z}
     . $XDG_CONFIG_HOME/sxhkd/{layout.mode,bsp-layout.mode,test.mode}
 
 # ----

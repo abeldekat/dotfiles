@@ -1,10 +1,53 @@
+# ----
+# Test the commands needed for a different approach to maintain the TALL layout of dwm
+#
+# Requirements
+# Just normal bspwm in spiral mode with first child. It resembles the tall layout out of the box
+# ----
+
 # this mode explicitly overrides super + z effectively producing a toggle back to normal mode.
 {Escape, super + z}
     . $XDG_CONFIG_HOME/sxhkd/normal.mode
+
+# Use case: New nodes are spawned from master @/1
+# No nodes, do nothing
+# One node, do nothing
+# Two nodes, do nothing. The command will apply but rotate on a leaf is pointless
+# Focussed master, new node, spiralled into child 2. One command needed to apply
+m
+	bspc node @^1:/2/2 -R 270 && bspc node @^1:/2 -B && notify-send "Applied m" "New node from master"
+
+# Use case: New nodes are spawned from stack @/2
+# bspc node -n @^1:/1 && bspc node @^1:/2/2 -R 270 && bspc node @^1:/2 -B && notify-send "Applied s" ""
+# After move node to master the stack is always the same: One horizontal with multiple vertical splits
+# Move that focused node to master and repeat the m command litterally
+s
+	bspc node focused -n @^1:/1 && notify-send "Applied s" "New node from stack. Apply m"
+
+
+# Result: The add node use case works. The order in the stack is consistent
+
+# Use case: The master node is deleted
+# All nodes are vertical in a grid
+# Needs equalize on the root node and a 90 degree rotation
+# Resembles m command but now directly on /2 instead of /2/2
+shift + m 
+	bspc node @^1:/2 -R 90 && bspc node @^1:/ -E && bspc node @^1:/2 -B && notify-send "Applied shift m"  "Master node deleted"
+
+# Use case: A stack node is deleted
+# Focus shifts to first child of parent/parent. 
+shift + s
+	bspc node @brother -R 90 && bspc node @^1:/2 -B && notify-send "Applied shift s"  "Stack node deleted"
+
+# Use case: A node in stack is promoted to master
+
+# Misc
+# r
+# 	bspc node @parent -R 90
 
 # ----
 #  Safety make an effort to disable any other typing
 #  ----
 
-{0-9,a-z,A-Z}
-	echo "dummy" > /dev/null
+# {0-9,a-z,A-Z}
+# 	echo "dummy" > /dev/null

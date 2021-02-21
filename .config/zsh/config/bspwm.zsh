@@ -48,7 +48,7 @@ alias bqnd='bspc query --nodes -d'
 alias bqnn='bspc query --nodes -n'
 
 # bsp-layout, appending desktop name is possible
-alias bla='bsp-layout get'
+alias bla='bsp-layout get $(bspc query -D -d --names)'
 
 # receptacles
 alias bqr='bspc query --nodes -n .leaf.\!window'
