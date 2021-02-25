@@ -38,7 +38,7 @@
 # p (CHAIN preselect using hjkl 0-9 and space)
 # q (CHAIN continuous input mode: expand contract move gaps)
 # r (rotate). Note r is used with super+alt
-# s (CHAIN split ratio, equalize, balance)
+# s (CHAIN split ratio, equalize, balance, automatic_scheme)
 # t (tiled)
 # u (circUlate)
 # v (flip Vlip. Note: Select a parent manually)

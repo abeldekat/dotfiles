@@ -89,6 +89,17 @@ super + s ; {1,2,3,4,5}
 super + s ; {e,b}
 	bspc node {@/ --equalize,@parent --balance}
 
+# Change automatic_scheme: alternate,spiral,longest_side
+super + s ; {a,s,l}
+	bspc config automatic_scheme {alternate,spiral,longest_side} \
+	&& notify-send "BSPWM" \ 
+	"Automatic scheme changed into $(bspc config automatic_scheme)"
+
+super + s ; f
+	bspc config initial_polarity {first_child,second_child} \
+	&& notify-send "BSPWM" \ 
+	"Initial polarity changed into $(bspc config initial_polarity)"
+
 # ----
 # Focus and swap 
 # ----

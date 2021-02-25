@@ -40,6 +40,9 @@ shift + s
 	bspc node @brother -R 90 && bspc node @^1:/2 -B && notify-send "Applied shift s"  "Stack node deleted"
 
 # Use case: A node in stack is promoted to master
+# More difficult. Try to recreate the predictablity of use case delete a node in the stack
+p
+	promote
 
 # Misc
 # r

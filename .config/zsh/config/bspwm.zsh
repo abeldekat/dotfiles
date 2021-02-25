@@ -30,7 +30,6 @@
 alias b='bspc'
 # do not override bc the calculator
 alias bco='bspc config'
-# alias bd='bspc desktop'
 alias bno='bspc node'
 alias bde='bspc desktop'
 
@@ -68,6 +67,9 @@ alias bqpl='bspc query --nodes -n .private.local'
 # sticky
 alias bqs='bspc query --nodes -n .sticky'
 alias bqsl='bspc query --nodes -n .sticky.local'
+
+# Unhide all hidden nodes in the current desktop
+alias bhul='bspc query -N -n .hidden.local | xargs -I {} bspc node {} -g hidden=off'
 
 # bspc node action
 # pipe the results of a previous bspq query into xargs

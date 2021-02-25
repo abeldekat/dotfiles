@@ -78,5 +78,5 @@ fi
 #bspc rule -a Screenkey manage=off
 
 # Scratchpad according to arch wiki
-bspc rule -a dropdown sticky=on state=floating hidden=on
+# bspc rule -a dropdown sticky=on state=floating hidden=on
 # st -c dropdown &

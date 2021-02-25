@@ -67,18 +67,19 @@ nnoremap <leader>5 5gt
 nnoremap <leader>6 6gt
 nnoremap <leader>7 7gt
 
-nnoremap <leader>to :TabooOpen 
-nnoremap <leader>tc :tabclose<CR> 
-nnoremap <leader>tr :TabooRename 
+nnoremap <leader>to :TabooOpen
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>tr :TabooRename
 
-nnoremap <leader>tib :call Tabswitch('bro', '~/inspiration/brodie/dotfiles')<CR> 
-nnoremap <leader>tic :call Tabswitch('cto', '~/inspiration/christoomey/dotfiles')<CR> 
-nnoremap <leader>til :call Tabswitch('luk', '~/inspiration/luke/voidrice/')<CR> 
-nnoremap <leader>tir :call Tabswitch('rah', '~/inspiration/rahatzamancse/linux-dots')<CR> 
-nnoremap <leader>tio :call Tabswitch('omz', '~/inspiration/ohmyzsh/oh-my-zsh-master')<CR> 
-nnoremap <leader>tip :call Tabswitch('cpd', '~/inspiration/protesilaos/cpdfd')<CR> 
-nnoremap <leader>tmv :call Tabswitch('vim', '~/.config/nvim')<CR> 
-nnoremap <leader>tmz :call Tabswitch('zsh', '~/.config/zsh')<CR> 
+nnoremap <leader>tib :call Tabswitch('bro', '~/inspiration/brodie/dotfiles')<CR>
+nnoremap <leader>tic :call Tabswitch('cto', '~/inspiration/christoomey/dotfiles')<CR>
+nnoremap <leader>til :call Tabswitch('bsp-layout', '~/inspiration/bsp-layout')<CR>
+" nnoremap <leader>tio :call Tabswitch('omz', '~/inspiration/ohmyzsh/oh-my-zsh-master')<CR>
+nnoremap <leader>tiv :call Tabswitch('luk', '~/inspiration/luke/voidrice/')<CR>
+nnoremap <leader>tip :call Tabswitch('cpd', '~/inspiration/protesilaos/cpdfd')<CR>
+nnoremap <leader>tmd :call Tabswitch('dwm', '~/builds/bsp-dwm')<CR>
+nnoremap <leader>tmv :call Tabswitch('vim', '~/.config/nvim')<CR>
+nnoremap <leader>tmz :call Tabswitch('zsh', '~/.config/zsh')<CR>
 
 function! Tabswitch(name,dir)
     exe 'TabooOpen '.a:name

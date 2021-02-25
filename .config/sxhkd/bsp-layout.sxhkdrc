@@ -21,15 +21,11 @@
 
 # bsp-layout Set: tall wide grid even monocle
 {t,w,g,e,m}
- 	bspc config automatic_scheme alternate; \
-  	bspc config initial_polarity first_child; \
 	bsp-layout set {tall,wide,grid,even,monocle}; \
 	polybar-msg hook bsp-layout-mode 2;
 
 # Set inverse layouts: rtall rwide rgrid
 {T,W,G}
-	bspc config automatic_scheme alternate; \
-	bspc config initial_polarity first_child; \
 	bsp-layout set {rtall,rwide,rgrid}; \
 	polybar-msg hook bsp-layout-mode 2;
 
@@ -37,10 +33,8 @@
 c
 	bsp-layout cycle --layouts tall,wide,rtall,rwide,grid,rgrid,even
 
-# Removes bsp-layout from current desktop and resets scheme and polarity 
+# Removes bsp-layout from current desktop
 q
-	bspc config automatic_scheme spiral; \
-	bspc config initial_polarity first_child; \
 	bsp-layout remove; \
 	polybar-msg hook bsp-layout-mode 1;
 

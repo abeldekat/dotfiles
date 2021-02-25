@@ -3,21 +3,21 @@ D	~/Downloads
 m	~/Music
 h	~/
 c	~/.config
-ca	~/.config/pkglist
-cf	~/.config/fontconfig
+# ca	~/.config/pkglist
+# cf	~/.config/fontconfig
 cv	~/.config/nvim
 cz	~/.config/zsh
 inb ~/inspiration/brodie/dotfiles
 inc ~/inspiration/christoomey/dotfiles
 inp ~/inspiration/protesilaos/cpdfd
-inl ~/inspiration/luke/voidrice
+# inl ~/inspiration/luke/voidrice
 lc	~/.local/share/colors
 le	~/.local/share
 mn	/mnt
 pp	~/Pictures
 s	~/.local/bin
-sa	~/.local/bin/arch
-sc	~/.local/bin/colors
-sp	~/.local/bin/polybar
-vl	/var/lib/libvirt
+# sa	~/.local/bin/arch
+# sc	~/.local/bin/colors
+# sp	~/.local/bin/polybar
+# vl	/var/lib/libvirt
 vv	~/Videos
