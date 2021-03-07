@@ -71,6 +71,13 @@ alias bqsl='bspc query --nodes -n .sticky.local'
 # Unhide all hidden nodes in the current desktop
 alias bhul='bspc query -N -n .hidden.local | xargs -I {} bspc node {} -g hidden=off'
 
+# Which desktops are controlled by bspwm-dynamic
+alias bdy='ls -1 /tmp/bsp-masterstack.state/desktops && \
+    cat /tmp/bsp-masterstack.state/GUARD && \
+    bspc config automatic_scheme && \
+    bspc config split_ratio && \
+    bspc config initial_polarity'
+
 # bspc node action
 # pipe the results of a previous bspq query into xargs
 alias -g BNA='| xargs -I {} bspc node {}'

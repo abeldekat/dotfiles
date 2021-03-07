@@ -147,10 +147,12 @@ format = <output>
 hook-0 = echo "📌 N "
 ; Layout mode
 hook-1 = echo "📌%{R} L %{R-}"
+; Masterstack mode
+hook-2 = echo "📌%{R} M %{R-}"
 ; Bsp-layout mode
-hook-2 = echo "📌%{R} B %{R-}"
+hook-3 = echo "📌%{R} B %{R-}"
 ; Test mode
-hook-3 = echo "📌%{R} T %{R-}"
+hook-4 = echo "📌%{R} T %{R-}"
 initial = 1
 format-padding = 0
 format-underline = ${xrdb:color6}

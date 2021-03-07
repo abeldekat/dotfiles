@@ -3,7 +3,7 @@ typeset -U PATH path
 _bin="$HOME/.local/bin"
 _sxhkd="$HOME/.config/sxhkd/scripts"
 _bspwm="$HOME/.config/bspwm/scripts"
-_work="$HOME/builds/bsp-dwm/src"
+_work="$HOME/builds/bsp-masterstack/src"
 path=("$_bin" "$_bspwm" "$_sxhkd" "$_work" "$_bin/polybar"   "$_bin/colors" "$_bin/larbs"  "$_bin/utils" "$_bin/arch" "$path[@]")
 export PATH
 

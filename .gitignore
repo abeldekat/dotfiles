@@ -11,6 +11,7 @@
 /snaps/
 *.o
 st
+dwm
 config.h
 pack
 plugged

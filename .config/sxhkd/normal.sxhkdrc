@@ -8,9 +8,9 @@ super + Escape
     notify-send "sxhkd reloaded"; \
     . $XDG_CONFIG_HOME/sxhkd/startup.mode
 
-# Change config to modes: layout, bsp-layout, cpdfd. The z is the most used layout mode
-super + z ; {l,b,z}
-    . $XDG_CONFIG_HOME/sxhkd/{layout.mode,bsp-layout.mode,test.mode}
+# Change config to modes: layout, bsp-layout, test, masterstack. The z is the most used layout mode
+super + z ; {l,b,t,z}
+    . $XDG_CONFIG_HOME/sxhkd/{layout.mode,bsp-layout.mode,test.mode,masterstack.mode}
 
 # ----
 # bspwm hotkeys
@@ -63,7 +63,7 @@ super + {t,shift + space,space,f}
 # Not standard, super + control + mxyz. Also added hidden flag
 # Note: super-control was used by preselect, now with p keychord
 # TODO no hidden flag
-# set node flags: marked,locked, sticky,private
+# set node flags: hidden,locked,marked,sticky,private
 super + a ; {h,l,m,s,z}
 	bspc node -g {hidden,locked,marked,sticky,private}
 

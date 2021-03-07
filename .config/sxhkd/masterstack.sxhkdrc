@@ -1,0 +1,15 @@
+# Adds a layer in which bsp-masterstack can be used
+# this mode explicitly overrides super + z effectively producing a toggle back to normal mode.
+{Escape, super + z}
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
+
+# Overriding normal.sxhkd:
+# n (advanced operations, receptacles and scripted actions)
+super + n ; {s,p,z,r}
+    bsp-masterstack.sh {start,stop,zoom,replay}
+
+# ----
+#  Safety make an effort to disable any other typing
+#  ----
+# {0-9,a-z,A-Z}
+# 	echo "dummy" > /dev/null
