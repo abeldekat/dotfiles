@@ -21,22 +21,20 @@
 
 # bsp-layout Set: tall wide grid even monocle
 {t,w,g,e,m}
-	bsp-layout set {tall,wide,grid,even,monocle}; \
-	polybar-msg hook bsp-layout-mode 2;
+	bsp-layout set {tall,wide,grid,even,monocle};
 
 # Set inverse layouts: rtall rwide rgrid
 {T,W,G}
-	bsp-layout set {rtall,rwide,rgrid}; \
-	polybar-msg hook bsp-layout-mode 2;
+	bsp-layout set {rtall,rwide,rgrid};
 
+# bsp-layout cycle --layouts tall,wide,rtall,rwide,grid,rgrid,even
 # Cycle through all avaible layouts
 c
-	bsp-layout cycle --layouts tall,wide,rtall,rwide,grid,rgrid,even
+	bsp-layout cycle --layouts tall,wide,rtall,rwide
 
 # Removes bsp-layout from current desktop
 q
-	bsp-layout remove; \
-	polybar-msg hook bsp-layout-mode 1;
+	bsp-layout remove;
 
 # TODO increase decrease master size
 # Note: Desktopname must be classic, like I

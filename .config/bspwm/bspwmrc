@@ -56,15 +56,20 @@ _bc single_monocle false
 _bc borderless_monocle true
 _bc gapless_monocle false
 _bc border_width 1
+_bc removal_adjustment true
+
 # colours
 # -------
 _bc presel_feedback_color $(_xrdb "color1")
 _bc normal_border_color $(_xrdb "background")
+# _bc normal_border_color $(_xrdb "color15")
 _bc active_border_color $(_xrdb "background")
+# _bc active_border_color $(_xrdb "color15")
 _bc focused_border_color $(_xrdb "color15")
+# _bc focused_border_color $(_xrdb "background")
 if [[ "$(theme-is-light)">0 ]]; then
     _bc border_width 4
-    _bc focused_border_color $(_xrdb "foreground")
+    # _bc focused_border_color $(_xrdb "foreground")
 fi
 
 # window rules

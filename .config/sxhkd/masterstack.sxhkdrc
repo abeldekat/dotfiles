@@ -3,10 +3,40 @@
 {Escape, super + z}
     . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
-# Overriding normal.sxhkd:
-# n (advanced operations, receptacles and scripted actions)
-super + n ; {s,p,z,r}
-    bsp-masterstack.sh {start,stop,zoom,replay}
+super + Return
+	st
+
+super + shift + Return
+	bsp-masterstack.sh zoom
+
+super + r
+	bsp-masterstack.sh rotate
+
+super + a
+	bsp-masterstack.sh start
+
+super + s
+	bsp-masterstack.sh stop
+
+super + p
+	bsp-masterstack.sh dump
+
+super + {_,shift + }w
+	bspc node -{c,k}
+
+super + m
+	bspc desktop -l next
+
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+# TODO
+# j,k for the stack
+# h,l for resize
+# super + {h,j,k,l}
+# override normal.sxhkdrc
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
 
 # ----
 #  Safety make an effort to disable any other typing

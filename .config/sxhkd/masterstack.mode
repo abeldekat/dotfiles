@@ -4,5 +4,4 @@ _td=$SXHKD_ACTIVE_CONFIG
 
 sxhkd.mode 3 \
     $_td/masterstack.sxhkdrc \
-    $_td/normal.sxhkdrc \
     $_td/common.sxhkdrc
